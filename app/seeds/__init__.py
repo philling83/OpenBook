@@ -15,6 +15,7 @@ def seed():
     seed_users()
     seed_deck_cards()
     seed_students()
+
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
