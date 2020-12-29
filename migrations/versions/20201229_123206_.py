@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 047eb95d37c3
-Revises:
-Create Date: 2020-12-29 11:12:47.849412
+Revision ID: 3ab703eab6e0
+Revises: 
+Create Date: 2020-12-29 12:32:06.510318
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = '047eb95d37c3'
+revision = '3ab703eab6e0'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -38,7 +38,7 @@ def upgrade():
     sa.Column('username', sa.String(length=40), nullable=False),
     sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('hashed_password', sa.String(length=255), nullable=False),
-    sa.Column('classrooms_id', sa.Integer()),
+    sa.Column('classrooms_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['classrooms_id'], ['classrooms.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
@@ -71,10 +71,10 @@ def upgrade():
     sa.ForeignKeyConstraint(['deck_id'], ['decks.id'], )
     )
     op.create_table('deck_cards',
-    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('card_id', sa.Integer(), nullable=False),
     sa.Column('deck_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['deck_id'], ['decks.id'], ),
-    sa.ForeignKeyConstraint(['user_id'], ['cards.id'], )
+    sa.ForeignKeyConstraint(['card_id'], ['cards.id'], ),
+    sa.ForeignKeyConstraint(['deck_id'], ['decks.id'], )
     )
     # ### end Alembic commands ###
 
