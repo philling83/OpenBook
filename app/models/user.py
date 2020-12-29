@@ -1,16 +1,20 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 # from sqlalchemy.orm import relationship
-from .Assignment import assignments
+# import .Classroom
 
-class Classroom(db.Model):
-    __tablename__ = 'classrooms'
+
+class User(db.Model, UserMixin):
+    __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(40), nullable=False, unique=True)
+    username = db.Column(db.String(40), nullable=False, unique=True)
+    email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
-    decks = db.relationship('Deck', secondary=assignments,
-                         back_populates='classrooms')
+    classrooms_id = db.Column(db.Integer, db.ForeignKey(
+        'classrooms.id'), nullable=False)
+    decks = db.relationship('Deck', back_populates='user')
 
     @property
     def password(self):
@@ -26,6 +30,8 @@ class Classroom(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "name": self.name,
+            "username": self.username,
+            "email": self.email,
+            "classrooms_id": self.classrooms_id,
             "decks": self.decks
         }

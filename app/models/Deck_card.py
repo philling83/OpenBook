@@ -4,10 +4,11 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.schema import Table
 
-Base = declarative_base()
-deck_cards = Table (
-    'deck_cards',
-    Base.metadata,
-    card_id = db.Column(db.Integer, nullable = False, db.ForeignKey('card.id')),
-    deck_id = db.Column(db.Integer, nullable = False, db.ForeignKey('deck.id')),
-    )
+# Base = declarative_base()
+deck_cards = db.Table('deck_cards',
+                      # db.Model.metadata,
+                      db.Column('user_id', db.Integer, db.ForeignKey(
+                          'cards.id'), nullable=False),
+                      db.Column('deck_id', db.Integer, db.ForeignKey(
+                          'decks.id'), nullable=False),
+                      )
