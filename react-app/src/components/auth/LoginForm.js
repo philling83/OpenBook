@@ -12,9 +12,11 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const user = await login(email, password);
     if (!user.errors) {
       setAuthenticated(true);
+      return <Redirect to='/app'/>
     } else {
       setErrors(user.errors);
     }
+
   };
 
   const updateEmail = (e) => {
@@ -26,7 +28,9 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    console.log(authenticated)
+    return <Redirect to="/app" />;
+
   }
 
   return (
