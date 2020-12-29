@@ -7,8 +7,9 @@ from sqlalchemy.schema import Table
 # Base = declarative_base()
 assignments = db.Table('assignments',
                        # db.Model.metadata,
-                       db.Column('classroom_id', db.Integer, db.ForeignKey('classrooms.id'),
-                                              nullable=False),
+                       db.Column('classroom_id', db.Integer,
+                                 db.ForeignKey('classrooms.id'),
+                                 nullable=False),
                        db.Column('deck_id', db.Integer, db.ForeignKey(
                            'decks.id'), nullable=False),
                        )

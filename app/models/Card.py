@@ -14,7 +14,8 @@ class Card(db.Model):
     possible_answers = db.Column(postgresql.ARRAY(db.String))
     answer = db.Column(db.String(80))
     image = db.Column(db.String())
-    created_by = db.Column(db.String, db.ForeignKey('users.id'), nullable=False)
+    created_by = db.Column(
+        db.Integer, db.ForeignKey('users.id'), nullable=False)
     user = db.relationship('User', back_populates='cards')
     decks = db.relationship('Deck', secondary=deck_cards,
                             back_populates='cards')

@@ -12,11 +12,13 @@ class Deck(db.Model):
     name = db.Column(db.String(40), nullable=False)
     subject = db.Column(db.String(40), nullable=False)
     tags = db.Column(postgresql.ARRAY(db.String))
-    created_by = db.Column(db.String, db.ForeignKey('users.id'), nullable=False)
+    created_by = db.Column(
+        db.Integer, db.ForeignKey('users.id'), nullable=False)
     user = db.relationship('User', back_populates='decks')
     classrooms = db.relationship(
         'Classroom', secondary=assignments, back_populates='decks')
-    cards = db.relationship('Card', secondary=deck_cards, back_populates='decks')
+    cards = db.relationship(
+        'Card', secondary=deck_cards, back_populates='decks')
 
     def to_dict(self):
         return {
