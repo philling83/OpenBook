@@ -13,8 +13,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     classrooms_id = db.Column(db.Integer, db.ForeignKey(
-        'classrooms.id'), nullable=False)
+        'classrooms.id'))
     decks = db.relationship('Deck', back_populates='user')
+    cards = db.relationship('Card', back_populates='user')
 
     @property
     def password(self):

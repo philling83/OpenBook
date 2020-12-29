@@ -1,7 +1,7 @@
 """empty message
 
 Revision ID: 047eb95d37c3
-Revises: 
+Revises:
 Create Date: 2020-12-29 11:12:47.849412
 
 """
@@ -38,7 +38,7 @@ def upgrade():
     sa.Column('username', sa.String(length=40), nullable=False),
     sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('hashed_password', sa.String(length=255), nullable=False),
-    sa.Column('classrooms_id', sa.Integer(), nullable=False),
+    sa.Column('classrooms_id', sa.Integer()),
     sa.ForeignKeyConstraint(['classrooms_id'], ['classrooms.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
