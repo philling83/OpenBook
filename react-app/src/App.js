@@ -38,13 +38,13 @@ function App() {
       <Route path="/sign-up" exact={true}>
         <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
       </Route>
-      <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
+      <ProtectedRoute path="/users" exact={true} >
         <UsersList/>
       </ProtectedRoute>
-      <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+      <ProtectedRoute path="/users/:userId" exact={true} >
         <User />
       </ProtectedRoute>
-      <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+      <ProtectedRoute path="/" exact={true} >
         <h1>My Home Page</h1>
       </ProtectedRoute>
     </BrowserRouter>

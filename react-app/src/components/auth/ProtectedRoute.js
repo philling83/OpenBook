@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import {useSelector} from "react-redux"
 
 const ProtectedRoute = props => {
+  const currentUser = useSelector((state) => state.session.user)
 
-  if (!props.authenticated) {
-    return <Redirect to="/login"/>
+  useEffect(() => {}, [currentUser])
+
+  console.log("protected route")
+  if (!currentUser) {
+    return <Redirect to="/login" />
   }
 
   return (
