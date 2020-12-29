@@ -12,21 +12,21 @@ seed_commands = AppGroup('seed')
 # Creates the `flask seed all` command
 @seed_commands.command('all')
 def seed():
-    # seed_users()
+    seed_users()
     # seed_classrooms()
-    # seed_students()
     seed_deck_cards()
+    seed_students()
     # seed_assignments()
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
-    undo_assignments()
-    undo_deck_cards()
+    # undo_assignments()
     undo_students()
-    undo_cards()
-    undo_decks()
-    undo_classrooms()
+    undo_deck_cards()
+    # undo_cards()
+    # undo_decks()
+    # undo_classrooms()
     undo_users()
     # Add other undo functions here
