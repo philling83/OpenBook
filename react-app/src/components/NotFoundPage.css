@@ -1,0 +1,10 @@
+
+.notFound-background {
+    background-image: url("../images/SchoolSuppliesDarkGreyBackground.jpg");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: rgba(0, 0, 0, 1);
+    width: 100vw;
+    height: 660px;
+}
