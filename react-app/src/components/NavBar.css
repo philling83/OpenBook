@@ -1,3 +1,8 @@
+.image {
+  content:url("../Assets/logo.png");
+  width: 200px;
+}
+
 .sign-up {
   color: white;
   background-color: green;
@@ -5,25 +10,26 @@
 }
 
 .log-in {
-  color: green
+  color: green;
+  text-decoration: none;
+  align-self: center;
 }
 
 .nav-bar {
   display: flex;
   /* border: 1px solid black; */
-  justify-content: space-between;
-  /* background-color: orange; */
-  /* background-image: url("../Assets/book3.png"); */
-  /* background-size: cover;
-  background-position: center; */
-  width: 100%;
+  /* justify-content: space-between; */
+  align-items: center;
   font-family: avenirheavy,Helvetica,Arial,sans-serif;
+  position: absolute;
 }
 
 .nav-bar > .logo {
   /* border: 1px solid red; */
   text-decoration: none;
   font-size: 25px;
+  align-self: center;
+  margin-left: 100px;
 }
 
 .first-logo {
@@ -40,5 +46,7 @@
   font-family: avenirheavy,Helvetica,Arial,sans-serif;
   /* border: 1px solid green; */
   justify-content: space-between;
+  margin-left: 925px;
+  margin-bottom: 25px;
   /* font-family: avenirheavy,Helvetica,Arial,sans-serif; */
 }

@@ -5,14 +5,11 @@ import SignUpButton from './SignUpButton';
 import "./NavBar.css";
 
 const NavBar = ({ setAuthenticated }) => {
+
   return (
-    <nav className="nav-bar">
+    <nav id="nav-bar" className="nav-bar">
       <NavLink to="/" exact={true} activeClassName="active" className="logo">
-        <a>| </a>
-        <a className="first-logo">Open</a>
-        <a> | </a>
-        <a className="second-logo">Book</a>
-        <a> |</a>
+        <div className="image"></div>
       </NavLink>
       <div className="buttons">
         <SignUpButton setAuthenticated={setAuthenticated} />
