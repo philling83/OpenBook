@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -55,8 +55,11 @@ function App() {
 				<ProtectedRoute path="/" exact={true}>
 					<h1>My Home Page</h1>
 				</ProtectedRoute>
-				<Route path="*">
+				<Route path="/404">
 					<NotFoundPage />
+				</Route>
+				<Route path="*">
+					<Redirect to="/404" />
 				</Route>
 			</Switch>
 		</BrowserRouter>
