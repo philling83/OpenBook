@@ -46,7 +46,8 @@ export const student_login = (student) => async (dispatch) => {
 	});
 
 	let studentJson = await response.json();
-	console.log("Student Json", studentJson)
+	// console.log("Student Json", studentJson)
+	dispatch(setUser(studentJson));
 }
 
 

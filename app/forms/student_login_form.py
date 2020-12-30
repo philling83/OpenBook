@@ -17,7 +17,8 @@ def class_password_matches(form, field):
     password = field.data
     name = form.data['name']
     student = Student.query.filter(Student.name == name).first()
-    classroom = Classroom.query.filter(student.classroom_id == Classroom.id).first()
+    classroom = Classroom.query.filter(
+        student.classroom_id == Classroom.id).first()
     if not student:
         raise ValidationError("No such student exists.")
     if not classroom.check_password(password):
