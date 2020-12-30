@@ -15,5 +15,6 @@ class Student(db.Model, UserMixin):
         return {
             "id": self.id,
             "name": self.name,
-            "classroom_id": self.classroom_id
+            "classroom_id": self.classroom_id,
+            "teacher": False
         }
