@@ -1,0 +1,312 @@
+.fullPageDiv {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.bodyDiv {
+    height: 93vh;
+    display: flex;
+}
+
+.sideBarDiv {
+    background-color: rgba(5, 13, 133, 0.9);
+}
+
+.mainDiv {
+    width: 100%;
+}
+
+/* banner div */
+
+.bannerDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    background-color: whitesmoke;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.userName {
+    color: rgba(5, 13, 133, 0.9);
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    width: 150px;
+    margin-right: 7px;
+}
+
+.avatar {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: rgba(5, 13, 133, 0.9);
+}
+
+
+
+.logoDiv {
+    display: flex;
+}
+
+.logoImage {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(160, 47, 64);
+}
+
+.logoText {
+    margin-left: 5px;
+    color: rgb(160, 47, 64);
+    font-size: 25px;
+    height: 30px;
+    width: 80px;
+}
+
+/* side div */
+.sideDiv {
+    border-bottom: 1px solid whitesmoke;
+    height: 60px;
+    width: 230px;
+    background-color: rgba(5, 13, 133, 0.9);
+}
+
+.joinClassDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reportDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.libraryDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 20px;
+
+}
+
+.joinText {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.joinCode {
+    color:rgba(5, 13, 133, 0.9);
+    background-color: whitesmoke;
+    height: 20px;
+    width: 80px;
+}
+
+/* teacher home page */
+
+.teacherDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* search bar */
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    width: 500px;
+    margin-left: 10px;
+    background-color: whitesmoke;
+    border-radius: 3%;
+    padding-left: 10px;
+    margin-left: 20px;
+    border: 2px solid rgba(5, 13, 133, 0.9);
+    color: rgba(5, 13, 133, 0.9);
+}
+
+.searchBarDiv {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 8vh;
+    width: 100%;
+    background-color: whitesmoke;
+    border-top: 4px solid rgba(5, 13, 133, 0.9);;
+}
+
+/* major action div */
+
+.majorActionDiv {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 25vh;
+    background-color: whitesmoke;
+    border-top: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.majorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 170px;
+    width: 250px;
+    margin-left: 25px;
+    border-radius: 5%;
+    color: whitesmoke;
+    font-size: 25px;
+    background-color: rgb(160, 47, 64);
+}
+
+
+/* minor action div */
+
+.minorActionDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    background-color: whitesmoke;
+    border-top: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.createButton {
+    height: 40px;
+    width: 80px;
+    background-color: rgba(5, 13, 133, 0.9);
+    color: whitesmoke;
+    border-radius: 15%;
+    margin-left: 20px;
+}
+
+.folderButton {
+    height: 40px;
+    width: 80px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 15%;
+    margin-left: 20px;
+    color: rgba(5, 13, 133, 0.9);
+    border: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.selectButton {
+    margin-left: 10px;
+    height: 40px;
+    width: 80px;
+    background-color: seashell;
+    color: black;
+    border-radius: 5%;
+    color: rgba(5, 13, 133, 0.9);
+    border: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.sortDiv {
+    margin-right: 15px;
+    color: rgba(5, 13, 133, 0.9);
+    font-size: 20px;
+}
+
+/* your decks div */
+
+.yourDecksDiv {
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    background-color: whitesmoke;
+    overflow: scroll;
+    border-top: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.textDiv {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: rgba(5, 13, 133, 0.9);
+    font-size: 20px;
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    background-color:  whitesmoke;
+}
+
+.yourFoldersDiv {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.folder {
+    margin-left: 20px;
+    width: auto;
+    height: 25px;
+    color: rgba(5, 13, 133, 0.9);
+}
+
+.allDecksDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deckDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 130px;
+    margin-left: 25px;
+    margin-top: 20px;
+    border: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.deckText {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:rgba(5, 13, 133, 0.9);
+    font-size: 13px;
+    background-color: whitesmoke;
+    margin-top: 3px;
+}
+
+.deckImage {
+    height: 80px;
+}
+
+.image {
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 100px;
+}
