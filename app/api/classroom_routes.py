@@ -9,14 +9,14 @@ def get_classroom(id):
     classroom_id = id
     classroom = Classroom.query.get(classroom_id)
 
-    print('Im printing this', classroom.to_dict())
+    # print('Im printing this', classroom.to_dict())
     # return 'whatever'
     return classroom.to_dict()
 
 
-#To create new classroom
-@class_routes.route('/', methods=['POST'])
-def create_classroom():
+@class_routes.route('/<teacher_id>', methods=['POST'])
+def create_classroom(teacher_id):
+    teacher_id = teacher_id
     new_classroom = Classroom()
 
     name = request.get_json().get('name')
@@ -25,6 +25,10 @@ def create_classroom():
     new_classroom.password = password
 
     db.session.add(new_classroom)
+
+    teacher = User.query.get(teacher_id)
+    teacher.classrooms_id = new_classroom.id
+
     db.session.commit()
 
     return new_classroom.to_dict()
