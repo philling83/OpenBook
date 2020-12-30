@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter} from "react-router-dom"
+// import {BrowserRouter} from "react-router-dom"
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -11,9 +11,7 @@ const store = configureStore();
 function Root() {
 	return (
 		<Provider store={store}>
-	
-				<App />
-
+			<App />
 		</Provider>
 	);
 }
