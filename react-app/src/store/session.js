@@ -1,5 +1,4 @@
 const SET_USER = "session/setUser";
-// const SET_STUDENT = "session/setStudent"
 const REMOVE_USER = "session/removeUser";
 
 const setUser = (user) => {
@@ -46,7 +45,7 @@ export const student_login = (student) => async (dispatch) => {
 	});
 
 	let studentJson = await response.json();
-	// console.log("Student Json", studentJson)
+
 	dispatch(setUser(studentJson));
 }
 
