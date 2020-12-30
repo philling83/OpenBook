@@ -27,5 +27,4 @@ class Classroom(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "decks": self.decks
         }
