@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import NotFoundPage from "./components/NotFoundPage";
 // import { authenticate } from "./services/auth";
 
 function App() {
@@ -54,6 +55,9 @@ function App() {
 				<ProtectedRoute path="/" exact={true}>
 					<h1>My Home Page</h1>
 				</ProtectedRoute>
+				<Route path="*">
+					<NotFoundPage />
+				</Route>
 			</Switch>
 		</BrowserRouter>
 	);
