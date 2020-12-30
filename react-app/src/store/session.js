@@ -27,11 +27,27 @@ export const login = (user) => async (dispatch) => {
 			password,
 		}),
 	});
-	// return await response.json();
+
 	let userJson = await response.json()
 	dispatch(setUser(userJson));
 	return response;
 };
+
+export const student_login = (student) => async (dispatch) => {
+	const {name, password} = student;
+
+	const response = await fetch("/api/auth/login/student", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({name, password})
+	});
+
+	let studentJson = await response.json();
+
+	dispatch(setUser(studentJson));
+}
 
 
 export const logout = () => async (dispatch) => {
