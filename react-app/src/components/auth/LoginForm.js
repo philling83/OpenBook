@@ -14,12 +14,22 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   const onLogin = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
 
     console.log("SUBMIT", email, password);
     return dispatch(
 
       sessionActions.login({ email, password })
     )
+=======
+    const user = await login(email, password);
+    if (!user.errors) {
+      setAuthenticated(true);
+      return <Redirect to='/app'/>
+    } else {
+      setErrors(user.errors);
+    }
+>>>>>>> routes
 
   };
 
@@ -31,8 +41,15 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
+<<<<<<< HEAD
   if (currentUser) {
     return <Redirect to="/" />;
+=======
+  if (authenticated) {
+    console.log(authenticated)
+    return <Redirect to="/app" />;
+
+>>>>>>> routes
   }
 
   return (
