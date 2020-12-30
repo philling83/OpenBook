@@ -68,3 +68,29 @@ def delete_deck(id):
         return 'deleted deck'
     except Exception:
         return Exception
+
+
+@deck_routes.route('/<deck_id>/assign_to_classroom/<classroom_id>', methods=['POST'])
+def assign_deck_to_classroom(deck_id, classroom_id):
+
+    deck = Deck.query.get(deck_id)
+    classroom = Classroom.query.get(classroom_id)
+
+    deck.classrooms.append(classroom)
+
+    db.session.commit()
+
+    return 'Deck assigned to classroom'
+
+
+@deck_routes.route('<deck_id>/unassign_from_classroom/<classroom_id>', methods=['POST'])
+def unassign_deck_from_classroom(deck_id, classroom_id):
+
+    deck = Deck.query.get(deck_id)
+    classroom = Classroom.query.get(classroom_id)
+
+    deck.classrooms.remove(classroom)
+
+    db.session.commit()
+
+    return 'Deck unassigned from classroom'

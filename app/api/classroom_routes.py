@@ -40,7 +40,7 @@ def edit_classroom(id):
 
     try:
         classroom_edit = Classroom.query.get(classroom_id)
-    except:
+    except Exception:
         return 'No classroom found'
 
     name = request.get_json().get('name')
@@ -60,7 +60,7 @@ def delete_classroom(id):
 
     try:
         classroom_delete = Classroom.query.get(classroom_id)
-    except:
+    except Exception:
         return 'No classroom found'
 
     db.session.delete(classroom_delete)

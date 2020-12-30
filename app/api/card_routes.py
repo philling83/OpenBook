@@ -68,3 +68,31 @@ def delete_card(id):
     db.session.commit()
 
     return 'card deleted'
+
+
+@card_routes.route('<card_id>/add_to_deck/<deck_id>', methods=['POST'])
+def add_card_to_deck(card_id, deck_id):
+
+    deck = Deck.query.get(deck_id)
+    card = Card.query.get(card_id)
+
+    deck.cards.append(card)
+
+    db.session.commit()
+
+    return 'Added card to deck'
+
+
+@card_routes.route('<card_id>/remove_from_deck/<deck_id>', methods=['POST'])
+def remove_card_from_deck(card_id, deck_id):
+
+    deck = Deck.query.get(deck_id)
+    card = Card.query.get(card_id)
+
+    deck.cards.remove(card)
+
+    db.session.commit()
+
+    return 'removed association'
+    
+
