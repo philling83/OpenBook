@@ -7,14 +7,11 @@ const ProtectedRoute = props => {
 
   useEffect(() => {}, [currentUser])
 
-  console.log("protected route")
-  if (!currentUser) {
-    return <Redirect to="/login" />
-  }
-
-  return (
-    <Route {...props}/>
-  );
+    return (
+			<Route {...props}>
+				{currentUser ? props.children : <Redirect to="/login" />}
+			</Route>
+		);
 };
 
 export default ProtectedRoute;

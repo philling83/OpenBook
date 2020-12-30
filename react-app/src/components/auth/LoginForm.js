@@ -8,6 +8,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const currentUser = useSelector((state) => state.session.user);
+
   const dispatch = useDispatch();
 
   const onLogin = async (e) => {
@@ -29,7 +31,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
-  if (authenticated) {
+  if (currentUser) {
     return <Redirect to="/" />;
   }
 
