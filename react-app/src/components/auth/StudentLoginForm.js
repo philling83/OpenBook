@@ -15,7 +15,7 @@ const StudentLoginForm = () => {
 		console.log("click");
 
 		// // TODO: handle student redux
-		// return dispatch();
+		return dispatch(sessionActions.student_login({ name, password }));
 	};
 
 	const updateName = (e) => {
