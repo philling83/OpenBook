@@ -1,6 +1,5 @@
 from .db import db
 from sqlalchemy.dialects import postgresql
-# from sqlalchemy.orm import relationship
 from .Assignment import assignments
 from .Deck_card import deck_cards
 
@@ -28,6 +27,7 @@ class Deck(db.Model):
             "tags": self.tags,
             "created_by": self.created_by,
             "user": self.user.to_dict(),
-            "classrooms": [classroom.to_dict() for classroom in self.classrooms],
+            "classrooms":
+                [classroom.to_dict() for classroom in self.classrooms],
             "cards": [card.to_dict() for card in self.cards],
         }
