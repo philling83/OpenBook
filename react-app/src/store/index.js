@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
 	session: sessionReducer,
 	cards: cardReducer,
 	deck: deckReducer,
-	classrooms: roomReducer,
+	classroom: roomReducer,
 });
 
 let enhancer;

@@ -1,38 +1,42 @@
-const GET_ROOM = 'classroom'
-const ADD_ROOM = 'classroom/add'
+const GET_ROOM = "classroom";
+const ADD_ROOM = "classroom/add";
 
 const setRoom = (room) => {
-    return {type: GET_ROOM, payload: room};
-}
+	return { type: GET_ROOM, payload: room };
+};
 
 const newRoom = (room) => {
-    return {type: ADD_ROOM, payload: room};
-}
+	return { type: ADD_ROOM, payload: room };
+};
 
 export const getRoom = (roomId) => async (dispatch) => {
-    const response = await fetch(`/api/classrooms/${roomId}`);
+	const response = await fetch(`/api/classrooms/${roomId}`);
 
-    const resJSON = await response.json();
+	const resJSON = await response.json();
 
-    dispatch(setRoom(resJSON));
+	dispatch(setRoom(resJSON));
 
-    return response;
+	return response;
+};
+
+export const createRoom = (teacherId, formData) => async (dispatch) => {
+    
 }
 
-const initialState = {room: null}
+const initialState = { room: null };
 
 const roomReducer = (state = initialState, action) => {
-    let newState;
+	let newState;
 
-    switch (action.type) {
-        case GET_ROOM:
-            newState = Object.assign({}, state);
-            newState.room = action.payload;
-            return newState;
+	switch (action.type) {
+		case GET_ROOM:
+			newState = Object.assign({}, state);
+			newState.room = action.payload;
+			return newState;
 
-        default:
-            return state;
-    }
-}
+		default:
+			return state;
+	}
+};
 
 export default roomReducer;

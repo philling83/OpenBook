@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import cardReducer, * as card_actions from "../store/cards";
 import * as deckActions from "../store/decks";
+import * as roomActions from "../store/classrooms";
 
 const Test = () => {
 	let cards;
@@ -89,6 +90,14 @@ const Test = () => {
         return dispatch(deckActions.deleteDeck(deckId))
     }
 
+    const getRoom = (event) => {
+        event.preventDefault();
+
+        const roomId = 1;
+
+        return dispatch(roomActions.getRoom(roomId));
+    }
+
 	return (
 		<div>
 			<button onClick={fetchCards}>Cards</button>
@@ -105,6 +114,10 @@ const Test = () => {
 
                 <button onClick={createDeck}>Create a New Deck</button>
 			</div>
+
+            <div>
+                <button onClick={getRoom}>Get Room 1</button>
+            </div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>
 
