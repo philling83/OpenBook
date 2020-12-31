@@ -11,7 +11,18 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
 
-import Test from "./components/test";
+
+import Test from './components/test'
+
+import FullPageDiv from './components/FullPageDiv';
+
+import Banner from './components/Banner';
+import SideBar from './components/SideBar';
+import Library from './components/Library';
+import CreateClass from './components/CreateClass';
+
+
+
 
 import FullPageDiv from "./components/FullPageDiv";
 
@@ -71,9 +82,44 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-				<Route path="/teachers/:teacherId">
-					<FullPageDiv />
-				</Route>
+
+        <Route path='/teachers/:teacherId'>
+          <FullPageDiv />
+        </Route>
+        <Route path='/teacher/createClass'>
+        <div class='fullPageDiv'>
+                  <Banner />
+                  <div class='bodyDiv'>
+                      <SideBar />
+                      <div class='mainDiv'>
+                            <CreateClass />
+                      </div>
+                  </div>
+          </div>
+        </Route>
+        <Route path='/teachers/libraries'>
+          <div class='fullPageDiv'>
+                  <Banner />
+                  <div class='bodyDiv'>
+                      <SideBar />
+                      <div class='mainDiv'>
+                            <Library />
+                      </div>
+                  </div>
+          </div>
+        </Route>
+        {/* <Route path='/teachers/:teacherId/cards'>
+          <div class='fullPageDiv'>
+                  <Banner />
+                  <div class='bodyDiv'>
+                      <SideBar />
+                      <div class='mainDiv'>
+                            < />
+                      </div>
+                  </div>
+          </div>
+        </Route> */}
+
 				<Route path="*">
 					<Redirect to="/404" />
 				</Route>

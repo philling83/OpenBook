@@ -1,18 +1,31 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const YourDecks = () => {
+const PublicDecks = () => {
     return (
         <div class='yourDecksDiv'>
-            <div class='textDiv'>Your Decks</div>
+            <div class='textDiv'>Public Decks</div>
             <div class='decksDiv'>
                 <div class='yourFoldersDiv'>
                     <select class='folder'>
-                        <option>Spanish Decks</option>
+                        <option>Preschool</option>
                         <option>Nouns</option>
                         <option>Conjugation</option>
                     </select>
                     <select class='folder'>
-                        <option>Vocab Decks</option>
+                        <option>Kindergarten</option>
+                        <option>Animals</option>
+                        <option>People</option>
+                        <option>Plants</option>
+                    </select>
+                    <select class='folder'>
+                        <option>1st Grade</option>
+                        <option>Animals</option>
+                        <option>People</option>
+                        <option>Plants</option>
+                    </select>
+                    <select class='folder'>
+                        <option>2nd Grade</option>
                         <option>Animals</option>
                         <option>People</option>
                         <option>Plants</option>
@@ -35,4 +48,4 @@ const YourDecks = () => {
     )
 }
 
-export default YourDecks;
+export default PublicDecks;

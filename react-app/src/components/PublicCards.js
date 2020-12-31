@@ -1,18 +1,18 @@
 import React from 'react';
 
-const YourDecks = () => {
+const PublicCards = () => {
     return (
         <div class='yourDecksDiv'>
-            <div class='textDiv'>Your Decks</div>
+            <div class='textDiv'>Public Cards</div>
             <div class='decksDiv'>
                 <div class='yourFoldersDiv'>
                     <select class='folder'>
-                        <option>Spanish Decks</option>
+                        <option>Spanish Cards</option>
                         <option>Nouns</option>
                         <option>Conjugation</option>
                     </select>
                     <select class='folder'>
-                        <option>Vocab Decks</option>
+                        <option>Vocab Cards</option>
                         <option>Animals</option>
                         <option>People</option>
                         <option>Plants</option>
@@ -21,7 +21,7 @@ const YourDecks = () => {
                 <div class='allDecksDiv'>
                     <div class='deckDiv'>
                         <div class='deckText'>
-                            <div>Deck name</div>
+                            <div>Card name</div>
                             <div>Created by</div>
                             <div>11/11/20</div>
                         </div>
@@ -35,4 +35,4 @@ const YourDecks = () => {
     )
 }
 
-export default YourDecks;
+export default PublicCards;

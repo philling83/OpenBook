@@ -4,10 +4,10 @@ const SideBar = () => {
     return (
         <div class='sideBarDiv'>
             <div class='sideDiv joinClassDiv'>
-                <div class='joinText'>Create Class</div>
+                <a class='joinText' href='/teacher/createClass'>Create Class</a>
             </div>
             <div class='sideDiv reportDiv'>Reports</div>
-            <div class='sideDiv libraryDiv'>Openbook Library</div>
+            <a class='sideDiv libraryDiv' href='/libraries'>Openbook Library</a>
         </div>
     )
 }

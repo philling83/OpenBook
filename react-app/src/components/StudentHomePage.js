@@ -7,11 +7,11 @@ import MinorAction from './MinorAction.js'
 
 import './TeacherHomePage.css'
 
-const TeacherHomePage = () => {
+const StudentHomePage = () => {
     return (
         <div class='teacherDiv'>
             <SearchBar />
-            <MajorAction thirdActionDisplay='Students'/>
+            <MajorAction thirdActionDisplay='Classmates'/>
             <MinorAction />
             <YourDecks />
         </div>
@@ -19,4 +19,4 @@ const TeacherHomePage = () => {
     )
 }
 
-export default TeacherHomePage;
+export default StudentHomePage;
