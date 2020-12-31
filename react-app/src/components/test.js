@@ -30,7 +30,9 @@ const Test = () => {
 
         const card = {'title':'react test', 'subject': 'react test', 'possible_answers': ['yes', 'no'], 'answer': 'yes', 'created_by': 1}
 
-        return dispatch(card_actions.editCard(1, card))
+        return dispatch(card_actions.changeCard(1, card))
+
+        // return dispatch(card_actions.allCards())
     }
 
     return (

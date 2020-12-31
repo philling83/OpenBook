@@ -12,6 +12,10 @@ const newCard = (card) => {
     return {type: ADD_CARD, payload: card}
 }
 
+const editCard = (card) => {
+    return {type: EDIT_CARD, payload: card}
+}
+
 
 
 export const allCards = () => async(dispatch) => {
@@ -34,11 +38,14 @@ export const addCard = (card) => async(dispatch) => {
 
 }
 
-export const editCard = (card_id, card) => async(dispatch) => {
+export const changeCard = (card_id, card) => async(dispatch) => {
     const response = await fetch(`/api/cards/${card_id}`, {method:'PUT', headers: {'Content-Type':'application/json'} ,body: JSON.stringify(card)})
 
     const responseJson = await response.json()
-    await allCards()
+
+    console.log(responseJson)
+    
+    dispatch(editCard(responseJson))
 
     return response
 }
@@ -64,10 +71,15 @@ const cardReducer = (state = {cards:null}, action) => {
             new_state.cards.push(action.payload)
             return new_state
 
-        // case EDIT_CARD:
-        //     new_state = Object.assign({}, state)
-
-        //     new_state.cards = action.payload
+        case EDIT_CARD:
+            new_state = Object.assign({}, state)
+            // console.log(state.cards)
+            for (let index in state.cards) {
+                if (state.cards[index].id === action.payload.id) {
+                    state.cards[index] = action.payload
+                }
+            }
+            return new_state
 
         default:
             return state
