@@ -16,6 +16,10 @@ const editCard = (card) => {
     return {type: EDIT_CARD, payload: card}
 }
 
+const deleteCard = (card_id) => {
+    return {type: DELETE_CARD, payload: card_id}
+}
+
 
 
 export const allCards = () => async(dispatch) => {
@@ -43,11 +47,23 @@ export const changeCard = (card_id, card) => async(dispatch) => {
 
     const responseJson = await response.json()
 
-    console.log(responseJson)
+    // console.log(responseJson)
     
     dispatch(editCard(responseJson))
 
-    return response
+    return responseJson
+}
+
+export const removeCard = (card_id) => async(dispatch) => {
+    const response = await fetch(`/api/cards/delete/${card_id}`, {method:'POST', headers: {'Content-Type':'application/json'}})
+
+    // const responseJson = await response.json()
+
+    dispatch(deleteCard(card_id))
+
+    return 'succeeded'
+    
+    
 }
 
 
@@ -75,8 +91,22 @@ const cardReducer = (state = {cards:null}, action) => {
             new_state = Object.assign({}, state)
             // console.log(state.cards)
             for (let index in state.cards) {
-                if (state.cards[index].id === action.payload.id) {
-                    state.cards[index] = action.payload
+                if (new_state.cards[index].id === action.payload.id) {
+                    new_state.cards[index] = action.payload
+                }
+            }
+            return new_state
+
+        case DELETE_CARD:
+            new_state = Object.assign({}, state)
+            console.log('new state', new_state)
+            console.log('payload', action.payload)
+            for (let index in new_state.cards) {
+                console.log('hit for loop')
+                console.log('index', index)
+                if (new_state.cards[index].id === action.payload) {
+                    console.log('hit if statement')
+                    new_state.cards.splice(index, 1)
                 }
             }
             return new_state

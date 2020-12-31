@@ -35,6 +35,14 @@ const Test = () => {
         // return dispatch(card_actions.allCards())
     }
 
+    const deleteCard = (event) => {
+        event.preventDefault()
+
+        const card_id = 1
+
+        return dispatch(card_actions.removeCard(card_id))
+    }
+
     return (
         <div>
             <button onClick={fetchCards}>Cards</button>
@@ -42,6 +50,8 @@ const Test = () => {
             <button onClick={addCard}> Add Card</button>
 
             <button onClick={editCard}> Edit Card 1</button>
+
+            <button onClick={deleteCard}>Delete Card 1</button>
 
             {/* <button onClick={fetchDecks}>Cards</button>
 
