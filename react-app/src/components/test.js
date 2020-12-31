@@ -4,9 +4,7 @@ import cardReducer, * as card_actions from "../store/cards";
 import * as deckActions from "../store/decks";
 
 const Test = () => {
-	let cards;
-	let decks;
-	let students;
+	
 
 	const dispatch = useDispatch();
 
@@ -41,8 +39,16 @@ const Test = () => {
 			created_by: 1,
 		};
 
-		return dispatch(card_actions.editCard(1, card));
+		return dispatch(card_actions.changeCard(1, card));
 	};
+    
+    const deleteCard = (event) => {
+        event.preventDefault()
+
+        const card_id = 1
+
+        return dispatch(card_actions.removeCard(card_id))
+    }
 
 	const getDeck = (event) => {
 		event.preventDefault();
@@ -66,6 +72,8 @@ const Test = () => {
         return dispatch(deckActions.updateDeck(deckId, formData));
     };
 
+    
+    
     const createDeck = (event) => {
         event.preventDefault();
 
@@ -99,7 +107,9 @@ const Test = () => {
 			<div>
 				<button onClick={getDeck}>Get Deck 1</button>
 
-				<button onClick={editDeck}>Edit Deck 1</button>
+            <button onClick={deleteCard}>Delete Card 1</button>
+
+            {/* <button onClick={fetchDecks}>Cards</button>
 
                 <button onClick={deleteDeck}>Delete Deck 1</button>
 
@@ -109,6 +119,7 @@ const Test = () => {
 			{/* <button onClick={fetchDecks}>Cards</button>
 
             <button onClick={fetchStudents}>Cards</button> */}
+            </div>
 		</div>
 	);
 };
