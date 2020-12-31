@@ -1,6 +1,6 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import cardReducer, * as card_actions from "../store/cards";
+import { useDispatch } from "react-redux";
+import * as card_actions from "../store/cards";
 import * as deckActions from "../store/decks";
 import * as roomActions from "../store/classrooms";
 
@@ -133,7 +133,25 @@ const Test = () => {
 		const roomId = 1;
 
 		return dispatch(roomActions.deleteRoom(roomId));
-	};
+    };
+
+    const assignDeck = (event) => {
+        event.preventDefault();
+
+        const roomId = 1;
+        const deckId = 1;
+
+        return dispatch(roomActions.assignDeck(roomId, deckId))
+    };
+
+    const removeDeck = (event) => {
+        event.preventDefault();
+
+        const roomId = 1;
+        const deckId = 1;
+
+        return dispatch(roomActions.removeDeck(roomId, deckId))
+    };
 
 	return (
 		<div>
@@ -162,6 +180,10 @@ const Test = () => {
 				<button onClick={editRoom}>Edit Room 1</button>
 
 				<button onClick={deleteRoom}>Delete Room</button>
+
+                <button onClick={assignDeck}>Assign Deck 1 to Room 1</button>
+
+                <button onClick={removeDeck}>Remove Deck 1 from Room 1</button>
 			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>

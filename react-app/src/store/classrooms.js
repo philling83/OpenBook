@@ -59,6 +59,21 @@ export const deleteRoom = (roomId) => async (dispatch) => {
     return response;
 };
 
+export const assignDeck = (roomId, deckId) => async (dispatch) => {
+    const response = await fetch(`/api/decks/${deckId}/assign_to_classroom/${roomId}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+    });
+
+    return response;
+};
+
+export const removeDeck = (roomId, deckId) => async (dispatch) => {
+    const response = await fetch(`/api/decks/${deckId}/unassign_from_classroom/${roomId}`, {method: "POST"});
+
+    return response;
+}
+
 const initialState = { room: null };
 
 const roomReducer = (state = initialState, action) => {
