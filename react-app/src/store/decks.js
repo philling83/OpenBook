@@ -10,8 +10,24 @@ export const fetchDeck = (deckId) => async (dispatch) => {
     const resJSON = await response.json();
 
     dispatch(setDeck(resJSON));
+
+    return response;
 }
 
+
+export const updateDeck = (deckId, formData) => async (dispatch) => {
+    const response = await fetch(`/api/decks/${deckId}`, {
+        method: 'PUT',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(formData)
+    });
+
+    const resJSON = await response.json();
+
+    dispatch(setDeck(resJSON));
+
+    return response;
+}
 
 
 
