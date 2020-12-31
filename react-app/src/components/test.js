@@ -49,54 +49,67 @@ const Test = () => {
 		event.preventDefault();
 		const deckId = 1;
 		return dispatch(deckActions.fetchDeck(deckId));
-    };
+	};
 
-    const editDeck = (event) => {
-        event.preventDefault();
+	const editDeck = (event) => {
+		event.preventDefault();
 
-        const deckId = 1;
-        const userId = 1;
+		const deckId = 1;
+		const userId = 1;
 
-        const formData = {
-            "name": "Redux Edit",
-            "subject": "Redux",
-            "tags": ["Redux"],
-            "created_by": userId
-        }
+		const formData = {
+			name: "Redux Edit",
+			subject: "Redux",
+			tags: ["Redux"],
+			created_by: userId,
+		};
 
-        return dispatch(deckActions.updateDeck(deckId, formData));
-    };
+		return dispatch(deckActions.updateDeck(deckId, formData));
+	};
 
-    const createDeck = (event) => {
-        event.preventDefault();
+	const createDeck = (event) => {
+		event.preventDefault();
 
-        const userId = 1;
+		const userId = 1;
 
-        const formData = {
-            "name": "Redux Create",
-            "subject": "Redux",
-            "tags": ["Redux"],
-            "created_by": userId
-        }
+		const formData = {
+			name: "Redux Create",
+			subject: "Redux",
+			tags: ["Redux"],
+			created_by: userId,
+		};
 
-        return dispatch(deckActions.createDeck(formData));
-    };
+		return dispatch(deckActions.createDeck(formData));
+	};
 
-    const deleteDeck = (event) => {
-        event.preventDefault();
+	const deleteDeck = (event) => {
+		event.preventDefault();
 
-        const deckId = 1;
+		const deckId = 1;
 
-        return dispatch(deckActions.deleteDeck(deckId))
-    }
+		return dispatch(deckActions.deleteDeck(deckId));
+	};
 
-    const getRoom = (event) => {
-        event.preventDefault();
+	const getRoom = (event) => {
+		event.preventDefault();
 
-        const roomId = 1;
+		const roomId = 1;
 
-        return dispatch(roomActions.getRoom(roomId));
-    }
+		return dispatch(roomActions.getRoom(roomId));
+	};
+
+	const createRoom = (event) => {
+		event.preventDefault();
+
+		const teacherId = 1;
+
+		const formData = {
+			name: "Redux Room",
+			password: "redux",
+        };
+
+        return dispatch(roomActions.createRoom(teacherId, formData));
+	};
 
 	return (
 		<div>
@@ -110,14 +123,16 @@ const Test = () => {
 
 				<button onClick={editDeck}>Edit Deck 1</button>
 
-                <button onClick={deleteDeck}>Delete Deck 1</button>
+				<button onClick={deleteDeck}>Delete Deck 1</button>
 
-                <button onClick={createDeck}>Create a New Deck</button>
+				<button onClick={createDeck}>Create a New Deck</button>
 			</div>
 
-            <div>
-                <button onClick={getRoom}>Get Room 1</button>
-            </div>
+			<div>
+				<button onClick={getRoom}>Get Room 1</button>
+
+				<button onClick={createRoom}>Create New Room</button>
+			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>
 

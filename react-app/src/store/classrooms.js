@@ -20,7 +20,17 @@ export const getRoom = (roomId) => async (dispatch) => {
 };
 
 export const createRoom = (teacherId, formData) => async (dispatch) => {
-    
+    const response = await fetch(`/api/classrooms/${teacherId}`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(formData),
+    })
+
+    const resJSON = await response.json();
+
+    dispatch(setRoom(resJSON));
+
+    return response;
 }
 
 const initialState = { room: null };
