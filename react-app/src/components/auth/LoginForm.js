@@ -32,7 +32,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (currentUser) {
-    return <Redirect to="/" />;
+    return <Redirect to="/teachers/:id" />;
   }
 
   return (
