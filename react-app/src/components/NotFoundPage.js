@@ -1,8 +1,11 @@
 import React from 'react';
+import "./NotFoundPage.css"
 
 const NotFoundPage = () => {
     return (
-        <p>It ain't here, dummy</p>
+        <div className="notFound-background">
+            <h1 className="notFound-writing">404 - Page not found!</h1>
+        </div>
     )
 }
 
