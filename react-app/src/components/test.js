@@ -66,10 +66,25 @@ const Test = () => {
         return dispatch(deckActions.updateDeck(deckId, formData));
     };
 
+    const createDeck = (event) => {
+        event.preventDefault();
+
+        const userId = 1;
+
+        const formData = {
+            "name": "Redux Create",
+            "subject": "Redux",
+            "tags": ["Redux"],
+            "created_by": userId
+        }
+
+        return dispatch(deckActions.createDeck(formData));
+    };
+
     const deleteDeck = (event) => {
         event.preventDefault();
 
-        const deckId = 2;
+        const deckId = 1;
 
         return dispatch(deckActions.deleteDeck(deckId))
     }
@@ -87,6 +102,8 @@ const Test = () => {
 				<button onClick={editDeck}>Edit Deck 1</button>
 
                 <button onClick={deleteDeck}>Delete Deck 1</button>
+
+                <button onClick={createDeck}>Create a New Deck</button>
 			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>

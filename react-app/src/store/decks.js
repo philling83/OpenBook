@@ -46,6 +46,20 @@ export const deleteDeck = (deckId) => async (dispatch) => {
     return response;
 }
 
+export const createDeck = (formData) => async (dispatch) => {
+    const response = await fetch(`/api/decks`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(formData),
+    });
+
+    const resJSON = await response.json();
+
+    dispatch(setDeck(resJSON));
+
+    return response;
+}
+
 
 
 const initialState = {deck: null};
