@@ -13,7 +13,6 @@ import Test from './components/test'
 
 import FullPageDiv from './components/FullPageDiv';
 
-// import { authenticate } from "./services/auth";
 
 
 function App() {
