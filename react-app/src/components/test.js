@@ -64,6 +64,14 @@ const Test = () => {
         }
 
         return dispatch(deckActions.updateDeck(deckId, formData));
+    };
+
+    const deleteDeck = (event) => {
+        event.preventDefault();
+
+        const deckId = 2;
+
+        return dispatch(deckActions.deleteDeck(deckId))
     }
 
 	return (
@@ -77,6 +85,8 @@ const Test = () => {
 				<button onClick={getDeck}>Get Deck 1</button>
 
 				<button onClick={editDeck}>Edit Deck 1</button>
+
+                <button onClick={deleteDeck}>Delete Deck 1</button>
 			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>
