@@ -1,10 +1,15 @@
 .footer-container {
   /* background-color: gray; */
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #215C89;
+  flex-direction: column;
 }
 
 .footer-container p {
-  color: #8b9195;
+  color: black;
   font-family: avenirroman,Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -12,6 +17,13 @@
     margin-left: 10px;
 }
 
-.footer-container a .bperry{
-  border: 1px solid black
+.github-profs {
+  /* background-image: url("../Assets/bperry.png"); */
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-left: 10px;
 }

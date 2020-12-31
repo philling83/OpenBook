@@ -12,21 +12,26 @@ const Widgets = () => {
       </div>
       <div className="widgets">
         <div className="student-widget">
-          <div>
+          <div className="student-widget_title">
             <h2>STUDENTS</h2>
           </div>
           <div>
             <p>Join a lesson</p>
           </div>
           <div>
-            <form>
+            <form className="full-name">
+              <input type="text" placeholder="Enter Full Name" />
+            </form>
+          </div>
+          <div>
+            <form className="code">
               <input type="text" placeholder="Enter CODE" />
             </form>
           </div>
         </div>
         <div className="teacher-widget">
           <h2>TEACHERS</h2>
-          <button href='/sign-up' className="signup-button">Sign up for Free</button>
+          <button className="signup-button">Sign up for FREE</button>
           <p>
             <a>or </a>
             <a href="/login">Login</a>

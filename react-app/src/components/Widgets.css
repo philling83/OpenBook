@@ -36,11 +36,12 @@
   height: 168px;
   background-color: #F26C59;
   border-radius: 20px;
-  justify-content: center;
+  /* justify-content: space-between; */
   flex-direction: column;
   align-items: center;
   margin-left: 300px;
   margin-top: 300px;
+  box-shadow: 0 9px 9px rgba(0,0,0,.16);
   /* position: relative; */
 }
 
@@ -57,26 +58,41 @@
   align-items: center;
   margin-right: 300px;
   margin-top: 300px;
+  box-shadow: 0 9px 9px rgba(0,0,0,.16);
   /* justify-content: center; */
   /* position: relative; */
 }
 
+.student-widget_title {
+  padding: 0px;
+}
+
 .student-widget h2 {
   display: block;
-  padding: 0px;
+  padding-bottom: 0px;
+  /* margin-top: 20px; */
   /* border: 1px solid black; */
   /* color: red */
 }
 
 .student-widget p {
   /* display: block; */
-  margin-bottom: 10px;
+  margin-right: 5px;
+  /* padding-right: 15px; */
   /* border: 1px solid black */
-  /* position: absolute; */
+  position: relative;
 }
 
-form {
-  margin-bottom: 15px;
+.full-name {
+  /* display: block; */
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.code {
+  display: block;
+  margin-bottom: 25px;
+  /* position: relative; */
 }
 
 .signup-button {
@@ -88,6 +104,11 @@ form {
   width: 170px;
   height: 40px;
   box-shadow: 0 8px 12px -11px rgba(0,0,0,.75);
+}
+
+.signup-button:hover {
+  background-color: darkgreen;
+  cursor: pointer;
 }
 
 .teacher-widget h2 {
