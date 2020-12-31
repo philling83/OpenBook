@@ -29,7 +29,6 @@ def get_all_cards():
 
     return result
 
-
 @card_routes.route('/', methods=["POST"])
 def create_card():
     # try:

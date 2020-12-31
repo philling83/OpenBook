@@ -30,4 +30,5 @@ class Deck(db.Model):
             "classrooms":
                 [classroom.to_dict() for classroom in self.classrooms],
             "cards": [card.to_dict() for card in self.cards],
+
         }

@@ -8,22 +8,26 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
+
 import Test from './components/test'
-// import { authenticate } from "./services/auth";
+
+import FullPageDiv from './components/FullPageDiv';
+
+
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    (async() => {
-      setLoaded(true);
-    })();
-  }, []);
+//   useEffect(() => {
+//     (async() => {
+//       setLoaded(true);
+//     })();
+//   }, []);
 
-  if (!loaded) {
-    return null;
-  }
+//   if (!loaded) {
+//     return null;
+//   }
 
   return (
 		<BrowserRouter>
@@ -34,8 +38,8 @@ function App() {
 				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
-						authenticated={authenticated}
-						setAuthenticated={setAuthenticated}
+						// authenticated={authenticated}
+						// setAuthenticated={setAuthenticated}
 					/>
 				</Route>
 				<Route path="/login/student" exact={true}>
@@ -62,6 +66,9 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
+        <Route path='/teachers/:teacherId'>
+          <FullPageDiv />
+        </Route>
 				<Route path="*">
 					<Redirect to="/404" />
 				</Route>

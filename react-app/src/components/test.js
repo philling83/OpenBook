@@ -5,10 +5,6 @@ import * as deckActions from "../store/decks";
 import * as roomActions from "../store/classrooms";
 
 const Test = () => {
-	let cards;
-	let decks;
-	let students;
-
 	const dispatch = useDispatch();
 
 	const fetchCards = (event) => {
@@ -42,7 +38,15 @@ const Test = () => {
 			created_by: 1,
 		};
 
-		return dispatch(card_actions.editCard(1, card));
+		return dispatch(card_actions.changeCard(1, card));
+	};
+
+	const deleteCard = (event) => {
+		event.preventDefault();
+
+		const card_id = 1;
+
+		return dispatch(card_actions.removeCard(card_id));
 	};
 
 	const getDeck = (event) => {
@@ -106,30 +110,30 @@ const Test = () => {
 		const formData = {
 			name: "Redux Room",
 			password: "redux",
-        };
+		};
 
-        return dispatch(roomActions.createRoom(teacherId, formData));
-    };
+		return dispatch(roomActions.createRoom(teacherId, formData));
+	};
 
-    const editRoom = (event) => {
-        event.preventDefault();
+	const editRoom = (event) => {
+		event.preventDefault();
 
-        const roomId = 1;
-        const formData = {
-            name: "Redux Edit",
-            password: "redux"
-        };
+		const roomId = 1;
+		const formData = {
+			name: "Redux Edit",
+			password: "redux",
+		};
 
-        return dispatch(roomActions.editRoom(roomId, formData));
-    };
+		return dispatch(roomActions.editRoom(roomId, formData));
+	};
 
-    const deleteRoom = (event) => {
-        event.preventDefault();
+	const deleteRoom = (event) => {
+		event.preventDefault();
 
-        const roomId = 1;
+		const roomId = 1;
 
-        return dispatch(roomActions.deleteRoom(roomId));
-    };
+		return dispatch(roomActions.deleteRoom(roomId));
+	};
 
 	return (
 		<div>
@@ -141,7 +145,9 @@ const Test = () => {
 			<div>
 				<button onClick={getDeck}>Get Deck 1</button>
 
-				<button onClick={editDeck}>Edit Deck 1</button>
+				<button onClick={deleteCard}>Delete Card 1</button>
+
+				{/* <button onClick={fetchDecks}>Cards</button> */}
 
 				<button onClick={deleteDeck}>Delete Deck 1</button>
 
@@ -153,14 +159,14 @@ const Test = () => {
 
 				<button onClick={createRoom}>Create New Room</button>
 
-                <button onClick={editRoom}>Edit Room 1</button>
+				<button onClick={editRoom}>Edit Room 1</button>
 
-                <button onClick={deleteRoom}>Delete Room</button>
+				<button onClick={deleteRoom}>Delete Room</button>
 			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>
 
-            <button onClick={fetchStudents}>Cards</button> */}
+			<button onClick={fetchStudents}>Cards</button> */}
 		</div>
 	);
 };
