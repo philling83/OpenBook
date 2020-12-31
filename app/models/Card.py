@@ -29,6 +29,6 @@ class Card(db.Model):
             "answer": self.answer,
             "image": self.image,
             "created_by": self.created_by,
-            "user": self.user,
-            "decks": self.decks
+            # "user": self.user,
+            # "decks": self.decks
         }

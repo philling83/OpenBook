@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
+import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
 import Widgets from "./components/Widgets";
@@ -8,7 +9,13 @@ import Footer from "./components/Footer";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import { authenticate } from "./services/auth";
+import NotFoundPage from "./components/NotFoundPage";
+
+import Test from './components/test'
+
+import FullPageDiv from './components/FullPageDiv';
+
+
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -16,10 +23,6 @@ function App() {
 
   useEffect(() => {
     (async() => {
-      const user = await authenticate();
-      if (!user.errors) {
-        setAuthenticated(true);
-      }
       setLoaded(true);
     })();
   }, []);
@@ -29,33 +32,56 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+		<BrowserRouter>
       <Route exact path='/'>
         <NavBar setAuthenticated={setAuthenticated} />
         <Widgets />
         <Footer />
       </Route>
-      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
-      <Route path="/login" exact={true}>
-        <LoginForm
-          authenticated={authenticated}
-          setAuthenticated={setAuthenticated}
-        />
-      </Route>
-      <Route path="/sign-up" exact={true}>
-        <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
-      </Route>
-      <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
-        <UsersList/>
-      </ProtectedRoute>
-      <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
-        <User />
-      </ProtectedRoute>
-      <ProtectedRoute path="/app" exact={true} authenticated={authenticated}>
-        <h1>My Home Page</h1>
-      </ProtectedRoute>
-    </BrowserRouter>
-  );
+// 			<NavBar setAuthenticated={setAuthenticated} />
+			<Switch>
+				<Route path='/test' exact={true}>
+					<Test />
+				</Route>
+				<Route path="/login" exact={true}>
+					<LoginForm
+						authenticated={authenticated}
+						setAuthenticated={setAuthenticated}
+					/>
+				</Route>
+				<Route path="/login/student" exact={true}>
+					<StudentLoginForm
+						authenticated={authenticated}
+						setAuthenticated={setAuthenticated}
+					/>
+				</Route>
+				<Route path="/sign-up" exact={true}>
+					<SignUpForm
+						authenticated={authenticated}
+						setAuthenticated={setAuthenticated}
+					/>
+				</Route>
+				<ProtectedRoute path="/users" exact={true}>
+					<UsersList />
+				</ProtectedRoute>
+				<ProtectedRoute path="/users/:userId" exact={true}>
+					<User />
+				</ProtectedRoute>
+				<ProtectedRoute path="/app" exact={true}>
+					<h1>My Home Page</h1>
+				</ProtectedRoute>
+				<Route path="/404">
+					<NotFoundPage />
+				</Route>
+        <Route path='/teachers/:teacherId'>
+          <FullPageDiv />
+        </Route>
+				<Route path="*">
+					<Redirect to="/404" />
+				</Route>
+			</Switch>
+		</BrowserRouter>
+	);
 }
 
 export default App;
