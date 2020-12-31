@@ -19,15 +19,15 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    (async() => {
-      setLoaded(true);
-    })();
-  }, []);
+//   useEffect(() => {
+//     (async() => {
+//       setLoaded(true);
+//     })();
+//   }, []);
 
-  if (!loaded) {
-    return null;
-  }
+//   if (!loaded) {
+//     return null;
+//   }
 
   return (
 		<BrowserRouter>
@@ -38,8 +38,8 @@ function App() {
 				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
-						authenticated={authenticated}
-						setAuthenticated={setAuthenticated}
+						// authenticated={authenticated}
+						// setAuthenticated={setAuthenticated}
 					/>
 				</Route>
 				<Route path="/login/student" exact={true}>
