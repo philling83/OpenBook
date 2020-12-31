@@ -5,7 +5,7 @@ const MajorAction = (props) => {
     <div class='majorActionDiv'>
         <div class='majorDiv assignmentDiv'>Current Assignments</div>
         <div class='majorDiv studentDiv'>Recent Assignments</div>
-        <div class='majorDiv videoDiv'>{props.thirdDivDisplay}</div>
+        <div class='majorDiv videoDiv'>{props.thirdActionDisplay}</div>
     </div>
     )
 }
