@@ -1,40 +1,47 @@
-import React from 'react'
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import cardReducer, * as card_actions from '../store/cards'
-
+import cardReducer, * as card_actions from "../store/cards";
+import * as deckActions from "../store/decks";
 
 const Test = () => {
-    let cards 
-    let decks
-    let students
+	
 
-    const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
-    const fetchCards = (event) => {
-        event.preventDefault()
+	const fetchCards = (event) => {
+		event.preventDefault();
 
-        return dispatch(card_actions.allCards())
-    }
+		return dispatch(card_actions.allCards());
+	};
 
-    const addCard = (event) => {
-        event.preventDefault()
+	const addCard = (event) => {
+		event.preventDefault();
 
-        const card = {'title':'react test', 'subject': 'react test', 'possible_answers': ['yes', 'no'], 'answer': 'yes', 'created_by': 1}
+		const card = {
+			title: "react test",
+			subject: "react test",
+			possible_answers: ["yes", "no"],
+			answer: "yes",
+			created_by: 1,
+		};
 
+		return dispatch(card_actions.addCard(card));
+	};
 
-        return dispatch(card_actions.addCard(card))
-    }
+	const editCard = (event) => {
+		event.preventDefault();
 
-    const editCard = (event) => {
-        event.preventDefault()
+		const card = {
+			title: "react test",
+			subject: "react test",
+			possible_answers: ["yes", "no"],
+			answer: "yes",
+			created_by: 1,
+		};
 
-        const card = {'title':'react test', 'subject': 'react test', 'possible_answers': ['yes', 'no'], 'answer': 'yes', 'created_by': 1}
-
-        return dispatch(card_actions.changeCard(1, card))
-
-        // return dispatch(card_actions.allCards())
-    }
-
+		return dispatch(card_actions.changeCard(1, card));
+	};
+    
     const deleteCard = (event) => {
         event.preventDefault()
 
@@ -43,24 +50,78 @@ const Test = () => {
         return dispatch(card_actions.removeCard(card_id))
     }
 
-    return (
-        <div>
-            <button onClick={fetchCards}>Cards</button>
+	const getDeck = (event) => {
+		event.preventDefault();
+		const deckId = 1;
+		return dispatch(deckActions.fetchDeck(deckId));
+    };
 
-            <button onClick={addCard}> Add Card</button>
+    const editDeck = (event) => {
+        event.preventDefault();
 
-            <button onClick={editCard}> Edit Card 1</button>
+        const deckId = 1;
+        const userId = 1;
+
+        const formData = {
+            "name": "Redux Edit",
+            "subject": "Redux",
+            "tags": ["Redux"],
+            "created_by": userId
+        }
+
+        return dispatch(deckActions.updateDeck(deckId, formData));
+    };
+
+    
+    
+    const createDeck = (event) => {
+        event.preventDefault();
+
+        const userId = 1;
+
+        const formData = {
+            "name": "Redux Create",
+            "subject": "Redux",
+            "tags": ["Redux"],
+            "created_by": userId
+        }
+
+        return dispatch(deckActions.createDeck(formData));
+    };
+
+    const deleteDeck = (event) => {
+        event.preventDefault();
+
+        const deckId = 1;
+
+        return dispatch(deckActions.deleteDeck(deckId))
+    }
+
+	return (
+		<div>
+			<button onClick={fetchCards}>Cards</button>
+
+			<button onClick={addCard}> Add Card</button>
+
+			<button onClick={editCard}> Edit Card 1</button>
+			<div>
+				<button onClick={getDeck}>Get Deck 1</button>
 
             <button onClick={deleteCard}>Delete Card 1</button>
 
             {/* <button onClick={fetchDecks}>Cards</button>
 
+                <button onClick={deleteDeck}>Delete Deck 1</button>
+
+                <button onClick={createDeck}>Create a New Deck</button>
+			</div>
+
+			{/* <button onClick={fetchDecks}>Cards</button>
+
             <button onClick={fetchStudents}>Cards</button> */}
+            </div>
+		</div>
+	);
+};
 
-
-        </div>
-    )
-}
-
-
-export default Test
+export default Test;

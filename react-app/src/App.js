@@ -8,8 +8,12 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
+
 import Test from './components/test'
-// import { authenticate } from "./services/auth";
+
+import FullPageDiv from './components/FullPageDiv';
+
+
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -62,6 +66,9 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
+        <Route path='/teachers/:teacherId'>
+          <FullPageDiv />
+        </Route>
 				<Route path="*">
 					<Redirect to="/404" />
 				</Route>
