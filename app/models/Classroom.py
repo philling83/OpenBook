@@ -12,6 +12,7 @@ class Classroom(db.Model):
     hashed_password = db.Column(db.String(255), nullable=False)
     decks = db.relationship('Deck', secondary=assignments,
                             back_populates='classrooms')
+    students = db.relationship("Student", cascade="all, delete-orphan")
 
     @property
     def password(self):
