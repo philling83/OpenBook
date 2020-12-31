@@ -11,42 +11,40 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
 
-import Test from './components/test'
+import Test from "./components/test";
 
-import FullPageDiv from './components/FullPageDiv';
-
-
+import FullPageDiv from "./components/FullPageDiv";
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+	const [authenticated, setAuthenticated] = useState(false);
+	const [loaded, setLoaded] = useState(false);
 
-//   useEffect(() => {
-//     (async() => {
-//       setLoaded(true);
-//     })();
-//   }, []);
+	//   useEffect(() => {
+	//     (async() => {
+	//       setLoaded(true);
+	//     })();
+	//   }, []);
 
-//   if (!loaded) {
-//     return null;
-//   }
+	//   if (!loaded) {
+	//     return null;
+	//   }
 
-  return (
+	return (
 		<BrowserRouter>
-      <Route exact path='/'>
-        <NavBar setAuthenticated={setAuthenticated} />
-        <Widgets />
-        <Footer />
-      </Route>
-// 			<NavBar setAuthenticated={setAuthenticated} />
+			<NavBar setAuthenticated={setAuthenticated} />
 			<Switch>
-				<Route path='/test' exact={true}>
+				<Route exact path="/">
+					<NavBar setAuthenticated={setAuthenticated} />
+					<Widgets />
+					<Footer />
+				</Route>
+				<Route path="/test" exact={true}>
 					<Test />
 				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
-						// authenticated={authenticated}
-						// setAuthenticated={setAuthenticated}
+					// authenticated={authenticated}
+					// setAuthenticated={setAuthenticated}
 					/>
 				</Route>
 				<Route path="/login/student" exact={true}>
@@ -73,9 +71,9 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-        <Route path='/teachers/:teacherId'>
-          <FullPageDiv />
-        </Route>
+				<Route path="/teachers/:teacherId">
+					<FullPageDiv />
+				</Route>
 				<Route path="*">
 					<Redirect to="/404" />
 				</Route>
