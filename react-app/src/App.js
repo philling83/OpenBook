@@ -8,8 +8,11 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
+
+import Test from './components/test'
+
 import FullPageDiv from './components/FullPageDiv';
-// import { authenticate } from "./services/auth";
+
 
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
 		<BrowserRouter>
 			<NavBar setAuthenticated={setAuthenticated} />
 			<Switch>
+				<Route path='/test' exact={true}>
+					<Test />
+				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
 						authenticated={authenticated}

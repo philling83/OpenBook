@@ -14,6 +14,20 @@ def get_card(id):
 
     return card.to_dict()
 
+@card_routes.route('/')
+def get_all_cards():
+
+    cards = db.session.query(Card).all()
+    # print('-------------------')
+
+    result = {'cards': None}
+
+    holding_list = [card.to_dict() for card in cards]
+    # print('--------------------')
+
+    result['cards'] = holding_list
+
+    return result
 
 @card_routes.route('/', methods=["POST"])
 def create_card():
