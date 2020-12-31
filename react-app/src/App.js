@@ -4,6 +4,8 @@ import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
+import Widgets from "./components/Widgets";
+import Footer from "./components/Footer";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
@@ -31,7 +33,12 @@ function App() {
 
   return (
 		<BrowserRouter>
-			<NavBar setAuthenticated={setAuthenticated} />
+      <Route exact path='/'>
+        <NavBar setAuthenticated={setAuthenticated} />
+        <Widgets />
+        <Footer />
+      </Route>
+// 			<NavBar setAuthenticated={setAuthenticated} />
 			<Switch>
 				<Route path='/test' exact={true}>
 					<Test />
@@ -60,7 +67,7 @@ function App() {
 				<ProtectedRoute path="/users/:userId" exact={true}>
 					<User />
 				</ProtectedRoute>
-				<ProtectedRoute path="/" exact={true}>
+				<ProtectedRoute path="/app" exact={true}>
 					<h1>My Home Page</h1>
 				</ProtectedRoute>
 				<Route path="/404">
