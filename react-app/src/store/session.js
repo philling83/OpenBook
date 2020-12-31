@@ -30,7 +30,7 @@ export const login = (user) => async (dispatch) => {
 
 	let userJson = await response.json()
 	dispatch(setUser(userJson));
-	return response;
+	// return response;
 };
 
 export const student_login = (student) => async (dispatch) => {

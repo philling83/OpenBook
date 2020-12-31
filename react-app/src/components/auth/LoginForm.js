@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 // import { login } from "../../services/auth";
 import { useDispatch, useSelector } from "react-redux"
 import * as sessionActions from "../../store/session"
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,6 +22,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     )
 
   };
+
+  useEffect(() => {}, [dispatch])
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
