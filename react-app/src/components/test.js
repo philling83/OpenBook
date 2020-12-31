@@ -109,7 +109,19 @@ const Test = () => {
         };
 
         return dispatch(roomActions.createRoom(teacherId, formData));
-	};
+    };
+
+    const editRoom = (event) => {
+        event.preventDefault();
+
+        const roomId = 1;
+        const formData = {
+            name: "Redux Edit",
+            password: "redux"
+        };
+
+        return dispatch(roomActions.editRoom(roomId, formData));
+    };
 
 	return (
 		<div>
@@ -132,6 +144,8 @@ const Test = () => {
 				<button onClick={getRoom}>Get Room 1</button>
 
 				<button onClick={createRoom}>Create New Room</button>
+
+                <button onClick={editRoom}>Edit Room 1</button>
 			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>
