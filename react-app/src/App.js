@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
+import FullPageDiv from './components/FullPageDiv';
 // import { authenticate } from "./services/auth";
 
 
@@ -59,6 +60,9 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
+        <Route path='/teachers/:teacherId'>
+          <FullPageDiv />
+        </Route>
 				<Route path="*">
 					<Redirect to="/404" />
 				</Route>
