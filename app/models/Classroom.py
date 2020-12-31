@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # from sqlalchemy.orm import relationship
 from .Assignment import assignments
 
+
 class Classroom(db.Model):
     __tablename__ = 'classrooms'
 
@@ -10,7 +11,7 @@ class Classroom(db.Model):
     name = db.Column(db.String(40), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     decks = db.relationship('Deck', secondary=assignments,
-                         back_populates='classrooms')
+                            back_populates='classrooms')
 
     @property
     def password(self):
@@ -27,4 +28,5 @@ class Classroom(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "decks": [deck.to_dict() for deck in self.decks]
         }
