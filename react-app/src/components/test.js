@@ -123,6 +123,14 @@ const Test = () => {
         return dispatch(roomActions.editRoom(roomId, formData));
     };
 
+    const deleteRoom = (event) => {
+        event.preventDefault();
+
+        const roomId = 1;
+
+        return dispatch(roomActions.deleteRoom(roomId));
+    };
+
 	return (
 		<div>
 			<button onClick={fetchCards}>Cards</button>
@@ -146,6 +154,8 @@ const Test = () => {
 				<button onClick={createRoom}>Create New Room</button>
 
                 <button onClick={editRoom}>Edit Room 1</button>
+
+                <button onClick={deleteRoom}>Delete Room</button>
 			</div>
 
 			{/* <button onClick={fetchDecks}>Cards</button>

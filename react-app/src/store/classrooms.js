@@ -1,12 +1,12 @@
 const GET_ROOM = "classroom";
-const ADD_ROOM = "classroom/add";
+const REMOVE_ROOM = "classroom/add";
 
 const setRoom = (room) => {
 	return { type: GET_ROOM, payload: room };
 };
 
-const newRoom = (room) => {
-	return { type: ADD_ROOM, payload: room };
+const removeRoom = () => {
+	return { type: REMOVE_ROOM, payload: null };
 };
 
 export const getRoom = (roomId) => async (dispatch) => {
@@ -47,6 +47,18 @@ export const editRoom = (roomId, formData) => async (dispatch) => {
     return response;
 };
 
+export const deleteRoom = (roomId) => async (dispatch) => {
+    const response = await fetch(`/api/classrooms/delete/${roomId}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(roomId)
+    });
+
+    dispatch(removeRoom());
+
+    return response;
+};
+
 const initialState = { room: null };
 
 const roomReducer = (state = initialState, action) => {
@@ -57,6 +69,11 @@ const roomReducer = (state = initialState, action) => {
 			newState = Object.assign({}, state);
 			newState.room = action.payload;
 			return newState;
+
+        case REMOVE_ROOM:
+            newState = Object.assign({}, state);
+            newState.room = action.payload;
+            return newState;
 
 		default:
 			return state;
