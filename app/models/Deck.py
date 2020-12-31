@@ -27,7 +27,7 @@ class Deck(db.Model):
             "subject": self.subject,
             "tags": self.tags,
             "created_by": self.created_by,
-            "user": self.user,
-            "classrooms": self.classrooms,
-            "cards": self.cards,
+            # "user": self.user,
+            # "classrooms": self.classrooms,
+            # "cards": self.cards,
         }
