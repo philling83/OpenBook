@@ -14,7 +14,6 @@ import NotFoundPage from "./components/NotFoundPage";
 
 
 import Test from './components/test'
-
 import FullPageDiv from './components/FullPageDiv';
 import Banner from './components/Banner';
 import SideBar from './components/SideBar';
@@ -22,6 +21,8 @@ import Library from './components/Library';
 import CreateClass from './components/CreateClass';
 import CreateDeck from './components/CreateDeck';
 import CreateCard from './components/CreateCard';
+import CardCreationForm from './components/CardCreationForm';
+
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -46,9 +47,9 @@ function App() {
 					<Widgets />
 					<Footer />
 				</Route>
-				<Route path="/test" exact={true}>
-					<Test />
-				</Route>
+				<ProtectedRoute path="/test" exact={true}>
+					<CardCreationForm />
+				</ProtectedRoute>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -80,6 +81,7 @@ function App() {
 					<NotFoundPage />
 				</Route>
         <Route path='/teachers/:teacherId'>
+			<NavBar />
           <FullPageDiv />
         </Route>
         <Route path='/teacher/createClass'>
