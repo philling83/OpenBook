@@ -17,6 +17,7 @@ import SideBar from './components/SideBar';
 import Library from './components/Library';
 import CreateClass from './components/CreateClass';
 import CardCreationForm from './components/CardCreationForm';
+import DeckEditForm from './components/DeckEditForm';
 
 
 function App() {
@@ -42,9 +43,9 @@ function App() {
 					<Widgets />
 					<Footer />
 				</Route>
-				<ProtectedRoute path="/test" exact={true}>
-					<CardCreationForm />
-				</ProtectedRoute>
+				<Route path="/test" exact={true}>
+					<DeckEditForm />
+				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
