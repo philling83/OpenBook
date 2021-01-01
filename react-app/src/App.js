@@ -42,9 +42,9 @@ function App() {
 					<Widgets />
 					<Footer />
 				</Route>
-				<Route path="/test" exact={true}>
+				<ProtectedRoute path="/test" exact={true}>
 					<CardCreationForm />
-				</Route>
+				</ProtectedRoute>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
