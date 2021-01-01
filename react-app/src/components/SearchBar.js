@@ -1,15 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as deckActions from "../store/decks"
 
 const SearchBar = () => {
+	const [term, setTerm] = useState('')
 
-    const searchDecks = (e) => {
-        e.preventDefault();
-    }
+	const dispatch = useDispatch()
+
+    const searchDecks = async (e) => {
+		e.preventDefault();
+		return dispatch(deckActions.searchDecks(term));
+
+	};
+
+	const updateValue = (event) => {
+		setTerm(event.target.value)
+	};
 
 	return (
 		<form onSubmit={searchDecks}>
 			<div className="searchBarDiv">
-				<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)" />
+				<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)"
+				value={term}
+				onChange={updateValue}
+				/>
 				<button className="searchBarButton">
 					<i class="fas fa-arrow-right"></i>
 				</button>
