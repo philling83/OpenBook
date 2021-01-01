@@ -9,44 +9,44 @@ const NavBar = ({ setAuthenticated }) => {
   return (
     <nav id="nav-bar" className="nav-bar">
       <ul>
-        <li>
+        {/* <li>
           <NavLink to="/" exact={true} activeClassName="active">
             Home
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <NavLink to="/login" exact={true} activeClassName="active">
             Login as teacher
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <NavLink to="/login/student" exact={true} activeClassName="active">
             Login as student
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <NavLink to="/sign-up" exact={true} activeClassName="active">
             Sign Up
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <NavLink to="/test" exact={true} activeClassName="active">
             Test
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <LogoutButton setAuthenticated={setAuthenticated} />
-        </li>
+        </li> */}
       </ul>
-      <NavLink to="/" exact={true} activeClassName="active" className="logo">
+      {/* <NavLink to="/" exact={true} activeClassName="active" className="logo">
         <div className="image"></div>
-      </NavLink>
-      <div className="buttons">
+      </NavLink> */}
+      {/* <div className="buttons">
         <SignUpButton setAuthenticated={setAuthenticated} />
         <NavLink to="/login" exact={true} activeClassName="active" className="log-in">
           Login
         </NavLink>
-      </div>
+      </div> */}
 
       {/* <NavLink to="/login/student" exact={true} activeClassName="active">
         Login as student

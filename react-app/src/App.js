@@ -81,51 +81,51 @@ function App() {
 					<NotFoundPage />
 				</Route>
         <Route path='/teachers/:teacherId'>
-			<NavBar />
+			    <NavBar />
           <FullPageDiv />
         </Route>
         <Route path='/teacher/createClass'>
-        <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <CreateClass />
-                      </div>
-                  </div>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar />
+                <div class='mainDiv'>
+                      <CreateClass />
+                </div>
+            </div>
           </div>
         </Route>
         <Route path='/teachers/libraries'>
           <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <Library />
-                      </div>
-                  </div>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar />
+                <div class='mainDiv'>
+                      <Library />
+                </div>
+            </div>
           </div>
         </Route>
         <Route path='/createDeck'>
-        <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <CreateDeck />
-                      </div>
-                  </div>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar />
+                <div class='mainDiv'>
+                      <CreateDeck />
+                </div>
+            </div>
           </div>
         </Route>
         <Route path='/createCard'>
-        <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <CreateCard />
-                      </div>
+          <div class='fullPageDiv'>
+            <Banner />
+              <div class='bodyDiv'>
+                  <SideBar />
+                  <div class='mainDiv'>
+                        <CreateCard />
                   </div>
+              </div>
           </div>
         </Route>
 

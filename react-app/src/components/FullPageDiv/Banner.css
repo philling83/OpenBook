@@ -40,7 +40,7 @@
 	display: flex;
 }
 
-.logoImage {
+/* .logoImage {
 	height: 30px;
 	width: 30px;
 	border-radius: 50%;
@@ -53,4 +53,9 @@
 	font-size: 25px;
 	height: 30px;
 	width: 80px;
-}
+} */
+
+.logoImage {
+	content:url("../../Assets/logo.png");
+	width: 200px;
+  }
