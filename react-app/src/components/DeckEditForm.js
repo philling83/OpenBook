@@ -20,16 +20,18 @@ const DeckEditForm = () => {
     useEffect(() => {}, [dispatch]);
 
     const handleChange = (e) => {
+        setCheckedRadio(e.target.value);
         setSelectedDeck(e.target.value);
     }
 
 	return (
 		loaded && (
 			<>
-				{selectedDeck ? <p>{selectedDeck}</p> : <p>Bye</p>}
+                <h1>Selected Deck:</h1>
+				{selectedDeck ? <p>{selectedDeck}</p> : <p>None</p>}
 				<div onChange={handleChange}>
 					{decks.map((deck) => (
-						<label><input type="radio" key={deck.name} value={deck.name}/> {deck.name}</label>
+						<label><input type="radio" checked={checkedRadio === deck.name} key={deck.name} value={deck.name}/>{deck.name}</label>
                     ))}
 				</div>
 			</>
