@@ -96,3 +96,17 @@ def unassign_deck_from_classroom(deck_id, classroom_id):
     db.session.commit()
 
     return 'Deck unassigned from classroom'
+
+
+@deck_routes.route('/search/<term>', methods=['GET'])
+def deck_search(term):
+    decks = db.session.query(Deck).all()
+
+    return {"decks": [deck.to_dict() for deck in decks if term in deck.tags]}
+
+
+@deck_routes.route('/all-decks', methods=['GET'])
+def all_decks():
+    decks = db.session.query(Deck).all()
+
+    return {"decks": [deck.to_dict() for deck in decks]}

@@ -10,21 +10,14 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
-
-
 import Test from './components/test'
-
 import FullPageDiv from './components/FullPageDiv';
-
 import Banner from './components/Banner';
 import SideBar from './components/SideBar';
 import Library from './components/Library';
 import CreateClass from './components/CreateClass';
+import CardCreationForm from './components/CardCreationForm';
 
-
-
-
-import FullPageDiv from "./components/FullPageDiv";
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -42,16 +35,16 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<NavBar setAuthenticated={setAuthenticated} />
+			{/* <NavBar setAuthenticated={setAuthenticated} /> */}
 			<Switch>
 				<Route exact path="/">
 					<NavBar setAuthenticated={setAuthenticated} />
 					<Widgets />
 					<Footer />
 				</Route>
-				<Route path="/test" exact={true}>
-					<Test />
-				</Route>
+				<ProtectedRoute path="/test" exact={true}>
+					<CardCreationForm />
+				</ProtectedRoute>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -84,6 +77,7 @@ function App() {
 				</Route>
 
         <Route path='/teachers/:teacherId'>
+			<NavBar />
           <FullPageDiv />
         </Route>
         <Route path='/teacher/createClass'>
