@@ -5,8 +5,8 @@ import TeacherHomePage from './TeacherHomePage';
 import StudentHomePage from './StudentHomePage';
 import Banner from './Banner';
 import SideBar from './SideBar';
-import Library from './Library';
-import CreateDeck from './CreateDeck'
+// import Library from '../Library/Library';
+// import CreateDeck from '../CreateDeck/CreateDeck'
 import { Redirect } from 'react-router-dom';
 
 const FullPageDiv = () => {

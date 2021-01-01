@@ -1,0 +1,44 @@
+.sideDiv {
+	border-bottom: 1px solid whitesmoke;
+	height: 60px;
+	width: 230px;
+	background-color: rgba(5, 13, 133, 0.9);
+}
+
+.joinClassDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.reportDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: whitesmoke;
+	font-size: 20px;
+}
+
+.libraryDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: whitesmoke;
+	font-size: 20px;
+}
+
+.joinText {
+	padding-left: 10px;
+	display: flex;
+	align-items: center;
+	color: whitesmoke;
+	font-size: 20px;
+}
+
+.joinCode {
+	color: rgba(5, 13, 133, 0.9);
+	background-color: whitesmoke;
+	height: 20px;
+	width: 80px;
+}

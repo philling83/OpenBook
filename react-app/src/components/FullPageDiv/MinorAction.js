@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './MinorAction.css'
+
 const MinorAction = () => {
     return (
         <div class='minorActionDiv'>

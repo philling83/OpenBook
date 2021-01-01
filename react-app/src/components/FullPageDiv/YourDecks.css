@@ -1,0 +1,71 @@
+
+.yourDecksDiv {
+	display: flex;
+	flex-direction: column;
+	height: 55vh;
+	background-color: whitesmoke;
+	overflow: scroll;
+	border-top: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.textDiv {
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	color: rgba(5, 13, 133, 0.9);
+	font-size: 20px;
+	margin-top: 10px;
+	height: 30px;
+	width: 100%;
+	background-color: whitesmoke;
+}
+
+.yourFoldersDiv {
+	height: auto;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.folder {
+	margin-left: 20px;
+	width: auto;
+	height: 25px;
+	color: rgba(5, 13, 133, 0.9);
+}
+
+.allDecksDiv {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.deckDiv {
+	display: flex;
+	flex-direction: column;
+	width: 100px;
+	height: 130px;
+	margin-left: 25px;
+	margin-top: 20px;
+	border: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.deckText {
+	height: 60px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: rgba(5, 13, 133, 0.9);
+	font-size: 13px;
+	background-color: whitesmoke;
+	margin-top: 3px;
+}
+
+.deckImage {
+	height: 80px;
+}
+
+.image {
+	padding: 0;
+	margin: 0;
+	height: 80px;
+	width: 100px;
+}

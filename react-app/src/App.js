@@ -14,13 +14,13 @@ import NotFoundPage from "./components/NotFoundPage";
 
 
 import Test from './components/test'
-import FullPageDiv from './components/FullPageDiv';
-import Banner from './components/Banner';
-import SideBar from './components/SideBar';
-import Library from './components/Library';
-import CreateClass from './components/CreateClass';
-import CreateDeck from './components/CreateDeck';
-import CreateCard from './components/CreateCard';
+import FullPageDiv from './components/FullPageDiv/FullPageDiv';
+import Banner from './components/FullPageDiv/Banner';
+import SideBar from './components/FullPageDiv/SideBar';
+import Library from './components/Library/Library';
+import CreateClass from './components/CreateClass/CreateClass';
+import CreateDeck from './components/CreateDeck/CreateDeck';
+import CreateCard from './components/CreateDeck/CreateCard';
 import CardCreationForm from './components/CardCreationForm';
 
 
