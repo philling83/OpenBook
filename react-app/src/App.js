@@ -16,6 +16,7 @@ import Banner from './components/Banner';
 import SideBar from './components/SideBar';
 import Library from './components/Library';
 import CreateClass from './components/CreateClass';
+import CardCreationForm from './components/CardCreationForm';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
 					<Footer />
 				</Route>
 				<Route path="/test" exact={true}>
-					<Test />
+					<CardCreationForm />
 				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
@@ -76,6 +77,7 @@ function App() {
 				</Route>
 
         <Route path='/teachers/:teacherId'>
+			<NavBar />
           <FullPageDiv />
         </Route>
         <Route path='/teacher/createClass'>

@@ -48,7 +48,7 @@ export const changeCard = (card_id, card) => async(dispatch) => {
     const responseJson = await response.json()
 
     // console.log(responseJson)
-    
+
     dispatch(editCard(responseJson))
 
     return responseJson
@@ -62,8 +62,8 @@ export const removeCard = (card_id) => async(dispatch) => {
     dispatch(deleteCard(card_id))
 
     return 'succeeded'
-    
-    
+
+
 }
 
 
@@ -83,7 +83,7 @@ const cardReducer = (state = {cards:null}, action) => {
 
         case ADD_CARD:
             new_state = Object.assign({}, state)
-
+            if (!new_state.cards) new_state.cards = []
             new_state.cards.push(action.payload)
             return new_state
 
@@ -115,7 +115,7 @@ const cardReducer = (state = {cards:null}, action) => {
             return state
     }
 
-    
+
 }
 
 export default cardReducer
