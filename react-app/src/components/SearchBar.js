@@ -9,7 +9,7 @@ const SearchBar = () => {
 
     const searchDecks = async (e) => {
 		e.preventDefault();
-		return dispatch(deckActions.searchDecks(term));
+		return dispatch(deckActions.allDecks());
 
 	};
 

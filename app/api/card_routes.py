@@ -14,6 +14,7 @@ def get_card(id):
 
     return card.to_dict()
 
+
 @card_routes.route('/')
 def get_all_cards():
 
@@ -28,6 +29,7 @@ def get_all_cards():
     result['cards'] = holding_list
 
     return result
+
 
 @card_routes.route('/', methods=["POST"])
 def create_card():
@@ -108,5 +110,3 @@ def remove_card_from_deck(card_id, deck_id):
     db.session.commit()
 
     return 'removed association'
-    
-
