@@ -8,12 +8,6 @@ const NavBar = ({ setAuthenticated }) => {
 
   return (
     <nav id="nav-bar" className="nav-bar">
-      <ul>
-        {/* <li>
-          <NavLink to="/" exact={true} activeClassName="active">
-            Home
-          </NavLink>
-        </li> */}
         {/* <li>
           <NavLink to="/login" exact={true} activeClassName="active">
             Login as teacher
