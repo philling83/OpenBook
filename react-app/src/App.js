@@ -20,6 +20,8 @@ import Banner from './components/Banner';
 import SideBar from './components/SideBar';
 import Library from './components/Library';
 import CreateClass from './components/CreateClass';
+import CreateDeck from './components/CreateDeck';
+import CreateCard from './components/CreateCard';
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -37,7 +39,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<NavBar setAuthenticated={setAuthenticated} />
+			{/* <NavBar setAuthenticated={setAuthenticated} /> */}
 			<Switch>
 				<Route exact path="/">
 					<NavBar setAuthenticated={setAuthenticated} />
@@ -77,7 +79,6 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-
         <Route path='/teachers/:teacherId'>
           <FullPageDiv />
         </Route>
@@ -103,6 +104,29 @@ function App() {
                   </div>
           </div>
         </Route>
+        <Route path='/createDeck'>
+        <div class='fullPageDiv'>
+                  <Banner />
+                  <div class='bodyDiv'>
+                      <SideBar />
+                      <div class='mainDiv'>
+                            <CreateDeck />
+                      </div>
+                  </div>
+          </div>
+        </Route>
+        <Route path='/createCard'>
+        <div class='fullPageDiv'>
+                  <Banner />
+                  <div class='bodyDiv'>
+                      <SideBar />
+                      <div class='mainDiv'>
+                            <CreateCard />
+                      </div>
+                  </div>
+          </div>
+        </Route>
+
         {/* <Route path='/teachers/:teacherId/cards'>
           <div class='fullPageDiv'>
                   <Banner />

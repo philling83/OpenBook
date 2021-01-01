@@ -4,7 +4,7 @@ const MinorAction = () => {
     return (
         <div class='minorActionDiv'>
             <div class='buttonDiv'>
-                <button class='createButton'>Create Deck</button>
+                <a href='/createDeck' class='createButton'>Create Deck</a>
                 <button class='folderButton'>BONUS Folder+</button>
             </div>
             <div class='sortDiv'>
