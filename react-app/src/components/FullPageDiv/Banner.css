@@ -1,0 +1,61 @@
+.bannerDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 7vh;
+	width: 100%;
+	background-color: whitesmoke;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.userDiv {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 60px;
+	width: 200px;
+	margin-right: 20px;
+}
+
+.userName {
+	color: rgba(5, 13, 133, 0.9);
+	font-size: 20px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 40px;
+	width: 150px;
+	margin-right: 7px;
+}
+
+.avatar {
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	background-color: rgba(5, 13, 133, 0.9);
+}
+
+.logoDiv {
+	display: flex;
+}
+
+/* .logoImage {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-color: rgb(160, 47, 64);
+}
+
+.logoText {
+	margin-left: 5px;
+	color: rgb(160, 47, 64);
+	font-size: 25px;
+	height: 30px;
+	width: 80px;
+} */
+
+.logoImage {
+	content:url("../../Assets/logo.png");
+	width: 200px;
+  }

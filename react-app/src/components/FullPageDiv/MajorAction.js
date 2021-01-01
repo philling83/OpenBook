@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './MajorAction.css'
+
 const MajorAction = (props) => {
     return (
     <div class='majorActionDiv'>

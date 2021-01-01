@@ -1,0 +1,40 @@
+
+.searchBar {
+	display: flex;
+	align-items: center;
+	height: 25px;
+	width: 500px;
+	margin-left: 10px;
+	background-color: whitesmoke;
+	border-radius: 2px 0px 0px 2px;
+	padding-left: 10px;
+	margin-left: 20px;
+	border: 2px solid rgba(5, 13, 133, 0.9);
+	color: rgba(5, 13, 133, 0.9);
+}
+
+.searchBar:focus {
+	outline: none;
+}
+
+.searchBarDiv {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	height: 8vh;
+	width: 100%;
+	background-color: whitesmoke;
+	border-top: 4px solid rgba(5, 13, 133, 0.9);
+}
+
+.searchBarButton {
+	height: 31px;
+	border: none;
+	border-radius: 0px 2px 2px 0px;
+	background-color: rgba(5, 13, 133, 0.9);
+	color: whitesmoke;
+}
+
+.searchBarButton:hover {
+	cursor: pointer;
+}
