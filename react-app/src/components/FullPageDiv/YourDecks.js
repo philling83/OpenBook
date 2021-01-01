@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './YourDecks.css'
+
 const YourDecks = () => {
     return (
         <div class='yourDecksDiv'>

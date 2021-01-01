@@ -10,12 +10,17 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
+
+
+
 import Test from './components/test'
-import FullPageDiv from './components/FullPageDiv';
-import Banner from './components/Banner';
-import SideBar from './components/SideBar';
-import Library from './components/Library';
-import CreateClass from './components/CreateClass';
+import FullPageDiv from './components/FullPageDiv/FullPageDiv';
+import Banner from './components/FullPageDiv/Banner';
+import SideBar from './components/FullPageDiv/SideBar';
+import Library from './components/Library/Library';
+import CreateClass from './components/CreateClass/CreateClass';
+import CreateDeck from './components/CreateDeck/CreateDeck';
+import CreateCard from './components/CreateDeck/CreateCard';
 import CardCreationForm from './components/CardCreationForm';
 
 
@@ -75,33 +80,55 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-
         <Route path='/teachers/:teacherId'>
-			<NavBar />
+			    <NavBar />
           <FullPageDiv />
         </Route>
         <Route path='/teacher/createClass'>
-        <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <CreateClass />
-                      </div>
-                  </div>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar />
+                <div class='mainDiv'>
+                      <CreateClass />
+                </div>
+            </div>
           </div>
         </Route>
         <Route path='/teachers/libraries'>
           <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <Library />
-                      </div>
-                  </div>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar />
+                <div class='mainDiv'>
+                      <Library />
+                </div>
+            </div>
           </div>
         </Route>
+        <Route path='/createDeck'>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar />
+                <div class='mainDiv'>
+                      <CreateDeck />
+                </div>
+            </div>
+          </div>
+        </Route>
+        <Route path='/createCard'>
+          <div class='fullPageDiv'>
+            <Banner />
+              <div class='bodyDiv'>
+                  <SideBar />
+                  <div class='mainDiv'>
+                        <CreateCard />
+                  </div>
+              </div>
+          </div>
+        </Route>
+
         {/* <Route path='/teachers/:teacherId/cards'>
           <div class='fullPageDiv'>
                   <Banner />

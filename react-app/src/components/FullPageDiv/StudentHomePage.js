@@ -5,11 +5,11 @@ import SearchBar from './SearchBar.js';
 import MajorAction from './MajorAction.js';
 import MinorAction from './MinorAction.js'
 
-import './TeacherHomePage.css'
+import './StudentHomePage.css'
 
 const StudentHomePage = () => {
     return (
-        <div class='teacherDiv'>
+        <div class='studentDiv'>
             <SearchBar />
             <MajorAction thirdActionDisplay='Classmates'/>
             <MinorAction />

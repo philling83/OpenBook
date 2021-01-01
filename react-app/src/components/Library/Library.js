@@ -2,8 +2,8 @@ import React from 'react'
 
 import CheckOutDeck from './CheckoutDeck';
 import PublicDecks from './PublicDecks';
-import SearchBar from './SearchBar.js';
-import MinorAction from './MinorAction.js'
+import SearchBar from '../FullPageDiv/SearchBar.js';
+import MinorAction from '../FullPageDiv/MinorAction.js'
 
 const Library = () => {
     return (

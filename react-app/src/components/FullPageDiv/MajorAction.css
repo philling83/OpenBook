@@ -1,0 +1,25 @@
+.majorActionDiv {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: row;
+	height: 25vh;
+	background-color: whitesmoke;
+	border-top: 2px solid rgba(5, 13, 133, 0.9);
+}
+
+.majorDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 170px;
+	width: 250px;
+	margin-left: 25px;
+	border-radius: 5%;
+	color: whitesmoke;
+	font-size: 25px;
+	background-color: rgb(160, 47, 64);
+}
