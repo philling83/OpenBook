@@ -10,21 +10,13 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
-
-
 import Test from './components/test'
-
 import FullPageDiv from './components/FullPageDiv';
-
 import Banner from './components/Banner';
 import SideBar from './components/SideBar';
 import Library from './components/Library';
 import CreateClass from './components/CreateClass';
 
-
-
-
-import FullPageDiv from "./components/FullPageDiv";
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -42,7 +34,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<NavBar setAuthenticated={setAuthenticated} />
+			{/* <NavBar setAuthenticated={setAuthenticated} /> */}
 			<Switch>
 				<Route exact path="/">
 					<NavBar setAuthenticated={setAuthenticated} />
