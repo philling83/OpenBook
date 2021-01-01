@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
 
 const SearchBar = () => {
-    return (
-        <div class='searchBarDiv'>
-            <div class='searchBar'>Search Your Decks By Keyword</div>
-        </div>
-    )
-}
+
+    const searchDecks = (e) => {
+        e.preventDefault();
+    }
+
+	return (
+		<form onSubmit={searchDecks}>
+			<div className="searchBarDiv">
+				<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)" />
+				<button className="searchBarButton">
+					<i class="fas fa-arrow-right"></i>
+				</button>
+			</div>
+		</form>
+	);
+};
 
 export default SearchBar;
