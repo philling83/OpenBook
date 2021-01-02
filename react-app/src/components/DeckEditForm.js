@@ -6,23 +6,19 @@ import Card from "./Card";
 import "./DeckEditForm.css";
 import { uid } from "react-uid";
 
-// function useForceUpdate() {
-// 	const [value, setValue] = useState(0); // integer state
-// 	return () => setValue((value) => value + 1); // update the state to force render
-// }
 
 const DeckEditForm = () => {
 	const [selectedDeck, setSelectedDeck] = useState("");
-	// const [checkedRadio, setCheckedRadio] = useState(selectedDeck);
+	const [checkedRadio, setCheckedRadio] = useState(selectedDeck);
 	const [loaded, setLoaded] = useState(false);
 	const [currentCards, setCurrentCards] = useState(null);
+	const [filteredDeck, setFilteredDeck] = useState('')
 	const allCards = useSelector((state) => state.cards.cards);
 	const decks = useSelector((state) => state.deck.decks);
 	const deck = useSelector((state) => state.deck.deck);
 	const cards = useSelector((state) => state.deck.cards);
 
 	const dispatch = useDispatch();
-	// const forceUpdate = useForceUpdate()
 
 	useEffect(() => {
 		(async () => {
@@ -35,10 +31,10 @@ const DeckEditForm = () => {
 		})();
 	}, [dispatch, deck, cards]);
 
-	let filteredDeck;
+
 	useEffect(() => {
 		if (decks) {
-			filteredDeck = decks.filter((deck) => deck.name === selectedDeck)[0];
+			setFilteredDeck(decks.filter((deck) => deck.name === selectedDeck)[0]);
 			console.log("deck", filteredDeck);
 			return setCurrentCards(filteredDeck.cards);
 		}
@@ -47,7 +43,7 @@ const DeckEditForm = () => {
 	const handleChange = async(e) => {
 		e.persist()
 		console.log("e.target.value", e.target.value)
-		// await setCheckedRadio(e.target.value.toString());
+		await setCheckedRadio(e.target.value.toString());
 		await setSelectedDeck(e.target.value.toString());
 		console.log("selectedDeck", selectedDeck)
 	};
@@ -66,10 +62,6 @@ const DeckEditForm = () => {
 		return dispatch(deckActions.removeCard(id, filteredDeck.id));
 	};
 
-	// const makeKey = () => {
-	// 	return new Date().getTime();
-
-	// }
 
 	return (
 		loaded && (
@@ -81,7 +73,7 @@ const DeckEditForm = () => {
 						<label key={deck.name.concat(i)}>
 							<input
 								type="radio"
-								// checked={checkedRadio === deck.name}
+								checked={checkedRadio === deck.name}
 								onChange={handleChange}
 								value={deck.name}
 							/>
