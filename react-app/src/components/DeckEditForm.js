@@ -5,13 +5,17 @@ import * as cardActions from "../store/cards";
 import Card from "./Card";
 import "./DeckEditForm.css";
 
+let filteredDeck
+
 const DeckEditForm = () => {
 	const [selectedDeck, setSelectedDeck] = useState("");
 	const [checkedRadio, setCheckedRadio] = useState(null);
 	const [loaded, setLoaded] = useState(false);
-	const [currentCards, setCurrentCards] = useState(null);
+    const [currentCards, setCurrentCards] = useState(null);
+    // const [cardId, setCardId] = useState(null);
+    const [sent, setSent] = useState(false);
 	const allCards = useSelector((state) => state.cards.cards);
-	const decks = useSelector((state) => state.deck.decks);
+    const decks = useSelector((state) => state.deck.decks);
 
 	const dispatch = useDispatch();
 
@@ -23,11 +27,11 @@ const DeckEditForm = () => {
 
 			return setLoaded(true);
 		})();
-	}, [dispatch]);
+	}, [dispatch, sent]);
 
 	useEffect(() => {
 		if (decks) {
-			let filteredDeck = decks.filter((deck) => deck.name === selectedDeck)[0];
+			filteredDeck = decks.filter((deck) => deck.name === selectedDeck)[0];
 			setCurrentCards(filteredDeck.cards);
 			console.log(allCards);
 		}
@@ -38,14 +42,21 @@ const DeckEditForm = () => {
 		setSelectedDeck(e.target.value);
 	};
 
-	const addToDeck = (e) => {
+	const addToDeck = async(e) => {
 		e.preventDefault();
-		console.log(e.target.id);
+        // setCardId(null);
+        // console.log(cardId);
+        let id = e.target.id
+        dispatch(deckActions.addCard(id, filteredDeck.id))
+        return setSent(true)
+
 	};
 
-	const removeFromDeck = (e) => {
+	const removeFromDeck = async(e) => {
         e.preventDefault();
-        console.log(e.target.id);
+        // setCardId(e.target.id);
+        return dispatch(deckActions.removeCard( filteredDeck.id))
+
 	};
 
 	return (
