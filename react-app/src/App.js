@@ -77,7 +77,7 @@ function App() {
 				</Route>
 
         <Route path='/teachers/:teacherId'>
-			<NavBar />
+			{/* <NavBar /> */}
           <FullPageDiv />
         </Route>
         <Route path='/teacher/createClass'>

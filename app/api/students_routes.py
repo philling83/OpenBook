@@ -16,6 +16,15 @@ def get_student(id):
     return student.to_dict()
 
 
+@students_routes.route('/from_class/<class_id>')
+def get_students_from_class(class_id):
+    students = Student.query.filter_by(classroom_id=class_id).all()
+
+    students_return = [student.to_dict() for student in students]
+
+    return {'list_of_students':students_return}
+
+
 @students_routes.route('/', methods=['POST'])
 def create_students():
 
