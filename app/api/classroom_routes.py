@@ -44,10 +44,10 @@ def edit_classroom(id):
         return 'No classroom found'
 
     name = request.get_json().get('name')
-    password = request.get_json().get('password')
+    # password = request.get_json().get('password')
 
     classroom_edit.name = name
-    classroom_edit.password = password
+    # classroom_edit.password = password
 
     db.session.commit()
 

@@ -11,6 +11,7 @@ const CreateClass = () => {
     const [names, setNames] = useState([]);
     const [password, setPassword] = useState('')
     const [loaded, setLoaded] = useState(false)
+    const [editMode, setEditMode] = useState(false)
 
     // const teacherId = 1
     
@@ -22,6 +23,9 @@ const CreateClass = () => {
     useEffect(() => {
         (async () => {
             if (teacher_class_id) {
+
+                setEditMode(true)
+
                 console.log('hit if sttement')
                 let resStudents = await fetch(`/api/students/from_class/${teacher_class_id}`)
                 let resStudentsJson = await resStudents.json()
@@ -119,7 +123,7 @@ const CreateClass = () => {
         // console.log(names)
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmitCreate = async (e) => {
         e.preventDefault()
 
         const classroomData = {
@@ -142,6 +146,33 @@ const CreateClass = () => {
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(studentData),
         })
+    }
+
+    const handleSubmitEdit = async (e) => {
+        e.preventDefault()
+
+        let classroomData = {
+            'name': className,
+        }
+        // if (password !== '') {
+        //     classroomData['password'] = password
+        // }
+
+        await dispatch(classActions.editRoom(teacher_class_id, classroomData))
+
+        for (let name in names) {
+            let studentData = {
+                'name': name,
+                'classroom_id': teacher_class_id
+            }
+
+            await fetch('/api/students/', {
+                method: 'PUT',
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify(studentData),
+            })
+
+        }
 
 
     }
@@ -163,7 +194,8 @@ const CreateClass = () => {
                     Secret password for class login 
                     <input type='text' placeholder='Super-Secret12345' />
                 </label>
-                <button onClick={handleSubmit} >Create Your Class!</button>
+                {editMode ? <button onClick={handleSubmitEdit}>Edit Your Class!</button>
+                    : <button onClick={handleSubmitCreate} >Create Your Class!</button>}
             
             </form>
         </div>
