@@ -84,6 +84,16 @@ export const allDecks = () => async (dispatch) => {
     return response;
 };
 
+export const addCard = (cardId, deckId) => async (dispatch) => {
+	const response = await fetch(`/api/cards/${cardId}/add_to_deck/${deckId}`, {method: 'POST'})
+	return response;
+};
+
+export const removeCard = (cardId, deckId) => async (dispatch) => {
+	const response = await fetch(`/api/cards/${cardId}/remove_from_deck/${deckId}`, {method: 'POST'})
+	return response;
+};
+
 const initialState = { deck: null, decks: null };
 
 const deckReducer = (state = initialState, action) => {
@@ -104,7 +114,7 @@ const deckReducer = (state = initialState, action) => {
             newState = Object.assign({}, state);
             newState.decks = action.payload;
             return newState;
-            
+
 		default:
 			return state;
 	}
