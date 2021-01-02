@@ -1,5 +1,7 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+// import { NavLink } from 'react-router-dom';
+
+import ControlPanel from './ControlPanel';
 
 import './CreateCard.css'
 
@@ -10,13 +12,13 @@ const CreateCard = () => {
                 <div class='imageDiv'></div>
                 <div class='cardText'></div>
             </div>
-            <div class='imageLinkDiv'>
+            <div class='ControlPanel'>
+                <ControlPanel />
+            </div>
+            {/* <div class='imageLinkDiv'>
                 <div class='text'>Paste Image Link here</div>
                 <input class='imageLink'></input>
-                <NavLink to="/test" exact={true} activeClassName="active">
-                    Test
-                </NavLink>
-            </div>
+            </div> */}
         </div>
     )
 }
