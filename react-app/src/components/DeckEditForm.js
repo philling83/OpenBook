@@ -23,13 +23,12 @@ const DeckEditForm = () => {
 
 			return setLoaded(true);
 		})();
-	}, []);
+	}, [dispatch]);
 
 	useEffect(() => {
 		if (decks) {
 			let filteredDeck = decks.filter((deck) => deck.name === selectedDeck)[0];
 			setCurrentCards(filteredDeck.cards);
-			// console.log(currentCards);
 			console.log(allCards);
 		}
 	}, [selectedDeck]);
@@ -37,12 +36,17 @@ const DeckEditForm = () => {
 	const handleChange = (e) => {
 		setCheckedRadio(e.target.value);
 		setSelectedDeck(e.target.value);
-    };
+	};
 
-    const addToDeck = (e) => {
+	const addToDeck = (e) => {
+		e.preventDefault();
+		console.log(e.target.id);
+	};
+
+	const removeFromDeck = (e) => {
         e.preventDefault();
-
-    }
+        console.log(e.target.id);
+	};
 
 	return (
 		loaded && (
@@ -75,6 +79,10 @@ const DeckEditForm = () => {
 							<div className="deck-card">
 								<p>Card #{i + 1}</p>
 								<Card card={card} />
+
+								<button id={card.id} onClick={removeFromDeck}>
+									Remove this Card
+								</button>
 							</div>
 						))
 					) : (
@@ -82,13 +90,13 @@ const DeckEditForm = () => {
 					)}
 				</div>
 
-				{ selectedDeck ? <h2>Card Library</h2> : <></>}
+				{selectedDeck ? <h2>Card Library</h2> : <></>}
 				<div className="deck-card-container">
 					{selectedDeck ? (
 						allCards.map((card, i) => (
 							<div className="deck-card">
 								<Card card={card} />
-								<button onClick={addToDeck}>Add This Card</button>
+								<button id={card.id} onClick={addToDeck}>Add This Card</button>
 							</div>
 						))
 					) : (
