@@ -4,81 +4,85 @@ import * as deckActions from "../store/decks";
 import * as cardActions from "../store/cards";
 import Card from "./Card";
 import "./DeckEditForm.css";
+import { uid } from "react-uid";
 
-let filteredDeck
+// function useForceUpdate() {
+// 	const [value, setValue] = useState(0); // integer state
+// 	return () => setValue((value) => value + 1); // update the state to force render
+// }
 
-function useForceUpdate() {
-	const [value, setValue] = useState(0); // integer state
-	return () => setValue((value) => value + 1); // update the state to force render
-}
-
-const DeckEditForm = ({count, setCount}) => {
+const DeckEditForm = () => {
 	const [selectedDeck, setSelectedDeck] = useState("");
-	const [checkedRadio, setCheckedRadio] = useState(null);
+	// const [checkedRadio, setCheckedRadio] = useState(selectedDeck);
 	const [loaded, setLoaded] = useState(false);
-    const [currentCards, setCurrentCards] = useState(null);
+	const [currentCards, setCurrentCards] = useState(null);
 	const allCards = useSelector((state) => state.cards.cards);
-    const decks = useSelector((state) => state.deck.decks);
-    const deck = useSelector((state) => state.deck.deck);
+	const decks = useSelector((state) => state.deck.decks);
+	const deck = useSelector((state) => state.deck.deck);
+	const cards = useSelector((state) => state.deck.cards);
 
-    const dispatch = useDispatch();
-    // const forceUpdate = useForceUpdate()
+	const dispatch = useDispatch();
+	// const forceUpdate = useForceUpdate()
 
 	useEffect(() => {
 		(async () => {
+			console.log("useEffect IIFE");
 			await dispatch(deckActions.allDecks());
 			await dispatch(cardActions.allCards());
-			console.log(allCards);
+			console.log("currentCards", currentCards);
 
 			return setLoaded(true);
 		})();
-	}, [dispatch]);
+	}, [dispatch, deck, cards]);
 
+	let filteredDeck;
 	useEffect(() => {
 		if (decks) {
 			filteredDeck = decks.filter((deck) => deck.name === selectedDeck)[0];
-			setCurrentCards(filteredDeck.cards);
-			console.log(allCards);
+			console.log("deck", filteredDeck);
+			return setCurrentCards(filteredDeck.cards);
 		}
-	}, [selectedDeck]);
+	}, [selectedDeck, currentCards]);
 
-	const handleChange = (e) => {
-		setCheckedRadio(e.target.value);
-		setSelectedDeck(e.target.value);
+	const handleChange = async(e) => {
+		e.persist()
+		console.log("e.target.value", e.target.value)
+		// await setCheckedRadio(e.target.value.toString());
+		await setSelectedDeck(e.target.value.toString());
+		console.log("selectedDeck", selectedDeck)
 	};
 
-	const addToDeck = async(e) => {
+	const addToDeck = async (e) => {
 		e.preventDefault();
-        let id = e.target.id
-        await dispatch(deckActions.addCard(id, filteredDeck.id))
-        await dispatch(deckActions.fetchDeck(filteredDeck.id))
-
-
+		let id = e.target.id;
+		await dispatch(deckActions.addCard(id, filteredDeck.id));
+		await dispatch(deckActions.fetchDeck(filteredDeck.id));
+		await dispatch(deckActions.allDecks());
 	};
 
-	const removeFromDeck = async(e) => {
-        e.preventDefault();
-        let id = e.target.id
-        return dispatch(deckActions.removeCard(id, filteredDeck.id))
+	const removeFromDeck = async (e) => {
+		e.preventDefault();
+		let id = e.target.id;
+		return dispatch(deckActions.removeCard(id, filteredDeck.id));
+	};
 
-    };
+	// const makeKey = () => {
+	// 	return new Date().getTime();
 
-    const deckCards = (currentCards) => {
-
-    }
+	// }
 
 	return (
 		loaded && (
 			<>
 				<h1>Edit Decks:</h1>
-                {decks}
+				{/* {decks} */}
 				<div onChange={handleChange}>
-					{decks.map((deck) => (
-						<label>
+					{decks.map((deck, i) => (
+						<label key={deck.name.concat(i)}>
 							<input
 								type="radio"
-								checked={checkedRadio === deck.name}
-								key={deck.name}
+								// checked={checkedRadio === deck.name}
+								onChange={handleChange}
 								value={deck.name}
 							/>
 							{deck.name}
@@ -96,9 +100,9 @@ const DeckEditForm = ({count, setCount}) => {
 				<div className="deck-card-container">
 					{currentCards ? (
 						currentCards.map((card, i) => (
-							<div className="deck-card">
+							<div key={card.title.concat(i)} className="deck-card">
 								<p>Card #{i + 1}</p>
-								<Card key={i} card={card} />
+								<Card card={card} />
 
 								<button id={card.id} onClick={removeFromDeck}>
 									Remove this Card
@@ -114,9 +118,11 @@ const DeckEditForm = ({count, setCount}) => {
 				<div className="deck-card-container">
 					{selectedDeck ? (
 						allCards.map((card, i) => (
-							<div className="deck-card">
+							<div className="deck-card" key={uid(card)}>
 								<Card card={card} />
-								<button id={card.id} onClick={addToDeck}>Add This Card</button>
+								<button id={card.id} onClick={addToDeck}>
+									Add This Card
+								</button>
 							</div>
 						))
 					) : (
