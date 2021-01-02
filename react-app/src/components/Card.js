@@ -6,8 +6,8 @@ const Card = (props) => {
 	return (
 		<div key={card.id}>
 			<div className="card-holder">
-				<p>Question: {card.title}</p>
 				<p>Subject: {card.subject}</p>
+				<p>Question: {card.title}</p>
 				<p>Choices</p>
 				<ul>
 					{card.possible_answers.map((choice) => (

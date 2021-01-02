@@ -20,7 +20,7 @@ import SideBar from './components/FullPageDiv/SideBar';
 import Library from './components/Library/Library';
 import CreateClass from './components/CreateClass/CreateClass';
 import CreateDeck from './components/CreateDeck/CreateDeck';
-import CreateCard from './components/CreateDeck/CreateCard';
+import CreateCard from './components/CreateDeck/CardClass';
 import CardCreationForm from './components/CardCreationForm';
 import DeckEditForm from './components/DeckEditForm';
 

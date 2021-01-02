@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ControlPanel from '../CreateDeck/ControlPanel'
+
 import './SideBar.css'
 
 const SideBar = () => {
@@ -10,6 +12,9 @@ const SideBar = () => {
             </div>
             <div class='sideDiv reportDiv'>Reports</div>
             <a class='sideDiv libraryDiv' href='/libraries'>Openbook Library</a>
+            <div class='sideDiv'>
+                <ControlPanel />
+            </div>
         </div>
     )
 }
