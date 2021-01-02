@@ -22,7 +22,7 @@ import CreateClass from './components/CreateClass/CreateClass';
 import CreateDeck from './components/CreateDeck/CreateDeck';
 import CreateCard from './components/CreateDeck/CreateCard';
 import CardCreationForm from './components/CardCreationForm';
-import DeckEditForm from './components/DeckEditForm';
+import DeckEditv2 from './components/DeckEditv2';
 
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
 					<Footer />
 				</Route>
 				<Route path="/test" exact={true}>
-					<DeckEditForm />
+					<DeckEditv2 />
 				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm

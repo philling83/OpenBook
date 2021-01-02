@@ -38,13 +38,14 @@ const DeckEditForm = () => {
 			console.log("deck", filteredDeck);
 			return setCurrentCards(filteredDeck.cards);
 		}
-	}, [selectedDeck, currentCards]);
+	}, [selectedDeck]);
 
 	const handleChange = async(e) => {
 		e.persist()
 		console.log("e.target.value", e.target.value)
-		await setCheckedRadio(e.target.value.toString());
-		await setSelectedDeck(e.target.value.toString());
+		setCheckedRadio(e.target.value);
+		console.log("checkedRadio", checkedRadio)
+		setSelectedDeck(e.target.value);
 		console.log("selectedDeck", selectedDeck)
 	};
 
