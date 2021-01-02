@@ -7,17 +7,21 @@ import "./DeckEditForm.css";
 
 let filteredDeck
 
+function useForceUpdate() {
+	const [value, setValue] = useState(0); // integer state
+	return () => setValue((value) => value + 1); // update the state to force render
+}
+
 const DeckEditForm = () => {
 	const [selectedDeck, setSelectedDeck] = useState("");
 	const [checkedRadio, setCheckedRadio] = useState(null);
 	const [loaded, setLoaded] = useState(false);
     const [currentCards, setCurrentCards] = useState(null);
-    // const [cardId, setCardId] = useState(null);
-    const [sent, setSent] = useState(false);
 	const allCards = useSelector((state) => state.cards.cards);
     const decks = useSelector((state) => state.deck.decks);
 
-	const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const forceUpdate = useForceUpdate()
 
 	useEffect(() => {
 		(async () => {
@@ -27,7 +31,7 @@ const DeckEditForm = () => {
 
 			return setLoaded(true);
 		})();
-	}, [dispatch, sent]);
+	}, [dispatch]);
 
 	useEffect(() => {
 		if (decks) {
@@ -44,20 +48,22 @@ const DeckEditForm = () => {
 
 	const addToDeck = async(e) => {
 		e.preventDefault();
-        // setCardId(null);
-        // console.log(cardId);
         let id = e.target.id
         dispatch(deckActions.addCard(id, filteredDeck.id))
-        return setSent(true)
+        return forceUpdate()
 
 	};
 
 	const removeFromDeck = async(e) => {
         e.preventDefault();
-        // setCardId(e.target.id);
-        return dispatch(deckActions.removeCard( filteredDeck.id))
+        let id = e.target.id
+        return dispatch(deckActions.removeCard(id, filteredDeck.id))
 
-	};
+    };
+
+    const deckCards = (currentCards) => {
+        
+    }
 
 	return (
 		loaded && (
@@ -89,7 +95,7 @@ const DeckEditForm = () => {
 						currentCards.map((card, i) => (
 							<div className="deck-card">
 								<p>Card #{i + 1}</p>
-								<Card card={card} />
+								<Card key={i} card={card} />
 
 								<button id={card.id} onClick={removeFromDeck}>
 									Remove this Card

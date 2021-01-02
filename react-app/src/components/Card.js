@@ -4,7 +4,7 @@ const Card = (props) => {
 	const card = props.card;
 
 	return (
-		<>
+		<div key={card.id}>
 			<div className="card-holder">
 				<p>Question: {card.title}</p>
 				<p>Subject: {card.subject}</p>
@@ -17,7 +17,7 @@ const Card = (props) => {
 				<p>Answer: {card.answer}</p>
 				<p>Image: {card.image}</p>
 			</div>
-		</>
+		</div>
 	);
 };
 
