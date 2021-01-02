@@ -1,0 +1,126 @@
+.login-banner {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid black; */
+  justify-content: center;
+  margin-top: 10px;
+  font-family: 'avenirlight', Helvetica, Arial, sans-serif;
+}
+
+.teacher-login {
+  /* border-right: 1px solid black; */
+  width: 600px;
+  height: 500px;
+  box-shadow: 0 2px 18px 4px rgba(0, 0, 0, .15);
+}
+
+.teacher-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #00a8ff;
+}
+
+.teacher-login-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  /* border: 1px solid red */
+}
+
+.teacher-form-label {
+  margin-top: 10px;
+}
+
+.teacher-input {
+  border-radius: 4px;
+  border: solid 1px #b8c0c6;
+}
+
+.submit {
+  /* border: 1px solid black; */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-button {
+  background-color: #00a8ff;
+  color: white;
+  width: 150px;
+  border: 1px solid #00a8ff;
+  border-radius: 4px;
+}
+
+.login-button:hover {
+  cursor: pointer;
+}
+
+.teacher-footer {
+  /* border: 1px solid black; */
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sign-up-link {
+  text-decoration: none;
+  color: #00a8ff;
+}
+
+.sign-up-link:visited {
+  color: #00a8ff;
+}
+
+.student-login {
+  /* border: 1px solid green; */
+  width: 600px;
+  box-shadow: 0 2px 18px 4px rgba(0, 0, 0, .15);
+  background-image: linear-gradient(to bottom, #006acd, #00a8ff 67%);
+  color: white;
+}
+
+.student-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-login-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  /* border: 1px solid red */
+}
+
+.student-form-label {
+  margin-top: 10px;
+}
+
+.student-form-input {
+  border-radius: 4px;
+  border: solid 1px #b8c0c6;
+}
+
+.join-class {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.join-class-button {
+  background-color:  #00a8ff;
+  color: white;
+  width: 150px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.join-class-button {
+  cursor: pointer;
+}

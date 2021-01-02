@@ -1,6 +1,5 @@
 import React from "react";
 import { signUp } from "../services/auth";
-import NavBar from "./NavBar";
 import "./NavBar.css"
 
 const SignUpButton = ({setAuthenticated}) => {

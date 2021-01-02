@@ -29,29 +29,37 @@ const StudentLoginForm = () => {
 	if (currentUser) return <Redirect to="/" />;
 
 	return (
-		<form onSubmit={onLogin}>
-			<div>
-				<label htmlFor="name">Name</label>
-				<input
-					name="name"
-					type="text"
-					placeholder="Name"
-					value={name}
-					onChange={updateName}
-				/>
+		<>
+			<div className="student-login-form-container">
+				<form onSubmit={onLogin}>
+					<div className="student-form-label">
+						<label htmlFor="name"></label>
+						<input
+							className="student-form-input"
+							name="name"
+							type="text"
+							placeholder="Name"
+							value={name}
+							onChange={updateName}
+						/>
+					</div>
+					<div className="student-form-label">
+						<label htmlFor="password"></label>
+						<input
+							className="student-form-input"
+							name="password"
+							type="password"
+							placeholder="Password"
+							value={password}
+							onChange={updatePassword}
+						/>
+					</div>
+					<div className="join-class">
+						<button className="join-class-button" type="submit">Join Class</button>
+					</div>
+				</form>
 			</div>
-			<div>
-				<label htmlFor="password">Password</label>
-				<input
-					name="password"
-					type="password"
-					placeholder="Password"
-					value={password}
-					onChange={updatePassword}
-				/>
-				<button type="submit">Join Class</button>
-			</div>
-		</form>
+		</>
 	);
 };
 

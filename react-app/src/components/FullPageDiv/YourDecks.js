@@ -4,30 +4,30 @@ import './YourDecks.css'
 
 const YourDecks = () => {
     return (
-        <div class='yourDecksDiv'>
-            <div class='textDiv'>Your Decks</div>
-            <div class='decksDiv'>
-                <div class='yourFoldersDiv'>
-                    <select class='folder'>
+        <div className='yourDecksDiv'>
+            <div className='textDiv'>Your Decks</div>
+            <div className='decksDiv'>
+                <div className='yourFoldersDiv'>
+                    <select className='folder'>
                         <option>Spanish Decks</option>
                         <option>Nouns</option>
                         <option>Conjugation</option>
                     </select>
-                    <select class='folder'>
+                    <select className='folder'>
                         <option>Vocab Decks</option>
                         <option>Animals</option>
                         <option>People</option>
                         <option>Plants</option>
                     </select>
                 </div>
-                <div class='allDecksDiv'>
-                    <div class='deckDiv'>
-                        <div class='deckText'>
+                <div className='allDecksDiv'>
+                    <div className='deckDiv'>
+                        <div className='deckText'>
                             <div>Deck name</div>
                             <div>Created by</div>
                             <div>11/11/20</div>
                         </div>
-                        <div class='deckImage'>
+                        <div className='deckImage'>
                             <img src="" alt=""></img>
                         </div>
                     </div>

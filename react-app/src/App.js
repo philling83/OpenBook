@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
@@ -13,7 +13,7 @@ import NotFoundPage from "./components/NotFoundPage";
 
 
 
-import Test from './components/test'
+// import Test from './components/test'
 import FullPageDiv from './components/FullPageDiv/FullPageDiv';
 import Banner from './components/FullPageDiv/Banner';
 import SideBar from './components/FullPageDiv/SideBar';
@@ -27,7 +27,7 @@ import DeckEditForm from './components/DeckEditForm';
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
-	const [loaded, setLoaded] = useState(false);
+	// const [loaded, setLoaded] = useState(false);
 
 	//   useEffect(() => {
 	//     (async() => {
