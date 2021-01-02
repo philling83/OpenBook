@@ -82,7 +82,7 @@ function App() {
 					<NotFoundPage />
 				</Route>
         <ProtectedRoute path='/teachers/:teacherId'>
-			    <NavBar />
+			    {/* <NavBar /> */}
           <FullPageDiv />
         </ProtectedRoute>
         <Route path='/teacher/createClass'>
@@ -122,7 +122,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
               <div class='bodyDiv'>
-                  <SideBar />
+                  <SideBar createClass={false}/>
                   <div class='mainDiv'>
                         <CreateCard />
                   </div>

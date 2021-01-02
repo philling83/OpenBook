@@ -7,7 +7,7 @@
 	flex-direction: row;
 	height: 25vh;
 	background-color: whitesmoke;
-	border-top: 2px solid rgba(5, 13, 133, 0.9);
+	border-top: 2px solid rgba(1, 5, 53, 0.9);
 }
 
 .majorDiv {
@@ -21,5 +21,17 @@
 	border-radius: 5%;
 	color: whitesmoke;
 	font-size: 25px;
-	background-color: rgb(160, 47, 64);
+}
+
+.assignmentDiv {
+    background-color: rgb(66, 66, 133, 0.9);
+}
+
+.studentDiv {
+    background-color: rgb(171, 171, 172, 0.9);
+
+}
+
+.videoDiv {
+    background-color: #00a8ff;
 }

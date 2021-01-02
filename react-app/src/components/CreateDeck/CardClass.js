@@ -22,6 +22,7 @@ class CreateCard extends React.Component {
         this.setState({question: event.target.value})
     }
     handleChoicesChange = (event) => {
+        console.log(event.target.value)
         this.setState({choices: event.target.value})
     }
     handleAnswerChange = (event) => {
@@ -73,7 +74,7 @@ class CreateCard extends React.Component {
                         <input className='inputField' id='answer' type='text' value={this.statevalue} onChange={this.handleAnswerChange} />
                     </label>
                     <label className='inputLabel'>
-                        Image URL:
+                        ImageURL:
                         <input className='inputField' id='image' type='url' value={this.statvalue} onChange={this.handleImageChange} />
                     </label>
                 </form>
