@@ -12,16 +12,17 @@ function useForceUpdate() {
 	return () => setValue((value) => value + 1); // update the state to force render
 }
 
-const DeckEditForm = () => {
+const DeckEditForm = ({count, setCount}) => {
 	const [selectedDeck, setSelectedDeck] = useState("");
 	const [checkedRadio, setCheckedRadio] = useState(null);
 	const [loaded, setLoaded] = useState(false);
     const [currentCards, setCurrentCards] = useState(null);
 	const allCards = useSelector((state) => state.cards.cards);
     const decks = useSelector((state) => state.deck.decks);
+    const deck = useSelector((state) => state.deck.deck);
 
     const dispatch = useDispatch();
-    const forceUpdate = useForceUpdate()
+    // const forceUpdate = useForceUpdate()
 
 	useEffect(() => {
 		(async () => {
@@ -49,8 +50,9 @@ const DeckEditForm = () => {
 	const addToDeck = async(e) => {
 		e.preventDefault();
         let id = e.target.id
-        dispatch(deckActions.addCard(id, filteredDeck.id))
-        return forceUpdate()
+        await dispatch(deckActions.addCard(id, filteredDeck.id))
+        await dispatch(deckActions.fetchDeck(filteredDeck.id))
+
 
 	};
 
@@ -62,13 +64,14 @@ const DeckEditForm = () => {
     };
 
     const deckCards = (currentCards) => {
-        
+
     }
 
 	return (
 		loaded && (
 			<>
 				<h1>Edit Decks:</h1>
+                {decks}
 				<div onChange={handleChange}>
 					{decks.map((deck) => (
 						<label>
