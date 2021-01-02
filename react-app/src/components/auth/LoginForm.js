@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 // import { login } from "../../services/auth";
-import { useDispatch, useSelector } from "react-redux"
-import * as sessionActions from "../../store/session"
+import { useDispatch, useSelector } from "react-redux";
+import * as sessionActions from "../../store/session";
+import "./LoginForm.css";
+import Footer from "../Footer";
+import StudentLoginForm from "./StudentLoginForm";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -38,34 +41,62 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
+    <>
+      <div className="login-banner">
+        <img className="logo-image" src={require("../../Assets/logo.png")} alt=""></img>
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
-        />
+      <div className="login-container">
+        <div className="teacher-login">
+          <div className="teacher-header">
+            <h1>Teachers</h1>
+            <h2>Log In</h2>
+          </div>
+          <div className="teacher-login-form-container">
+            <form onSubmit={onLogin}>
+              <div>
+                {errors.map((error) => (
+                  <div>{error}</div>
+                ))}
+              </div>
+              <div className="teacher-form-label">
+                <input
+                  className="teacher-input"
+                  name="email"
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  onChange={updateEmail}
+                />
+              </div>
+              <div className="teacher-form-label">
+                <input
+                  className="teacher-input"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={updatePassword}
+                />
+              </div>
+              <div className="submit">
+                <button className="submit-button" type="submit">Login</button>
+              </div>
+            </form>
+          </div>
+          <p className="teacher-footer">Don't have an account?
+          <a href="/sign-up" className="sign-up-link"> Sign up</a>
+          </p>
+        </div>
+        <div className="student-login">
+          <div className="student-header">
+            <h1>Students</h1>
+			      <h2>Join a Class</h2>
+          </div>
+          <StudentLoginForm />
+        </div>
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
-    </form>
+      <Footer />
+    </>
   );
 };
 

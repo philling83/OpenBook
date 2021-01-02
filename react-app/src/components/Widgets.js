@@ -33,7 +33,7 @@ const Widgets = () => {
           <h2>TEACHERS</h2>
           <button className="signup-button">Sign up for FREE</button>
           <p>
-            <a>or </a>
+            or
             <a href="/login">Login</a>
           </p>
         </div>

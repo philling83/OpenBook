@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import { logout } from "../../services/auth";
+import React from "react";
+// import { logout } from "../../services/auth";
 import { useDispatch } from "react-redux"
 import * as sessionActions from "../../store/session"
 
