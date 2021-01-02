@@ -9,7 +9,7 @@ import AddCardToDeck from './AddCardToDeck';
 
 const CreateDeck = () => {
     return (
-        <div class='teacherDiv'>
+        <div className='teacherDiv'>
             <SearchBar />
             <AddCardToDeck />
             <MinorAction />

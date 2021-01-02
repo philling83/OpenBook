@@ -5,14 +5,14 @@ import './CreateCard.css'
 
 const CreateCard = () => {
     return (
-        <div class='createCardDiv'>
-            <div class='blankCard'>
-                <div class='imageDiv'></div>
-                <div class='cardText'></div>
+        <div className='createCardDiv'>
+            <div className='blankCard'>
+                <div className='imageDiv'></div>
+                <div className='cardText'></div>
             </div>
-            <div class='imageLinkDiv'>
-                <div class='text'>Paste Image Link here</div>
-                <input class='imageLink'></input>
+            <div className='imageLinkDiv'>
+                <div className='text'>Paste Image Link here</div>
+                <input className='imageLink'></input>
                 <NavLink to="/test" exact={true} activeClassName="active">
                     Test
                 </NavLink>
