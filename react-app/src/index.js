@@ -6,7 +6,19 @@ import App from "./App";
 import { Provider } from "react-redux";
 import configureStore from "./store";
 
-const store = configureStore();
+//{session: {…}, cards: {…}, deck: {…}, classroom: {…}}
+// cards: {cards: null}
+// classroom: {room: null}
+// deck: {deck: null, decks: null}
+// session: {user: null}
+// __proto__: Object
+
+const preloadedState = {
+
+	deck: {deck: {cards: []}, decks: null}
+}
+
+const store = configureStore(preloadedState);
 
 function Root() {
 	return (

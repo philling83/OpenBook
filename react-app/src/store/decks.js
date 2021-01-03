@@ -86,11 +86,15 @@ export const allDecks = () => async (dispatch) => {
 
 export const addCard = (cardId, deckId) => async (dispatch) => {
 	const response = await fetch(`/api/cards/${cardId}/add_to_deck/${deckId}`, {method: 'POST'})
+	const resJSON = await response.json();
+	dispatch(setDeck(resJSON));
 	return response;
 };
 
 export const removeCard = (cardId, deckId) => async (dispatch) => {
 	const response = await fetch(`/api/cards/${cardId}/remove_from_deck/${deckId}`, {method: 'POST'})
+	const resJSON = await response.json();
+	dispatch(setDeck(resJSON));
 	return response;
 };
 

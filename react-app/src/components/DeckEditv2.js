@@ -4,12 +4,12 @@ import * as deckActions from "../store/decks";
 import * as cardActions from "../store/cards";
 
 const DeckEditv2 = () => {
-	const decks = useSelector((state) => state.deck.decks);
+    const decks = useSelector((state) => state.deck.decks);
+    const cards = useSelector((state) => state.deck.deck.cards)
 	const allCards = useSelector((state) => state.cards.cards);
 	const [loaded, setLoaded] = useState(false);
     const [deckId, setDeckId] = useState("");
-	const [selectedDeck, setSelectedDeck] = useState("");
-    const [selectedCards, setSelectedCards] = useState("");
+	const [selectedDeck, setSelectedDeck] = useState({cards:[]});
 
 	const dispatch = useDispatch();
 
@@ -18,9 +18,9 @@ const DeckEditv2 = () => {
 			await dispatch(deckActions.allDecks());
 			await dispatch(cardActions.allCards());
             setLoaded(true);
-            console.log("selectedCards: ", selectedCards)
+            console.log("selectedDeck: ", selectedDeck)
 		})();
-	}, [dispatch, selectedCards]);
+	}, [cards]);
 
 	useEffect(() => {
 		(async () => {
@@ -28,19 +28,13 @@ const DeckEditv2 = () => {
 		})();
 	}, [deckId]);
 
-	useEffect(() => {
-		(async() => {
-            setSelectedCards(selectedDeck.cards)
-        })()
-	}, [selectedDeck]);
-
 	const selectDeck = (e) => setDeckId(e.target.id);
 
 	const removeCard = async (e) => {
 		console.log("card id: ", e.target.id);
 		const cardId = e.target.id;
 		const deckId = selectedDeck.id;
-		await dispatch(deckActions.removeCard(cardId, deckId));
+		return dispatch(deckActions.removeCard(cardId, deckId));
 	};
 
 	const addCard = async (e) => {
@@ -56,7 +50,6 @@ const DeckEditv2 = () => {
 			<>
 				<div>
 					<h2>Your Decks:</h2>
-
 					{decks.map((deck, i) => (
 						<div key={deck.name.concat(i)}>
 							<p>{deck.name}</p>
@@ -70,7 +63,7 @@ const DeckEditv2 = () => {
 					{selectedDeck ? (
 						<>
 							<h3>This Deck's Cards:</h3>
-							{selectedDeck.cards.map((card, i) => (
+							{cards.map((card, i) => (
 								<div key={card.title.concat(i)}>
 									<p>{card.title}</p>
 									<button id={card.id} onClick={removeCard}>
