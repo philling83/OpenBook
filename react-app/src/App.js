@@ -11,6 +11,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
 
+import DeckEditv2 from "./components/DeckEditv2";
 
 
 // import Test from './components/test'
@@ -50,7 +51,7 @@ function App() {
 					<Footer />
 				</Route>
 				<Route path="/test" exact={true}>
-					<DeckEditForm />
+					<DeckEditv2 />
 				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
@@ -142,7 +143,7 @@ function App() {
           </div>
         </Route>
 
-        {/* <Route path='/teachers/:teacherId/cards'>
+				{/* <Route path='/teachers/:teacherId/cards'>
           <div class='fullPageDiv'>
                   <Banner />
                   <div class='bodyDiv'>

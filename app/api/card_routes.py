@@ -96,7 +96,7 @@ def add_card_to_deck(card_id, deck_id):
 
     db.session.commit()
 
-    return 'Added card to deck'
+    return deck.to_dict()
 
 
 @card_routes.route('<card_id>/remove_from_deck/<deck_id>', methods=['POST'])
@@ -109,4 +109,4 @@ def remove_card_from_deck(card_id, deck_id):
 
     db.session.commit()
 
-    return 'removed association'
+    return deck.to_dict()
