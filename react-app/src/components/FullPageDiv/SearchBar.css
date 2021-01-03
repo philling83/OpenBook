@@ -9,8 +9,8 @@
 	border-radius: 2px 0px 0px 2px;
 	padding-left: 10px;
 	margin-left: 20px;
-	border: 2px solid rgba(5, 13, 133, 0.9);
-	color: rgba(5, 13, 133, 0.9);
+	border: 2px solid rgba(1, 5, 53, 0.9);
+	color: rgba(1, 5, 53, 0.9);
 }
 
 .searchBar:focus {
@@ -24,17 +24,25 @@
 	height: 8vh;
 	width: 100%;
 	background-color: whitesmoke;
-	border-top: 4px solid rgba(5, 13, 133, 0.9);
+	border-top: 4px solid rgba(1, 5, 53, 0.9);
 }
 
 .searchBarButton {
 	height: 31px;
 	border: none;
 	border-radius: 0px 2px 2px 0px;
-	background-color: rgba(5, 13, 133, 0.9);
+	background-color: rgb(66, 66, 133, 0.9);
+	border-right: 2px solid rgba(1, 5, 53, 0.9);
+	border-bottom: 2px solid rgba(1, 5, 53, 0.9);
+	border-top: 2px solid rgba(1, 5, 53, 0.9);
 	color: whitesmoke;
 }
 
 .searchBarButton:hover {
+    overflow: hidden;
+    background-image: linear-gradient(270deg,rgba(1, 5, 53, 0.9),  rgba(0, 168, 255, 0.7));
+    background-size: 400% 400%;
+    animation: TransitioningBackground 10s ease infinite;
+    transition: 0.6s;
 	cursor: pointer;
 }

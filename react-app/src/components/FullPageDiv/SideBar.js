@@ -1,4 +1,5 @@
 import React from 'react'
+import  { NavLink } from 'react-router-dom'
 
 import ControlPanel from '../CreateDeck/ControlPanel'
 
@@ -8,14 +9,24 @@ const SideBar = (props) => {
     return (
         <div className='sideBarDiv'>
             {props.createClass &&
-                <a className='sideDiv joinText' href='/teacher/createClass'>Create Class</a>}
-            {!props.CreateClass &&
-                <button className = 'sideDiv joinText'>Add Card to Deck</button>}
+                <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText'>Create Class</div>
+                </NavLink>}
+            {props.addCardToDeck &&
+                <NavLink to='/CreateDeck' style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText'>Add Card to Deck</div>
+                </NavLink>}
+            {props.addToLibrary &&
+                <NavLink to='/teachers/:teacherId' style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText'>Add To My Library</div>
+                </NavLink>}
             <div class='sideDiv reportDiv'>Reports</div>
-            <a class='sideDiv libraryDiv' href='/libraries'>Openbook Library</a>
-            <div class='sideDiv'>
+            <NavLink to='' style={{textDecoration: 'none'}}>
+                <div class='sideDiv libraryDiv'>Openbook Library</div>
+            </NavLink>
+            {/* <div class='sideDiv'>
                 <ControlPanel />
-            </div>
+            </div> */}
         </div>
     )
 }

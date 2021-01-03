@@ -14,9 +14,9 @@ const Banner = () => {
             </div>
             <div className='userDiv'>
                 <div className='userName'>Guest User</div>
-                <NavLink to="/sign-up" exact={true} activeClassName="active">
+                {/* <NavLink to="/sign-up" exact={true} activeClassName="active">
                     Sign Up
-                </NavLink>
+                </NavLink> */}
             </div>
         </div>
     )

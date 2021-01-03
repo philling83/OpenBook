@@ -12,7 +12,7 @@ const CreateDeck = () => {
         <div className='teacherDiv'>
             <SearchBar />
             <AddCardToDeck />
-            <MinorAction />
+            <MinorAction createDeck={false} completeDeck={true} createCard={true}/>
             <YourCards />
             {/* <PublicCards /> */}
         </div>

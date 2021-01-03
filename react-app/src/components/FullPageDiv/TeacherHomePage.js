@@ -12,7 +12,7 @@ const TeacherHomePage = () => {
         <div className='teacherDiv'>
             <SearchBar />
             <MajorAction thirdActionDisplay='Students'/>
-            <MinorAction />
+            <MinorAction createDeck={true} completeDeck={false} createCard={true}/>
             <YourDecks />
         </div>
 

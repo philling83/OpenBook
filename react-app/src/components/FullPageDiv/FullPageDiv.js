@@ -19,7 +19,7 @@ const FullPageDiv = () => {
             <div className='fullPageDiv'>
                 <Banner />
                 <div className='bodyDiv'>
-                    <SideBar />
+                    <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
                     <div className='mainDiv'>
                         {currentUser.teacher ? <TeacherHomePage />
                                              : <StudentHomePage />}

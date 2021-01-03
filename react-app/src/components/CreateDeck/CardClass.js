@@ -10,7 +10,7 @@ class CreateCard extends React.Component {
             question: '',
             choices: [],
             answer: '',
-            image: '',
+            image: 'Upload Image Here',
 
         };
     }
@@ -49,6 +49,9 @@ class CreateCard extends React.Component {
                             <p className='answer'>{this.state.answer}</p>
                         </div>
                         <div className='cardImageDiv'>
+                            {this.state.image === 'Upload Image Here' &&
+                                <h2 className='placeholderText'>Upload Image Here</h2>
+                            }
                             <img className='cardImage' src={this.state.image} />
                         </div>
                     </div>

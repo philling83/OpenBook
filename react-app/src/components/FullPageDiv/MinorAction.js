@@ -1,22 +1,27 @@
 import React from 'react'
+import  { NavLink } from 'react-router-dom'
 
 import './MinorAction.css'
 
-const MinorAction = () => {
+const MinorAction = (props) => {
+
     return (
         <div className='minorActionDiv'>
-            <div className='buttonDiv'>
-                <a href='/createDeck' className='createButton'>Create Deck</a>
-                <button className='folderButton'>BONUS Folder+</button>
-            </div>
-            <div className='sortDiv'>
-                <label for="selectButton">BONUS Sort by:</label>
-                <select className='selectButton'>
-                    <option>Recent</option>
-                    <option>Title</option>
-                    <option>Author</option>
-                </select>
-            </div>
+            {props.createDeck &&
+                <NavLink to='/CreateDeck'>
+                    <button className='myButton'>Create Deck</button>
+                </NavLink>
+            }
+            {props.completeDeck &&
+                <NavLink to=''>
+                    <button className='myButton'>Complete Deck</button>
+                </NavLink>
+            }
+            {props.createCard &&
+                <NavLink to='/CreateCard'>
+                    <button className='myButton'>Create Card</button>
+                </NavLink>
+            }
         </div>
     )
 }

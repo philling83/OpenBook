@@ -89,7 +89,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
             <div class='bodyDiv'>
-                <SideBar />
+                <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
                 <div class='mainDiv'>
                       <CreateClass />
                 </div>
@@ -100,7 +100,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
             <div class='bodyDiv'>
-                <SideBar />
+                <SideBar addToLibrary={true} addCardToDeck={false} createClass={false}/>
                 <div class='mainDiv'>
                       <Library />
                 </div>
@@ -111,7 +111,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
             <div class='bodyDiv'>
-                <SideBar />
+                <SideBar addToLibrary={true} addCardToDeck={false} createClass={false}/>
                 <div class='mainDiv'>
                       <CreateDeck />
                 </div>
@@ -122,7 +122,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
               <div class='bodyDiv'>
-                  <SideBar createClass={false}/>
+                  <SideBar addToLibrary={false} addCardToDeck={true} createClass={false}/>
                   <div class='mainDiv'>
                         <CreateCard />
                   </div>
