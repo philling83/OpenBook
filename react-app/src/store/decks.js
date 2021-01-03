@@ -21,7 +21,7 @@ export const fetchDeck = (deckId) => async (dispatch) => {
 
 	dispatch(setDeck(resJSON));
 
-	return response;
+	return resJSON;
 };
 
 export const updateDeck = (deckId, formData) => async (dispatch) => {
