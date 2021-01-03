@@ -20,8 +20,9 @@ import SideBar from './components/FullPageDiv/SideBar';
 import Library from './components/Library/Library';
 import CreateClass from './components/CreateClass/CreateClass';
 import CreateDeck from './components/CreateDeck/CreateDeck';
-import CreateCard from './components/CreateDeck/CreateCard';
+import CreateCard from './components/CreateDeck/CardClass';
 import CardCreationForm from './components/CardCreationForm';
+import DeckEditForm from './components/DeckEditForm';
 
 
 function App() {
@@ -47,9 +48,9 @@ function App() {
 					<Widgets />
 					<Footer />
 				</Route>
-				<ProtectedRoute path="/test" exact={true}>
-					<CardCreationForm />
-				</ProtectedRoute>
+				<Route path="/test" exact={true}>
+					<DeckEditForm />
+				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -80,10 +81,10 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-        <Route path='/teachers/:teacherId'>
-			    <NavBar />
+        <ProtectedRoute path='/teachers/:teacherId'>
+			    {/* <NavBar /> */}
           <FullPageDiv />
-        </Route>
+        </ProtectedRoute>
         <Route path='/teacher/createClass'>
           <div class='fullPageDiv'>
             <Banner />
@@ -121,7 +122,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
               <div class='bodyDiv'>
-                  <SideBar />
+                  <SideBar createClass={false}/>
                   <div class='mainDiv'>
                         <CreateCard />
                   </div>

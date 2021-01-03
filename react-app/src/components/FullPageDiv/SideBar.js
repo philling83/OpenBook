@@ -1,15 +1,21 @@
 import React from 'react'
 
+import ControlPanel from '../CreateDeck/ControlPanel'
+
 import './SideBar.css'
 
-const SideBar = () => {
+const SideBar = (props) => {
     return (
         <div className='sideBarDiv'>
-            <div className='sideDiv joinClassDiv'>
-                <a className='joinText' href='/teacher/createClass'>Create Class</a>
+            {props.createClass &&
+                <a className='sideDiv joinText' href='/teacher/createClass'>Create Class</a>}
+            {!props.CreateClass &&
+                <button className = 'sideDiv joinText'>Add Card to Deck</button>}
+            <div class='sideDiv reportDiv'>Reports</div>
+            <a class='sideDiv libraryDiv' href='/libraries'>Openbook Library</a>
+            <div class='sideDiv'>
+                <ControlPanel />
             </div>
-            <div className='sideDiv reportDiv'>Reports</div>
-            <a className='sideDiv libraryDiv' href='/libraries'>Openbook Library</a>
         </div>
     )
 }

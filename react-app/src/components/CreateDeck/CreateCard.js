@@ -1,24 +1,30 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+// import { NavLink } from 'react-router-dom';
+
+import ControlPanel from './ControlPanel';
+import Card from '../Card'
 
 import './CreateCard.css'
 
 const CreateCard = () => {
     return (
-        <div className='createCardDiv'>
-            <div className='blankCard'>
-                <div className='imageDiv'></div>
-                <div className='cardText'></div>
+        <div class='createCardDiv'>
+            <div class='upperDiv'>
+                <div className='blankCard'></div>
             </div>
-            <div className='imageLinkDiv'>
-                <div className='text'>Paste Image Link here</div>
-                <input className='imageLink'></input>
-                <NavLink to="/test" exact={true} activeClassName="active">
-                    Test
-                </NavLink>
+            <div className='inputDiv'>
+                <div className='card'>
+                    <div className='cardHolder'>
+                        <p>Subject: </p>
+                        <p>Question: </p>
+                        <p>Choices </p>
+                        <p>Answer: </p>
+                        <p>Image: </p>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
-export default CreateCard;
+// export default CreateCard;
