@@ -9,7 +9,7 @@ import './StudentHomePage.css'
 
 const StudentHomePage = () => {
     return (
-        <div class='studentDiv'>
+        <div className='studentDiv'>
             <SearchBar />
             <MajorAction thirdActionDisplay='Classmates'/>
             <MinorAction />

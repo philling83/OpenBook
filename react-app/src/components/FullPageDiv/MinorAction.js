@@ -4,14 +4,14 @@ import './MinorAction.css'
 
 const MinorAction = () => {
     return (
-        <div class='minorActionDiv'>
-            <div class='buttonDiv'>
-                <a href='/createDeck' class='createButton'>Create Deck</a>
-                <button class='folderButton'>BONUS Folder+</button>
+        <div className='minorActionDiv'>
+            <div className='buttonDiv'>
+                <a href='/createDeck' className='createButton'>Create Deck</a>
+                <button className='folderButton'>BONUS Folder+</button>
             </div>
-            <div class='sortDiv'>
+            <div className='sortDiv'>
                 <label for="selectButton">BONUS Sort by:</label>
-                <select class='selectButton'>
+                <select className='selectButton'>
                     <option>Recent</option>
                     <option>Title</option>
                     <option>Author</option>

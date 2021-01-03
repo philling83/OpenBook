@@ -6,14 +6,14 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div class='bannerDiv'>
-            <div class='logoDiv'>
+        <div className='bannerDiv'>
+            <div className='logoDiv'>
                 <NavLink to="/" exact={true} activeClassName="active">
-                    <div class='logoImage'></div>
+                    <div className='logoImage'></div>
                 </NavLink>
             </div>
-            <div class='userDiv'>
-                <div class='userName'>Guest User</div>
+            <div className='userDiv'>
+                <div className='userName'>Guest User</div>
                 <NavLink to="/sign-up" exact={true} activeClassName="active">
                     Sign Up
                 </NavLink>

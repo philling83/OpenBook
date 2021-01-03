@@ -9,7 +9,7 @@ import './TeacherHomePage.css'
 
 const TeacherHomePage = () => {
     return (
-        <div class='teacherDiv'>
+        <div className='teacherDiv'>
             <SearchBar />
             <MajorAction thirdActionDisplay='Students'/>
             <MinorAction />

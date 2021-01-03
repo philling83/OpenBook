@@ -16,11 +16,11 @@ const FullPageDiv = () => {
         return <Redirect to="/"/>
     } else {
         return (
-            <div class='fullPageDiv'>
+            <div className='fullPageDiv'>
                 <Banner />
-                <div class='bodyDiv'>
+                <div className='bodyDiv'>
                     <SideBar />
-                    <div class='mainDiv'>
+                    <div className='mainDiv'>
                         {currentUser.teacher ? <TeacherHomePage />
                                              : <StudentHomePage />}
                     </div>
