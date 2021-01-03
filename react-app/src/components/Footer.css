@@ -1,20 +1,32 @@
 .footer-container {
-  /* background-color: gray; */
-  margin: 0 auto;
+  border-top: 1px solid gray;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: #215C89;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: avenirroman,Helvetica,Arial,sans-serif;
+  background-color: #00a8ff;
+  width: 100vw;
+}
+
+.github-links {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  margin-top: 20px;
+  color: white;
+  /* border: 1px solid red; */
 }
 
 .footer-container p {
-  color: black;
+  color: white;
   font-family: avenirroman,Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 34px;
-    margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-left: 10px;
 }
 
 .github-profs {
@@ -26,4 +38,11 @@
   overflow: hidden;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.footer-content {
+  /* border: 1px solid red; */
+  font-family: avenirroman,Helvetica,Arial,sans-serif;
+  width: 500px;
+  margin-right: 10px;
 }

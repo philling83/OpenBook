@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
@@ -10,18 +10,26 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
-import Test from './components/test'
-import FullPageDiv from './components/FullPageDiv';
-import Banner from './components/Banner';
-import SideBar from './components/SideBar';
-import Library from './components/Library';
-import CreateClass from './components/CreateClass';
+
+import DeckEditv2 from "./components/DeckEditv2";
+
+
+// import Test from './components/test'
+import FullPageDiv from './components/FullPageDiv/FullPageDiv';
+import Banner from './components/FullPageDiv/Banner';
+import SideBar from './components/FullPageDiv/SideBar';
+import Library from './components/Library/Library';
+import CreateClass from './components/CreateClass/CreateClass';
+import CreateDeck from './components/CreateDeck/CreateDeck';
+import CreateCard from './components/CreateDeck/CardClass';
 import CardCreationForm from './components/CardCreationForm';
+import DeckEditForm from './components/DeckEditForm';
+import DeckPreview from './components/FullPageDiv/DeckPreview'
 
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
-	const [loaded, setLoaded] = useState(false);
+	// const [loaded, setLoaded] = useState(false);
 
 	//   useEffect(() => {
 	//     (async() => {
@@ -42,9 +50,9 @@ function App() {
 					<Widgets />
 					<Footer />
 				</Route>
-				<ProtectedRoute path="/test" exact={true}>
-					<CardCreationForm />
-				</ProtectedRoute>
+				<Route path="/test" exact={true}>
+					<DeckEditv2 />
+				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -75,34 +83,67 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-
-        <Route path='/teachers/:teacherId'>
-			<NavBar />
+        <ProtectedRoute path='/teachers/:teacherId'>
+			    {/* <NavBar /> */}
           <FullPageDiv />
+        </ProtectedRoute>
+        <Route path='/teacher/deckPreview'>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
+                <div class='mainDiv'>
+                      <DeckPreview />
+                </div>
+            </div>
+          </div>
         </Route>
         <Route path='/teacher/createClass'>
-        <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <CreateClass />
-                      </div>
-                  </div>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
+                <div class='mainDiv'>
+                      <CreateClass />
+                </div>
+            </div>
           </div>
         </Route>
         <Route path='/teachers/libraries'>
           <div class='fullPageDiv'>
-                  <Banner />
-                  <div class='bodyDiv'>
-                      <SideBar />
-                      <div class='mainDiv'>
-                            <Library />
-                      </div>
-                  </div>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar addToLibrary={true} addCardToDeck={false} createClass={false}/>
+                <div class='mainDiv'>
+                      <Library />
+                </div>
+            </div>
           </div>
         </Route>
-        {/* <Route path='/teachers/:teacherId/cards'>
+        <Route path='/createDeck'>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar addToLibrary={true} addCardToDeck={false} createClass={false}/>
+                <div class='mainDiv'>
+                      <CreateDeck />
+                </div>
+            </div>
+          </div>
+        </Route>
+        <Route path='/createCard'>
+          <div class='fullPageDiv'>
+            <Banner />
+              <div class='bodyDiv'>
+                  <SideBar addToLibrary={false} addCardToDeck={true} createClass={false}/>
+                  <div class='mainDiv'>
+                        <CreateCard />
+                  </div>
+              </div>
+          </div>
+        </Route>
+
+				{/* <Route path='/teachers/:teacherId/cards'>
           <div class='fullPageDiv'>
                   <Banner />
                   <div class='bodyDiv'>

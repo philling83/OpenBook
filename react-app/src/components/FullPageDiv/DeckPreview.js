@@ -7,16 +7,16 @@ import MinorAction from './MinorAction.js'
 
 import './TeacherHomePage.css'
 
-const TeacherHomePage = () => {
+const DeckPreview = () => {
     return (
-        <div class='teacherDiv'>
+        <div className='teacherDiv'>
             <SearchBar />
-            <MajorAction thirdActionDisplay='Students'/>
-            <MinorAction />
+            <MajorAction preview={true} thirdActionDisplay='Students'/>
+            <MinorAction createDeck={true} completeDeck={false} createCard={true}/>
             <YourDecks />
         </div>
 
     )
 }
 
-export default TeacherHomePage;
+export default DeckPreview;

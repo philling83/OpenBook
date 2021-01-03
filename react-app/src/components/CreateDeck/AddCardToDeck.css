@@ -1,0 +1,47 @@
+.checkoutDiv {
+    display: flex;
+    flex-direction: column;
+    height: 24vh;
+    border-top: 2px solid rgba(1, 5, 53, 0.9);
+}
+
+.addedCardsDiv {
+    display: flex;
+    height: 90%;
+}
+
+.addedCards {
+    display: flex;
+    width: 100%;
+    /* height: 30%; */
+    background-color: whitesmoke;
+}
+
+.text {
+    height: 10%;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: rgba(1, 5, 53, 0.9);
+    background-color: whitesmoke;
+    font-size: 18px;
+    align-items: center;
+}
+
+
+
+/* .controlPanel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 15%;
+    background-color: whitesmoke;
+} */
+
+/* .checkOutButton {
+    margin: 10px;
+    height: 40px;
+    width: 90px;
+    color: whitesmoke;
+    background-color: rgba(1, 5, 53, 0.9);
+} */

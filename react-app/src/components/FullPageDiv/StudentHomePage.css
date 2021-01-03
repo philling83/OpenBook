@@ -1,0 +1,26 @@
+.fullPageDiv {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.bodyDiv {
+	height: 93vh;
+	display: flex;
+}
+
+.sideBarDiv {
+	background-color: rgba(5, 13, 133, 0.9);
+}
+
+.mainDiv {
+	width: 100%;
+}
+
+/* .studentDiv {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+} */
