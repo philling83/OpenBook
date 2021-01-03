@@ -7,8 +7,9 @@ const DeckEditv2 = () => {
 	const decks = useSelector((state) => state.deck.decks);
 	const allCards = useSelector((state) => state.cards.cards);
 	const [loaded, setLoaded] = useState(false);
+    const [deckId, setDeckId] = useState("");
 	const [selectedDeck, setSelectedDeck] = useState("");
-	const [deckId, setDeckId] = useState("");
+    const [selectedCards, setSelectedCards] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -16,9 +17,10 @@ const DeckEditv2 = () => {
 		(async () => {
 			await dispatch(deckActions.allDecks());
 			await dispatch(cardActions.allCards());
-			setLoaded(true);
+            setLoaded(true);
+            console.log("selectedCards: ", selectedCards)
 		})();
-	}, [dispatch]);
+	}, [dispatch, selectedCards]);
 
 	useEffect(() => {
 		(async () => {
@@ -27,14 +29,27 @@ const DeckEditv2 = () => {
 	}, [deckId]);
 
 	useEffect(() => {
-		console.log("selectedDeck", selectedDeck);
+		(async() => {
+            setSelectedCards(selectedDeck.cards)
+        })()
 	}, [selectedDeck]);
 
-    const selectDeck = (e) => setDeckId(e.target.id);
+	const selectDeck = (e) => setDeckId(e.target.id);
 
-    const removeCard = (e) => console.log("card id: ",e.target.id);
+	const removeCard = async (e) => {
+		console.log("card id: ", e.target.id);
+		const cardId = e.target.id;
+		const deckId = selectedDeck.id;
+		await dispatch(deckActions.removeCard(cardId, deckId));
+	};
 
-    const addCard = (e) => console.log("card id: ",e.target.id);
+	const addCard = async (e) => {
+		console.log("card id: ", e.target.id);
+		const cardId = e.target.id;
+        const deckId = selectedDeck.id;
+        if (!deckId) return;
+		await dispatch(deckActions.addCard(cardId, deckId));
+	};
 
 	return (
 		loaded && (
@@ -58,7 +73,9 @@ const DeckEditv2 = () => {
 							{selectedDeck.cards.map((card, i) => (
 								<div key={card.title.concat(i)}>
 									<p>{card.title}</p>
-									<button id={card.id} onClick={removeCard}>Remove</button>
+									<button id={card.id} onClick={removeCard}>
+										Remove
+									</button>
 								</div>
 							))}
 						</>
@@ -71,7 +88,9 @@ const DeckEditv2 = () => {
 					{allCards.map((card, i) => (
 						<div key={card.title.concat(i)}>
 							<p>{card.title}</p>
-							<button id={card.id} onClick={addCard}>Add</button>
+							<button id={card.id} onClick={addCard}>
+								Add
+							</button>
 						</div>
 					))}
 				</div>
