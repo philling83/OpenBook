@@ -30,7 +30,7 @@ export const createRoom = (teacherId, formData) => async (dispatch) => {
 
     dispatch(setRoom(resJSON));
 
-    return response;
+    return resJSON;
 };
 
 export const editRoom = (roomId, formData) => async (dispatch) => {

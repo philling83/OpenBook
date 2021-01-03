@@ -29,5 +29,6 @@ class Classroom(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "decks": [deck.to_dict() for deck in self.decks]
+            "decks": [deck.to_dict() for deck in self.decks],
+            "students": [student.to_dict() for student in self.students]
         }

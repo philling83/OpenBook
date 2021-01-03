@@ -22,6 +22,8 @@ import Library from './components/Library/Library';
 import CreateClass from './components/CreateClass/CreateClass';
 import CreateDeck from './components/CreateDeck/CreateDeck';
 import CreateCard from './components/CreateDeck/CardClass';
+import ClassContainer from './components/CreateClass/ClassContainer';
+
 import CardCreationForm from './components/CardCreationForm';
 import DeckEditForm from './components/DeckEditForm';
 import DeckPreview from './components/FullPageDiv/DeckPreview'
@@ -104,7 +106,7 @@ function App() {
             <div class='bodyDiv'>
                 <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
                 <div class='mainDiv'>
-                      <CreateClass />
+                      <ClassContainer />
                 </div>
             </div>
           </div>
