@@ -15,7 +15,7 @@ import FullPageDiv from './components/FullPageDiv';
 import Banner from './components/Banner';
 import SideBar from './components/SideBar';
 import Library from './components/Library';
-import CreateClass from './components/CreateClass';
+import ClassContainer from './components/ClassContainer';
 import CardCreationForm from './components/CardCreationForm';
 
 
@@ -86,7 +86,7 @@ function App() {
                   <div class='bodyDiv'>
                       <SideBar />
                       <div class='mainDiv'>
-                            <CreateClass />
+                            <ClassContainer />
                       </div>
                   </div>
           </div>

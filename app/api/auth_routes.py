@@ -34,6 +34,7 @@ def student_login():
     """
     Logs a user in
     """
+    print('hit student route')
     form = StudentLoginForm()
     print(request.get_json())
     # Get the csrf_token from the request cookie and put it into the
