@@ -18,7 +18,6 @@ const DeckEditv2 = () => {
 			await dispatch(deckActions.allDecks());
 			await dispatch(cardActions.allCards());
             setLoaded(true);
-            console.log("selectedDeck: ", selectedDeck)
 		})();
 	}, [cards]);
 
@@ -31,14 +30,12 @@ const DeckEditv2 = () => {
 	const selectDeck = (e) => setDeckId(e.target.id);
 
 	const removeCard = async (e) => {
-		console.log("card id: ", e.target.id);
 		const cardId = e.target.id;
 		const deckId = selectedDeck.id;
 		return dispatch(deckActions.removeCard(cardId, deckId));
 	};
 
 	const addCard = async (e) => {
-		console.log("card id: ", e.target.id);
 		const cardId = e.target.id;
         const deckId = selectedDeck.id;
         if (!deckId) return;
