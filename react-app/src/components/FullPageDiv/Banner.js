@@ -8,12 +8,14 @@ const Banner = () => {
     return (
         <div className='bannerDiv'>
             <div className='logoDiv'>
-                <NavLink to="/" exact={true} activeClassName="active">
+                <NavLink to="/teachers/:teacherId" style={{textDecoration: 'none'}}>
                     <div className='logoImage'></div>
                 </NavLink>
             </div>
             <div className='userDiv'>
-                <div className='userName'>Guest User</div>
+                <NavLink to="/login" style={{textDecoration: 'none'}}>
+                    <div className='userName'>Guest User</div>
+                </NavLink>
                 {/* <NavLink to="/sign-up" exact={true} activeClassName="active">
                     Sign Up
                 </NavLink> */}

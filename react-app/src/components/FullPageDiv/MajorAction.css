@@ -63,3 +63,35 @@
     transition: 0.6s;
 	cursor: pointer;
 }
+
+.cardDiv {
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	width: 100px;
+	height: 150px;
+	margin-left: 25px;
+	margin-top: 20px;
+	border: 2px solid rgba(1, 5, 53, 0.9);
+}
+
+.cardView {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: whitesmoke;
+	overflow: scroll;
+	border-top: 2px solid rgba(1, 5, 53, 0.9);
+}
+
+.textDiv {
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	color: rgba(1, 5, 53, 0.9);
+	font-size: 20px;
+	margin-top: 10px;
+	height: 30px;
+	width: 100%;
+	background-color: whitesmoke;
+}

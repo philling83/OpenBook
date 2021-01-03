@@ -23,6 +23,7 @@ import CreateDeck from './components/CreateDeck/CreateDeck';
 import CreateCard from './components/CreateDeck/CardClass';
 import CardCreationForm from './components/CardCreationForm';
 import DeckEditForm from './components/DeckEditForm';
+import DeckPreview from './components/FullPageDiv/DeckPreview'
 
 
 function App() {
@@ -85,6 +86,17 @@ function App() {
 			    {/* <NavBar /> */}
           <FullPageDiv />
         </ProtectedRoute>
+        <Route path='/teacher/deckPreview'>
+          <div class='fullPageDiv'>
+            <Banner />
+            <div class='bodyDiv'>
+                <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
+                <div class='mainDiv'>
+                      <DeckPreview />
+                </div>
+            </div>
+          </div>
+        </Route>
         <Route path='/teacher/createClass'>
           <div class='fullPageDiv'>
             <Banner />

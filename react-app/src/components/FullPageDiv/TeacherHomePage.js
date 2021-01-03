@@ -11,7 +11,7 @@ const TeacherHomePage = () => {
     return (
         <div className='teacherDiv'>
             <SearchBar />
-            <MajorAction thirdActionDisplay='Students'/>
+            <MajorAction preview={false} thirdActionDisplay='Students'/>
             <MinorAction createDeck={true} completeDeck={false} createCard={true}/>
             <YourDecks />
         </div>
