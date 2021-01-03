@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import TeacherHomePage from './TeacherHomePage';
 import StudentHomePage from './StudentHomePage';
 import Banner from './Banner';
 import SideBar from './SideBar';
-import Library from './Library';
-import CreateDeck from './CreateDeck'
-import { Redirect } from 'react-router-dom';
+
+import './FullPageDiv.css'
+
 
 const FullPageDiv = () => {
     const currentUser = useSelector(state => state.session.user);
@@ -15,15 +16,13 @@ const FullPageDiv = () => {
         return <Redirect to="/"/>
     } else {
         return (
-            <div class='fullPageDiv'>
+            <div className='fullPageDiv'>
                 <Banner />
-                <div class='bodyDiv'>
-                    <SideBar />
-                    <div class='mainDiv'>
+                <div className='bodyDiv'>
+                    <SideBar addToLibrary={false} addCardToDeck={false} createClass={true}/>
+                    <div className='mainDiv'>
                         {currentUser.teacher ? <TeacherHomePage />
                                              : <StudentHomePage />}
-                        {/* <Library /> */}
-                        {/* <CreateDeck /> */}
                     </div>
                 </div>
             </div>

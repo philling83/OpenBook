@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import './CreateClass.css'
-import * as classActions from '../store/classrooms'
+import * as classActions from '../../store/classrooms'
 
 
 const EditClass = () => {

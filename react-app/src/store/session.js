@@ -29,6 +29,7 @@ export const login = (user) => async (dispatch) => {
 	});
 
 	let userJson = await response.json()
+	if (Object.keys(userJson).includes("errors")) return
 	dispatch(setUser(userJson));
 	// return response;
 };

@@ -16,7 +16,7 @@ def validation_errors_to_error_messages(validation_errors):
     for field in validation_errors:
         for error in validation_errors[field]:
             errorMessages.append(f"{field} : {error}")
-    return errorMessages
+    # return errorMessages
 
 
 @auth_routes.route('/')
@@ -46,7 +46,7 @@ def student_login():
             Student.name == form.data['name']).first()
         login_user(student)
         return student.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    # return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @auth_routes.route('/login', methods=['POST'])

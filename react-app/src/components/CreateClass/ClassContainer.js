@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import CreateClass from './CreateClass'
 import EditClass from './EditClass'
-import './CreateClass.css'
-import { changeCard } from '../store/cards'
+import { changeCard } from '../../store/cards'
 
 
 const ClassContainer = () => {

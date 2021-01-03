@@ -1,8 +1,0 @@
-.student-creation {
-    display: flex;
-    flex-direction: column;
-}
-
-.add-row {
-    max-width: 150px;
-}

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import * as deckActions from "../store/decks"
+import { useDispatch } from "react-redux";
+import * as deckActions from "../../store/decks"
+
+import './SearchBar.css'
 
 const SearchBar = () => {
 	const [term, setTerm] = useState('')

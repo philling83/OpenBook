@@ -1,0 +1,161 @@
+.createCardDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-top: 4px solid rgba(1, 5, 53, 0.9);;
+}
+
+.blankCard {
+    position: relative;
+    margin-top: 35px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+    width: 85%;
+    background-color: rgb(231, 217, 217);
+    font-size: 40px;
+    color:rgba(1, 5, 53, 0.9);
+    overflow-wrap: normal;
+    overflow: hidden;
+    border-radius: 3%;
+    box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
+}
+
+.upperDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+    background-color: rgb(171, 171, 172, 0.9);
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+}
+
+.cardImageDiv {
+    /* border-radius: 7px; */
+    height: 320px;
+    width: 600px;
+    bottom: 310px;
+    background-color: whitesmoke;
+    border: 2px solid rgba(1, 5, 53, 0.5);
+    border-radius: 5px;
+}
+
+.cardImage {
+    /* border-radius: 7px; */
+    /* border-radius: 5%; */
+    width: 100%;
+    height: 100%;
+
+}
+
+.questionDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(231, 217, 217);
+    overflow-wrap: break-word;
+    font-size: 35px;
+}
+
+.subject {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 25px;
+}
+
+.choiceDiv {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(231, 217, 217);
+    font-size: 35px;
+}
+
+.choices {
+    margin-top: 20px;
+}
+
+.answer {
+    position: absolute;
+    bottom: 10px;
+    color: #00a8ff;
+}
+
+.lowerDiv {
+    display: flex;
+}
+
+.inputForm {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    font-size: 25px;
+}
+
+.inputDiv {
+    width: 100%;
+    background-color: rgb(171, 171, 172, 0.9);
+}
+
+.placeholderText {
+    position: absolute;
+    bottom: 170px;
+    right: 65px;
+    font-size: 30px;
+    color: rgba(1, 5, 53, 0.5);
+    /* z-index: -1; */
+}
+
+.inputLabel {
+    margin-top: 12px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 5px;
+    color: whitesmoke;
+    background-color: rgba(1, 5, 53, 0.9);
+}
+
+.inputLabel:hover {
+    overflow: hidden;
+    background-image: linear-gradient(270deg,rgba(1, 5, 53, 0.9),  rgba(0, 168, 255, 0.7));
+    background-size: 400% 400%;
+    animation: TransitioningBackground 10s ease infinite;
+    transition: 0.6s;
+	cursor: pointer;
+}
+
+.inputField {
+    border-radius: 7px;
+    padding-left: 5px;
+    height: 29px;
+    border-right: 5px solid whitesmoke;
+    background-color: whitesmoke;
+    margin-right: 5px;
+    width: 87%;
+    font-size: 24px;
+    margin-left: 10px;
+}
