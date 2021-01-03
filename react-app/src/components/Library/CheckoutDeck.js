@@ -2,9 +2,9 @@ import React from 'react';
 
 const CheckOutDeck = () => {
     return (
-        <div class='checkoutDiv'>
+        <div className='checkoutDiv'>
             <h2>Add Decks to Your Decks</h2>
-            <button class='checkOutButton'>Add Decks</button>
+            <button className='checkOutButton'>Add Decks</button>
         </div>
 
     )

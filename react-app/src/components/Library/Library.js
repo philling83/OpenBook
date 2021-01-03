@@ -7,7 +7,7 @@ import MinorAction from '../FullPageDiv/MinorAction.js'
 
 const Library = () => {
     return (
-        <div class='teacherDiv'>
+        <div className='teacherDiv'>
             <SearchBar />
             <CheckOutDeck />
             <MinorAction />

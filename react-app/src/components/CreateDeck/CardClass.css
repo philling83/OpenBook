@@ -1,0 +1,134 @@
+.createCardDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-top: 4px solid rgba(1, 5, 53, 0.9);;
+}
+
+.blankCard {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    width: 85%;
+    background-color: rgb(231, 217, 217);
+    font-size: 40px;
+    color:rgba(1, 5, 53, 0.9);
+    overflow-wrap: normal;
+    overflow: hidden;
+    border-radius: 3%;
+}
+
+.upperDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    background-color: rgb(171, 171, 172, 0.9);
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+
+.cardImageDiv {
+
+    height: 320px;
+    width: 600px;
+    bottom: 310px;
+    background-color: rgb(231, 217, 217);
+    border-top: 2px solid rgba(1, 5, 53, 0.9);
+}
+
+.cardImage {
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.questionDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(231, 217, 217);
+    overflow-wrap: break-word;
+}
+
+.subject {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.choiceDiv {
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid rgba(1, 5, 53, 0.9);
+    /* border-right: 2px solid rgba(1, 5, 53, 0.9); */
+    height: 100%;
+    width: 100%;
+    background-color: rgb(231, 217, 217);
+}
+
+.choices {
+    margin-top: 20px;
+}
+
+.answer {
+    position: absolute;
+    bottom: 10px;
+    color: #00a8ff;
+}
+
+.lowerDiv {
+    display: flex;
+}
+
+.inputForm {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 25px;
+}
+
+.inputDiv {
+    width: 100%;
+    background-color: rgb(171, 171, 172, 0.9);
+    margin-bottom: 10px;
+
+}
+
+.inputLabel {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 5px;
+    color: whitesmoke;
+    background-color: rgba(1, 5, 53, 0.9);
+}
+
+.inputField {
+    height: 30px;
+    margin-right: 5px;
+    width: 85%;
+    font-size: 25px;
+    margin-left: 10px;
+}

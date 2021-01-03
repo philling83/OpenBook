@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
@@ -13,20 +13,21 @@ import NotFoundPage from "./components/NotFoundPage";
 
 
 
-import Test from './components/test'
+// import Test from './components/test'
 import FullPageDiv from './components/FullPageDiv/FullPageDiv';
 import Banner from './components/FullPageDiv/Banner';
 import SideBar from './components/FullPageDiv/SideBar';
 import Library from './components/Library/Library';
 import CreateClass from './components/CreateClass/CreateClass';
 import CreateDeck from './components/CreateDeck/CreateDeck';
-import CreateCard from './components/CreateDeck/CreateCard';
+import CreateCard from './components/CreateDeck/CardClass';
 import CardCreationForm from './components/CardCreationForm';
+import DeckEditForm from './components/DeckEditForm';
 
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
-	const [loaded, setLoaded] = useState(false);
+	// const [loaded, setLoaded] = useState(false);
 
 	//   useEffect(() => {
 	//     (async() => {
@@ -47,9 +48,9 @@ function App() {
 					<Widgets />
 					<Footer />
 				</Route>
-				<ProtectedRoute path="/test" exact={true}>
-					<CardCreationForm />
-				</ProtectedRoute>
+				<Route path="/test" exact={true}>
+					<DeckEditForm />
+				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -80,10 +81,10 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-        <Route path='/teachers/:teacherId'>
-			    <NavBar />
+        <ProtectedRoute path='/teachers/:teacherId'>
+			    {/* <NavBar /> */}
           <FullPageDiv />
-        </Route>
+        </ProtectedRoute>
         <Route path='/teacher/createClass'>
           <div class='fullPageDiv'>
             <Banner />
@@ -121,7 +122,7 @@ function App() {
           <div class='fullPageDiv'>
             <Banner />
               <div class='bodyDiv'>
-                  <SideBar />
+                  <SideBar createClass={false}/>
                   <div class='mainDiv'>
                         <CreateCard />
                   </div>
