@@ -4,7 +4,6 @@ import * as deckActions from "../store/decks";
 import * as cardActions from "../store/cards";
 import Card from "./Card";
 import "./DeckEditForm.css";
-import { uid } from "react-uid";
 
 
 const DeckEditForm = () => {
@@ -111,7 +110,7 @@ const DeckEditForm = () => {
 				<div className="deck-card-container">
 					{selectedDeck ? (
 						allCards.map((card, i) => (
-							<div className="deck-card" key={uid(card)}>
+							<div className="deck-card" key={card.title.concat(i)}>
 								<Card card={card} />
 								<button id={card.id} onClick={addToDeck}>
 									Add This Card

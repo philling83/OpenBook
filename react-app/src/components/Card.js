@@ -1,5 +1,4 @@
 import React from "react";
-import { uid } from "react-uid";
 
 
 const Card = (props) => {
