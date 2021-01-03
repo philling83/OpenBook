@@ -1,9 +1,6 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
 
-import ControlPanel from './ControlPanel';
-import Card from '../Card'
-
 import './CreateCard.css'
 
 const CreateCard = () => {

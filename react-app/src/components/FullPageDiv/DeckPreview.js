@@ -5,18 +5,18 @@ import SearchBar from './SearchBar.js';
 import MajorAction from './MajorAction.js';
 import MinorAction from './MinorAction.js'
 
-import './StudentHomePage.css'
+import './TeacherHomePage.css'
 
-const StudentHomePage = () => {
+const DeckPreview = () => {
     return (
-        <div className='studentDiv'>
+        <div className='teacherDiv'>
             <SearchBar />
-            <MajorAction preview={false} thirdActionDisplay='Classmates'/>
-            <MinorAction />
+            <MajorAction preview={true} thirdActionDisplay='Students'/>
+            <MinorAction createDeck={true} completeDeck={false} createCard={true}/>
             <YourDecks />
         </div>
 
     )
 }
 
-export default StudentHomePage;
+export default DeckPreview;
