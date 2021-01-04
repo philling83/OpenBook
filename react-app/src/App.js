@@ -50,7 +50,6 @@ function App() {
 				<Route exact path="/">
 					<NavBar setAuthenticated={setAuthenticated} />
 					<Widgets />
-					<Footer />
 				</Route>
 				<Route path="/test" exact={true}>
 					<DeckEditv2 />
