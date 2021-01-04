@@ -8,8 +8,8 @@ const CardCreationForm = () => {
 	const [possible_answers, set_possible_answers] = useState("");
 	const [answer, setAnswer] = useState("");
 	const [image, setImage] = useState("");
-    const createdBy = useSelector(state => state.session.user.id);
-    // let createdBy = 1;
+    // const createdBy = useSelector(state => state.session.user.id);
+    let createdBy = 1;
 
     const dispatch = useDispatch();
 

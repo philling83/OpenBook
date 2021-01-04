@@ -1,35 +1,60 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as deckActions from "../../store/decks";
 
-import './MajorAction.css'
+import "./MajorAction.css";
 
 const MajorAction = (props) => {
+	const deck = useSelector((state) => state.deck.deck);
 
-    return (
-        <div className='majorActionDiv'>
-            {!props.preview &&
-                <>
-                    <div className='majorDiv assignmentDiv'>Current Assignments</div>
-                    <div className='majorDiv studentDiv'>Recent Assignments</div>
-                    <div className='majorDiv videoDiv'>Students</div>
-                </>
-            }
-            {props.preview &&
-                <div className='cardView'>
-                    <div className='textDiv'>Deck Name</div>
-                    <div className='cardDiv'>
-                        <div className='deckText'>
-                            <div>Card name</div>
-                            <div>Created by</div>
-                            <div>11/11/20</div>
-                        </div>
+	useEffect(() => {}, [deck, deck.id]);
 
-                    </div>
+	const dispatch = useDispatch();
 
-                </div>
-            }
-        </div>
-    )
-}
+	const cancelPreview = () => {
+		return dispatch(deckActions.clearDeck());
+	};
 
+	return (
+		<div className="majorActionDiv">
+			{!deck.id && (
+				<>
+					<div className="majorDiv assignmentDiv">Current Assignments</div>
+					<div className="majorDiv studentDiv">Recent Assignments</div>
+					<div className="majorDiv videoDiv">Students</div>
+				</>
+			)}
+			{deck.id && (
+				<>
+					<button className="majorActionCancel" onClick={cancelPreview}>
+						<i className="fas fa-window-close"></i>
+					</button>
+					<div className="cardView">
+						{deck.cards.map((card, i) => (
+							<>
+								<div key={card.title.concat(i)} className="cardDiv">
+									<div className="cardHolder">
+										<div className="previewText">{card.name}</div>
+                                        <div className="previewText">Subject: {card.subject}</div>
+										<div>Question: {card.title}</div>
+										<div className="previewText">
+											{card.possible_answers.map((choice, i) => (
+												<li className="previewChoice" key={choice.concat(i)}>
+													{choice}
+												</li>
+											))}
+										</div>
+                                        <div className="previewText">Answer: {card.answer}</div>
+                                        < div className="previewText">Created By: {deck.user.username}</div>
+									</div>
+								</div>
+							</>
+						))}
+					</div>
+				</>
+			)}
+		</div>
+	);
+};
 
 export default MajorAction;

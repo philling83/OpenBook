@@ -1,6 +1,7 @@
 const GET_DECK = "deck/allCards";
 const DELETE_DECK = "deck/delete";
 const SET_DECKS = "decks";
+const CLEAR_DECK = "deck/clear"
 
 const setDeck = (deck) => {
 	return { type: GET_DECK, payload: deck };
@@ -13,6 +14,10 @@ const removeDeck = () => {
 const setDecks = (decks) => {
     return { type: SET_DECKS, payload: decks}
 };
+
+const resetDeck = () => {
+	return {type: CLEAR_DECK, payload: { id: null, cards: [] }}
+}
 
 export const fetchDeck = (deckId) => async (dispatch) => {
 	const response = await fetch(`/api/decks/${deckId}`);
@@ -84,6 +89,20 @@ export const allDecks = () => async (dispatch) => {
     return response;
 };
 
+export const clearDeck = () => async (dispatch) => {
+	dispatch(resetDeck())
+}
+
+export const getDeckByUserId = (userId) => async (dispatch) => {
+	const response = await fetch(`/api/decks/by_user/${userId}`);
+
+	const resJSON = await response.json();
+
+	dispatch(setDecks(resJSON.decks));
+
+	return response;
+};
+
 export const addCard = (cardId, deckId) => async (dispatch) => {
 	const response = await fetch(`/api/cards/${cardId}/add_to_deck/${deckId}`, {method: 'POST'})
 	const resJSON = await response.json();
@@ -98,7 +117,7 @@ export const removeCard = (cardId, deckId) => async (dispatch) => {
 	return response;
 };
 
-const initialState = { deck: null, decks: null };
+const initialState = { deck: null, decks: null, selected: null };
 
 const deckReducer = (state = initialState, action) => {
 	let newState;
@@ -110,6 +129,11 @@ const deckReducer = (state = initialState, action) => {
             return newState;
 
 		case DELETE_DECK:
+			newState = Object.assign({}, state);
+			newState.deck = action.payload;
+            return newState;
+
+		case CLEAR_DECK:
 			newState = Object.assign({}, state);
 			newState.deck = action.payload;
             return newState;

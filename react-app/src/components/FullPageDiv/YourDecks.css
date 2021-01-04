@@ -50,7 +50,7 @@
 }
 
 .deckDiv:hover {
-	margin-top: 12px;
+	transform: translateY(-5px)
 }
 
 .deckText {

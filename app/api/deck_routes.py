@@ -16,6 +16,15 @@ def get_deck(id):
     return deck.to_dict()
 
 
+@deck_routes.route('/by_user/<id>')
+def get_deck_by_user(id):
+    user_id = id
+
+    decks = Deck.query.filter(Deck.created_by == user_id).all()
+
+    return {"decks": deck.to_dict() for deck in decks}
+
+
 @deck_routes.route('/', methods=['POST'])
 def create_deck():
 

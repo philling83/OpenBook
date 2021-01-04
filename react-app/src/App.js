@@ -54,6 +54,9 @@ function App() {
 				<Route path="/test" exact={true}>
 					<DeckEditv2 />
 				</Route>
+				<Route path="/testCard" exact={true}>
+					<CardCreationForm />
+				</Route>
 				<Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -84,10 +87,10 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-        <ProtectedRoute path='/teachers/:teacherId'>
+        <Route path='/teachers/:teacherId'>
 			    {/* <NavBar /> */}
           <FullPageDiv />
-        </ProtectedRoute>
+        </Route>
         <Route path='/teacher/deckPreview'>
           <div class='fullPageDiv'>
             <Banner />
