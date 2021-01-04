@@ -42,8 +42,8 @@
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
-	width: 100px;
-	height: 130px;
+	width: 130px;
+	height: 100px;
 	margin-left: 25px;
 	margin-top: 20px;
 	border: 2px solid rgba(1, 5, 53, 0.9);
