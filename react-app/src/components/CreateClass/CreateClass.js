@@ -149,7 +149,7 @@ const CreateClass = () => {
                     Secret password for class login 
                     <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
                 </label>
-                <button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>}
+                <button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>
             
             </form>
         </div>

@@ -4,18 +4,19 @@ import * as classActions from '../../store/classrooms'
 
 
 const EditClass = () => {
-//     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-//     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
-//     dispatch(classActions.getRoom(teacher_class_id))
+    const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+    dispatch(classActions.getRoom(teacher_class_id))
 
-//     const teacherId = useSelector(state => state.session.user.id);
-//     let student_info = useSelector(state => state.classroom.room.students)
+    const teacherId = useSelector(state => state.session.user.id);
+    let student_info = useSelector(state => state.classroom.room.students)
+    let classroom_info = useSelector(state => state.classroom.room)
 
-//     const [studentState, updateStudentState] = useState(student_info)
-//     const [newStudents, updateNewStudents] = useState([])
-//     const [password, updatePassword] = useState('')
-//     const [className, setClassName] = useState('')
+    const [studentState, updateStudentState] = useState(student_info)
+    const [newStudents, updateNewStudents] = useState([])
+    const [password, updatePassword] = useState('')
+    const [className, setClassName] = useState(classroom_info.name)
 
 
 //     let className
@@ -29,7 +30,34 @@ const EditClass = () => {
 //     let removeName
     
 
-    
+    const updateNames = (e) => {
+        let temp_name = [...names]
+        temp_name[e.target.id] = e.target.value
+        setNames(temp_name)
+        // console.log(names)
+    }
+
+    const updateClassName = (e) => {
+        setClassName(e.target.value)
+    }
+
+    const removeName = (e) => {
+        e.preventDefault()
+        const removeIndex = e.target.id
+
+        setNames(names.splice(removeIndex, 1))
+        // console.log(names)
+    }
+
+    const updatePassword = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const addRow = (e) => {
+        e.preventDefault()
+        setNames([...names, ''])
+        // console.log(names)
+    }
 
 
 
@@ -72,29 +100,29 @@ const EditClass = () => {
 
 //     }
 
-//     return (
-//         loaded && (<div>
+    return (
+        loaded && (<div>
 
-//             <h1>Create class</h1>
+            <h1>Create class</h1>
     
-//             <form className='student-creation'> 
-//                 <label>
-//                     Class Name
-//                     <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-//                 </label>
-//                 {generateList()}
-//                 <button className='add-row' onClick={addRow}>Add Row</button>
-//                 <label>
-//                     Secret password for class login 
-//                     <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
-//                 </label>
+            <form className='student-creation'> 
+                <label>
+                    Class Name
+                    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
+                </label>
+                {generateList()}
+                <button className='add-row' onClick={addRow}>Add Row</button>
+                <label>
+                    Secret password for class login 
+                    <input type='text' onClick={updatePassword} placeholder='Must change me' />
+                </label>
                 
-//                 <button onClick={handleSubmitEdit}>Edit Your Class!</button>
+                <button onClick={handleSubmitEdit}>Edit Your Class!</button>
             
-//             </form>
-//         </div>
-//         )
-//     )
+            </form>
+        </div>
+        )
+    )
 
     return <div>Test</div>
 }
