@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect, useHistory } from 'react-router-dom'
 
 import SearchBar from '../FullPageDiv/SearchBar'
 
 
 import './CreateClass.css'
 const CreateClass = () => {
+    let history = useHistory()
 
     // const teacher_class_id = useSelector(state => state.session.user.classrooms_id) || null;
     const teacherId = useSelector(state => state.session.user.id);
@@ -134,6 +135,9 @@ const CreateClass = () => {
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(studentData),
         })
+
+
+        history.push('/teachers/:id')
     }
 
     return (
