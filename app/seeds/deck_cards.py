@@ -46,10 +46,44 @@ def seed_deck_cards():
                       possible_answers=['3', '0', '2', '1'], answer='2',
                       created_by=1)
 
-    demo_card9 = Card(title='How do you say hello?', subject='Spanish',
+    demo_card9 = Card(title='How do you say "hello"?', subject='Spanish',
                       possible_answers=['hola', 'gato', 'perro', 'loco'],
                       answer='hola',
                       created_by=1)
+
+    demo_card10 = Card(title='How do you say "no"?', subject='Spanish',
+                       possible_answers=['No', 'Nien', 'Non', 'Null'],
+                       answer='No',
+                       created_by=1)
+
+    demo_card11 = Card(title='How do you say "Thank You"?', subject='Spanish',
+                       possible_answers=['Mas', 'Gracias', 'Gato', 'Loco'],
+                       answer='Gracias',
+                       created_by=1)
+
+    demo_card12 = Card(title='How do you say "Good Morning"?',
+                       subject='Spanish',
+                       possible_answers=['Buenas tardes',
+                                         'Buenas noches',
+                                         'Buenos días'],
+                       answer='Buenos días',
+                       created_by=1)
+
+    demo_card13 = Card(title='How do you say "Good Afternoon"?',
+                       subject='Spanish',
+                       possible_answers=['Buenas tardes',
+                                         'Buenas noches',
+                                         'Buenos días'],
+                       answer='Buenos tardes',
+                       created_by=1)
+
+    demo_card14 = Card(title='How do you say "Good Evening"?',
+                       subject='Spanish',
+                       possible_answers=['Buenas tardes',
+                                         'Buenas noches',
+                                         'Buenos días'],
+                       answer='Buenos noches',
+                       created_by=1)
 
     db.session.add(demo_classroom)
     db.session.commit()
@@ -64,6 +98,11 @@ def seed_deck_cards():
 
     demo_classroom.decks.append(demo_deck)
     demo_deck.cards.append(demo_card9)
+    demo_deck.cards.append(demo_card10)
+    demo_deck.cards.append(demo_card11)
+    demo_deck.cards.append(demo_card12)
+    demo_deck.cards.append(demo_card13)
+    demo_deck.cards.append(demo_card14)
 
     demo_deck2.cards.append(demo_card1)
     demo_deck2.cards.append(demo_card2)
