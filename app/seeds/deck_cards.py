@@ -19,10 +19,34 @@ def seed_deck_cards():
                       created_by=1)
 
     demo_card2 = Card(title='What is 4 + 6 = ?', subject='Math',
-                      possible_answers=['5', '10', '4', '5'], answer='10',
+                      possible_answers=['5', '10', '4', '6'], answer='10',
                       created_by=1)
 
-    demo_card3 = Card(title='How do you say hello?', subject='Spanish',
+    demo_card3 = Card(title='What is 1 + 3 = ?', subject='Math',
+                      possible_answers=['7', '13', '4', '5'], answer='4',
+                      created_by=1)
+
+    demo_card4 = Card(title='What is 6 - 2 = ?', subject='Math',
+                      possible_answers=['3', '2', '4', '5'], answer='4',
+                      created_by=1)
+
+    demo_card5 = Card(title='What is 5 + 1 = ?', subject='Math',
+                      possible_answers=['6', '15', '4', '5'], answer='6',
+                      created_by=1)
+
+    demo_card6 = Card(title='What is 5 - 4 = ?', subject='Math',
+                      possible_answers=['2', '1', '4', '3'], answer='1',
+                      created_by=1)
+
+    demo_card7 = Card(title='What is 1 + 6 = ?', subject='Math',
+                      possible_answers=['7', '0', '4', '5'], answer='7',
+                      created_by=1)
+
+    demo_card8 = Card(title='What is 1 + 1 = ?', subject='Math',
+                      possible_answers=['3', '0', '2', '1'], answer='2',
+                      created_by=1)
+
+    demo_card9 = Card(title='How do you say hello?', subject='Spanish',
                       possible_answers=['hola', 'gato', 'perro', 'loco'],
                       answer='hola',
                       created_by=1)
@@ -39,9 +63,16 @@ def seed_deck_cards():
     db.session.commit()
 
     demo_classroom.decks.append(demo_deck)
-    demo_deck.cards.append(demo_card3)
+    demo_deck.cards.append(demo_card9)
+
     demo_deck2.cards.append(demo_card1)
     demo_deck2.cards.append(demo_card2)
+    demo_deck2.cards.append(demo_card3)
+    demo_deck2.cards.append(demo_card4)
+    demo_deck2.cards.append(demo_card5)
+    demo_deck2.cards.append(demo_card6)
+    demo_deck2.cards.append(demo_card7)
+    demo_deck2.cards.append(demo_card8)
 
     db.session.commit()
 

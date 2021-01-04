@@ -78,12 +78,19 @@
 .cardView {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	height: 100%;
 	background-color: whitesmoke;
-	width: 600px;
+	min-width: 600px;
+	width: 1320px;
+	overflow-x: scroll;
 	/* border-top: 2px solid rgba(1, 5, 53, 0.9); */
+}
+
+.cardHolder {
+	width: 300px;
 }
 
 .textDiv {

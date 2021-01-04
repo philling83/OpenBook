@@ -33,7 +33,7 @@ const MajorAction = (props) => {
 						{deck.cards.map((card, i) => (
 							<>
 								<div key={card.title.concat(i)} className="cardDiv">
-									<div className="deckText">
+									<div className="cardHolder">
 										<div className="previewText">{card.name}</div>
                                         <div className="previewText">Subject: {card.subject}</div>
 										<div>Question: {card.title}</div>
