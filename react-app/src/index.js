@@ -8,7 +8,8 @@ import configureStore from "./store";
 
 
 const preloadedState = {
-	deck: {deck: {cards: []}, decks: null}
+	session: {user: {id: 1}},
+	deck: {deck: {cards: []}, decks: [], selected: null}
 }
 
 const store = configureStore(preloadedState);

@@ -86,10 +86,10 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-        <ProtectedRoute path='/teachers/:teacherId'>
+        <Route path='/teachers/:teacherId'>
 			    {/* <NavBar /> */}
           <FullPageDiv />
-        </ProtectedRoute>
+        </Route>
         <Route path='/teacher/deckPreview'>
           <div class='fullPageDiv'>
             <Banner />
