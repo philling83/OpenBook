@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect, useHistory } from 'react-router-dom'
 
 import SearchBar from '../FullPageDiv/SearchBar'
 
 
 import './CreateClass.css'
 const CreateClass = () => {
+    let history = useHistory()
 
     // const teacher_class_id = useSelector(state => state.session.user.classrooms_id) || null;
     const teacherId = useSelector(state => state.session.user.id);
@@ -134,29 +135,12 @@ const CreateClass = () => {
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(studentData),
         })
+
+
+        history.push('/teachers/:id')
     }
 
     return (
-<<<<<<< HEAD
-        (<div>
-
-            <h1>Create class</h1>
-    
-            <form className='student-creation'> 
-                <label>
-                    Class Name
-                    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-                </label>
-                {generateList()}
-                <button className='add-row' onClick={addRow}>Add Row</button>
-                <label>
-                    Secret password for class login 
-                    <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
-                </label>
-                <button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>
-            
-            </form>
-=======
         (<div className='createClassDiv'>
             <SearchBar />
             {/* <MajorAction preview={true} /> */}
@@ -205,7 +189,6 @@ const CreateClass = () => {
             </div>
 
 
->>>>>>> bf4bb7e27b4a913806987be95f984db1690bf625
         </div>
         )
     )
