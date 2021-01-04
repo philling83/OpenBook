@@ -22,8 +22,9 @@ class CreateCard extends React.Component {
         this.setState({question: event.target.value})
     }
     handleChoicesChange = (event) => {
-        console.log(event.target.value)
-        this.setState({choices: event.target.value})
+        let choices = event.target.value.split(',')
+        this.setState({choices: choices})
+        console.log(this.state.choices)
     }
     handleAnswerChange = (event) => {
         this.setState({answer: event.target.value})
@@ -45,7 +46,10 @@ class CreateCard extends React.Component {
                     </div>
                     <div className='lowerDiv'>
                         <div className='choiceDiv'>
-                            <p className='choices'>{this.state.choices}</p>
+                            {console.log(this.state.choices)}
+                            {this.state.choices.map(choice => (
+                                <p className='choices'>{choice}</p>
+                            ))}
                             <p className='answer'>{this.state.answer}</p>
                         </div>
                         <div className='cardImageDiv'>
@@ -66,7 +70,7 @@ class CreateCard extends React.Component {
                     </label>
                     <label className='inputLabel'>
                         Question:
-                        <input className='inputField' id='question' type='text' value={this.state.qvalue} onChange={this.handleQuestionChange} />
+                        <input className='inputField' id='question' type='text' value={this.state.value} onChange={this.handleQuestionChange} />
                     </label>
                     <label className='inputLabel'>
                         Choices:
@@ -74,11 +78,11 @@ class CreateCard extends React.Component {
                     </label>
                     <label className='inputLabel'>
                         Answer:
-                        <input className='inputField' id='answer' type='text' value={this.statevalue} onChange={this.handleAnswerChange} />
+                        <input className='inputField' id='answer' type='text' value={this.state.value} onChange={this.handleAnswerChange} />
                     </label>
                     <label className='inputLabel'>
                         ImageURL:
-                        <input className='inputField' id='image' type='url' value={this.statvalue} onChange={this.handleImageChange} />
+                        <input className='inputField' id='image' type='url' value={this.state.value} onChange={this.handleImageChange} />
                     </label>
                 </form>
             </div>

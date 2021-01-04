@@ -4,28 +4,30 @@ import CreateClass from './CreateClass'
 import EditClass from './EditClass'
 import { changeCard } from '../../store/cards'
 
+import './CreateClass.css'
+
 
 const ClassContainer = () => {
 
 
     const [editMode, setEditMode] = useState(false)
 
-    
+
 
     const changeMode = (e) => {
         e.preventDefault()
         setEditMode(!editMode)
     }
 
-    
+
 
 
     return (
 
         <div>
             {editMode ? <EditClass /> : <CreateClass />}
-            {editMode ? <button onClick={changeMode}>Change to Create Classroom Form</button>
-            : <button onClick={changeMode}>Change to Edit Classroom Form</button>}
+            {editMode ? <button onClick={changeMode} className='myButton changeMode'>Create Class</button>
+            : <button onClick={changeMode} className='myButton changeMode'>Edit Class</button>}
         </div>
     )
 
