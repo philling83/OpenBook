@@ -4,24 +4,24 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   font-family: avenirroman,Helvetica,Arial,sans-serif;
-  background-color: #00a8ff;
+  /* background-color: #00a8ff; */
   width: 100vw;
 }
 
 .github-links {
   display: flex;
   flex-direction: row;
-  margin-left: 30px;
-  margin-top: 20px;
-  color: white;
+  margin-left: 0px;
+  /* margin-top: 5px; */
+  color:#00a8ff;
   /* border: 1px solid red; */
 }
 
 .footer-container p {
-  color: white;
+  color: #00a8ff;
   font-family: avenirroman,Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 500;

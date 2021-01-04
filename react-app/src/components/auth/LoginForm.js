@@ -43,7 +43,9 @@ const LoginForm = () => {
   return (
     <>
       <div className="login-banner">
-        <img className="logo-image" src={require("../../Assets/logo.png")} alt=""></img>
+        <a href="/">
+          <img className="logo-image" src={require("../../Assets/logo.png")} alt=""></img>
+        </a>
       </div>
       <div className="login-container">
         <div className="teacher-login">
@@ -95,7 +97,7 @@ const LoginForm = () => {
           <StudentLoginForm />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

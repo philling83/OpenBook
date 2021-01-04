@@ -111,7 +111,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           <StudentLoginForm />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

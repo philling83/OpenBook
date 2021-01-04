@@ -9,22 +9,33 @@
 
 .teacher-content {
   position: absolute;
-  margin-top: 150px;
-  margin-left: 825px;
   font-family: avenirheavy,Helvetica,Arial,sans-serif;
   color: #215C89;
-  font-size: 25px;
+  font-size: 50px;
+  margin-left: 370px;
+  margin-top: 185px;
+  /* height: 50px;
+  width: 150px; */
+}
+
+.splash-container {
+  background-image: url("../Assets/book1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  background-color: white;
+  /* border: 1px solid black; */
 }
 
 .widgets {
   display: flex;
-  background-image: url("../Assets/book3.png");
+  /* background-image: url("../Assets/book1.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   height: 600px;
   margin: 0 auto;
   /* border: 1px solid black; */
-  justify-content: space-between
+  justify-content: space-between;
   /* border: 1px solid orange; */
 }
 
@@ -38,9 +49,10 @@
   border-radius: 20px;
   /* justify-content: space-between; */
   flex-direction: column;
+  /* justify-content: space-evenly; */
   align-items: center;
-  margin-left: 300px;
-  margin-top: 300px;
+  margin-left: 850px;
+  margin-top: 200px;
   box-shadow: 0 9px 9px rgba(0,0,0,.16);
   /* position: relative; */
 }
@@ -53,14 +65,12 @@
   width: 225px;
   height: 168px;
   border-radius: 20px;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  margin-right: 300px;
-  margin-top: 300px;
+  margin-right: 200px;
+  margin-top: 200px;
   box-shadow: 0 9px 9px rgba(0,0,0,.16);
-  /* justify-content: center; */
-  /* position: relative; */
 }
 
 .student-widget_title {
@@ -68,18 +78,15 @@
 }
 
 .student-widget h2 {
-  display: block;
-  padding-bottom: 0px;
-  /* margin-top: 20px; */
+  /* display: block; */
   /* border: 1px solid black; */
-  /* color: red */
 }
 
 .student-widget p {
   /* display: block; */
   margin-right: 5px;
   /* padding-right: 15px; */
-  /* border: 1px solid black */
+  /* border: 1px solid black; */
   position: relative;
 }
 
@@ -90,8 +97,8 @@
 }
 
 .code {
-  display: block;
-  margin-bottom: 25px;
+  /* border: 1px solid black; */
+  /* display: block; */
   /* position: relative; */
 }
 
@@ -114,7 +121,7 @@
 .teacher-widget h2 {
   display: block;
   padding: 0px;
-  margin-top: 30.5px;
+  margin-top: 22px;
 }
 
 .teacher-widget p {
@@ -126,4 +133,8 @@
 
 .teacher-widget a:visited{
   color: white;
+}
+
+.teacher-title {
+  /* margin-bottom: 55px; */
 }
