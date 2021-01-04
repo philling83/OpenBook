@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
+import { NavLink } from 'react-router-dom'
+
 import SearchBar from '../FullPageDiv/SearchBar'
-import MinorAction from '../FullPageDiv/MinorAction'
-import MajorAction from '../FullPageDiv/MajorAction'
+
 
 import './CreateClass.css'
 const CreateClass = () => {
@@ -135,23 +136,23 @@ const CreateClass = () => {
         })
     }
 
-
-
-
     return (
         (<div className='createClassDiv'>
             <SearchBar />
             {/* <MajorAction preview={true} /> */}
             <div class='classListDiv'>
                 <div className='blankClass'>
-                    <div className='questionDiv'>
-                        <p className='subject'></p>
-                        <p className='question'></p>
+                    <div className='infoDiv'>
+                        <p className='className'>{className}</p>
+                        <p className='password'>{password}</p>
                     </div>
                     <div className='lowerDiv'>
-                        <div className='choiceDiv'>
-                            <p className='choices'></p>
-                            <p className='answer'></p>
+                        <div className='studentNameDiv'>
+                        {names.map(name => (
+                            <p className='studentName'>
+                                {name}
+                            </p>
+                        ))}
                         </div>
                     </div>
                 </div>

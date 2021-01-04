@@ -82,7 +82,9 @@
 
 .choiceDiv {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color: rgb(231, 217, 217);
@@ -119,7 +121,7 @@
 .placeholderText {
     position: absolute;
     bottom: 170px;
-    right: 65px;
+    right: 55px;
     font-size: 30px;
     color: rgba(1, 5, 53, 0.5);
     /* z-index: -1; */

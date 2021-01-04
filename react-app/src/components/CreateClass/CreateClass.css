@@ -97,6 +97,13 @@
     flex-direction: column;
 }
 
+/* .lowerDiv {
+    display: flex;
+    padding-left: 15px;
+    background-color: yellow;
+    height: 290px;
+    width: 700px;
+} */
 .removeButton {
     margin-right: 10px;
     height: 27px;
@@ -120,7 +127,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 80%;
     width: 700px;
     background-color: rgb(231, 217, 217);
@@ -130,4 +137,36 @@
     overflow: hidden;
     border-radius: 3%;
     box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
+}
+
+.infoDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.className {
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.password {
+    position: absolute;
+    right: 20px;
+}
+
+.studentName {
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 35px;
+    width: 250px;
+}
+
+.studentNameDiv {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    height: 320px;
+    width: 700px;
+    flex-flow: column wrap;
 }
