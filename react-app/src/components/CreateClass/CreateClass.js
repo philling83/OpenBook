@@ -1,19 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
+import SearchBar from '../FullPageDiv/SearchBar'
+import MinorAction from '../FullPageDiv/MinorAction'
+import MajorAction from '../FullPageDiv/MajorAction'
 
+import './CreateClass.css'
 const CreateClass = () => {
-    
+
     // const teacher_class_id = useSelector(state => state.session.user.classrooms_id) || null;
     const teacherId = useSelector(state => state.session.user.id);
     const [className, setClassName] = useState('')
     const [names, setNames] = useState([]);
     const [password, setPassword] = useState('')
+    const [editMode, setEditMode] = useState(false)
     // const [loaded, setLoaded] = useState(false)
     // const [editMode, setEditMode] = useState(false)
 
     // const teacherId = 1
-    
+
     const dispatch = useDispatch();
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
@@ -33,7 +38,7 @@ const CreateClass = () => {
     //             let resStudents = await fetch(`/api/students/from_class/${teacher_class_id}`)
     //             let resStudentsJson = await resStudents.json()
     //             // console.log(resStudentsJson)
-                
+
     //             if (resStudentsJson) {
     //                 let students = resStudentsJson['list_of_students']
     //                 let student_names = students.map((el) => {
@@ -42,12 +47,12 @@ const CreateClass = () => {
     //                 console.log('student names',student_names)
     //                 setNames(student_names)
     //             }
-    
+
     //             let resClassroom = await fetch(`/api/classrooms/${teacher_class_id}`)
-    
+
     //             let resClassroomJson = await resClassroom.json()
     //             // console.log(resClassroomJson)
-    
+
     //             if (resClassroomJson){
     //                 setClassName(resClassroomJson['name'])
     //             }
@@ -90,12 +95,12 @@ const CreateClass = () => {
 
     const generateList = () => {
         return names.map((el, i) => (
-            <label>
-                    Student Name 
-                    <input id={i} type='text' onChange={updateNames} value={el || ''} placeholder='Charlie R.' />
-                    <button onClick={removeName}>Remove Student</button>
+            <label className='studentInputLabel'>
+                    Student Name
+                    <input className='studentInputField' id={i} type='text' onChange={updateNames} value={el || ''} placeholder='Charlie R.' />
+                    <button className='myButton removeButton'onClick={removeName}>Remove</button>
             </label>
-            
+
         ))
     }
 
@@ -130,31 +135,74 @@ const CreateClass = () => {
         })
     }
 
-    
-    
-    
-    return (
-        (<div>
 
-            <h1>Create class</h1>
-    
-            <form className='student-creation'> 
-                <label>
-                    Class Name
-                    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-                </label>
-                {generateList()}
-                <button className='add-row' onClick={addRow}>Add Row</button>
-                <label>
-                    Secret password for class login 
-                    <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
-                </label>
-                <button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>}
-            
-            </form>
+
+
+    return (
+        (<div className='createClassDiv'>
+            <SearchBar />
+            {/* <MajorAction preview={true} /> */}
+            <div class='classListDiv'>
+                <div className='blankClass'>
+                    <div className='questionDiv'>
+                        <p className='subject'></p>
+                        <p className='question'></p>
+                    </div>
+                    <div className='lowerDiv'>
+                        <div className='choiceDiv'>
+                            <p className='choices'></p>
+                            <p className='answer'></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='classButtonDiv'>
+                <div className='completeDiv'>
+                    <h2 className='warningText textDiv'>Warning: Overwrites current class</h2>
+                    <button className='myButton' onClick={handleSubmitCreate} >Complete Class!</button>
+
+                </div>
+                <button className='add-row myButton' onClick={addRow}>Add Row</button>
+            </div>
+            <div className='inputClassDiv'>
+                <form className='studentInputForm'>
+                    <div className='studentLabelDiv'>
+                        <label className='studentInputLabel'>
+                            Class Name
+                            <input className='studentInputField' type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
+                        </label>
+                        <label className='studentInputLabel'>
+                            Password for class login
+                            <input className='studentInputField' type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
+                        </label>
+                    </div>
+                    <div className='listDiv'>
+                        {generateList()}
+
+                    </div>
+                </form>
+            </div>
+
+
         </div>
         )
     )
 }
 
 export default CreateClass;
+
+
+{/* <form className='student-creation'>
+<label>
+    Class Name
+    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
+</label>
+{generateList()}
+
+<label>
+    Secret password for class login
+    <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
+</label>
+<button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>}
+
+</form> */}
