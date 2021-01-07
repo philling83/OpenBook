@@ -10,7 +10,6 @@ import configureStore from "./store";
 
 
 const preloadedState = {
-// 	session: {user: {id: 1}},
 	deck: {deck: {cards: []}, decks: [], selected: null}
 }
 
