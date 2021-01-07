@@ -14,6 +14,19 @@ export const removeUser = () => {
 	};
 };
 
+export const authenticate = () => async (dispatch) => {
+	const response = await fetch("/api/auth/", {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+	const resJSON = await response.json();
+	if (Object.keys(resJSON).includes("errors")) return response;
+	dispatch(setUser(resJSON));
+	return response;
+};
+
+
 export const login = (user) => async (dispatch) => {
 	const { email, password } = user;
 	console.log(email, password)
@@ -29,9 +42,9 @@ export const login = (user) => async (dispatch) => {
 	});
 
 	let userJson = await response.json()
-	if (Object.keys(userJson).includes("errors")) return
+	if (Object.keys(userJson).includes("errors")) return response;
 	dispatch(setUser(userJson));
-	// return response;
+	return response;
 };
 
 export const student_login = (student) => async (dispatch) => {

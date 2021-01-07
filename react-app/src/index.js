@@ -9,10 +9,10 @@ import { Provider } from "react-redux";
 import configureStore from "./store";
 
 
-// const preloadedState = {
+const preloadedState = {
 // 	session: {user: {id: 1}},
-// 	deck: {deck: {cards: []}, decks: [], selected: null}
-// }
+	deck: {deck: {cards: []}, decks: [], selected: null}
+}
 
 const store = configureStore(preloadedState);
 
