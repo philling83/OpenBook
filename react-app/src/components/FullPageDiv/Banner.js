@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import LogoutButton from '../auth/LogoutButton'
 
 
 import './Banner.css'
@@ -21,9 +22,7 @@ const Banner = () => {
                 <NavLink to="/login" style={{textDecoration: 'none'}}>
                     <div className='userName'>{user}</div>
                 </NavLink>
-                {/* <NavLink to="/sign-up" exact={true} activeClassName="active">
-                    Sign Up
-                </NavLink> */}
+                <div><LogoutButton /></div>
             </div>
         </div>
     )
