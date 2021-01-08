@@ -1,5 +1,6 @@
 # OpenBook
 *By Brandon Perry, Jacob Grooms, Philip Ling, Robin Scavo*
+Check out the live version [here](https://openbook-app.herokuapp.com/)
 
 **Table of Contents**
 - [OpenBook](#openbook)
