@@ -54,15 +54,12 @@ const EditClass = () => {
         })
 
         setStudentState(new_list)
-        console.log(studentState)
-        console.log(new_list)
+        
     }
 
     const deleteCurrentStudent = (e) => {
         e.preventDefault()
-        console.log('hit delete student')
         const new_list = studentState.filter(el => {
-            console.log(el)
             if (el.id !== Number(e.target.id)) {
                 return el
             }
@@ -78,15 +75,14 @@ const EditClass = () => {
         return newStudents.map((el,i) => (
             <label className='studentInputLabel'>
                 New Student Name
-                <input className='studentInputField' id={`new-${i}`} type='text' onChange={updateNewStudent} value={el.name} />
-                <button className='myButton removeButton' onClick={deleteNewStudent}>Remove</button>
+                <input className='studentInputField' id={i} type='text' onChange={updateNewStudent} value={el.name} />
+                <button className='myButton removeButton' id={i} onClick={deleteNewStudent}>Remove</button>
             </label>
         ))
     }
 
     const updateNewStudent = (e) => {
-        console.log(e.target.id)
-        const target_id = e.target.id.slice(4)
+        const target_id = e.target.id
         let new_list = newStudents.map((el,i) => {
            
             if (i === Number(target_id)) {
@@ -101,7 +97,16 @@ const EditClass = () => {
     }
 
     const deleteNewStudent = (e) => {
+        e.preventDefault()
+        const target_id = e.target.id
+        const new_list = newStudents.filter((el,i) => {
+            if (i !== Number(target_id)) {
+                return el
+            }
+        })
 
+        setNewStudents(new_list)
+        console.log(new_list)
     }
 
     const addRow = (e) => {
