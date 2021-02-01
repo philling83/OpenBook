@@ -4,127 +4,147 @@ import * as classActions from '../../store/classrooms'
 
 
 const EditClass = () => {
-//     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-//     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
-//     dispatch(classActions.getRoom(teacher_class_id))
+    const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+    // dispatch(classActions.getRoom(teacher_class_id))
 
-//     const teacherId = useSelector(state => state.session.user.id);
-//     let student_info = useSelector(state => state.classroom.room.students)
-//     let classroom_info = useSelector(state => state.classroom.room)
-
-//     const [studentState, updateStudentState] = useState(student_info)
-//     const [newStudents, updateNewStudents] = useState([])
-//     const [password, updatePassword] = useState('')
-//     const [className, setClassName] = useState(classroom_info.name)
-
-
-// //     let className
-// //     let password
-// //     let loaded
-// //     let updateClassName
-// //     let addRow
+    const teacherId = useSelector(state => state.session.user.id);
+    let student_info = useSelector(state => state.classroom.room.students)
+    let classroom_info = useSelector(state => state.classroom.room)
   
-// //     let names
-// //     let updateNames
-// //     let removeName
+
+    const [studentState, setStudentState] = useState(student_info)
+    const [newStudents, setNewStudents] = useState([])
+    const [deletedStudents, setDeletedStudents] = useState([])
+    const [password, setPassword] = useState('')
+    const [className, setClassName] = useState(classroom_info.name)
+    const [loaded, setLoaded] = useState(false)
+
+
+    useEffect(()=> {
+        dispatch(classActions.getRoom(teacher_class_id))
+        setLoaded(true)
+    },[])
+
     
+    const updateClassName = () => {
 
-//     const updateNames = (e) => {
-//         let temp_name = [...names]
-//         temp_name[e.target.id] = e.target.value
-//         setNames(temp_name)
-//         // console.log(names)
-//     }
+    }
 
-//     const updateClassName = (e) => {
-//         setClassName(e.target.value)
-//     }
+    const generateCurrentStudentsList = () => {
+        return studentState.map((el) => (
+            <label className='studentInputLabel' id={el.id}>
+                Student Name 
+                <input className='studentInputField' id={el.id} type='text' onChange={updateCurrentStudents} value={el.name} />
+                <button className='myButton removeButton' id={el.id} onClick={deleteCurrentStudent}>Remove</button>
+            </label>
+        ))
+    }
 
-//     const removeName = (e) => {
-//         e.preventDefault()
-//         const removeIndex = e.target.id
+    const updateCurrentStudents = (e) => {
+        let new_list = studentState.map(el => {
+           
+            if (el.id === Number(e.target.id)) {
+                el.name = e.target.value
+                return el
+            } else {
+                return el
+            }
+        })
 
-//         setNames(names.splice(removeIndex, 1))
-//         // console.log(names)
-//     }
+        setStudentState(new_list)
+        console.log(studentState)
+        console.log(new_list)
+    }
 
-//     const setPassword = (e) => {
-//         setPassword(e.target.value)
-//     }
+    const deleteCurrentStudent = (e) => {
+        e.preventDefault()
+        console.log('hit delete student')
+        const new_list = studentState.filter(el => {
+            console.log(el)
+            if (el.id !== Number(e.target.id)) {
+                return el
+            }
+        })
 
-//     const addRow = (e) => {
-//         e.preventDefault()
-//         setNames([...names, ''])
-//         // console.log(names)
-//     }
+        setStudentState(new_list)
+    }
+
+    const generateNewStudentsList = () => {
+        if (newStudents === []) {
+            return null
+        }
+        return newStudents.map((el,i) => (
+            <label className='studentInputLabel'>
+                New Student Name
+                <input className='studentInputField' id={`new-${i}`} type='text' onChange={updateNewStudent} value={el.name} />
+                <button className='myButton removeButton' onClick={deleteNewStudent}>Remove</button>
+            </label>
+        ))
+    }
+
+    const updateNewStudent = (e) => {
+        console.log(e.target.id)
+        const target_id = e.target.id.slice(4)
+        let new_list = newStudents.map((el,i) => {
+           
+            if (i === Number(target_id)) {
+                el = e.target.value
+                return el
+            } else {
+                return el
+            }
+        })
+
+        setNewStudents(new_list)
+    }
+
+    const deleteNewStudent = (e) => {
+
+    }
+
+    const addRow = (e) => {
+        e.preventDefault()
+        setNewStudents([...newStudents, ''])
+    }
+
+    const updatePassword = () => {
+
+    }
 
 
+    const handleSubmitEdit = () => {
 
-// //     const generateList = () => {
-// //         return names.map((el, i) => (
-// //             <label>
-// //                     Student Name 
-// //                     <input id={i} type='text' onChange={updateNames} value={el || ''} placeholder='Charlie R.' />
-// //                     <button onClick={removeName}>Remove Student</button>
-// //             </label>
-            
-// //         ))
-// //     }
-
-// //     const handleSubmitEdit = async (e) => {
-// //         e.preventDefault()
-
-// //         let classroomData = {
-// //             'name': className,
-// //             'password': password
-// //         }
-        
-
-// //         await dispatch(classActions.editRoom(teacher_class_id, classroomData))
-
-// //         for (let name in names) {
-// //             let studentData = {
-// //                 'name': name,
-// //                 'classroom_id': teacher_class_id
-// //             }
-
-// //             await fetch('/api/students/', {
-// //                 method: 'PUT',
-// //                 headers: { "Content-Type": "application/json"},
-// //                 body: JSON.stringify(studentData),
-// //             })
-
-// //         }
+    }
 
 
-// //     }
+    return (
+        loaded && (<div>
 
-//     return (
-//         loaded && (<div>
-
-//             <h1>Create class</h1>
+            <h1>Create class</h1>
     
-//             <form className='student-creation'> 
-//                 <label>
-//                     Class Name
-//                     <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-//                 </label>
-//                 {generateList()}
-//                 <button className='add-row' onClick={addRow}>Add Row</button>
-//                 <label>
-//                     Secret password for class login 
-//                     <input type='text' onClick={setPassword} placeholder='Must change me' />
-//                 </label>
+            <form className='student-creation'> 
+                <label>
+                    Class Name
+                    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
+                </label>
+                {generateCurrentStudentsList()}
+                {generateNewStudentsList()}
+                <button className='add-row' onClick={addRow}>Add Row</button>
+                <label>
+                    Secret password for class login 
+                    <input type='text' onClick={updatePassword} placeholder='Must change me' />
+                </label>
                 
-//                 <button onClick={handleSubmitEdit}>Edit Your Class!</button>
+                <button onClick={handleSubmitEdit}>Edit Your Class!</button>
             
-//             </form>
-//         </div>
-//         )
-//     )
+            </form>
+        </div>
+        )
+    )
 
-    return <div>Test</div>
+    // return <div>Test</div>
 }
 
 export default EditClass
