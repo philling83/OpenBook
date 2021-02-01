@@ -28,8 +28,8 @@ const EditClass = () => {
     },[])
 
     
-    const updateClassName = () => {
-
+    const updateClassName = (e) => {
+        setClassName(e.target.value)
     }
 
     const generateCurrentStudentsList = () => {
@@ -62,6 +62,8 @@ const EditClass = () => {
         const new_list = studentState.filter(el => {
             if (el.id !== Number(e.target.id)) {
                 return el
+            } else {
+                setDeletedStudents([...deletedStudents, el])
             }
         })
 
@@ -114,8 +116,8 @@ const EditClass = () => {
         setNewStudents([...newStudents, ''])
     }
 
-    const updatePassword = () => {
-
+    const updatePassword = (e) => {
+        setPassword(e.target.value)
     }
 
 
