@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 import * as classActions from '../../store/classrooms'
 
 
 const EditClass = () => {
     const dispatch = useDispatch();
+    let history = useHistory()
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
     // dispatch(classActions.getRoom(teacher_class_id))
@@ -146,6 +148,8 @@ const EditClass = () => {
 
         //Delete removed students
         await dispatch(classActions.deleteStudents(deletedStudents))
+
+        history.push('/teachers/:id')
     }
 
 
