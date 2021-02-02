@@ -1,5 +1,6 @@
 const GET_ROOM = "classroom";
 const REMOVE_ROOM = "classroom/add";
+const ADD_STUDENTS = 'students/add'
 
 const setRoom = (room) => {
 	return { type: GET_ROOM, payload: room };
@@ -8,6 +9,10 @@ const setRoom = (room) => {
 const removeRoom = () => {
 	return { type: REMOVE_ROOM, payload: null };
 };
+
+const addStudents = (students) => {
+    return {type: ADD_STUDENTS, payload: students}
+}
 
 export const getRoom = (roomId) => async (dispatch) => {
 	const response = await fetch(`/api/classrooms/${roomId}`);
@@ -74,6 +79,25 @@ export const removeDeck = (roomId, deckId) => async (dispatch) => {
     return response;
 }
 
+export const createStudents = (classroom_id, list_of_students) => async(dispatch) => {
+    
+    const response = await fetch('/api/students/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify({
+            'list_of_students':list_of_students, 
+            'classroom_id':classroom_id
+        }),
+    })
+
+    let resJson = await response.json()
+    console.log('resJson createStudent', resJson)
+    dispatch(addStudents(resJson['list_of_students']))
+
+    return response
+}
+
+
 const initialState = { room: null };
 
 const roomReducer = (state = initialState, action) => {
@@ -89,6 +113,12 @@ const roomReducer = (state = initialState, action) => {
             newState = Object.assign({}, state);
             newState.room = action.payload;
             return newState;
+
+        case ADD_STUDENTS:
+            newState = Object.assign({}, state)
+            newState.room.students = action.payload;
+
+            return newState
 
 		default:
 			return state;

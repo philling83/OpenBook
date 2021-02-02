@@ -121,8 +121,18 @@ const EditClass = () => {
     }
 
 
-    const handleSubmitEdit = () => {
+    const handleSubmitEdit = (e) => {
+        e.preventDefault()
 
+        //Edit classroom info
+        const classData = {
+            'name': className,
+            'password': password
+        }
+        dispatch(classActions.editRoom(classroom_info.id, classData))
+
+        //Edit student data
+        
     }
 
 
