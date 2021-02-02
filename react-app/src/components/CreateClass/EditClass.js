@@ -9,7 +9,6 @@ const EditClass = () => {
     let history = useHistory()
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
-    // dispatch(classActions.getRoom(teacher_class_id))
 
     const teacherId = useSelector(state => state.session.user.id);
     let student_info = useSelector(state => state.classroom.room.students)
@@ -17,7 +16,6 @@ const EditClass = () => {
   
 
     const [studentState, setStudentState] = useState(student_info)
-    // const [oldStudentState, setOldStudentState] = useState(student_info)
     const [newStudents, setNewStudents] = useState([])
     const [deletedStudents, setDeletedStudents] = useState([])
     const [password, setPassword] = useState('')
@@ -178,7 +176,6 @@ const EditClass = () => {
         )
     )
 
-    // return <div>Test</div>
 }
 
 export default EditClass
