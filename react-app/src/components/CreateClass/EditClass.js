@@ -15,6 +15,7 @@ const EditClass = () => {
   
 
     const [studentState, setStudentState] = useState(student_info)
+    // const [oldStudentState, setOldStudentState] = useState(student_info)
     const [newStudents, setNewStudents] = useState([])
     const [deletedStudents, setDeletedStudents] = useState([])
     const [password, setPassword] = useState('')
@@ -121,7 +122,7 @@ const EditClass = () => {
     }
 
 
-    const handleSubmitEdit = (e) => {
+    const handleSubmitEdit = async (e) => {
         e.preventDefault()
 
         //Edit classroom info
@@ -129,10 +130,18 @@ const EditClass = () => {
             'name': className,
             'password': password
         }
-        dispatch(classActions.editRoom(classroom_info.id, classData))
+        await dispatch(classActions.editRoom(classroom_info.id, classData))
 
         //Edit student data
-        
+        let edited_students = studentState.filter(el => {
+            if (!(el in student_info)) {
+                return el
+            }
+        })
+
+        await dispatch(classActions.editStudents(classroom_info.id, edited_students))
+
+
     }
 
 

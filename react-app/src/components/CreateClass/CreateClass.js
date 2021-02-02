@@ -125,10 +125,6 @@ const CreateClass = () => {
         // console.log(new_class)
         const classroomId = new_class.id
 
-        // const studentData = {
-        //     'list_of_students': names,
-        //     'classroom_id': classroomId
-        // }
 
         await dispatch(classActions.createStudents(classroomId, names))
 
