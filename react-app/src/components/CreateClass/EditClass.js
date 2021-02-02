@@ -141,7 +141,11 @@ const EditClass = () => {
 
         await dispatch(classActions.editStudents(classroom_info.id, edited_students))
 
+        //Add new students
+        await dispatch(classActions.createStudents(classroom_info.id, newStudents))
 
+        //Delete removed students
+        await dispatch(classActions.deleteStudents(deletedStudents))
     }
 
 

@@ -2,6 +2,7 @@ const GET_ROOM = "classroom";
 const REMOVE_ROOM = "classroom/add";
 const ADD_STUDENTS = 'students/add'
 const EDIT_STUDENTS = 'students/edit'
+const DELETE_STUDENTS = 'students/delete'
 
 const setRoom = (room) => {
 	return { type: GET_ROOM, payload: room };
@@ -17,6 +18,10 @@ const addStudents = (students) => {
 
 const changeStudents = (student) => {
     return {type: EDIT_STUDENTS, payload: student}
+}
+
+const destroyStudents = (students) => {
+    return {type: DELETE_STUDENTS, payload: students}
 }
 
 
@@ -125,6 +130,19 @@ export const editStudents = (classroom_id, list_of_students) => async(dispatch) 
     dispatch(changeStudents(student_list))
 }
 
+export const deleteStudents = (list_of_students) => async(dispatch) => {
+
+    for (let student of list_of_students) {
+        await fetch(`/api/students/delete/${student.id}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: null,
+        })
+        
+    }
+    dispatch(destroyStudents(list_of_students))
+}
+
 
 const initialState = { room: null };
 
@@ -157,6 +175,21 @@ const roomReducer = (state = initialState, action) => {
                     }
                 }
             })
+            return newState
+
+        case DELETE_STUDENTS:
+            newState = Object.assign({}, state)
+
+            let deleted_students = action.payload
+            for (let i = 0; i < newState.room.students.length; i++) {
+                for (let deleted of deleted_students) {
+                    if (newState.room.students[i].id === deleted.id) {
+                        newState.room.students.splice(i, 1)
+                        i-=1
+                    }
+                }
+            }
+            
             return newState
 
 		default:
