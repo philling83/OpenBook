@@ -40,7 +40,9 @@ def create_students():
 
         db.session.commit()
 
-        return 'Students successfully added'
+        students = get_students_from_class(request.get_json().get('classroom_id'))
+
+        return students
     except Exception:
         return Exception
 

@@ -125,16 +125,8 @@ const CreateClass = () => {
         // console.log(new_class)
         const classroomId = new_class.id
 
-        const studentData = {
-            'list_of_students': names,
-            'classroom_id': classroomId
-        }
 
-        await fetch('/api/students/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(studentData),
-        })
+        await dispatch(classActions.createStudents(classroomId, names))
 
 
         history.push('/teachers/:id')
