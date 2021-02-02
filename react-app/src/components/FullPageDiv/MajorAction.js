@@ -1,13 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as deckActions from "../../store/decks";
+import * as classActions from '../../store/classrooms'
+import DisplayStudentsModal from './DisplayStudentsModal'
 
 import "./MajorAction.css";
 
 const MajorAction = (props) => {
 	const deck = useSelector((state) => state.deck.deck);
+	const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
 
 	useEffect(() => {}, [deck, deck.id]);
+	
+	useEffect(()=> {
+        dispatch(classActions.getRoom(teacher_class_id))
+    }, [])
+	
+
 
 	const dispatch = useDispatch();
 
@@ -21,7 +30,7 @@ const MajorAction = (props) => {
 				<>
 					<div className="majorDiv assignmentDiv">Current Assignments</div>
 					<div className="majorDiv studentDiv">Recent Assignments</div>
-					<div className="majorDiv videoDiv">Students</div>
+					<div className="majorDiv videoDiv"> <DisplayStudentsModal /> </div>
 				</>
 			)}
 			{deck.id && (
