@@ -30,7 +30,7 @@ const MajorAction = (props) => {
 				<>
 					<div className="majorDiv assignmentDiv">Current Assignments</div>
 					<div className="majorDiv studentDiv">Recent Assignments</div>
-					<div className="majorDiv videoDiv"> <DisplayStudentsModal /> </div>
+					<DisplayStudentsModal /> 
 				</>
 			)}
 			{deck.id && (

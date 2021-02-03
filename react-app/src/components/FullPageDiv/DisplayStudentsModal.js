@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import * as classActions from '../../store/classrooms'
 
+import './DisplayStudentsModal.css'
+
 const customStyles = {
     content : {
         top: '50%',
@@ -43,16 +45,22 @@ const DisplayStudentsModal = () => {
 
     return (
         <div>
-            <button onClick={toggleModal}>Students</button>
+            <div onClick={toggleModal} className="majorDiv videoDiv">Students</div>
             <Modal 
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
                 style={customStyles}
                 contentLabel='Your Students'
             >
-
-                <button onClick={toggleModal}>Close</button>
-                {roomInfo ? displayStudents() : null}
+                {roomInfo ? 
+                    <div className='student_modal__container'>
+                        <button onClick={toggleModal}>Close</button>
+                        <div>
+                            You have {roomInfo.students.length} students
+                        </div> 
+                        {displayStudents()}
+                    </div>
+                : null}
 
             </Modal>
         </div>
