@@ -8,98 +8,115 @@ import Footer from "../Footer";
 import StudentLoginForm from "./StudentLoginForm";
 
 const LoginForm = () => {
-  const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const currentUser = useSelector((state) => state.session.user);
+	const [errors, setErrors] = useState([]);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const currentUser = useSelector((state) => state.session.user);
 
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  const onLogin = async (e) => {
+	const onLogin = async (e) => {
+		e.preventDefault();
+		return dispatch(sessionActions.login({ email, password }));
+	};
+
+	const demoTeacher = (e) => {
     e.preventDefault();
+		return dispatch(sessionActions.login({
+			email: "demo@aa.io",
+			password: "password",
+		}));
+	};
 
-    console.log("SUBMIT", email, password);
-    return dispatch(
+	useEffect(() => {}, [dispatch]);
 
-      sessionActions.login({ email, password })
-    )
+	const updateEmail = (e) => {
+		setEmail(e.target.value);
+	};
 
-  };
+	const updatePassword = (e) => {
+		setPassword(e.target.value);
+	};
 
-  useEffect(() => {}, [dispatch])
+	if (currentUser) {
+		return <Redirect to="/teachers/:id" />;
+	}
 
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  if (currentUser) {
-    return <Redirect to="/teachers/:id" />;
-  }
-
-  return (
-    <>
-      <div className="login-banner">
-        <a href="/">
-          <img className="logo-image" src={require("../../Assets/logo.png")} alt=""></img>
-        </a>
-      </div>
-      <div className="login-container">
-        <div className="teacher-login">
-          <div className="teacher-header">
-            <h1>Teachers</h1>
-            <h2>Log In</h2>
-          </div>
-          <div className="teacher-login-form-container">
-            <form onSubmit={onLogin}>
-              <div>
-                {errors.map((error) => (
-                  <div>{error}</div>
-                ))}
-              </div>
-              <div className="teacher-form-label">
-                <input
-                  className="teacher-input"
-                  name="email"
-                  type="text"
-                  placeholder="Email"
-                  value={email}
-                  onChange={updateEmail}
-                />
-              </div>
-              <div className="teacher-form-label">
-                <input
-                  className="teacher-input"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={updatePassword}
-                />
-              </div>
-              <div className="submit">
-                <button className="submit-button" type="submit">Login</button>
-              </div>
-            </form>
-          </div>
-          <p className="teacher-footer">Don't have an account?
-          <a href="/sign-up" className="sign-up-link"> Sign up</a>
-          </p>
-        </div>
-        <div className="student-login">
-          <div className="student-header">
-            <h1>Students</h1>
-			      <h2>Join a Class</h2>
-          </div>
-          <StudentLoginForm />
-        </div>
-      </div>
-      {/* <Footer /> */}
-    </>
-  );
+	return (
+		<>
+			<div className="login-banner">
+				<a href="/">
+					<img
+						className="logo-image"
+						src={require("../../Assets/logo.png")}
+						alt=""
+					></img>
+				</a>
+			</div>
+			<div className="login-container">
+				<div className="teacher-login">
+					<div className="teacher-header">
+						<h1>Teachers</h1>
+						<h2>Log In</h2>
+					</div>
+					<div className="teacher-login-form-container">
+						<form onSubmit={onLogin}>
+							<div>
+								{errors.map((error) => (
+									<div>{error}</div>
+								))}
+							</div>
+							<div className="teacher-form-label">
+								<input
+									className="teacher-input"
+									name="email"
+									type="text"
+									placeholder="Email"
+									value={email}
+									onChange={updateEmail}
+								/>
+							</div>
+							<div className="teacher-form-label">
+								<input
+									className="teacher-input"
+									name="password"
+									type="password"
+									placeholder="Password"
+									value={password}
+									onChange={updatePassword}
+								/>
+							</div>
+							<div className="submit">
+								<button className="submit-button" type="submit">
+									Login
+								</button>
+							</div>
+							<div className="submit">
+								<button onClick={demoTeacher} className="submit-button">
+									Demo Teacher
+								</button>
+							</div>
+						</form>
+					</div>
+					<p className="teacher-footer">
+						Don't have an account?
+						<a href="/sign-up" className="sign-up-link">
+							{" "}
+							Sign up
+						</a>
+					</p>
+				</div>
+				<div className="student-login">
+					<div className="student-header">
+						<h1>Students</h1>
+						<h2>Join a Class</h2>
+					</div>
+					<StudentLoginForm />
+				</div>
+			</div>
+			{/* <Footer /> */}
+		</>
+	);
 };
 
 export default LoginForm;

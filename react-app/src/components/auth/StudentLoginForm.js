@@ -12,10 +12,15 @@ const StudentLoginForm = () => {
 
 	const onLogin = async (e) => {
 		e.preventDefault();
-		console.log("click");
-
-		// // TODO: handle student redux
 		return dispatch(sessionActions.student_login({ name, password }));
+	};
+
+	const demoStudent = (e) => {
+		e.preventDefault();
+		return dispatch(sessionActions.student_login({
+			name: "Demo Student",
+			password: "password"
+		}))
 	};
 
 	const updateName = (e) => {
@@ -55,7 +60,14 @@ const StudentLoginForm = () => {
 						/>
 					</div>
 					<div className="join-class">
-						<button className="join-class-button" type="submit">Join Class</button>
+						<button className="join-class-button" type="submit">
+							Join Class
+						</button>
+					</div>
+					<div className="join-class">
+						<button onClick={demoStudent} className="join-class-button">
+							Demo Student
+						</button>
 					</div>
 				</form>
 			</div>
