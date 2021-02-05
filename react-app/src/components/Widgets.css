@@ -1,110 +1,97 @@
-.student-content {
-  position: absolute;
-  margin-top: 150px;
-  margin-left: 125px;
-  font-family: avenirheavy,Helvetica,Arial,sans-serif;
-  color: #215C89;
-  font-size: 25px;
-}
-
-.teacher-content {
-  position: absolute;
-  font-family: avenirheavy,Helvetica,Arial,sans-serif;
-  color: #215C89;
-  font-size: 50px;
-  margin-left: 370px;
-  margin-top: 185px;
-  /* height: 50px;
-  width: 150px; */
-}
-
 .splash-container {
   background-image: url("../Assets/book1.jpg");
   background-size: cover;
   background-position: center;
-  height: 800px;
+  height: 100vh;
   background-color: white;
+  /* border: 1px solid black; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.splash-container_content {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  align-items: center;
+  position: absolute;
+  width: 65%;
+  margin-top: 150px;
+  margin-left: 150px;
+}
+
+.teacher-content {
+  font-family: avenirheavy,Helvetica,Arial,sans-serif;
+  color: #215C89;
+  font-size: 50px;
   /* border: 1px solid black; */
 }
 
 .widgets {
   display: flex;
-  /* background-image: url("../Assets/book1.jpg");
-  background-size: cover;
-  background-position: center; */
-  height: 600px;
-  margin: 0 auto;
-  /* border: 1px solid black; */
+  width: 48%;
   justify-content: space-between;
-  /* border: 1px solid orange; */
+  /* border: 1px solid red; */
 }
 
 .student-widget {
   display: flex;
-  /* border: 1px solid black; */
+  /* border: 1px solid green; */
   color: white;
   width: 225px;
-  height: 168px;
   background-color: #F26C59;
   border-radius: 20px;
-  /* justify-content: space-between; */
   flex-direction: column;
-  /* justify-content: space-evenly; */
   align-items: center;
-  margin-left: 850px;
-  margin-top: 200px;
   box-shadow: 0 9px 9px rgba(0,0,0,.16);
-  /* position: relative; */
+}
+
+.student-login_form {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.student-form_input {
+  border-radius: 8px;
+  height: 30px;
+}
+
+.student-form_submit {
+  border-radius: 8px;
+  height: 40px;
+  width: 164.8px;
+  background-color: #e74d1f;
+  color: white;
+}
+
+.student-form_submit:hover {
+  background-color: #b12900;
+  cursor: pointer;
 }
 
 .teacher-widget {
   background-color: #7ADB85;
   display: flex;
-  /* border: 1px solid black; */
+  /* border: 1px solid red; */
   color: white;
   width: 225px;
-  height: 168px;
   border-radius: 20px;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  margin-right: 200px;
-  margin-top: 200px;
   box-shadow: 0 9px 9px rgba(0,0,0,.16);
 }
 
-.student-widget_title {
-  padding: 0px;
-}
-
-.student-widget h2 {
-  /* display: block; */
+.teacher-title {
   /* border: 1px solid black; */
-}
-
-.student-widget p {
-  /* display: block; */
-  margin-right: 5px;
-  /* padding-right: 15px; */
-  /* border: 1px solid black; */
-  position: relative;
-}
-
-.full-name {
-  /* display: block; */
   margin-top: 0px;
-  margin-bottom: 5px;
-}
-
-.code {
-  /* border: 1px solid black; */
-  /* display: block; */
-  /* position: relative; */
 }
 
 .signup-button {
-  margin-top: 0px;
-  margin-bottom: 20px;
   background-color: #56A978;
   color: white;
   border-radius: 8px;
@@ -118,23 +105,34 @@
   cursor: pointer;
 }
 
-.teacher-widget h2 {
-  display: block;
-  padding: 0px;
-  margin-top: 22px;
-}
-
-.teacher-widget p {
-  padding-bottom: 15px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  /* border: 1px solid black; */
-}
-
 .teacher-widget a:visited{
   color: white;
 }
 
-.teacher-title {
-  /* margin-bottom: 55px; */
+@media screen and (max-width: 1000px) {
+
+  .splash-container_content {
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid green; */
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  .widgets {
+    margin-right: 100px;
+
+  }
+
+  .student-form_input {
+    width: 125px;
+  }
+
+  .student-form_submit {
+    width: 133px;
+  }
+
+  .signup-button {
+    width: 100px;
+  }
 }

@@ -29,10 +29,7 @@ const Widgets = () => {
 	return (
 		<>
 			<div className="splash-container">
-				<FadeInDownDiv>
-					{/* <div className="student-content">
-          <h3>You'll wonder how you learned without it</h3>
-        </div> */}
+				<FadeInDownDiv className='splash-container_content'>
 					<div className="teacher-content">
 						<h3>OpenBook</h3>
 					</div>
@@ -45,34 +42,43 @@ const Widgets = () => {
 								<p>Join a lesson</p>
 							</div>
 							<div>
-								<form className="full-name" onSubmit={studentLogin}>
+								<form className="student-login_form" onSubmit={studentLogin}>
 									<input
+										className="student-form_input"
 										value={name}
 										type="text"
-										placeholder="Enter Full Name"
+										placeholder="Enter FULL NAME"
 										onChange={(e) => setName(e.target.value)}
 									/>
 
 									<input
+										className="student-form_input"
 										value={password}
 										type="password"
-										placeholder="Enter Password"
+										placeholder="Enter CODE"
 										onChange={(e) => setPassword(e.target.value)}
 									/>
-
-                  <button hidden type="submit"></button>
+									<div>
+                  						<button className="student-form_submit" type="submit">JOIN</button>
+									</div>
 								</form>
 							</div>
 						</div>
 						<div className="teacher-widget">
-							<h2 className="teacher-title">TEACHERS</h2>
-							<a href="/sign-up">
-								<button className="signup-button">Sign up for FREE</button>
-							</a>
-							<p>
-								<a>or </a>
-								<a href="/login">Login</a>
-							</p>
+							<div className="teacher-title_div">
+								<h2 className="teacher-title">TEACHERS</h2>
+							</div>
+							<div className="teacher-signup_div">
+								<a href="/sign-up">
+									<button className="signup-button">Sign up for FREE</button>
+								</a>
+							</div>
+							<div className="teacher-login_div">
+								<p>
+									<a>or </a>
+									<a href="/login">Login</a>
+								</p>
+							</div>
 						</div>
 					</div>
 				</FadeInDownDiv>
