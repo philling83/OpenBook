@@ -36,6 +36,7 @@ def create_card():
     # try:
     print(request)
     new_card = Card()
+    print('hit card_routes')
 
     new_card.title = request.get_json().get('title')
     new_card.subject = request.get_json().get('subject')
