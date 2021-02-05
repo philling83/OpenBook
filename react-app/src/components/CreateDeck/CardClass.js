@@ -22,11 +22,8 @@ const CreateCard = () => {
     const [choices, setChoices] = useState([])
     const [answer, setAnswer] = useState('')
     const [image, setImage] = useState('Upload Image Here')
-    console.log(subject)
-    console.log(title)
-    console.log(choices)
-    console.log(answer)
-    console.log(image)
+    const [confirm, setConfirm] = useState(false)
+   
 
 
 
@@ -88,11 +85,26 @@ const CreateCard = () => {
             'created_by': teacher_id
         }
 
-        console.log(formData)
+        dispatch(cardActions.addCard(formData))
+        userFeedback()
+        clearInputs()
 
-        return dispatch(cardActions.addCard(formData))
     }
 
+    const clearInputs = () => {
+        setImage('Upload Image Here')
+        setSubject('')
+        setTitle('')
+        setChoices([])
+        setAnswer('')
+    }
+
+    const userFeedback = () => {
+        setConfirm(true)
+        setTimeout(() => {
+            setConfirm(false)
+        }, 2000);
+    }
 
 
     
@@ -101,6 +113,7 @@ const CreateCard = () => {
             <div class='upperDiv'>
                 <div className='blankCard'>
                     <div className='questionDiv'>
+                        {confirm ? <p>Card Successfully Submitted</p> : null}
                         <p className='subject'>{subject}</p>
                         <p className='question'>{title}</p>
                     </div>
@@ -125,23 +138,23 @@ const CreateCard = () => {
                 <form className='inputForm'>
                     <label className='inputLabel'>
                         Subject:
-                        <input className='inputField' id='subject' type='text' onChange={handleSubjectChange} />
+                        <input className='inputField' id='subject' value={subject} type='text' onChange={handleSubjectChange} />
                     </label>
                     <label className='inputLabel'>
                         Question:
-                        <input className='inputField' id='question' type='text' onChange={handleQuestionChange} />
+                        <input className='inputField' id='question' value={title} type='text' onChange={handleQuestionChange} />
                     </label>
                     <label className='inputLabel'>
                         Choices:
-                        <input className='inputField' id='choices' type='text' val onChange={handleChoicesChange} />
+                        <input className='inputField' id='choices' value={choices} type='text' val onChange={handleChoicesChange} />
                     </label>
                     <label className='inputLabel'>
                         Answer:
-                        <input className='inputField' id='answer' type='text' onChange={handleAnswerChange} />
+                        <input className='inputField' id='answer' value={answer} type='text' onChange={handleAnswerChange} />
                     </label>
                     <label className='inputLabel'>
                         ImageURL:
-                        <input className='inputField' id='image' type='url' onChange={handleImageChange} />
+                        <input className='inputField' id='image' value={image} type='url' onChange={handleImageChange} />
                     </label>
                     <button onClick={handleSubmit}>Submit</button>
                 </form>
