@@ -53,6 +53,11 @@
 	transform: translateY(-5px)
 }
 
+.deckDiv img {
+	height: 100%;
+	width: auto;
+}
+
 .deckText {
 	height: 60px;
 	display: flex;
