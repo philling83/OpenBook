@@ -34,8 +34,10 @@ export const allCards = () => async(dispatch) => {
 }
 
 export const addCard = (card) => async(dispatch) => {
+    console.log('hit addCard')
     const response = await fetch('/api/cards/', {method:'POST', headers: {'Content-Type':'application/json'} ,body: JSON.stringify(card)})
     const responseJson = await response.json()
+    console.log(responseJson)
     dispatch(newCard(responseJson))
 
     return response
@@ -102,8 +104,8 @@ const cardReducer = (state = {cards:null}, action) => {
             console.log('new state', new_state)
             console.log('payload', action.payload)
             for (let index in new_state.cards) {
-                console.log('hit for loop')
-                console.log('index', index)
+                // console.log('hit for loop')
+                // console.log('index', index)
                 if (new_state.cards[index].id === action.payload) {
                     console.log('hit if statement')
                     new_state.cards.splice(index, 1)
