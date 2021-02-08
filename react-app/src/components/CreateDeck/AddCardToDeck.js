@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useStore } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 
 import './AddCardToDeck.css';
+
+import * as cardActions from '../../store/cards'
 
 const AddCardToDeck = () => {
     let cards = useSelector(state => state.cards.cards_to_add)
     const [cardsToAdd, setCardsToAdd] = useState([...cards])
+    const dispatch = useDispatch()
 
     let store = useStore()
 
@@ -13,13 +16,17 @@ const AddCardToDeck = () => {
         setCardsToAdd([...cards])
     })
 
-
+    const removeCard = (e) => {
+        dispatch(cardActions.RemoveCardToAdd(cards[e.target.id].id))
+        setCardsToAdd(cardsToAdd.filter(card => card.id !== cards[e.target.id].id))
+        
+    }
    
 
     const displayCards = () => {
         return cardsToAdd.map((card, i) => {
             return (
-                <div className='addedCards' id={i}>
+                <div className='addedCards' id={i} onClick={removeCard}>
                     {console.log('hit display cards')}
                     <div className='addedCardText' id={i}>
                         <div id={i}>{card.title}</div>

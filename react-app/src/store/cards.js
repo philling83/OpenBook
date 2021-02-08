@@ -134,11 +134,12 @@ const cardReducer = (state = {cards:null, cards_to_add: []}, action) => {
 
         case REMOVE_CARD_TO_ADD:
             new_state = Object.assign({}, state)
-            new_state.cards_to_add.filter(card => {
+            let new_cards_to_add = new_state.cards_to_add.filter(card => {
                 if (card.id !== Number(action.payload)) {
                     return card
                 }
             })
+            new_state.cards_to_add = new_cards_to_add
             return new_state
 
         default:
