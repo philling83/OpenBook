@@ -1,21 +1,28 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import * as cardActions from '../../store/cards'
 
 const YourCards = () => {
     let cards = useSelector(state => state.cards.cards)
-    console.log(cards)
+    const dispatch = useDispatch()
+    
+    const addCard = (e) => {
+        console.log(cards[e.target.id])
+        console.log(e.target.id)
+        dispatch(cardActions.AddCardToAdd(cards[e.target.id]))
+    }
 
     const displayCards = () => {
-        return cards.map(card => {
+        return cards.map((card, i) => {
             return (
-                <div className='deckDiv'>
-                    <div className='deckText'>
-                        <div>{card.title}</div>
+                <div className='deckDiv' id={i} onClick={addCard}>
+                    <div className='deckText' id={i}>
+                        <div id={i}>{card.title}</div>
                         {/* <div>Created by</div>
                         <div>11/11/20</div> */}
                     </div>
-                    <div className='deckImage'>
-                        {card.image ? <img src={card.image} alt=""></img> : null}
+                    <div className='deckImage' id={i}>
+                        {card.image ? <img src={card.image} id={i} alt=""></img> : null}
                     </div>
                 </div>
             )

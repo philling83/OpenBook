@@ -3,6 +3,8 @@ const GET_CARDS = 'cards-all'
 const ADD_CARD = 'add-card'
 const DELETE_CARD = 'delete-card'
 const EDIT_CARD = 'edit-card'
+const ADD_CARD_TO_ADD = 'add-card-to-add'
+const REMOVE_CARD_TO_ADD = 'remove-card-to-add'
 
 const setCards = (cards) => {
     return {type: GET_CARDS, payload: cards}
@@ -18,6 +20,14 @@ const editCard = (card) => {
 
 const deleteCard = (card_id) => {
     return {type: DELETE_CARD, payload: card_id}
+}
+
+const addCardToAddAction = (card) => {
+    return {type: ADD_CARD_TO_ADD, payload: card}
+}
+
+const removeCardToAddAction = (card_id) => {
+    return {type: REMOVE_CARD_TO_ADD, payload: card_id}
 }
 
 
@@ -64,16 +74,20 @@ export const removeCard = (card_id) => async(dispatch) => {
     dispatch(deleteCard(card_id))
 
     return 'succeeded'
+}
 
+export const AddCardToAdd = (card) => async(dispatch) => {
+    dispatch(addCardToAddAction(card))
+}
 
+export const RemoveCardToAdd = (card_id) => async(dispatch) => {
+    dispatch(removeCardToAddAction(card_id))
 }
 
 
 
 
-
-
-const cardReducer = (state = {cards:null}, action) => {
+const cardReducer = (state = {cards:null, cards_to_add: []}, action) => {
     let new_state
 
     switch(action.type) {
@@ -111,6 +125,20 @@ const cardReducer = (state = {cards:null}, action) => {
                     new_state.cards.splice(index, 1)
                 }
             }
+            return new_state
+
+        case ADD_CARD_TO_ADD:
+            new_state = Object.assign({}, state)
+            new_state.cards_to_add.push(action.payload)
+            return new_state
+
+        case REMOVE_CARD_TO_ADD:
+            new_state = Object.assign({}, state)
+            new_state.cards_to_add.filter(card => {
+                if (card.id !== Number(action.payload)) {
+                    return card
+                }
+            })
             return new_state
 
         default:
