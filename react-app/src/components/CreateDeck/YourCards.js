@@ -7,8 +7,6 @@ const YourCards = () => {
     const dispatch = useDispatch()
     
     const addCard = (e) => {
-        console.log(cards[e.target.id])
-        console.log(e.target.id)
         dispatch(cardActions.AddCardToAdd(cards[e.target.id]))
     }
 

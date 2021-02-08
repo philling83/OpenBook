@@ -77,11 +77,11 @@ export const removeCard = (card_id) => async(dispatch) => {
 }
 
 export const AddCardToAdd = (card) => async(dispatch) => {
-    dispatch(addCardToAddAction(card))
+    return dispatch(addCardToAddAction(card))
 }
 
 export const RemoveCardToAdd = (card_id) => async(dispatch) => {
-    dispatch(removeCardToAddAction(card_id))
+    return dispatch(removeCardToAddAction(card_id))
 }
 
 

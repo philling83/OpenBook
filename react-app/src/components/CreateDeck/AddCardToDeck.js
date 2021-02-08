@@ -1,15 +1,26 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useStore } from 'react-redux';
 
 import './AddCardToDeck.css';
 
 const AddCardToDeck = () => {
     let cards = useSelector(state => state.cards.cards_to_add)
+    const [cardsToAdd, setCardsToAdd] = useState([...cards])
+
+    let store = useStore()
+
+    store.subscribe(()=> {
+        setCardsToAdd([...cards])
+    })
+
+
+   
 
     const displayCards = () => {
-        return cards.map((card, i) => {
+        return cardsToAdd.map((card, i) => {
             return (
                 <div className='addedCards' id={i}>
+                    {console.log('hit display cards')}
                     <div className='addedCardText' id={i}>
                         <div id={i}>{card.title}</div>
                         {/* <div>Created by</div>
@@ -22,6 +33,8 @@ const AddCardToDeck = () => {
             )
         })
     }
+
+   
 
     return (
         <div className='checkoutDiv'>
