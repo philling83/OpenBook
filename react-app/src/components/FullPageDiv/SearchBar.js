@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as deckActions from "../../store/decks"
 
@@ -9,28 +9,31 @@ const SearchBar = () => {
 
 	const dispatch = useDispatch()
 
-    const searchDecks = async (e) => {
-		e.preventDefault();
-		return dispatch(deckActions.allDecks());
+	useEffect(() => {
+		dispatch(deckActions.searchDecks(term));
+	}, [term])
 
-	};
+    // const searchDecks = async (e) => {
+	// 	e.preventDefault();
+	// 	return dispatch(deckActions.searchDecks(term));
+	// };
 
 	const updateValue = (event) => {
 		setTerm(event.target.value)
 	};
 
 	return (
-		<form onSubmit={searchDecks}>
+		// <form onSubmit={searchDecks}>
 			<div className="searchBarDiv">
 				<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)"
 				value={term}
 				onChange={updateValue}
 				/>
-				<button className="searchBarButton">
+				{/* <button className="searchBarButton">
 					<i class="fas fa-arrow-right"></i>
-				</button>
+				</button> */}
 			</div>
-		</form>
+		// </form>
 	);
 };
 

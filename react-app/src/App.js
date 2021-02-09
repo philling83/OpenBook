@@ -44,8 +44,11 @@ function App() {
 			{/* <NavBar setAuthenticated={setAuthenticated} /> */}
 			<Switch>
 				<Route exact path="/">
-					<NavBar setAuthenticated={setAuthenticated} />
-					<Widgets />
+					<LoginForm
+					// authenticated={authenticated}
+					// setAuthenticated={setAuthenticated}
+					/>
+					<Footer />
 				</Route>
 				<Route path="/test" exact={true}>
 					<DeckEditv2 />
@@ -53,12 +56,12 @@ function App() {
 				<Route path="/testCard" exact={true}>
 					<CardCreationForm />
 				</Route>
-				<Route path="/login" exact={true}>
+				{/* <Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
 					// setAuthenticated={setAuthenticated}
 					/>
-				</Route>
+				</Route> */}
 				<Route path="/login/student" exact={true}>
 					<StudentLoginForm
 						authenticated={authenticated}
