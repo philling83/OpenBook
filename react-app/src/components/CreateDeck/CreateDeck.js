@@ -6,6 +6,7 @@ import YourCards from './YourCards'
 import SearchBar from '../FullPageDiv/SearchBar.js';
 import MinorAction from '../FullPageDiv/MinorAction.js';
 import AddCardToDeck from './AddCardToDeck';
+import DeckInfoCreate from './DeckInfoCreate'
 import * as cardActions from '../../store/cards'
 import { useDispatch } from 'react-redux';
 
@@ -21,6 +22,7 @@ const CreateDeck = () => {
         <div className='teacherDiv'>
             <SearchBar />
             <AddCardToDeck />
+            <DeckInfoCreate />
             <MinorAction createDeck={false} completeDeck={true} createCard={true}/>
             <YourCards />
             {/* <PublicCards /> */}
