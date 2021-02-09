@@ -7,8 +7,8 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: avenirroman,Helvetica,Arial,sans-serif;
-  /* background-color: #00a8ff; */
   width: 100vw;
+  color: #035e8b;
 }
 
 .github-links {

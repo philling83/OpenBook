@@ -9,7 +9,7 @@ import './Banner.css'
 const Banner = () => {
     const currentUser = useSelector(state => state.session.user);
     const user = currentUser.username
-    console.log(user)
+    // console.log(user)
 
     return (
         <div className='bannerDiv'>

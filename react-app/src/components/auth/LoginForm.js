@@ -67,7 +67,6 @@ const LoginForm = () => {
 			</div>
 			<div className="login-container">
 				<FadeInLeftDiv>
-
 					<div className="teacher-login">
 						<div className="teacher-header">
 							<h1>Teachers</h1>

@@ -11,7 +11,7 @@ const SearchBar = () => {
 
 	useEffect(() => {
 		dispatch(deckActions.searchDecks(term));
-	}, [term])
+	}, [dispatch, term])
 
     // const searchDecks = async (e) => {
 	// 	e.preventDefault();

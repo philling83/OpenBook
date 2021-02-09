@@ -15,7 +15,7 @@ const CreateDeck = () => {
 
     useEffect(() => {
         dispatch(cardActions.allCards())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className='teacherDiv'>

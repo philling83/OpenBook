@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import React, { useState } from 'react'
+// import {useDispatch, useSelector} from 'react-redux'
 import CreateClass from './CreateClass'
 import EditClass from './EditClass'
-import { changeCard } from '../../store/cards'
+// import { changeCard } from '../../store/cards'
 
 import './CreateClass.css'
 
@@ -12,15 +12,10 @@ const ClassContainer = () => {
 
     const [editMode, setEditMode] = useState(false)
 
-
-
     const changeMode = (e) => {
         e.preventDefault()
         setEditMode(!editMode)
     }
-
-
-
 
     return (
 
@@ -30,9 +25,6 @@ const ClassContainer = () => {
             : <button onClick={changeMode} className='myButton changeMode'>Edit Class</button>}
         </div>
     )
-
-
-
 }
 
 

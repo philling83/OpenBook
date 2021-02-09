@@ -94,12 +94,12 @@ export const removeDeck = (roomId, deckId) => async (dispatch) => {
 }
 
 export const createStudents = (classroom_id, list_of_students) => async(dispatch) => {
-    
+
     const response = await fetch('/api/students/', {
         method: 'POST',
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify({
-            'list_of_students':list_of_students, 
+            'list_of_students':list_of_students,
             'classroom_id':classroom_id
         }),
     })
@@ -138,7 +138,7 @@ export const deleteStudents = (list_of_students) => async(dispatch) => {
             headers: {'Content-Type': 'application/json'},
             body: null,
         })
-        
+
     }
     dispatch(destroyStudents(list_of_students))
 }
@@ -174,6 +174,7 @@ const roomReducer = (state = initialState, action) => {
                         el.name = student_edit.name
                     }
                 }
+                return newState
             })
             return newState
 
@@ -189,7 +190,7 @@ const roomReducer = (state = initialState, action) => {
                     }
                 }
             }
-            
+
             return newState
 
 		default:

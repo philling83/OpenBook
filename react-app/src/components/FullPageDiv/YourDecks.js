@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import * as deckActions from "../../store/decks";
 
 import "./YourDecks.css";
 
 const YourDecks = () => {
 	const decks = useSelector((state) => state.deck.decks);
-	const user = useSelector((state) => state.session.user);
+	// const user = useSelector((state) => state.session.user);
     const [loaded, setLoaded] = useState(false);
     const [deckId, setDeckId] = useState("")
 
@@ -18,11 +18,11 @@ const YourDecks = () => {
 			await dispatch(deckActions.allDecks());
 			return setLoaded(true);
 		})();
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         (async () => dispatch(deckActions.fetchDeck(deckId)))()
-    }, [deckId])
+    }, [dispatch, deckId])
 
     const handleSelection = (e) => {
         const deckId = e.target.id

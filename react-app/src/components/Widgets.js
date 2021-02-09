@@ -75,7 +75,7 @@ const Widgets = () => {
 							</div>
 							<div className="teacher-login_div">
 								<p>
-									<a>or </a>
+									{/* <a>or </a> */}
 									<a href="/login">Login</a>
 								</p>
 							</div>

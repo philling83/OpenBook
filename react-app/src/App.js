@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
-import Widgets from "./components/Widgets";
+// import NavBar from "./components/NavBar";
+// import Widgets from "./components/Widgets";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -33,7 +33,7 @@ function App() {
 			await dispatch(authenticate());
 			setLoaded(true);
 		})();
-	}, []);
+	}, [dispatch]);
 
 	if (!loaded) {
 		return null;
@@ -73,6 +73,7 @@ function App() {
 						authenticated={authenticated}
 						setAuthenticated={setAuthenticated}
 					/>
+					<Footer />
 				</Route>
 				<ProtectedRoute path="/users" exact={true}>
 					<UsersList />

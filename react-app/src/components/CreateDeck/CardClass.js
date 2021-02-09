@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './CardClass.css'
 
@@ -23,7 +23,7 @@ const CreateCard = () => {
     const [answer, setAnswer] = useState('')
     const [image, setImage] = useState('Upload Image Here')
     const [confirm, setConfirm] = useState(false)
-   
+
 
 
 
@@ -72,9 +72,9 @@ const CreateCard = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        
-        
+
+
+
 
         const formData = {
             'title': title,
@@ -107,7 +107,7 @@ const CreateCard = () => {
     }
 
 
-    
+
         return (
         <div class='createCardDiv'>
             <div class='upperDiv'>
@@ -128,7 +128,7 @@ const CreateCard = () => {
                             {image === 'Upload Image Here' &&
                                 <h2 className='placeholderText'>Upload Image Here</h2>
                             }
-                            <img className='cardImage' src={image} />
+                            <img className='cardImage' src={image} alt="" />
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ const CreateCard = () => {
             </div>
         </div>
         )
-    
+
 }
 
 export default CreateCard
