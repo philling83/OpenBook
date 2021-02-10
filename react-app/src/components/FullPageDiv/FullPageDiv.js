@@ -11,9 +11,9 @@ import "./FullPageDiv.css";
 
 const FullPageDiv = () => {
 	const currentUser = useSelector((state) => state.session.user);
-	if (!currentUser) {
-		return <Redirect to="/" />;
-	}
+	// if (!currentUser) {
+	// 	return <Redirect to="/" />;
+	// }
 	return (
 		<div className="fullPageDiv">
 			<Banner />

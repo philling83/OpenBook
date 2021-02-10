@@ -51,12 +51,12 @@ function App() {
 					/>
 					<Footer />
 				</Route>
-				<Route path="/test" exact={true}>
+				<ProtectedRoute path="/test" exact={true}>
 					<DeckEditv2 />
-				</Route>
-				<Route path="/testCard" exact={true}>
+				</ProtectedRoute>
+				<ProtectedRoute path="/testCard" exact={true}>
 					<CardCreationForm />
-				</Route>
+				</ProtectedRoute>
 				{/* <Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
@@ -88,11 +88,11 @@ function App() {
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
-				<Route path="/teachers/:teacherId">
+				<ProtectedRoute path="/teachers/:teacherId">
 					{/* <NavBar /> */}
 					<FullPageDiv />
-				</Route>
-				<Route path="/teacher/deckPreview">
+				</ProtectedRoute>
+				<ProtectedRoute path="/teacher/deckPreview">
 					<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
@@ -106,8 +106,8 @@ function App() {
 							</div>
 						</div>
 					</div>
-				</Route>
-				<Route path="/teacher/createClass">
+				</ProtectedRoute>
+				<ProtectedRoute path="/teacher/createClass">
 					<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
@@ -121,8 +121,8 @@ function App() {
 							</div>
 						</div>
 					</div>
-				</Route>
-				<Route path="/teachers/libraries">
+				</ProtectedRoute>
+				<ProtectedRoute path="/teachers/libraries">
 					<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
@@ -136,8 +136,8 @@ function App() {
 							</div>
 						</div>
 					</div>
-				</Route>
-				<Route path="/createDeck">
+				</ProtectedRoute>
+				<ProtectedRoute path="/createDeck">
 					<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
@@ -151,8 +151,8 @@ function App() {
 							</div>
 						</div>
 					</div>
-				</Route>
-				<Route path='/EditDeck'>
+				</ProtectedRoute>
+				<ProtectedRoute path='/EditDeck'>
 				<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
@@ -166,8 +166,8 @@ function App() {
 							</div>
 						</div>
 					</div>
-				</Route>
-				<Route path="/createCard">
+				</ProtectedRoute>
+				<ProtectedRoute path="/createCard">
 					<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
@@ -181,7 +181,7 @@ function App() {
 							</div>
 						</div>
 					</div>
-				</Route>
+				</ProtectedRoute>
 
 				{/* <Route path='/teachers/:teacherId/cards'>
           <div class='fullPageDiv'>

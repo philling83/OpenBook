@@ -51,7 +51,7 @@ const LoginForm = () => {
 	};
 
 	if (currentUser) {
-		return <Redirect to="/teachers/:id" />;
+		return <Redirect to={`/teachers/${currentUser.id}`} />;
 	}
 
 	return (
