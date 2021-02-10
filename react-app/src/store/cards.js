@@ -1,4 +1,3 @@
-
 const GET_CARDS = 'cards-all'
 const ADD_CARD = 'add-card'
 const DELETE_CARD = 'delete-card'
@@ -67,7 +66,7 @@ export const changeCard = (card_id, card) => async(dispatch) => {
 }
 
 export const removeCard = (card_id) => async(dispatch) => {
-    const response = await fetch(`/api/cards/delete/${card_id}`, {method:'POST', headers: {'Content-Type':'application/json'}})
+    // const response = await fetch(`/api/cards/delete/${card_id}`, {method:'POST', headers: {'Content-Type':'application/json'}})
 
     // const responseJson = await response.json()
 

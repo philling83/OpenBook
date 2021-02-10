@@ -15,8 +15,9 @@
 
 .teacher-login {
   /* border-right: 1px solid black; */
+  /* display: flex; */
   width: 600px;
-  height: 500px;
+  height: 550px;
   box-shadow: 0 2px 18px 4px rgba(0, 0, 0, .15);
 }
 
@@ -80,6 +81,7 @@
 .student-login {
   /* border: 1px solid green; */
   width: 600px;
+  height: 550px;
   box-shadow: 0 2px 18px 4px rgba(0, 0, 0, .15);
   background-image: linear-gradient(to bottom, #006acd, #00a8ff 67%);
   color: white;

@@ -19,13 +19,13 @@ const DeckEditv2 = () => {
 			await dispatch(cardActions.allCards());
             setLoaded(true);
 		})();
-	}, [cards]);
+	}, [dispatch, cards]);
 
 	useEffect(() => {
 		(async () => {
 			setSelectedDeck(await dispatch(deckActions.fetchDeck(deckId)));
 		})();
-	}, [deckId]);
+	}, [dispatch, deckId]);
 
 	const selectDeck = (e) => setDeckId(e.target.id);
 

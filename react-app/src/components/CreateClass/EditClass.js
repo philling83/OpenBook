@@ -10,10 +10,10 @@ const EditClass = () => {
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
 
-    const teacherId = useSelector(state => state.session.user.id);
+    // const teacherId = useSelector(state => state.session.user.id);
     let student_info = useSelector(state => state.classroom.room.students)
     let classroom_info = useSelector(state => state.classroom.room)
-  
+
 
     const [studentState, setStudentState] = useState(student_info)
     const [newStudents, setNewStudents] = useState([])
@@ -26,9 +26,9 @@ const EditClass = () => {
     useEffect(()=> {
         dispatch(classActions.getRoom(teacher_class_id))
         setLoaded(true)
-    },[])
+    }, [dispatch, teacher_class_id])
 
-    
+
     const updateClassName = (e) => {
         setClassName(e.target.value)
     }
@@ -36,7 +36,7 @@ const EditClass = () => {
     const generateCurrentStudentsList = () => {
         return studentState.map((el) => (
             <label className='studentInputLabel' id={el.id}>
-                Student Name 
+                Student Name
                 <input className='studentInputField' id={el.id} type='text' onChange={updateCurrentStudents} value={el.name} />
                 <button className='myButton removeButton' id={el.id} onClick={deleteCurrentStudent}>Remove</button>
             </label>
@@ -45,7 +45,7 @@ const EditClass = () => {
 
     const updateCurrentStudents = (e) => {
         let new_list = studentState.map(el => {
-           
+
             if (el.id === Number(e.target.id)) {
                 el.name = e.target.value
                 return el
@@ -54,8 +54,8 @@ const EditClass = () => {
             }
         })
 
-        setStudentState(new_list)
-        
+        return setStudentState(new_list)
+
     }
 
     const deleteCurrentStudent = (e) => {
@@ -64,11 +64,11 @@ const EditClass = () => {
             if (el.id !== Number(e.target.id)) {
                 return el
             } else {
-                setDeletedStudents([...deletedStudents, el])
+                return setDeletedStudents([...deletedStudents, el])
             }
         })
 
-        setStudentState(new_list)
+        return setStudentState(new_list)
     }
 
     const generateNewStudentsList = () => {
@@ -87,7 +87,7 @@ const EditClass = () => {
     const updateNewStudent = (e) => {
         const target_id = e.target.id
         let new_list = newStudents.map((el,i) => {
-           
+
             if (i === Number(target_id)) {
                 el = e.target.value
                 return el
@@ -106,10 +106,11 @@ const EditClass = () => {
             if (i !== Number(target_id)) {
                 return el
             }
+            return el
         })
 
-        setNewStudents(new_list)
-        console.log(new_list)
+        // console.log(new_list)
+        return setNewStudents(new_list)
     }
 
     const addRow = (e) => {
@@ -137,6 +138,7 @@ const EditClass = () => {
             if (!(el in student_info)) {
                 return el
             }
+            return el
         })
 
         await dispatch(classActions.editStudents(classroom_info.id, edited_students))
@@ -155,8 +157,8 @@ const EditClass = () => {
         loaded && (<div>
 
             <h1>Create class</h1>
-    
-            <form className='student-creation'> 
+
+            <form className='student-creation'>
                 <label>
                     Class Name
                     <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
@@ -165,12 +167,12 @@ const EditClass = () => {
                 {generateNewStudentsList()}
                 <button className='add-row' onClick={addRow}>Add Row</button>
                 <label>
-                    Secret password for class login 
+                    Secret password for class login
                     <input type='text' onClick={updatePassword} placeholder='Must change me' />
                 </label>
-                
+
                 <button onClick={handleSubmitEdit}>Edit Your Class!</button>
-            
+
             </form>
         </div>
         )

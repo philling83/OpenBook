@@ -70,7 +70,13 @@ export const createDeck = (formData) => async (dispatch) => {
 };
 
 export const searchDecks = (term) => async (dispatch) => {
-	const response = await fetch(`/api/decks/search/${term}`);
+	let response
+
+	if (term) {
+		response = await fetch(`/api/decks/search/${term}`);
+	} else {
+		response = await fetch(`/api/decks/all-decks`)
+	}
 
 	const resJSON = await response.json();
 
