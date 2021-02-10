@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 
 import * as deckActions from '../../store/decks'
+import * as cardActions from '../../store/cards'
 
 const DeckInfoCreate = () => {
     const [name, setName] = useState('')
@@ -52,6 +53,7 @@ const DeckInfoCreate = () => {
             dispatch(deckActions.addCard(card.id, new_deck.id))
         }
         dispatch(deckActions.allDecks())
+        dispatch(cardActions.ClearCardToAdd())
     }
 
     return (
