@@ -9,15 +9,13 @@ const MinorAction = (props) => {
     let deck = useSelector(state => state.deck.deck)
 
     const createOrEditDeck = () => {
-
-
         if (deck.id) {
             return (
                 <NavLink to='/EditDeck'>
                     <button className='myButton'>Edit Deck</button>
                 </NavLink>
             )
-        } 
+        }
         else {
             return (
                 <NavLink to='/CreateDeck'>

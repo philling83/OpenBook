@@ -29,9 +29,9 @@ const SearchBar = () => {
 				value={term}
 				onChange={updateValue}
 				/>
-				{/* <button className="searchBarButton">
+				<button className="searchBarButton">
 					<i class="fas fa-arrow-right"></i>
-				</button> */}
+				</button>
 			</div>
 		// </form>
 	);

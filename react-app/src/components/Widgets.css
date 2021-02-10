@@ -114,7 +114,6 @@
   .splash-container_content {
     flex-direction: column;
     justify-content: center;
-    /* border: 1px solid green; */
     margin-top: 0px;
     margin-left: 0px;
   }

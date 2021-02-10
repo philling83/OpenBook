@@ -12,17 +12,17 @@ const SideBar = (props) => {
                 <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Create Class</div>
                 </NavLink>}
-            {props.addCardToDeck &&
+            {/* {props.addCardToDeck &&
                 <NavLink to='/CreateDeck' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Add Card to Deck</div>
-                </NavLink>}
-            {props.addToLibrary &&
+                </NavLink>} */}
+            {/* {props.addToLibrary &&
                 <NavLink to='/teachers/:teacherId' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Add To My Library</div>
-                </NavLink>}
-            <div className='sideDiv reportDiv'>Reports</div>
+                </NavLink>} */}
+            <div className='sideDiv reportDiv'>Create Deck</div>
             <NavLink to='' style={{textDecoration: 'none'}}>
-                <div className='sideDiv libraryDiv'>Openbook Library</div>
+                <div className='sideDiv libraryDiv'>Create Card</div>
             </NavLink>
             {/* <div class='sideDiv'>
                 <ControlPanel />
