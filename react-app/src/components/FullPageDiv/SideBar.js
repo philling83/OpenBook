@@ -1,7 +1,7 @@
 import React from 'react'
 import  { NavLink } from 'react-router-dom'
 
-import ControlPanel from '../CreateDeck/ControlPanel'
+// import ControlPanel from '../CreateDeck/ControlPanel'
 
 import './SideBar.css'
 
@@ -20,9 +20,9 @@ const SideBar = (props) => {
                 <NavLink to='/teachers/:teacherId' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Add To My Library</div>
                 </NavLink>}
-            <div class='sideDiv reportDiv'>Reports</div>
+            <div className='sideDiv reportDiv'>Reports</div>
             <NavLink to='' style={{textDecoration: 'none'}}>
-                <div class='sideDiv libraryDiv'>Openbook Library</div>
+                <div className='sideDiv libraryDiv'>Openbook Library</div>
             </NavLink>
             {/* <div class='sideDiv'>
                 <ControlPanel />

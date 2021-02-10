@@ -56,7 +56,7 @@ export const deleteDeck = (deckId) => async (dispatch) => {
 };
 
 export const createDeck = (formData) => async (dispatch) => {
-	const response = await fetch(`/api/decks`, {
+	const response = await fetch(`/api/decks/`, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify(formData),
@@ -65,12 +65,19 @@ export const createDeck = (formData) => async (dispatch) => {
 	const resJSON = await response.json();
 
 	dispatch(setDeck(resJSON));
+	dispatch(allDecks)
 
-	return response;
+	return resJSON;
 };
 
 export const searchDecks = (term) => async (dispatch) => {
-	const response = await fetch(`/api/decks/search/${term}`);
+	let response
+
+	if (term) {
+		response = await fetch(`/api/decks/search/${term}`);
+	} else {
+		response = await fetch(`/api/decks/all-decks`)
+	}
 
 	const resJSON = await response.json();
 

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
+// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import * as classActions from '../../store/classrooms'
+// import * as classActions from '../../store/classrooms'
 
 import './DisplayStudentsModal.css'
 
@@ -20,16 +20,11 @@ const customStyles = {
 
 const DisplayStudentsModal = () => {
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const [modalOpen, setModalOpen] = useState(false)
-    const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+    // const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
     const roomInfo = useSelector(state => state.classroom.room)
-
-  
-
-    
- 
 
     const toggleModal = (e) => {
         e.preventDefault()
@@ -37,8 +32,8 @@ const DisplayStudentsModal = () => {
     }
 
     const displayStudents = () => {
-        return roomInfo.students.map(student => {
-            return <div>{student.name}</div>
+        return roomInfo.students.map((student, i) => {
+            return <div key={i}>{student.name}</div>
         })
     }
 
@@ -46,18 +41,18 @@ const DisplayStudentsModal = () => {
     return (
         <div>
             <div onClick={toggleModal} className="majorDiv videoDiv">Students</div>
-            <Modal 
+            <Modal
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
                 style={customStyles}
                 contentLabel='Your Students'
             >
-                {roomInfo ? 
+                {roomInfo ?
                     <div className='student_modal__container'>
                         <button onClick={toggleModal}>Close</button>
                         <div>
                             You have {roomInfo.students.length} students
-                        </div> 
+                        </div>
                         {displayStudents()}
                     </div>
                 : null}

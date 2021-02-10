@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
-import { NavLink, Redirect, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import SearchBar from '../FullPageDiv/SearchBar'
 
@@ -15,9 +15,8 @@ const CreateClass = () => {
     const [className, setClassName] = useState('')
     const [names, setNames] = useState([]);
     const [password, setPassword] = useState('')
-    const [editMode, setEditMode] = useState(false)
-    // const [loaded, setLoaded] = useState(false)
     // const [editMode, setEditMode] = useState(false)
+    // const [loaded, setLoaded] = useState(false)
 
     // const teacherId = 1
 
@@ -25,8 +24,8 @@ const CreateClass = () => {
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
     dispatch(classActions.getRoom(teacher_class_id))
-    let list_of_students
-    let classroom_name
+    // let list_of_students
+    // let classroom_name
 
     // useEffect(() => {
     //     (async () => {
@@ -189,17 +188,17 @@ const CreateClass = () => {
 export default CreateClass;
 
 
-{/* <form className='student-creation'>
-<label>
-    Class Name
-    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-</label>
-{generateList()}
+// {/* <form className='student-creation'>
+// <label>
+//     Class Name
+//     <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
+// </label>
+// {generateList()}
 
-<label>
-    Secret password for class login
-    <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
-</label>
-<button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>}
+// <label>
+//     Secret password for class login
+//     <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
+// </label>
+// <button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>}
 
-</form> */}
+// </form> */}

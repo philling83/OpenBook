@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
-import Widgets from "./components/Widgets";
+// import NavBar from "./components/NavBar";
+// import Widgets from "./components/Widgets";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -22,6 +22,7 @@ import ClassContainer from "./components/CreateClass/ClassContainer";
 import CardCreationForm from "./components/CardCreationForm";
 import DeckPreview from "./components/FullPageDiv/DeckPreview";
 import { authenticate } from "./store/session";
+import EditDeck from "./components/CreateDeck/EditDeck";
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -33,7 +34,7 @@ function App() {
 			await dispatch(authenticate());
 			setLoaded(true);
 		})();
-	}, []);
+	}, [dispatch]);
 
 	if (!loaded) {
 		return null;
@@ -44,8 +45,11 @@ function App() {
 			{/* <NavBar setAuthenticated={setAuthenticated} /> */}
 			<Switch>
 				<Route exact path="/">
-					<NavBar setAuthenticated={setAuthenticated} />
-					<Widgets />
+					<LoginForm
+					// authenticated={authenticated}
+					// setAuthenticated={setAuthenticated}
+					/>
+					<Footer />
 				</Route>
 				<Route path="/test" exact={true}>
 					<DeckEditv2 />
@@ -53,12 +57,12 @@ function App() {
 				<Route path="/testCard" exact={true}>
 					<CardCreationForm />
 				</Route>
-				<Route path="/login" exact={true}>
+				{/* <Route path="/login" exact={true}>
 					<LoginForm
 					// authenticated={authenticated}
 					// setAuthenticated={setAuthenticated}
 					/>
-				</Route>
+				</Route> */}
 				<Route path="/login/student" exact={true}>
 					<StudentLoginForm
 						authenticated={authenticated}
@@ -70,6 +74,7 @@ function App() {
 						authenticated={authenticated}
 						setAuthenticated={setAuthenticated}
 					/>
+					<Footer />
 				</Route>
 				<ProtectedRoute path="/users" exact={true}>
 					<UsersList />
@@ -143,6 +148,21 @@ function App() {
 							/>
 							<div class="mainDiv">
 								<CreateDeck />
+							</div>
+						</div>
+					</div>
+				</Route>
+				<Route path='/EditDeck'>
+				<div class="fullPageDiv">
+						<Banner />
+						<div class="bodyDiv">
+							<SideBar
+								addToLibrary={true}
+								addCardToDeck={false}
+								createClass={false}
+							/>
+							<div class="mainDiv">
+								<EditDeck />
 							</div>
 						</div>
 					</div>

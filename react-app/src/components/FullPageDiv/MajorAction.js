@@ -9,16 +9,16 @@ import "./MajorAction.css";
 const MajorAction = (props) => {
 	const deck = useSelector((state) => state.deck.deck);
 	const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+	const dispatch = useDispatch();
 
 	useEffect(() => {}, [deck, deck.id]);
-	
+
 	useEffect(()=> {
         dispatch(classActions.getRoom(teacher_class_id))
-    }, [])
-	
+    }, [dispatch, teacher_class_id])
 
 
-	const dispatch = useDispatch();
+
 
 	const cancelPreview = () => {
 		return dispatch(deckActions.clearDeck());
@@ -30,7 +30,7 @@ const MajorAction = (props) => {
 				<>
 					<div className="majorDiv assignmentDiv">Current Assignments</div>
 					<div className="majorDiv studentDiv">Recent Assignments</div>
-					<DisplayStudentsModal /> 
+					<DisplayStudentsModal />
 				</>
 			)}
 			{deck.id && (
