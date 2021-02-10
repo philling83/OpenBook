@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as deckActions from "../../store/decks";
 import * as classActions from '../../store/classrooms'
 import DisplayStudentsModal from './DisplayStudentsModal'
+import DisplayAssignmentsModal from './DisplayAssignmentsModal'
 
 import "./MajorAction.css";
 
@@ -28,7 +29,8 @@ const MajorAction = (props) => {
 		<div className="majorActionDiv">
 			{!deck.id && (
 				<>
-					<div className="majorDiv assignmentDiv">Current Assignments</div>
+					{/* <div className="majorDiv assignmentDiv">Current Assignments</div> */}
+					<DisplayAssignmentsModal />
 					<div className="majorDiv studentDiv">Recent Assignments</div>
 					<DisplayStudentsModal />
 				</>
