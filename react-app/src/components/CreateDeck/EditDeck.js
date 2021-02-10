@@ -1,34 +1,36 @@
 import React, { useEffect } from 'react'
 
-// import CheckOutDeck from '../Library/CheckoutDeck';
-// import PublicDecks from '../Library/PublicDecks';
 import YourCards from './YourCards'
 import SearchBar from '../FullPageDiv/SearchBar.js';
 import MinorAction from '../FullPageDiv/MinorAction.js';
 import AddCardToDeck from './AddCardToDeck';
-import DeckInfoCreate from './DeckInfoCreate'
 import * as cardActions from '../../store/cards'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import DeckInfoEdit from './DeckInfoEdit';
 
-const CreateDeck = () => {
+const EditDeck = () => {
+
+    let current_deck = useSelector(state => state.deck.deck)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
+        dispatch(cardActions.ClearCardToAdd())
         dispatch(cardActions.allCards())
-    }, [dispatch])
+        for (let card of current_deck.cards) {
+            dispatch(cardActions.AddCardToAdd(card))
+        }
+    }, [])
 
     return (
         <div className='teacherDiv'>
             <SearchBar />
-            <AddCardToDeck />
-            <DeckInfoCreate />
+            <AddCardToDeck /> 
+            <DeckInfoEdit />
             <MinorAction createDeck={false} completeDeck={true} createCard={true}/>
             <YourCards />
-            {/* <PublicCards /> */}
         </div>
-
     )
 }
 
-export default CreateDeck;
+export default EditDeck
