@@ -12,7 +12,7 @@ const dispatch = useDispatch()
     )
   };
 
-  return <button onClick={onLogout} className="submit-button">Logout</button>;
+  return <button onClick={onLogout} className="submit-button myButton logOutButton">Logout</button>;
 };
 
 export default LogoutButton;
