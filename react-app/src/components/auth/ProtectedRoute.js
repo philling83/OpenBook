@@ -6,7 +6,7 @@ const ProtectedRoute = props => {
   const currentUser = useSelector(state => state.session.user)
   return (
     <Route {...props}>
-      {(currentUser)? props.children  : <Redirect to="/login" />}
+      {(currentUser)? props.children  : <Redirect to="/" />}
     </Route>
   )
 };
