@@ -4,6 +4,7 @@ const DELETE_CARD = 'delete-card'
 const EDIT_CARD = 'edit-card'
 const ADD_CARD_TO_ADD = 'add-card-to-add'
 const REMOVE_CARD_TO_ADD = 'remove-card-to-add'
+const CLEAR_CARD_TO_ADD = 'clear-card-to-add'
 
 const setCards = (cards) => {
     return {type: GET_CARDS, payload: cards}
@@ -27,6 +28,10 @@ const addCardToAddAction = (card) => {
 
 const removeCardToAddAction = (card_id) => {
     return {type: REMOVE_CARD_TO_ADD, payload: card_id}
+}
+
+const clearCardToAddAction = () => {
+    return {type: CLEAR_CARD_TO_ADD}
 }
 
 
@@ -81,6 +86,10 @@ export const AddCardToAdd = (card) => async(dispatch) => {
 
 export const RemoveCardToAdd = (card_id) => async(dispatch) => {
     return dispatch(removeCardToAddAction(card_id))
+}
+
+export const ClearCardToAdd = () => async(dispatch) => {
+    return dispatch(clearCardToAddAction())
 }
 
 
@@ -139,6 +148,11 @@ const cardReducer = (state = {cards:null, cards_to_add: []}, action) => {
                 }
             })
             new_state.cards_to_add = new_cards_to_add
+            return new_state
+
+        case CLEAR_CARD_TO_ADD:
+            new_state = Object.assign({}, state)
+            new_state.cards_to_add = []
             return new_state
 
         default:

@@ -22,6 +22,7 @@ import ClassContainer from "./components/CreateClass/ClassContainer";
 import CardCreationForm from "./components/CardCreationForm";
 import DeckPreview from "./components/FullPageDiv/DeckPreview";
 import { authenticate } from "./store/session";
+import EditDeck from "./components/CreateDeck/EditDeck";
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -147,6 +148,21 @@ function App() {
 							/>
 							<div class="mainDiv">
 								<CreateDeck />
+							</div>
+						</div>
+					</div>
+				</Route>
+				<Route path='/EditDeck'>
+				<div class="fullPageDiv">
+						<Banner />
+						<div class="bodyDiv">
+							<SideBar
+								addToLibrary={true}
+								addCardToDeck={false}
+								createClass={false}
+							/>
+							<div class="mainDiv">
+								<EditDeck />
 							</div>
 						</div>
 					</div>

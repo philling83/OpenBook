@@ -27,17 +27,25 @@ def get_deck_by_user(id):
 
 @deck_routes.route('/', methods=['POST'])
 def create_deck():
+    print('------------')
+
+    print('hit create_deck')
 
     try:
         new_deck = Deck()
-
+        print('new_deck', new_deck)
         new_deck.name = request.get_json().get('name')
+        print('assigned name')
         new_deck.subject = request.get_json().get('subject')
+        print('assigned subject')
         new_deck.tags = request.get_json().get('tags')
+        print('assigned tags')
         new_deck.created_by = request.get_json().get('created_by')
+        print('assigned createdby')
 
         db.session.add(new_deck)
         db.session.commit()
+        print('new_deck committed')
 
         return new_deck.to_dict()
     except Exception:
