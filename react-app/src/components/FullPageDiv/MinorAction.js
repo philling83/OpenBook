@@ -16,13 +16,13 @@ const MinorAction = (props) => {
                 </NavLink>
             )
         }
-        else {
-            return (
-                <NavLink to='/CreateDeck'>
-                    <button className='myButton'>Create Deck</button>
-                </NavLink>
-            )
-        }
+        // else {
+        //     return (
+        //         <NavLink to='/CreateDeck'>
+        //             <button className='myButton'>Create Deck</button>
+        //         </NavLink>
+        //     )
+        // }
     }
 
 
@@ -36,11 +36,11 @@ const MinorAction = (props) => {
                     <button className='myButton'>Complete Deck</button>
                 </NavLink>
             }
-            {props.createCard &&
+            {/* {props.createCard &&
                 <NavLink to='/CreateCard'>
                     <button className='myButton'>Create Card</button>
                 </NavLink>
-            }
+            } */}
         </div>
     )
 }

@@ -34,7 +34,7 @@ const DisplayAssignmentsModal = () => {
 
     return (
         <div>
-            <div onClick={toggleModal} className="majorDiv assignmentDiv">Current Assignments</div>
+            <div onClick={toggleModal} className="majorDiv assignmentDiv">Assignments</div>
             <Modal
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
