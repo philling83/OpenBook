@@ -5,71 +5,18 @@ import { useHistory } from 'react-router-dom'
 
 import SearchBar from '../FullPageDiv/SearchBar'
 
-
 import './CreateClass.css'
+
 const CreateClass = () => {
     let history = useHistory()
-
-    // const teacher_class_id = useSelector(state => state.session.user.classrooms_id) || null;
     const teacherId = useSelector(state => state.session.user.id);
     const [className, setClassName] = useState('')
     const [names, setNames] = useState([]);
     const [password, setPassword] = useState('')
-    // const [editMode, setEditMode] = useState(false)
-    // const [loaded, setLoaded] = useState(false)
-
-    // const teacherId = 1
-
     const dispatch = useDispatch();
-
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+
     dispatch(classActions.getRoom(teacher_class_id))
-    // let list_of_students
-    // let classroom_name
-
-    // useEffect(() => {
-    //     (async () => {
-    //         if (teacher_class_id) {
-
-    //             setEditMode(true)
-
-    //             dispatch(classActions.getRoom(teacher_class_id))
-
-    //             console.log('hit if sttement')
-    //             let resStudents = await fetch(`/api/students/from_class/${teacher_class_id}`)
-    //             let resStudentsJson = await resStudents.json()
-    //             // console.log(resStudentsJson)
-
-    //             if (resStudentsJson) {
-    //                 let students = resStudentsJson['list_of_students']
-    //                 let student_names = students.map((el) => {
-    //                     return el.name
-    //                 })
-    //                 console.log('student names',student_names)
-    //                 setNames(student_names)
-    //             }
-
-    //             let resClassroom = await fetch(`/api/classrooms/${teacher_class_id}`)
-
-    //             let resClassroomJson = await resClassroom.json()
-    //             // console.log(resClassroomJson)
-
-    //             if (resClassroomJson){
-    //                 setClassName(resClassroomJson['name'])
-    //             }
-    //             console.log(resStudentsJson['list_of_students'])
-    //             console.log(resClassroomJson['name'])
-    //         }
-
-
-    //         return setLoaded(true)
-    //     })()
-    // },[])
-
-
-
-
-
 
     const updateClassName = (e) => {
         setClassName(e.target.value)
@@ -79,7 +26,6 @@ const CreateClass = () => {
         let temp_name = [...names]
         temp_name[e.target.id] = e.target.value
         setNames(temp_name)
-        // console.log(names)
     }
 
     const removeName = (e) => {
@@ -87,7 +33,6 @@ const CreateClass = () => {
         const removeIndex = e.target.id
 
         setNames(names.splice(removeIndex, 1))
-        // console.log(names)
     }
 
     const updatePassword = (e) => {
@@ -108,7 +53,6 @@ const CreateClass = () => {
     const addRow = (e) => {
         e.preventDefault()
         setNames([...names, ''])
-        // console.log(names)
     }
 
     const handleSubmitCreate = async (e) => {
@@ -121,7 +65,6 @@ const CreateClass = () => {
         console.log('classsroom data', classroomData)
 
         const new_class = await dispatch(classActions.createRoom(teacherId, classroomData))
-        // console.log(new_class)
         const classroomId = new_class.id
 
 
@@ -134,7 +77,6 @@ const CreateClass = () => {
     return (
         (<div className='createClassDiv'>
             <SearchBar />
-            {/* <MajorAction preview={true} /> */}
             <div class='classListDiv'>
                 <div className='blankClass'>
                     <div className='infoDiv'>
@@ -178,27 +120,9 @@ const CreateClass = () => {
                     </div>
                 </form>
             </div>
-
-
         </div>
         )
     )
 }
 
 export default CreateClass;
-
-
-// {/* <form className='student-creation'>
-// <label>
-//     Class Name
-//     <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-// </label>
-// {generateList()}
-
-// <label>
-//     Secret password for class login
-//     <input type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
-// </label>
-// <button onClick={handleSubmitCreate} >Create Your Class! (Warning: Overwrites current class)</button>}
-
-// </form> */}

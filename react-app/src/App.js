@@ -103,6 +103,7 @@ function App() {
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
+								editClass={true}
 							/>
 							<div class="mainDiv">
 								<TeacherHomePage />
@@ -128,6 +129,7 @@ function App() {
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
+								editClass={true}
 							/>
 							<div class="mainDiv">
 								<TeacherHomePage/>
@@ -153,6 +155,7 @@ function App() {
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
+								editClass={false}
 							/>
 							<div class="mainDiv">
 								<ClassContainer />
@@ -178,6 +181,7 @@ function App() {
 								editCard={false}
 								removeCard={false}
 								completeDeck={true}
+								editClass={false}
 							/>
 							<div class="mainDiv">
 								<CreateDeck />
@@ -219,6 +223,7 @@ function App() {
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
+								editClass={false}
 							/>
 							<div class="mainDiv">
 								<CreateCard />

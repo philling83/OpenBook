@@ -1,0 +1,9 @@
+.student_modal__container {
+    width: 500px;
+    height: 500px;
+}
+
+.student_modal__container button {
+    position: absolute;
+    right: 10px;
+}

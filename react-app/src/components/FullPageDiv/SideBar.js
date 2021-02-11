@@ -1,13 +1,23 @@
-import React from 'react'
-import  { NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import  { NavLink } from 'react-router-dom';
+// import Modal from 'react-modal';
 
-// import ControlPanel from '../CreateDeck/ControlPanel'
+import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
 
-import './SideBar.css'
+import './SideBar.css';
 
 const SideBar = (props) => {
+    const [editClassModalOpen, setEditClassModalOpen] = useState(false)
+
+    const toggleEditClassModal = (e) => {
+        e.preventDefault()
+        setEditClassModalOpen(!editClassModalOpen)
+    }
+
     return (
         <div className='sideBarDiv'>
+            {editClassModalOpen &&
+                <DisplayEditClassModal />}
             {props.goHome &&
                 <NavLink to='/teachers/:teacherId' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Home</div>
@@ -56,6 +66,11 @@ const SideBar = (props) => {
                 <NavLink to='' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Complete Deck</div>
                 </NavLink>}
+            {props.editClass &&
+                // <NavLink to='' style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText' onClick={toggleEditClassModal}>Edit Class</div>
+                // </NavLink>
+                }
         </div>
     )
 }
