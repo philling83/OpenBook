@@ -5,7 +5,7 @@ import * as cardActions from '../../store/cards'
 const YourCards = () => {
     let cards = useSelector(state => state.cards.cards)
     const dispatch = useDispatch()
-    
+
     const addCard = (e) => {
         dispatch(cardActions.AddCardToAdd(cards[e.target.id]))
     }
@@ -16,8 +16,6 @@ const YourCards = () => {
                 <div className='deckDiv' id={i} onClick={addCard}>
                     <div className='deckText' id={i}>
                         <div id={i}>{card.title}</div>
-                        {/* <div>Created by</div>
-                        <div>11/11/20</div> */}
                     </div>
                     <div className='deckImage' id={i}>
                         {card.image ? <img src={card.image} id={i} alt=""></img> : null}

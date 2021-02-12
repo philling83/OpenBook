@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
-
-// import * as classActions from '../../store/classrooms'
 
 import './DisplayStudentsModal.css'
 
@@ -19,9 +16,6 @@ const customStyles = {
 }
 
 const DisplayStudentsModal = () => {
-
-    // const dispatch = useDispatch()
-
     const [modalOpen, setModalOpen] = useState(false)
     // const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
     const roomInfo = useSelector(state => state.classroom.room)

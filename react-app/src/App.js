@@ -6,25 +6,20 @@ import { authenticate } from "./store/session";
 import LoginForm from "./components/auth/LoginForm";
 import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-// import NavBar from "./components/NavBar";
-// import Widgets from "./components/Widgets";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
 import DeckEditv2 from "./components/DeckEditv2";
-// import FullPageDiv from "./components/FullPageDiv/FullPageDiv";
 import Banner from "./components/FullPageDiv/Banner";
 import SideBar from "./components/FullPageDiv/SideBar";
-// import Library from "./components/Library/Library";
 import CreateDeck from "./components/CreateDeck/CreateDeck";
 import CreateCard from "./components/CreateDeck/CardClass";
-import ClassContainer from "./components/CreateClass/ClassContainer";
 import CardCreationForm from "./components/CardCreationForm";
-// import DeckPreview from "./components/FullPageDiv/DeckPreview";
 import EditDeck from "./components/CreateDeck/EditDeck";
-import TeacherHomePage from './components/FullPageDiv/TeacherHomePage'
+import TeacherHomePage from './components/FullPageDiv/TeacherHomePage';
+import CreateClass from './components/CreateClass/CreateClass';
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -44,7 +39,6 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			{/* <NavBar setAuthenticated={setAuthenticated} /> */}
 			<Switch>
 				<Route exact path="/">
 					<LoginForm/>
@@ -87,7 +81,7 @@ function App() {
 				</Route>
 
 				<ProtectedRoute path="/teachers/:teacherId">
-				<div class="fullPageDiv">
+					<div class="fullPageDiv">
 						<Banner />
 						<div class="bodyDiv">
 							<SideBar
@@ -158,7 +152,7 @@ function App() {
 								editClass={false}
 							/>
 							<div class="mainDiv">
-								<ClassContainer />
+								<CreateClass />
 							</div>
 						</div>
 					</div>

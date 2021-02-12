@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import  { NavLink } from 'react-router-dom';
-// import Modal from 'react-modal';
+import { useSelector } from 'react-redux';
 
 import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
 
@@ -8,6 +8,7 @@ import './SideBar.css';
 
 const SideBar = (props) => {
     const [editClassModalOpen, setEditClassModalOpen] = useState(false)
+    const roomInfo = useSelector(state => state.classroom.room)
 
     const toggleEditClassModal = (e) => {
         e.preventDefault()
@@ -23,7 +24,7 @@ const SideBar = (props) => {
                     <div className='sideDiv joinText'>Home</div>
                 </NavLink>}
             {props.createClass &&
-                <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}}>
+                <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}} >
                     <div className='sideDiv joinText'>Create Class</div>
                 </NavLink>}
             {props.createDeck &&
@@ -66,11 +67,8 @@ const SideBar = (props) => {
                 <NavLink to='' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Complete Deck</div>
                 </NavLink>}
-            {props.editClass &&
-                // <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText' onClick={toggleEditClassModal}>Edit Class</div>
-                // </NavLink>
-                }
+            {props.editClass && roomInfo &&
+                <div className='sideDiv joinText' onClick={toggleEditClassModal}>Edit Class</div>}
         </div>
     )
 }

@@ -4,7 +4,7 @@
 	align-items: center;
 	height: 7vh;
 	width: 100%;
-	background-color: whitesmoke;
+	background-color: rgb(243, 245, 246);
 }
 
 .userDiv {
@@ -28,35 +28,20 @@
 	margin-bottom: 5px;
 }
 
-/* .avatar {
-	height: 45px;
-	width: 45px;
-	border-radius: 50%;
-	background-color: rgba(5, 13, 133, 0.9);
-} */
-
-/* .logoDiv {
-	display: flex;
-} */
-
-/* .logoImage {
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	background-color: rgb(160, 47, 64);
-}
-
-.logoText {
-	margin-left: 5px;
-	color: rgb(160, 47, 64);
-	font-size: 25px;
-	height: 30px;
-	width: 80px;
-} */
-
 .logoImage {
 	content:url("../../Assets/logo.png");
 	width: 170px;
 	height: 45px;
 	margin-left: 15px;
+  }
+
+  .bannerContainer {
+	  display: flex;
+	  flex-direction: column;
+  }
+
+  .decorDiv {
+	  height: 15px;
+	  background-color: rgba(66, 66, 133, 0.9);
+	  border-bottom: 1px solid rgb(243, 245, 246);
   }

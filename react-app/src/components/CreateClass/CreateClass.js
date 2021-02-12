@@ -76,7 +76,7 @@ const CreateClass = () => {
 
     return (
         (<div className='createClassDiv'>
-            <SearchBar />
+            {/* <SearchBar /> */}
             <div class='classListDiv'>
                 <div className='blankClass'>
                     <div className='infoDiv'>

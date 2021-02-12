@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react'
-
-// import CheckOutDeck from '../Library/CheckoutDeck';
-// import PublicDecks from '../Library/PublicDecks';
-import YourCards from './YourCards'
-import SearchBar from '../FullPageDiv/SearchBar.js';
-import MinorAction from '../FullPageDiv/MinorAction.js';
-import AddCardToDeck from './AddCardToDeck';
-import DeckInfoCreate from './DeckInfoCreate'
 import * as cardActions from '../../store/cards'
 import { useDispatch } from 'react-redux';
+
+import YourCards from './YourCards'
+import SearchBar from '../FullPageDiv/SearchBar.js';
+import AddCardToDeck from './AddCardToDeck';
+import DeckInfoCreate from './DeckInfoCreate'
 
 const CreateDeck = () => {
 
@@ -20,12 +17,10 @@ const CreateDeck = () => {
 
     return (
         <div className='teacherDiv'>
-            <SearchBar />
             <AddCardToDeck />
             <DeckInfoCreate />
-            <MinorAction createDeck={false} completeDeck={true} createCard={true}/>
+            <SearchBar />
             <YourCards />
-            {/* <PublicCards /> */}
         </div>
 
     )
