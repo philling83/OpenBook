@@ -13,18 +13,14 @@ const SearchBar = () => {
 		dispatch(deckActions.searchDecks(term));
 	}, [dispatch, term])
 
-    // const searchDecks = async (e) => {
-	// 	e.preventDefault();
-	// 	return dispatch(deckActions.searchDecks(term));
-	// };
-
 	const updateValue = (event) => {
 		setTerm(event.target.value)
 	};
 
 	return (
-		// <form onSubmit={searchDecks}>
-			<div className="searchBarDiv">
+		<>
+			<div className="searchBarDiv"></div>
+			<div className='searchBarInner'>
 				<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)"
 				value={term}
 				onChange={updateValue}
@@ -33,7 +29,7 @@ const SearchBar = () => {
 					<i class="fas fa-arrow-right"></i>
 				</button>
 			</div>
-		// </form>
+		</>
 	);
 };
 

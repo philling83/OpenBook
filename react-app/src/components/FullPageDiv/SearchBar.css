@@ -1,23 +1,6 @@
 
-.searchBar {
-	display: flex;
-	align-items: center;
-	height: 25px;
-	width: 500px;
-	margin-left: 10px;
-	background-color:  rgb(243, 245, 246);
-	border-radius: 2px 0px 0px 2px;
-	padding-left: 10px;
-	margin-left: 20px;
-	border: 2px solid rgba(1, 5, 53, 0.9);
-	color: rgba(1, 5, 53, 0.9);
-}
-
-.searchBar:focus {
-	outline: none;
-}
-
 .searchBarDiv {
+	position: relative;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -25,7 +8,35 @@
 	width: 100%;
 	background-color:  rgb(243, 245, 246);
 	border-top: 3px solid rgba(66, 66, 133, 0.9);
+	background-image: url('../../images/bookshelf.png');
+	background-size: contain;
+	opacity: 0.9;
 }
+
+.searchBarInner {
+	display: flex;
+	flex-direction: row;
+	top: 435px;
+	position: absolute;
+}
+.searchBar {
+	display: flex;
+	align-items: center;
+	height: 25px;
+	width: 500px;
+	background-color:  rgb(243, 245, 246);
+	border-radius: 2px 0px 0px 2px;
+	padding-left: 10px;
+	margin-left: 20px;
+	border: 2px solid rgba(1, 5, 53, 0.9);
+	color: rgba(1, 5, 53, 0.9);
+	opacity: 1;
+}
+
+.searchBar:focus {
+	outline: none;
+}
+
 
 .searchBarButton {
 	height: 31px;

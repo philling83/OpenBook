@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import  { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import * as sessionActions from "../../store/session"
 
 import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
 
 import './SideBar.css';
 
 const SideBar = (props) => {
+    const dispatch = useDispatch()
     const [editClassModalOpen, setEditClassModalOpen] = useState(false)
     const roomInfo = useSelector(state => state.classroom.room)
+    const currentUser = useSelector(state => state.session.user);
+    const user = currentUser.username
 
     const toggleEditClassModal = (e) => {
         e.preventDefault()
         setEditClassModalOpen(!editClassModalOpen)
     }
+
+    const onLogout = async (e) => {
+        return dispatch(
+          sessionActions.logout()
+        )
+    };
 
     return (
         <div className='sideBarDiv'>
@@ -69,6 +79,10 @@ const SideBar = (props) => {
                 </NavLink>}
             {props.editClass && roomInfo &&
                 <div className='sideDiv joinText' onClick={toggleEditClassModal}>Edit Class</div>}
+            <div className='sideDiv joinText bottomButton' onClick={onLogout}>
+                <div>{user}</div>
+                <div>Log Out</div>
+            </div>
         </div>
     )
 }
