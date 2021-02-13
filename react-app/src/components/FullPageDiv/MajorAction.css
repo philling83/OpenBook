@@ -5,10 +5,9 @@
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: row;
-	height: 33vh;
-	width: 100%;
+	height: 320px;
+	width: 1500px;
 	background-color:  rgb(243, 245, 246);
-	/* border-top: 2px solid rgba(1, 5, 53, 0.9); */
 }
 
 .majorDiv {
@@ -23,47 +22,31 @@
 	border-radius: 5%;
 	color:  rgb(243, 245, 246);
 	font-size: 25px;
-	/* box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75); */
 }
 
 .assignmentDiv {
-    background-color: rgba(1, 5, 53, 0.9);
+    background-color: rgba(165, 128, 93, 0.9);
 }
 
 .studentDiv {
-    background-color: rgba(171, 171, 172, 0.9);
+    background-color: rgba(165, 93, 94, 0.9);
 
 }
 
 .videoDiv {
-    background-color: rgba(0, 168, 255, 0.7);
+    background-color: rgba(165, 93, 130, 0.9);
 }
 
 .assignmentDiv:hover {
-    overflow: hidden;
-    background-image: linear-gradient(270deg,rgba(66, 66, 133, 0.9),  rgba(1, 5, 53, 0.9));
-    background-size: 400% 400%;
-    animation: TransitioningBackground 5s ease infinite;
-    transition: 0.6s;
-	cursor: pointer;
+	background-color: rgb(158, 122, 86);
 }
 
 .studentDiv:hover {
-    overflow: hidden;
-    background-image: linear-gradient(270deg,rgba(171, 171, 172, 0.9),  rgba(0, 168, 255, 0.7));
-    background-size: 400% 400%;
-    animation: TransitioningBackground 5s ease infinite;
-    transition: 0.6s;
-	cursor: pointer;
+	background-color: rgb(139, 72, 73);
 }
 
 .videoDiv:hover {
-    overflow: hidden;
-    background-image: linear-gradient(270deg,rgba(0, 168, 255, 0.7),  rgba(171, 171, 172, 0.9));
-    background-size: 400% 400%;
-    animation: TransitioningBackground 5s ease infinite;
-    transition: 0.6s;
-	cursor: pointer;
+	background-color: rgb(136, 67, 103);
 }
 
 .cardDiv {
@@ -74,7 +57,7 @@
 	height: 175px;
 	margin-left: 25px;
 	margin-top: 20px;
-	border: 2px solid rgba(1, 5, 53, 0.9);
+	border: 2px solid rgba(80, 5, 230, 0.9);
 }
 
 .cardView {
@@ -88,7 +71,6 @@
 	min-width: 600px;
 	width: 1320px;
 	overflow-x: scroll;
-	/* border-top: 2px solid rgba(1, 5, 53, 0.9); */
 }
 
 .cardHolder {

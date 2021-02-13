@@ -19,15 +19,16 @@ const SearchBar = () => {
 
 	return (
 		<>
-			<div className="searchBarDiv"></div>
-			<div className='searchBarInner'>
-				<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)"
-				value={term}
-				onChange={updateValue}
-				/>
-				<button className="searchBarButton">
-					<i class="fas fa-arrow-right"></i>
-				</button>
+			<div className="searchBarDiv">
+				<div className='searchBarInner'>
+					<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)"
+					value={term}
+					onChange={updateValue}
+					/>
+					<button className="searchBarButton">
+						<i class="fas fa-arrow-right"></i>
+					</button>
+				</div>
 			</div>
 		</>
 	);

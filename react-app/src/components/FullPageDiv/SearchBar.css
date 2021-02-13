@@ -4,56 +4,57 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	height: 8vh;
+	height: 100px;
 	width: 100%;
 	background-color:  rgb(243, 245, 246);
-	border-top: 3px solid rgba(66, 66, 133, 0.9);
 	background-image: url('../../images/bookshelf.png');
 	background-size: contain;
-	opacity: 0.9;
+	/* opacity: 0.9; */
 }
 
 .searchBarInner {
 	display: flex;
 	flex-direction: row;
-	top: 435px;
-	position: absolute;
+	/* bottom: 55px; */
+	/* position: relative; */
 }
 .searchBar {
+	position: relative;
 	display: flex;
 	align-items: center;
-	height: 25px;
+	height: 30px;
 	width: 500px;
 	background-color:  rgb(243, 245, 246);
-	border-radius: 2px 0px 0px 2px;
+	border-radius: 5px 0px 0px 5px;
 	padding-left: 10px;
 	margin-left: 20px;
-	border: 2px solid rgba(1, 5, 53, 0.9);
-	color: rgba(1, 5, 53, 0.9);
+	border: 2px solid rgb(69, 105, 139);
+	color: rgb(69, 105, 139);
 	opacity: 1;
+	font-size: 22px;
 }
 
+.searchBar::placeholder {
+	color: rgb(69, 105, 139, 0.8);
+	font-size: 17px;
+}
 .searchBar:focus {
 	outline: none;
 }
 
 
 .searchBarButton {
-	height: 31px;
+	height: 36px;
 	border: none;
-	border-radius: 0px 2px 2px 0px;
-	background-color: rgb(66, 66, 133, 0.9);
-	border-right: 2px solid rgba(1, 5, 53, 0.9);
-	border-bottom: 2px solid rgba(1, 5, 53, 0.9);
-	border-top: 2px solid rgba(1, 5, 53, 0.9);
+	border-radius: 0px 5px 5px 0px;
+	background-color: rgb(69, 105, 139);
+	border-right: 2px solid rgb(69, 105, 139);
+	border-bottom: 2px solid rgb(69, 105, 139);
+	border-top: 2px solid rgb(69, 105, 139);
 	color:  rgb(243, 245, 246);
 }
 
 .searchBarButton:hover {
-    overflow: hidden;
-    background-image: linear-gradient(270deg,rgba(1, 5, 53, 0.9),  rgba(0, 168, 255, 0.7));
-    background-size: 400% 400%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-	cursor: pointer;
+	background-color: rgb(134, 164, 194);
+	color: rgb(24, 52, 78);
 }
