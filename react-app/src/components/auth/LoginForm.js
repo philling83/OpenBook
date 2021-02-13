@@ -59,7 +59,7 @@ const LoginForm = () => {
 				<a href="/">
 					<img
 						className="logo-image"
-						src={require("../../Assets/logo.png")}
+						src={require("../../Assets/splashLogo.png")}
 						alt=""
 					></img>
 				</a>

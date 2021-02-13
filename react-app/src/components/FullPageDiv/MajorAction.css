@@ -6,7 +6,7 @@
 	justify-content: flex-start;
 	flex-direction: row;
 	height: 320px;
-	width: 1500px;
+	width: 2500px;
 	background-color:  rgb(243, 245, 246);
 }
 
@@ -57,7 +57,7 @@
 	height: 175px;
 	margin-left: 25px;
 	margin-top: 20px;
-	border: 2px solid rgba(80, 5, 230, 0.9);
+	/* border: 2px solid rgba(80, 5, 230, 0.9); */
 }
 
 .cardView {

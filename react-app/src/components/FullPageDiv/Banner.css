@@ -59,15 +59,20 @@
 
 .logoImage {
 	position: absolute;
-	right: 20px;
+	right: 25px;
 	top: 12px;
-	content:url("../../Assets/logo.png");
-	width: 170px;
-	height: 45px;
-	opacity: 1;
-	background-color: rgb(243, 245, 246);
-	border-radius: 45%;
-	padding: 9px;
+	/* content:url("../../Assets/logo.png"); */
+	background:  url("../../Assets/bookLogo.png") no-repeat;
+	background-size: 200px;
+	background-position: center;
+	background-blend-mode: screen;
+	/* background-blend-mode: color; */
+	width: 210px;
+	height: 65px;
+	/* opacity: 1; */
+	background-color: none;
+	/* border-radius: 45%;
+	padding: 9px; */
   }
 
   .bannerContainer {
