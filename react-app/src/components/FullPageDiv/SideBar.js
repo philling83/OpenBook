@@ -4,12 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from "../../store/session"
 
 import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
+import DisplaySubmitDeckModal from '../Modals/DisplaySubmitDeckModal'
 
 import './SideBar.css';
 
 const SideBar = (props) => {
     const dispatch = useDispatch()
     const [editClassModalOpen, setEditClassModalOpen] = useState(false)
+    const [submitDeckModalOpen, setSubmitDeckModalOpen] = useState(false)
     const roomInfo = useSelector(state => state.classroom.room)
     const currentUser = useSelector(state => state.session.user);
     const user = currentUser.username
@@ -17,6 +19,11 @@ const SideBar = (props) => {
     const toggleEditClassModal = (e) => {
         e.preventDefault()
         setEditClassModalOpen(!editClassModalOpen)
+    }
+
+    const toggleSubmitDeckModal = (e) => {
+        e.preventDefault()
+        setSubmitDeckModalOpen(!submitDeckModalOpen)
     }
 
     const onLogout = async (e) => {
@@ -29,6 +36,8 @@ const SideBar = (props) => {
         <div className='sideBarDiv'>
             {editClassModalOpen &&
                 <DisplayEditClassModal />}
+            {submitDeckModalOpen &&
+                <DisplaySubmitDeckModal />}
             {props.goHome &&
                 <NavLink to='/teachers/:teacherId' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Home</div>
@@ -74,11 +83,11 @@ const SideBar = (props) => {
                     <div className='sideDiv joinText'>Remove Card</div>
                 </NavLink>}
             {props.completeDeck &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Complete Deck</div>
-                </NavLink>}
+                <div className='sideDiv joinText' onClick={toggleSubmitDeckModal}>
+                    Complete Deck</div>}
             {props.editClass && roomInfo &&
-                <div className='sideDiv joinText' onClick={toggleEditClassModal}>Edit Class</div>}
+                <div className='sideDiv joinText' onClick={toggleEditClassModal}>
+                    Edit Class</div>}
             <div className='sideDiv joinText bottomButton' onClick={onLogout}>
                 <div>{user}</div>
                 <div>Log Out</div>

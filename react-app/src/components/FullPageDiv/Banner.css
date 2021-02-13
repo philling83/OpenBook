@@ -7,6 +7,7 @@
 	background-repeat: no-repeat;
 	background-position-x: 0px;
 	background-position-y: -80px;
+	filter: sepia(20%);
 	/* opacity: 0.9; */
 }
 
@@ -78,5 +79,6 @@
   .decorDiv {
 	  height: 15px;
 	  background-color:rgb(69, 105, 139);
+	  background-color:rgb(32, 60, 87);
 	  border-bottom: 1px solid rgb(243, 245, 246);
   }

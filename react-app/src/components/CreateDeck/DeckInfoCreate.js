@@ -4,7 +4,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import * as deckActions from '../../store/decks'
 import * as cardActions from '../../store/cards'
 
-const DeckInfoCreate = () => {
+import './DeckInfoCreate.css'
+
+const DeckInfoCreate = (props) => {
     const [name, setName] = useState('')
     const [subject, setSubject] = useState('')
     const [tags, setTags] = useState([])
@@ -48,7 +50,7 @@ const DeckInfoCreate = () => {
         let new_deck = await dispatch(deckActions.createDeck(formData))
 
         console.log(new_deck)
-        
+
         for (let card of cards) {
             dispatch(deckActions.addCard(card.id, new_deck.id))
         }
@@ -57,12 +59,28 @@ const DeckInfoCreate = () => {
     }
 
     return (
-        <div>
-            <form>
-                <input placeholder='deck name' onChange={updateName}/>
-                <input placeholder='subject' onChange={updateSubject} />
-                <input placeholder='tags, seperate by comma' onChange={updateTags}/>
-                <button onClick={handleSubmit}>Submit Deck</button>
+        <div className='deckInfoDiv'>
+            <div className='upperInfoDiv'>
+                <h1 className='deckInfoHeader'>Enter Your Deck Information ~</h1>
+                <div className='closeButtonDiv' onClick={props.toggleModal}>
+                    <div className='closeInnerDiv'></div>
+                    <i className='closeButton fas fa-window-close'></i>
+                </div>
+            </div>
+            <form className='deckInfoForm'>
+                <div className='infoDiv'>
+                    <h1 className='infoLabel'>Deck Name ~</h1>
+                    <input className='infoInput' placeholder='ex: Arithmetic' onChange={updateName}/>
+                </div>
+                <div className='infoDiv'>
+                    <h1 className='infoLabel'>Subject ~</h1>
+                    <input className='infoInput' placeholder='ex: Math' onChange={updateSubject} />
+                </div>
+                <div className='infoDiv'>
+                    <h1 className='infoLabel'>Comma Seperated Keywords ~</h1>
+                    <input className='infoInput' placeholder='ex: addition, subtraction' onChange={updateTags}/>
+                </div>
+                <button className='infoButtonSubmit' onClick={handleSubmit}>Submit Deck</button>
             </form>
         </div>
     )

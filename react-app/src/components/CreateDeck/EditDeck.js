@@ -19,14 +19,14 @@ const EditDeck = () => {
         for (let card of current_deck.cards) {
             dispatch(cardActions.AddCardToAdd(card))
         }
-    })
+    }, [current_deck])
 
     return (
         <div className='teacherDiv'>
             <SearchBar />
             <AddCardToDeck />
             <DeckInfoEdit />
-            <YourCards />
+            {/* <YourCards /> */}
         </div>
     )
 }

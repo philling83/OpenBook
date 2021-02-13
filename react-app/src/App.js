@@ -81,9 +81,9 @@ function App() {
 				</Route>
 
 				<ProtectedRoute path="/teachers/:teacherId">
-					<div class="fullPageDiv">
+					<div className="fullPageDiv">
 						<Banner />
-						<div class="bodyDiv">
+						<div className="bodyDiv">
 							<SideBar
 								goHome={false}
 								createClass={true}
@@ -99,7 +99,7 @@ function App() {
 								completeDeck={false}
 								editClass={true}
 							/>
-							<div class="mainDiv">
+							<div className="mainDiv">
 								<TeacherHomePage />
 							</div>
 						</div>
@@ -107,9 +107,9 @@ function App() {
 				</ProtectedRoute>
 
 				<ProtectedRoute path="/teacher/deckPreview">
-					<div class="fullPageDiv">
+					<div className="fullPageDiv">
 						<Banner />
-						<div class="bodyDiv">
+						<div className="bodyDiv">
 							<SideBar
 								goHome={false}
 								createClass={true}
@@ -125,7 +125,7 @@ function App() {
 								completeDeck={false}
 								editClass={true}
 							/>
-							<div class="mainDiv">
+							<div className="mainDiv">
 								<TeacherHomePage/>
 							</div>
 						</div>
@@ -133,9 +133,9 @@ function App() {
 				</ProtectedRoute>
 
 				<ProtectedRoute path="/teacher/createClass">
-					<div class="fullPageDiv">
+					<div className="fullPageDiv">
 						<Banner />
-						<div class="bodyDiv">
+						<div className="bodyDiv">
 							<SideBar
 								goHome={true}
 								createClass={false}
@@ -151,7 +151,7 @@ function App() {
 								completeDeck={false}
 								editClass={false}
 							/>
-							<div class="mainDiv">
+							<div className="mainDiv">
 								<CreateClass />
 							</div>
 						</div>
@@ -159,9 +159,9 @@ function App() {
 				</ProtectedRoute>
 
 				<ProtectedRoute path="/teacher/createDeck">
-					<div class="fullPageDiv">
+					<div className="fullPageDiv">
 						<Banner />
-						<div class="bodyDiv">
+						<div className="bodyDiv">
 							<SideBar
 								goHome={true}
 								createClass={true}
@@ -177,7 +177,7 @@ function App() {
 								completeDeck={true}
 								editClass={false}
 							/>
-							<div class="mainDiv">
+							<div className="mainDiv">
 								<CreateDeck />
 							</div>
 						</div>
@@ -185,15 +185,15 @@ function App() {
 				</ProtectedRoute>
 
 				<ProtectedRoute path='/teacher/EditDeck'>
-				<div class="fullPageDiv">
+				<div className="fullPageDiv">
 						<Banner />
-						<div class="bodyDiv">
+						<div className="bodyDiv">
 							<SideBar
 								addToLibrary={true}
 								addCardToDeck={false}
 								createClass={false}
 							/>
-							<div class="mainDiv">
+							<div className="mainDiv">
 								<EditDeck />
 							</div>
 						</div>
@@ -201,9 +201,9 @@ function App() {
 				</ProtectedRoute>
 
 				<ProtectedRoute path="/teacher/createCard">
-					<div class="fullPageDiv">
+					<div className="fullPageDiv">
 						<Banner />
-						<div class="bodyDiv">
+						<div className="bodyDiv">
 							<SideBar
 								goHome={true}
 								createClass={true}
@@ -219,7 +219,7 @@ function App() {
 								completeDeck={false}
 								editClass={false}
 							/>
-							<div class="mainDiv">
+							<div className="mainDiv">
 								<CreateCard />
 							</div>
 						</div>

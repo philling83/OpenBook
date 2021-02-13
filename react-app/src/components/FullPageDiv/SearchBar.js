@@ -26,7 +26,7 @@ const SearchBar = () => {
 					onChange={updateValue}
 					/>
 					<button className="searchBarButton">
-						<i class="fas fa-arrow-right"></i>
+						<i className="fas fa-arrow-right"></i>
 					</button>
 				</div>
 			</div>

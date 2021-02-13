@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
 import { useHistory } from 'react-router-dom'
 
-import SearchBar from '../FullPageDiv/SearchBar'
+// import SearchBar from '../FullPageDiv/SearchBar'
 
 import './CreateClass.css'
 
