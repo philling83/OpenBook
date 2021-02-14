@@ -39,7 +39,7 @@ const SideBar = (props) => {
             {submitDeckModalOpen &&
                 <DisplaySubmitDeckModal />}
             {props.goHome &&
-                <NavLink to='/teachers/:teacherId' style={{textDecoration: 'none'}}>
+                <NavLink to={`/teachers/${currentUser.id}`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Home</div>
                 </NavLink>}
             {props.createClass &&

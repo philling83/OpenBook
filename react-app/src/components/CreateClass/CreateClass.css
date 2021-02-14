@@ -1,4 +1,189 @@
+
 .createClassDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(243, 245, 246);
+    height: 100%;
+    width: 100%;
+    color: rgb(32, 60, 87);
+    /* background-color: orange; */
+}
+
+.upperHolder {
+    height: 51%;
+    width: 100%;
+    border-bottom: 6px solid rgb(32, 60, 87);
+}
+
+.upperCreateClassDiv {
+    position: relative;
+    margin-top: 35px;
+    margin-left: 35px;
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 650px;
+    background-color: rgba(165, 128, 93, 0.3);
+    font-size: 40px;
+    color:rgba(1, 5, 53, 0.9);
+    overflow-wrap: normal;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
+}
+
+.lowerCreateClassDiv {
+    height: 49%;
+    width: 800px;
+    margin-top: 5px;
+}
+
+/* .createInput {
+    margin-left: 20px;
+} */
+
+.createClassSubmit, .addCreateStudentButton {
+    height: 50px;
+    background-color: rgb(32, 60, 87);
+    color: rgb(248, 245, 245);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 45px;
+    width: 180px;
+}
+
+.addCreateStudentButton {
+    position: absolute;
+    bottom: 170px;
+    left: 255px;
+}
+
+.editDetailDiv {
+    /* position: sticky; */
+    display: flex;
+    width: 770px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.createLabel {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.createButtonDiv {
+    position: absolute;
+    bottom: 330px;
+    left: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 290px;
+    /* background-color: seagreen; */
+}
+
+.warningText {
+    padding-left: 5px;
+    margin: 0;
+    width: 250px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: rgba(165, 93, 130, 0.9);
+}
+
+.studentInputForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 450px;
+    width: 100%;
+    /* overflow: scroll; */
+}
+
+.scrollDiv {
+    overflow: scroll;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    display: none;
+  }
+
+.scrollDiv {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+.className {
+    font-size: 40px;
+    width: 300px;
+    height: 40px;
+    /* background-color: orangered; */
+}
+
+.password {
+    width: 300px;
+    height: px;
+    /* background-color: palegreen; */
+    /* position: absolute;
+    right: 20px; */
+}
+
+.studentName {
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 27px;
+    width: 250px;
+    /* background-color: palevioletred; */
+}
+
+.studentNameDiv {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    height: 280px;
+    width: 700px;
+    flex-flow: column wrap;
+    /* background-color: rebeccapurple; */
+    overflow-x: scroll;
+}
+
+.infoDiv {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    height: 75px;
+    background-color: rgba(165, 128, 93, 0.9);;
+    border-bottom: 4px solid rgb(32, 60, 87);
+}
+
+.createClassSubmit:hover, .addCreateStudentButton:hover, .removeStudentButton:hover {
+    background-color: rgb(176, 198, 221);
+    color: rgb(32, 60, 87);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .createClassDiv {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -46,15 +231,7 @@
     width: 200px;
 }
 
-.warningText {
-    padding-left: 5px;
-    height: 100px;
-    width: 70px;
-    margin-bottom: 13px;
-    font-size: 15px;
-    text-align: center;
-    color: rgba(0, 168, 255, 0.7);
-}
+
 
 .studentLabelDiv {
     display: flex;
@@ -71,7 +248,7 @@
     width: 80%;
     font-size: 20px;
     /* margin-left: 10px; */
-}
+/* }
 
 .studentInputLabel {
     margin-top: 10px;
@@ -129,34 +306,6 @@
     box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
 }
 
-.infoDiv {
-    display: flex;
-    justify-content: center;
-}
 
-.className {
-    margin-top: 30px;
-    font-size: 40px;
-}
 
-.password {
-    position: absolute;
-    right: 20px;
-}
-
-.studentName {
-    margin-left: 0px;
-    margin-top: 20px;
-    margin-right: 20px;
-    font-size: 35px;
-    width: 250px;
-}
-
-.studentNameDiv {
-    display: flex;
-    flex-direction: column;
-    padding-left: 15px;
-    height: 320px;
-    width: 700px;
-    flex-flow: column wrap;
-}
+*/

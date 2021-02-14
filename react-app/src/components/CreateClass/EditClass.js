@@ -157,7 +157,7 @@ const EditClass = (props) => {
 
 
     return (
-        loaded && (<div>
+        loaded && (
             <div className='editClassDiv'>
                 <div className='upperEditClassDiv'>
                     <h1 className='editClassHeader'>Edit your class ~</h1>
@@ -175,13 +175,14 @@ const EditClass = (props) => {
                         <h1 className='infoLabel'>Password for class login ~</h1>
                         <input className='infoInput' placeholder='(e.g. 4321)' onChange={updatePassword} />
                     </div>
-                    {generateCurrentStudentsList()}
-                    {generateNewStudentsList()}
+                    <div className='scrollDiv'>
+                        {generateCurrentStudentsList()}
+                        {generateNewStudentsList()}
+                    </div>
                     <button className='addStudentButton' onClick={addRow}>Add Student</button>
                     <button className='editClassSubmit' onClick={handleSubmitEdit}>Submit Changes</button>
                 </form>
             </div>
-        </div>
         )
     )
 

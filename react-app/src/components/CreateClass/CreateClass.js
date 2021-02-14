@@ -41,12 +41,12 @@ const CreateClass = () => {
 
     const generateList = () => {
         return names.map((el, i) => (
-            <label className='studentInputLabel'>
-                    Student Name
-                    <input className='studentInputField' id={i} type='text' onChange={updateNames} value={el || ''} placeholder='Charlie R.' />
-                    <button className='myButton removeButton'onClick={removeName}>Remove</button>
-            </label>
-
+            // <label className='studentInputLabel'>
+            //         Student Name
+            <div className='addStudentRow'>
+                <button className='removeStudentButton'onClick={removeName}>Remove</button>
+                <input className='editClassField' id={i} type='text' onChange={updateNames} value={el || ''} placeholder='Charlie R.' />
+            </div>
         ))
     }
 
@@ -76,8 +76,47 @@ const CreateClass = () => {
 
     return (
         (<div className='createClassDiv'>
-            {/* <SearchBar /> */}
-            <div class='classListDiv'>
+            <div className='upperHolder'>
+                <div className='upperCreateClassDiv'>
+                    <div className='infoDiv'>
+                        <div className='className'>{className}</div>
+                        <div className='divassword'>{password}</div>
+                    </div>
+                    <div className='lowerDiv'>
+                        <div className='studentNameDiv'>
+                            {names.map(name => (
+                                <div className='studentName'>{name}</div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='lowerCreateClassDiv'>
+                <div className='createClassDiv'>
+                    {/* <div className='upperEditClassDiv'>
+                        <h1 className='editClassHeader'>Create your class ~</h1>
+                    </div> */}
+                    <form className='studentInputForm'>
+                        <div className='editDetailDiv'>
+                            <input className='infoInput createInput' placeholder="(e.g. Mary's Class)" onChange={updateClassName}/>
+                            <h1 className='infoLabel createLabel'>~ Class Name</h1>
+                        </div>
+                        <div className='editDetailDiv'>
+                            <input className='infoInput createInput' placeholder='(e.g. 4321)' onChange={updatePassword} />
+                            <h1 className='infoLabel createLabel'>~ Password for class login</h1>
+                        </div>
+                        {/* {generateCurrentStudentsList()} */}
+                        <div className='scrollDiv'>
+                            {generateList()}
+                        </div>
+                        <button className='addCreateStudentButton' onClick={addRow}>Add Student</button>
+                        <div className='createButtonDiv'>
+                            <h2 className='warningText textDiv'>Warning! Overwrites current class!</h2>
+                            <button className='createClassSubmit' onClick={handleSubmitCreate}>Submit Changes</button>
+                        </div>
+                    </form>
+                </div>
+{/*
                 <div className='blankClass'>
                     <div className='infoDiv'>
                         <p className='className'>{className}</p>
@@ -119,6 +158,7 @@ const CreateClass = () => {
 
                     </div>
                 </form>
+            </div> */}
             </div>
         </div>
         )

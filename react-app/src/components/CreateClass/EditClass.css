@@ -7,17 +7,8 @@
     font-family: 'Source Sans Pro', sans-serif;
     height: 500px;
     width: 800px;
-    overflow: scroll;
+    /* overflow: scroll; */
     background-color: rgba(165, 128, 93, 0.5);
-}
-
-.editClassDiv::-webkit-scrollbar {
-    display: none;
-  }
-
-.editClassDiv {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
 }
 
 .editClassHeader {
@@ -172,4 +163,17 @@ scrollbar-width: none;  /* Firefox */
 }
 .closeButtonDiv:hover .closeInnerDiv {
     background-color: rgb(32, 60, 87);
+}
+
+.scrollDiv {
+    overflow: scroll;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    display: none;
+  }
+
+.scrollDiv {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
 }
