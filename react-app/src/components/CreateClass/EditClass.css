@@ -114,15 +114,20 @@ scrollbar-width: none;  /* Firefox */
     margin-right: 15px;
 }
 
+.editClassSubmit:hover, .addStudentButton:hover, .removeStudentButton:hover {
+    background-color: rgb(176, 198, 221);
+    color: rgb(32, 60, 87);
+}
+
 .addStudentButton {
     bottom: 180px;
     left: 20px;
 }
 
-.infoButtonSubmit:hover {
+/* .infoButtonSubmit:hover {
     background-color: rgb(134, 164, 194);
     color: rgb(32, 60, 87);
-}
+} */
 
 .upperEditClassDiv {
     display: flex;

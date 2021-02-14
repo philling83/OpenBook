@@ -128,7 +128,7 @@ const EditClass = (props) => {
 
     const handleSubmitEdit = async (e) => {
         e.preventDefault()
-
+        console.log('edit submit')
         //Edit classroom info
         const classData = {
             'name': className,

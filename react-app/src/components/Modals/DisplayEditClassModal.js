@@ -45,8 +45,8 @@ const DisplayEditClassModal = () => {
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
                 style={customStyles}
-                appElement={document.getElementById('app')}
                 contentLabel='Edit Class'
+                ariaHideApp={false}
             >
                 <EditClass toggleModal={toggleModal}/>
             </Modal>

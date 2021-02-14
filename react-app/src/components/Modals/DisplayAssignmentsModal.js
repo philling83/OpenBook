@@ -5,31 +5,47 @@ import { useSelector } from 'react-redux';
 import './DisplayAssignmentsModal.css'
 
 const customStyles = {
-    content : {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+    overlay: {
+        backgroundColor: 'none'
+    },
+    content: {
+        position: 'absolute',
+        top: '240px',
+        left: '120px',
+        height: '500px',
+        width: '800px',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        outline: 'none',
+        backgroundColor: 'rgb(248, 245, 245)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        color: 'rgb(32, 60, 87)',
+        borderRadius: '5px',
+        padding: '0px',
+        border: '8px solid rgb(32, 60, 87)',
     }
 }
 
 const DisplayAssignmentsModal = () => {
-
     const [modalOpen, setModalOpen] = useState(false)
-    const roomInfo = useSelector(state => state.classroom.room)
+    const roomInfo = useSelector(state => state.classroom.room);
+    const teacher = "HardCoded's class"
+    const assignments = ['HardCoded 1/2/21', 'HardCoded 2/1/21']
 
     const toggleModal = (e) => {
         e.preventDefault()
         setModalOpen(!modalOpen)
     }
 
-    const displayAssignments = () => {
-        return roomInfo.decks.map((deck) => {
-            return <div key={deck.id}>{deck.name}</div>
-        })
-    }
+    // const displayAssignments = () => {
+    //     return roomInfo.decks.map((deck) => {
+    //         return <div key={deck.id}>{deck.name}</div>
+    //     })
+    // }
 
 
     return (
@@ -40,20 +56,29 @@ const DisplayAssignmentsModal = () => {
                 onRequestClose={toggleModal}
                 style={customStyles}
                 contentLabel='Your Assignments'
+                ariaHideApp={false}
             >
                 {roomInfo ?
-                    <div className='assignment_modal__container'>
-                        <button onClick={toggleModal}>Close</button>
-                        {roomInfo.decks.length === 1 ?
-                            <div>
-                                You have {roomInfo.decks.length} assigned deck.
+                    <div className='studentModalDiv'>
+                        <div className='studentUpperDiv'>
+                            <h1 className='editClassHeader'>{`${teacher}`}</h1>
+                            <div className='closeButtonDiv .studentClose' onClick={toggleModal}>
+                                <div className='closeInnerDiv'></div>
+                                <i className='closeButton fas fa-window-close'></i>
                             </div>
-                        :
-                            <div>
-                                You have {roomInfo.decks.length} assigned decks.
-                            </div>
-                        }
-                        {displayAssignments()}
+                        </div>
+                        <div className='assignmentHeaderDiv'>
+                            <div className='assHeader'>You have {roomInfo.decks.length} assigned decks</div>
+                        </div>
+                        <div className='assignmentListDiv'>
+                            {assignments.map((assignment, i) =>
+                                <div className='assignmentRow'>
+                                    <h1 className='assignmentList' key={i.toString()}>{assignment}</h1>
+                                    <button className='unassignButton'>Unassign</button>
+                                </div>
+                            )};
+                        </div>
+                        {/* {displayAssignments()} */}
                     </div>
                 : null}
             </Modal>
