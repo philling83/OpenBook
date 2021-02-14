@@ -13,8 +13,6 @@ const customStyles = {
         position: 'absolute',
         top: '240px',
         left: '120px',
-        // right: '120px',
-        // bottom: '240px',
         height: '500px',
         width: '800px',
         overflow: 'auto',

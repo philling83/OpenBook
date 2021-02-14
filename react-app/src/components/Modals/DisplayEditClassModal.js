@@ -6,13 +6,28 @@ import EditClass from '../CreateClass/EditClass'
 import './DisplayEditClassModal'
 
 const customStyles = {
-    content : {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+    overlay: {
+        backgroundColor: 'none'
+    },
+    content: {
+        position: 'absolute',
+        top: '240px',
+        left: '120px',
+        height: '500px',
+        width: '800px',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        outline: 'none',
+        backgroundColor: 'rgb(248, 245, 245)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        color: 'rgb(32, 60, 87)',
+        borderRadius: '5px',
+        padding: '0px',
+        border: '8px solid rgb(32, 60, 87)',
     }
 }
 
@@ -30,9 +45,10 @@ const DisplayEditClassModal = () => {
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
                 style={customStyles}
-                // contentLabel='Your Students'
+                appElement={document.getElementById('app')}
+                contentLabel='Edit Class'
             >
-                <EditClass />
+                <EditClass toggleModal={toggleModal}/>
             </Modal>
         </div>
     )
