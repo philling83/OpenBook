@@ -7,7 +7,6 @@
     font-family: 'Source Sans Pro', sans-serif;
     height: 500px;
     width: 800px;
-    /* overflow: scroll; */
     background-color: rgba(165, 128, 93, 0.5);
 }
 
@@ -114,11 +113,6 @@
     bottom: 180px;
     left: 20px;
 }
-
-/* .infoButtonSubmit:hover {
-    background-color: rgb(134, 164, 194);
-    color: rgb(32, 60, 87);
-} */
 
 .upperEditClassDiv {
     display: flex;

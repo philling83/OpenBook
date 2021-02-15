@@ -21,7 +21,7 @@ const SearchBar = () => {
 		<>
 			<div className="searchBarDiv">
 				<div className='searchBarInner'>
-					<input type="text" className="searchBar" placeholder="Search Decks by Tag (e.g. addition, words)"
+					<input type="text" className="searchBar" placeholder="Search Decks by Title or Keywords (e.g. addition, words)"
 					value={term}
 					onChange={updateValue}
 					/>

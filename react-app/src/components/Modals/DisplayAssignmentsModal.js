@@ -72,7 +72,7 @@ const DisplayAssignmentsModal = () => {
                         </div>
                         <div className='assignmentListDiv'>
                             {assignments.map((assignment, i) =>
-                                <div className='assignmentRow'>
+                                <div className='assignmentRow' key={i.toString()}>
                                     <h1 className='assignmentList' key={i.toString()}>{assignment}</h1>
                                     <button className='unassignButton'>Unassign</button>
                                 </div>

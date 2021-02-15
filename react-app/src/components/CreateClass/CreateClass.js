@@ -3,8 +3,6 @@ import {useDispatch, useSelector} from 'react-redux'
 import * as classActions from '../../store/classrooms'
 import { useHistory } from 'react-router-dom'
 
-// import SearchBar from '../FullPageDiv/SearchBar'
-
 import './CreateClass.css'
 
 const CreateClass = () => {
@@ -41,8 +39,6 @@ const CreateClass = () => {
 
     const generateList = () => {
         return names.map((el, i) => (
-            // <label className='studentInputLabel'>
-            //         Student Name
             <div className='addStudentRow'>
                 <button className='removeStudentButton'onClick={removeName}>Remove</button>
                 <input className='editClassField' id={i} type='text' onChange={updateNames} value={el || ''} placeholder='Charlie R.' />
@@ -93,9 +89,6 @@ const CreateClass = () => {
             </div>
             <div class='lowerCreateClassDiv'>
                 <div className='createClassDiv'>
-                    {/* <div className='upperEditClassDiv'>
-                        <h1 className='editClassHeader'>Create your class ~</h1>
-                    </div> */}
                     <form className='studentInputForm'>
                         <div className='editDetailDiv'>
                             <input className='infoInput createInput' placeholder="(e.g. Mary's Class)" onChange={updateClassName}/>
@@ -105,7 +98,6 @@ const CreateClass = () => {
                             <input className='infoInput createInput' placeholder='(e.g. 4321)' onChange={updatePassword} />
                             <h1 className='infoLabel createLabel'>~ Password for class login</h1>
                         </div>
-                        {/* {generateCurrentStudentsList()} */}
                         <div className='scrollDiv'>
                             {generateList()}
                         </div>
@@ -116,49 +108,6 @@ const CreateClass = () => {
                         </div>
                     </form>
                 </div>
-{/*
-                <div className='blankClass'>
-                    <div className='infoDiv'>
-                        <p className='className'>{className}</p>
-                        <p className='password'>{password}</p>
-                    </div>
-                    <div className='lowerDiv'>
-                        <div className='studentNameDiv'>
-                        {names.map(name => (
-                            <p className='studentName'>
-                                {name}
-                            </p>
-                        ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='classButtonDiv'>
-                <div className='completeDiv'>
-                    <h2 className='warningText textDiv'>Warning: Overwrites current class</h2>
-                    <button className='myButton' onClick={handleSubmitCreate} >Complete Class!</button>
-
-                </div>
-                <button className='add-row myButton' onClick={addRow}>Add Row</button>
-            </div>
-            <div className='inputClassDiv'>
-                <form className='studentInputForm'>
-                    <div className='studentLabelDiv'>
-                        <label className='studentInputLabel'>
-                            Class Name
-                            <input className='studentInputField' type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-                        </label>
-                        <label className='studentInputLabel'>
-                            Password for class login
-                            <input className='studentInputField' type='text' onClick={updatePassword} placeholder='Super-Secret12345' />
-                        </label>
-                    </div>
-                    <div className='listDiv'>
-                        {generateList()}
-
-                    </div>
-                </form>
-            </div> */}
             </div>
         </div>
         )

@@ -29,14 +29,14 @@
 	border-radius: 5px 0px 0px 5px;
 	padding-left: 10px;
 	margin-left: 20px;
-	border: 2px solid rgb(69, 105, 139);
-	color: rgb(69, 105, 139);
+	border: 2px solid rgba(1, 5, 53, 0.9);
+	color: rgba(1, 5, 53, 0.9);
 	opacity: 1;
 	font-size: 22px;
 }
 
 .searchBar::placeholder {
-	color: rgb(69, 105, 139, 0.8);
+	color: rgb(69, 105, 139);
 	font-size: 17px;
 }
 .searchBar:focus {
@@ -48,11 +48,11 @@
 	height: 36px;
 	border: none;
 	border-radius: 0px 5px 5px 0px;
-	background-color: rgb(69, 105, 139);
-	border-right: 2px solid rgb(69, 105, 139);
-	border-bottom: 2px solid rgb(69, 105, 139);
-	border-top: 2px solid rgb(69, 105, 139);
-	color:  rgb(243, 245, 246);
+	background-color: rgba(165, 128, 93);
+	border-right: 2px solid rgba(1, 5, 53, 0.9);
+	border-bottom: 2px solid rgba(1, 5, 53, 0.9);
+	border-top: 2px solid rgba(1, 5, 53, 0.9);
+	color:  rgba(1, 5, 53, 0.9);
 }
 
 .searchBarButton:hover {

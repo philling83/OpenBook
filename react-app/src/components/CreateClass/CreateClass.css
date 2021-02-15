@@ -7,7 +7,6 @@
     height: 100%;
     width: 100%;
     color: rgb(32, 60, 87);
-    /* background-color: orange; */
 }
 
 .upperHolder {
@@ -18,12 +17,11 @@
 
 .upperCreateClassDiv {
     position: relative;
-    margin-top: 35px;
+    margin-top: 30px;
     margin-left: 35px;
-    /* padding: 10px; */
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 376px;
     width: 650px;
     background-color: rgba(165, 128, 93, 0.3);
     font-size: 40px;
@@ -39,10 +37,6 @@
     width: 800px;
     margin-top: 5px;
 }
-
-/* .createInput {
-    margin-left: 20px;
-} */
 
 .createClassSubmit, .addCreateStudentButton {
     height: 50px;
@@ -63,7 +57,6 @@
 }
 
 .editDetailDiv {
-    /* position: sticky; */
     display: flex;
     width: 770px;
     justify-content: center;
@@ -85,7 +78,6 @@
     align-items: center;
     height: 100px;
     width: 290px;
-    /* background-color: seagreen; */
 }
 
 .warningText {
@@ -103,7 +95,6 @@
     align-items: flex-end;
     height: 450px;
     width: 100%;
-    /* overflow: scroll; */
 }
 
 .scrollDiv {
@@ -123,15 +114,10 @@ scrollbar-width: none;  /* Firefox */
     font-size: 40px;
     width: 300px;
     height: 40px;
-    /* background-color: orangered; */
 }
 
 .password {
     width: 300px;
-    height: px;
-    /* background-color: palegreen; */
-    /* position: absolute;
-    right: 20px; */
 }
 
 .studentName {
@@ -140,7 +126,6 @@ scrollbar-width: none;  /* Firefox */
     margin-right: 20px;
     font-size: 27px;
     width: 250px;
-    /* background-color: palevioletred; */
 }
 
 .studentNameDiv {
@@ -150,7 +135,6 @@ scrollbar-width: none;  /* Firefox */
     height: 280px;
     width: 700px;
     flex-flow: column wrap;
-    /* background-color: rebeccapurple; */
     overflow-x: scroll;
 }
 
@@ -170,142 +154,3 @@ scrollbar-width: none;  /* Firefox */
     background-color: rgb(176, 198, 221);
     color: rgb(32, 60, 87);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .createClassDiv {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.classListDiv {
-    height: 47vh;
-    width: 100%;
-    background-color: rgb(171, 171, 172, 0.9);
-}
-
-.classButtonDiv {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 12vh;
-    background-color: rgb(243, 245, 246);
-    border-top: 2px solid rgba(66, 66, 133, 0.9);
-}
-
-.inputClassDiv {
-    display: flex;
-    justify-content: space-between;
-    overflow: scroll;
-    height: 219px;
-    width: 100%;
-    margin: 0;
-    background-color: rgb(243, 245, 246);
-}
-
-.changeMode {
-    position: absolute;
-    bottom: 283px;
-    right: 20px
-}
-
-.completeDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    background-color: rgb(243, 245, 246);
-    height: 100px;
-    width: 200px;
-}
-
-
-
-.studentLabelDiv {
-    display: flex;
-    padding-top: 10px;
-}
-
-.studentInputField {
-    border-radius: 7px;
-    padding-left: 5px;
-    height: 25px;
-    border-right: 5px solid rgb(243, 245, 246);
-    background-color: rgb(243, 245, 246);
-    margin-right: 5px;
-    width: 80%;
-    font-size: 20px;
-    /* margin-left: 10px; */
-/* }
-
-.studentInputLabel {
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-right: 2px;
-    border-radius: 7px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    height: 45px;
-    font-size: 20px;
-    padding-left: 5px;
-    color: rgb(243, 245, 246);
-    background-color: rgba(1, 5, 53, 0.9);
-}
-
-.listDiv {
-    display: flex;
-    flex-direction: column;
-}
-
-.removeButton {
-    margin-right: 10px;
-    height: 27px;
-    justify-self: right;
-    background-color: rgba(0, 168, 255, 0.7);
-}
-
-.removeButton:hover {
-    overflow: hidden;
-    background-image: linear-gradient(270deg,rgba(0, 168, 255, 0.7),rgba(1, 5, 53, 0.9));
-    background-size: 400% 400%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-	cursor: pointer;
-}
-
-.blankClass {
-    position: relative;
-    margin-top: 35px;
-    margin-left: 35px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    width: 700px;
-    background-color: rgb(231, 217, 217);
-    font-size: 40px;
-    color:rgba(1, 5, 53, 0.9);
-    overflow-wrap: normal;
-    overflow: hidden;
-    border-radius: 3%;
-    box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
-}
-
-
-
-*/

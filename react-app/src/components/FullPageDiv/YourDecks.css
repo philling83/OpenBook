@@ -6,13 +6,16 @@
 	height: 500px;
 	overflow: scroll;
 	background-color: rgb(243, 245, 246);
+	cursor: pointer;
+	padding-left: 10px;
+	color: rgba(1, 5, 53);
 }
 
-.textDiv {
+.yourDeckTextDiv {
 	display: flex;
 	align-items: center;
 	padding-left: 20px;
-	color: rgba(1, 5, 53, 0.9);
+	color: rgba(1, 5, 53, 0.6);
 	font-size: 20px;
 	margin-top: 10px;
 	height: 30px;
@@ -20,18 +23,18 @@
 	background-color:  rgb(243, 245, 246);
 }
 
-.yourFoldersDiv {
+/* .yourFoldersDiv {
 	height: auto;
 	width: 100%;
 	margin-top: 20px;
-}
+} */
 
-.folder {
+/* .folder {
 	margin-left: 20px;
 	width: auto;
 	height: 25px;
 	color:rgba(1, 5, 53, 0.9);
-}
+} */
 
 .allDecksDiv {
 	display: flex;
@@ -42,40 +45,60 @@
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
-	width: 130px;
-	height: 100px;
-	margin-left: 25px;
-	margin-top: 20px;
-	border: 2px solid rgb(69, 105, 139);
+	width: 143px;
+	height: 94px;
+	margin: 10px;
+	border: 3px solid rgba(1, 5, 53, 0.9);
+	box-sizing: border-box;
 }
+
+.miniHeader {
+	height: 22px;
+	background-color: tomato;
+}
+
+
 
 .deckDiv:hover {
 	transform: translateY(-5px)
 }
 
-.deckDiv img {
+/* .deckDiv img {
 	height: 100%;
 	width: auto;
-}
+} */
 
 .deckText {
-	height: 60px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	color: rgba(1, 5, 53, 0.9);
-	font-size: 13px;
+	justify-content: space-between;
+	color: rgba(1, 5, 53);
+	font-size: 15px;
 	background-color:  rgb(243, 245, 246);
-	margin-top: 3px;
 }
 
-.deckImage {
-	height: 80px;
+.miniDeckDiv {
+	height: 94px;
+	width: 163px;
+	margin: 20px;
 }
 
-.image {
-	padding: 0;
-	margin: 0;
-	height: 80px;
-	width: 100px;
+.miniDeckName {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	font-size: 18px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.miniCreatedBy {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 22px;
+	padding-right: 5px;
+	border-top: 2px solid rgba(1, 5, 53, 0.6);
 }
