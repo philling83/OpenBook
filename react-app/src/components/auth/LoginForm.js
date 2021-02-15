@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-// import { login } from "../../services/auth";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
-import "./LoginForm.css";
-import StudentLoginForm from "./StudentLoginForm";
-
 import styled, { keyframes } from "styled-components";
 import { fadeInLeft, fadeInRight } from "react-animations";
 
+import StudentLoginForm from "./StudentLoginForm";
+
+import "./LoginForm.css";
 const FadeInLeftAnimation = keyframes`${fadeInLeft}`;
 const FadeInLeftDiv = styled.div`
   animation: 3s ${FadeInLeftAnimation};
@@ -60,7 +59,7 @@ const LoginForm = () => {
 				<a href="/">
 					<img
 						className="logo-image"
-						src={require("../../Assets/logo.png")}
+						src={require("../../Assets/splashLogo.png")}
 						alt=""
 					></img>
 				</a>

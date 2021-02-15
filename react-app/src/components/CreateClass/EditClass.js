@@ -3,8 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import * as classActions from '../../store/classrooms'
 
+import './EditClass.css'
 
-const EditClass = () => {
+const EditClass = (props) => {
     const dispatch = useDispatch();
     let history = useHistory()
 
@@ -76,11 +77,13 @@ const EditClass = () => {
             return null
         }
         return newStudents.map((el,i) => (
-            <label className='studentInputLabel'>
-                New Student Name
-                <input className='studentInputField' id={i} type='text' onChange={updateNewStudent} value={el.name} />
-                <button className='myButton removeButton' id={i} onClick={deleteNewStudent}>Remove</button>
-            </label>
+            // <label className='editClassLabel'>
+            //     New Student Name]
+                <div className='addStudentRow'>
+                    <button className='removeStudentButton' id={i} onClick={deleteNewStudent}>Remove</button>
+                    <input className='editClassField' placeholder='Enter Student Name' id={i} type='text' onChange={updateNewStudent} value={el.name} />
+                </div>
+            // </label>
         ))
     }
 
@@ -125,7 +128,7 @@ const EditClass = () => {
 
     const handleSubmitEdit = async (e) => {
         e.preventDefault()
-
+        console.log('edit submit')
         //Edit classroom info
         const classData = {
             'name': className,
@@ -154,27 +157,32 @@ const EditClass = () => {
 
 
     return (
-        loaded && (<div>
-
-            <h1>Create class</h1>
-
-            <form className='student-creation'>
-                <label>
-                    Class Name
-                    <input type='text' value={className} placeholder="Molly's Class" onChange={updateClassName} />
-                </label>
-                {generateCurrentStudentsList()}
-                {generateNewStudentsList()}
-                <button className='add-row' onClick={addRow}>Add Row</button>
-                <label>
-                    Secret password for class login
-                    <input type='text' onClick={updatePassword} placeholder='Must change me' />
-                </label>
-
-                <button onClick={handleSubmitEdit}>Edit Your Class!</button>
-
-            </form>
-        </div>
+        loaded && (
+            <div className='editClassDiv'>
+                <div className='upperEditClassDiv'>
+                    <h1 className='editClassHeader'>Edit your class ~</h1>
+                    <div className='closeButtonDiv .editClose' onClick={props.toggleModal}>
+                        <div className='closeInnerDiv'></div>
+                        <i className='closeButton fas fa-window-close'></i>
+                    </div>
+                </div>
+                <form className='editClassForm'>
+                    <div className='editDetailDiv'>
+                        <h1 className='infoLabel'>Class Name ~</h1>
+                        <input className='infoInput' placeholder="(e.g. Mary's Class)" onChange={updateClassName}/>
+                    </div>
+                    <div className='editDetailDiv'>
+                        <h1 className='infoLabel'>Password for class login ~</h1>
+                        <input className='infoInput' placeholder='(e.g. 4321)' onChange={updatePassword} />
+                    </div>
+                    <div className='scrollDiv'>
+                        {generateCurrentStudentsList()}
+                        {generateNewStudentsList()}
+                    </div>
+                    <button className='addStudentButton' onClick={addRow}>Add Student</button>
+                    <button className='editClassSubmit' onClick={handleSubmitEdit}>Submit Changes</button>
+                </form>
+            </div>
         )
     )
 

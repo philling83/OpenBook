@@ -1,8 +1,8 @@
 .checkoutDiv {
     display: flex;
     flex-direction: column;
-    height: 24vh;
-    border-top: 2px solid rgba(1, 5, 53, 0.9);
+    height: 33vh;
+    background-color: rgb(243, 245, 246);
 }
 
 .addedCardsDiv {
@@ -13,35 +13,15 @@
 .addedCards {
     display: flex;
     width: 100%;
-    /* height: 30%; */
-    background-color: whitesmoke;
+    background-color: rgb(243, 245, 246);
 }
 
-.text {
+.addCardText {
     height: 10%;
     padding-left: 20px;
     padding-top: 10px;
-    color: rgba(1, 5, 53, 0.9);
-    background-color: whitesmoke;
+    color: rgba(1, 5, 53, 0.7);
+    background-color: rgb(243, 245, 246);
     font-size: 18px;
     align-items: center;
 }
-
-
-
-/* .controlPanel {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 15%;
-    background-color: whitesmoke;
-} */
-
-/* .checkOutButton {
-    margin: 10px;
-    height: 40px;
-    width: 90px;
-    color: whitesmoke;
-    background-color: rgba(1, 5, 53, 0.9);
-} */

@@ -1,164 +1,130 @@
+
 .createClassDiv {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(243, 245, 246);
     height: 100%;
     width: 100%;
+    color: rgb(32, 60, 87);
 }
 
-.classListDiv {
-    height: 47vh;
+.upperHolder {
+    height: 51%;
     width: 100%;
-    background-color: rgb(171, 171, 172, 0.9);
-    border-top: 2px solid rgba(1, 5, 53, 0.9);
+    border-bottom: 6px solid rgb(32, 60, 87);
 }
 
-.classButtonDiv {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 12vh;
-    background-color: whitesmoke;
-    border-top: 2px solid rgba(1, 5, 53, 0.9);
-}
-
-.inputClassDiv {
-    display: flex;
-    justify-content: space-between;
-    overflow: scroll;
-    height: 219px;
-    width: 100%;
-    margin: 0;
-    background-color: whitesmoke;
-    border-top: 2px solid rgba(1, 5, 53, 0.9);
-}
-
-.changeMode {
-    position: absolute;
-    bottom: 283px;
-    right: 20px
-}
-
-.completeDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    background-color: whitesmoke;
-    height: 100px;
-    width: 200px;
-}
-
-.warningText {
-    padding-left: 5px;
-    height: 100px;
-    width: 70px;
-    margin-bottom: 13px;
-    font-size: 15px;
-    text-align: center;
-    color: rgba(0, 168, 255, 0.7);
-}
-
-.studentLabelDiv {
-    display: flex;
-    padding-top: 10px;
-}
-
-.studentInputField {
-    border-radius: 7px;
-    padding-left: 5px;
-    height: 25px;
-    border-right: 5px solid whitesmoke;
-    background-color: whitesmoke;
-    margin-right: 5px;
-    width: 80%;
-    font-size: 20px;
-    /* margin-left: 10px; */
-}
-
-.studentInputLabel {
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-right: 2px;
-    border-radius: 7px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    height: 45px;
-    font-size: 20px;
-    padding-left: 5px;
-    color: whitesmoke;
-    background-color: rgba(1, 5, 53, 0.9);
-}
-
-.listDiv {
-    display: flex;
-    flex-direction: column;
-}
-
-/* .lowerDiv {
-    display: flex;
-    padding-left: 15px;
-    background-color: yellow;
-    height: 290px;
-    width: 700px;
-} */
-.removeButton {
-    margin-right: 10px;
-    height: 27px;
-    justify-self: right;
-    background-color: rgba(0, 168, 255, 0.7);
-}
-
-.removeButton:hover {
-    overflow: hidden;
-    background-image: linear-gradient(270deg,rgba(0, 168, 255, 0.7),rgba(1, 5, 53, 0.9));
-    background-size: 400% 400%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-	cursor: pointer;
-}
-
-.blankClass {
+.upperCreateClassDiv {
     position: relative;
-    margin-top: 35px;
+    margin-top: 30px;
     margin-left: 35px;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    height: 80%;
-    width: 700px;
-    background-color: rgb(231, 217, 217);
+    height: 376px;
+    width: 650px;
+    background-color: rgba(165, 128, 93, 0.3);
     font-size: 40px;
     color:rgba(1, 5, 53, 0.9);
     overflow-wrap: normal;
     overflow: hidden;
-    border-radius: 3%;
+    border-radius: 5px;
     box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
 }
 
-.infoDiv {
+.lowerCreateClassDiv {
+    height: 49%;
+    width: 800px;
+    margin-top: 5px;
+}
+
+.createClassSubmit, .addCreateStudentButton {
+    height: 50px;
+    background-color: rgb(32, 60, 87);
+    color: rgb(248, 245, 245);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 45px;
+    width: 180px;
+}
+
+.addCreateStudentButton {
+    position: absolute;
+    bottom: 170px;
+    left: 255px;
+}
+
+.editDetailDiv {
     display: flex;
+    width: 770px;
     justify-content: center;
+    margin-top: 15px;
+}
+
+.createLabel {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.createButtonDiv {
+    position: absolute;
+    bottom: 330px;
+    left: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 290px;
+}
+
+.warningText {
+    padding-left: 5px;
+    margin: 0;
+    width: 250px;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: rgba(165, 93, 130, 0.9);
+}
+
+.studentInputForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 450px;
+    width: 100%;
+}
+
+.scrollDiv {
+    overflow: scroll;
+}
+
+.scrollDiv::-webkit-scrollbar {
+    display: none;
+  }
+
+.scrollDiv {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
 }
 
 .className {
-    margin-top: 30px;
     font-size: 40px;
+    width: 300px;
+    height: 40px;
 }
 
 .password {
-    position: absolute;
-    right: 20px;
+    width: 300px;
 }
 
 .studentName {
     margin-left: 0px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 20px;
-    font-size: 35px;
+    font-size: 27px;
     width: 250px;
 }
 
@@ -166,7 +132,25 @@
     display: flex;
     flex-direction: column;
     padding-left: 15px;
-    height: 320px;
+    height: 280px;
     width: 700px;
     flex-flow: column wrap;
+    overflow-x: scroll;
+}
+
+.infoDiv {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    height: 75px;
+    background-color: rgba(165, 128, 93, 0.9);;
+    border-bottom: 4px solid rgb(32, 60, 87);
+}
+
+.createClassSubmit:hover, .addCreateStudentButton:hover, .removeStudentButton:hover {
+    background-color: rgb(176, 198, 221);
+    color: rgb(32, 60, 87);
 }

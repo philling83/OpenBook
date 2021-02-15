@@ -1,15 +1,13 @@
 
 .bodyDiv {
-	height: 93vh;
+	height: 91vh;
 	display: flex;
-}
-
-.sideBarDiv {
-	background-color: rgba(5, 13, 133, 0.9);
 }
 
 .mainDiv {
 	width: 100%;
+	height: 100%;
+	background-color: rgb(243, 245, 246);
 }
 
 .teacherDiv {
@@ -18,3 +16,48 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.fullPageDiv {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.myButton:hover {
+    overflow: hidden;
+    background-image: linear-gradient(270deg,rgba(1, 5, 53, 0.9),  rgba(0, 168, 255, 0.7));
+    background-size: 400% 400%;
+    animation: TransitioningBackground 10s ease infinite;
+    transition: 0.6s;
+	cursor: pointer;
+}
+
+.myButton {
+	font-size: 15px;
+	color: whitesmoke;
+    text-align: center;
+	border-radius: 5px;
+	margin-left: 20px;
+	height: 50px;
+	width: 90px;
+	background-color: rgba(1, 5, 53, 0.9);
+	text-decoration: none;
+}
+
+@keyframes TransitioningBackground {
+    0% {
+        background-position: 1% 0%;
+    }
+    50% {
+        background-position: 99% 100%;
+    }
+    100% {
+        background-position: 1% 0%;
+    }
+}
+
+/* .logOutButton {
+    height: 30px;
+} */

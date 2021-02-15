@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 import YourCards from './YourCards'
 import SearchBar from '../FullPageDiv/SearchBar.js';
-import MinorAction from '../FullPageDiv/MinorAction.js';
 import AddCardToDeck from './AddCardToDeck';
 import * as cardActions from '../../store/cards'
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,15 +19,14 @@ const EditDeck = () => {
         for (let card of current_deck.cards) {
             dispatch(cardActions.AddCardToAdd(card))
         }
-    }, [])
+    }, [current_deck])
 
     return (
         <div className='teacherDiv'>
             <SearchBar />
-            <AddCardToDeck /> 
+            <AddCardToDeck />
             <DeckInfoEdit />
-            <MinorAction createDeck={false} completeDeck={true} createCard={true}/>
-            <YourCards />
+            {/* <YourCards /> */}
         </div>
     )
 }

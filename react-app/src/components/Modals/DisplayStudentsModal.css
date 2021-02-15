@@ -1,0 +1,91 @@
+
+.studentModalDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: rgba(165, 128, 93, 0.5);
+}
+
+.studentUpperDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 75px;
+    /* border-bottom: 4px solid rgb(32, 60, 87); */
+}
+
+.headersDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    /* text-decoration: underline; */
+    font-size: 30px;
+    border-bottom: 4px solid rgb(32, 60, 87);
+}
+
+.studentsAndAssignments {
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+}
+
+.righthandHeader {
+    margin-left: 160px;
+    margin-right: 80px;
+}
+
+.editClassHeader {
+    font-size: 39px;
+    margin-top: 20px;
+    margin-right: 170px;
+}
+
+.studentListHeader {
+    font-size: 32px;
+}
+
+.studentModalList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.studentsAndAssignments::-webkit-scrollbar {
+    display: none;
+  }
+
+.studentsAndAssignments {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+.hardCode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    height: 105px;
+    width: 100%;
+    margin: 0px;
+    border-bottom: 2px solid rgb(32, 60, 87);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    overflow-x: scroll;
+    line-height: 30px;
+}
+
+.studentModalList {
+    width: 40%;
+    height: 500px;
+}
+
+.rightHandList {
+    width: 60%;
+    border-left: 2px solid rgb(32, 60, 87);
+}

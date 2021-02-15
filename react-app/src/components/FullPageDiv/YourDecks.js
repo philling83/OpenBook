@@ -25,26 +25,35 @@ const YourDecks = () => {
     }, [dispatch, deckId])
 
     const handleSelection = (e) => {
+		console.log(e.target.id)
         const deckId = e.target.id
         return setDeckId(deckId);
-    };
+	};
+
+	const headerColor = () => {
+		const colorArray = ['rgb(69, 105, 139)', 'rgba(69, 105, 139, 0.5)', 'rgba(165, 128, 93, 0.9)', 'rgba(165, 93, 94, 0.9)', 'rgba(165, 93, 130, 0.9)', 'rgba(165, 93, 130, 0.5)', 'rgba(165, 93, 94, 0.5)', 'rgba(165, 128, 93, 0.5)']
+		const randomNumber = Math.floor((Math.random() * 5) + 0);
+		return colorArray[randomNumber]
+	}
 
 	return (
 		loaded && (
 			<div className="yourDecksDiv">
-				<div className="textDiv">Your Decks</div>
+				<div className="yourDeckTextDiv">Your Decks</div>
 				<div className="decksDiv">
 					<div className="allDecksDiv">
 						{decks.map((deck, i) => (
-							<div key={deck.name.concat(i)} onClick={handleSelection}>
-								<div id={deck.id} className="deckDiv">
-									<div className="deckText">
-										<div>{deck.name}</div>
-										<div>{deck.user.username}</div>
-										<div>{deck.subject}</div>
+							// <div key={deck.name.concat(i)} onClick={handleSelection}>
+								<div id={deck.id} className="deckDiv" key={deck.name.concat(i)} onClick={handleSelection}>
+									<div className="deckText" id={deck.id}  onClick={handleSelection}>
+										<div style={{backgroundColor: `${headerColor()}`}} className='miniHeader' id={deck.id} onClick={handleSelection}>
+											<div id={deck.id} onClick={handleSelection}>{deck.subject}</div>
+										</div>
+										<div id={deck.id} className="miniDeckName"  onClick={handleSelection}>{deck.name}</div>
+										<div id={deck.id} className="miniCreatedBy" onClick={handleSelection}>{`By~ ${deck.user.username}`}</div>
 									</div>
 								</div>
-							</div>
+							// </div>
 						))}
 					</div>
 				</div>

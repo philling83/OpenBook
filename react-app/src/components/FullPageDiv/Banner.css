@@ -1,12 +1,39 @@
 .bannerDiv {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 7vh;
+	height: 88px;
 	width: 100%;
-	background-color: whitesmoke;
-	padding-left: 20px;
-	padding-right: 20px;
+	background-color: rgb(243, 245, 246);
+	background-image: url('../../images/NYC.png');
+	background-size: 1200px;
+	background-repeat: no-repeat;
+	background-position-x: 0px;
+	background-position-y: -80px;
+	filter: sepia(20%);
+	/* opacity: 0.9; */
+}
+
+@media only screen and (min-width: 1200px) {
+	.bannerDiv {
+		background-size: 1400px;
+		background-position-y: -100px;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.bannerDiv {
+		background-size: 1600px;
+		background-position-y: -130px;
+	}
+}
+@media only screen and (min-width: 1600px) {
+	.bannerDiv {
+		background-size: 1800px;
+		background-position-y: -160px;
+	}
+}
+@media only screen and (min-width: 1800px) {
+	.bannerDiv {
+		background-size: 2000px;
+		background-position-y: -190px;
+	}
 }
 
 .userDiv {
@@ -30,35 +57,33 @@
 	margin-bottom: 5px;
 }
 
-/* .avatar {
-	height: 45px;
-	width: 45px;
-	border-radius: 50%;
-	background-color: rgba(5, 13, 133, 0.9);
-} */
-
-/* .logoDiv {
-	display: flex;
-} */
-
-/* .logoImage {
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	background-color: rgb(160, 47, 64);
-}
-
-.logoText {
-	margin-left: 5px;
-	color: rgb(160, 47, 64);
-	font-size: 25px;
-	height: 30px;
-	width: 80px;
-} */
-
 .logoImage {
-	content:url("../../Assets/logo.png");
-	width: 170px;
-	height: 45px;
-	margin-left: 15px;
+	position: absolute;
+	right: 25px;
+	top: 12px;
+	/* content:url("../../Assets/logo.png"); */
+	background:  url("../../Assets/bookLogo.png") no-repeat;
+	background-size: 200px;
+	background-position: center;
+	background-blend-mode: screen;
+	/* background-blend-mode: color; */
+	width: 210px;
+	height: 65px;
+	/* opacity: 1; */
+	background-color: none;
+	/* border-radius: 45%;
+	padding: 9px; */
+  }
+
+  .bannerContainer {
+	  position: static;
+	  display: flex;
+	  flex-direction: column;
+  }
+
+  .decorDiv {
+	  height: 15px;
+	  background-color:rgb(69, 105, 139);
+	  background-color:rgb(32, 60, 87);
+	  border-bottom: 1px solid rgb(243, 245, 246);
   }
