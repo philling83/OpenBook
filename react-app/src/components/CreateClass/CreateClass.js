@@ -58,16 +58,15 @@ const CreateClass = () => {
             'name': className,
             'password': password
         }
-        console.log('classsroom data', classroomData)
 
         const new_class = await dispatch(classActions.createRoom(teacherId, classroomData))
         const classroomId = new_class.id
 
+        console.log('classroom data', classroomData)
 
         await dispatch(classActions.createStudents(classroomId, names))
 
-
-        history.push('/teachers/:id')
+        history.push(`/teachers/${teacherId}`)
     }
 
     return (

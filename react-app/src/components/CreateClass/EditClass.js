@@ -178,6 +178,7 @@ const EditClass = (props) => {
                     <div className='scrollDiv'>
                         {generateCurrentStudentsList()}
                         {generateNewStudentsList()}
+
                     </div>
                     <button className='addStudentButton' onClick={addRow}>Add Student</button>
                     <button className='editClassSubmit' onClick={handleSubmitEdit}>Submit Changes</button>

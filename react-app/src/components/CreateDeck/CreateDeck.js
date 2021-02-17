@@ -8,7 +8,6 @@ import AddCardToDeck from './AddCardToDeck';
 // import DeckInfoCreate from './DeckInfoCreate'
 
 const CreateDeck = () => {
-    console.log('createDeck')
     const dispatch = useDispatch()
 
     useEffect(() => {
