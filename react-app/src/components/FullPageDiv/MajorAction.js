@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as deckActions from "../../store/decks";
 import * as classActions from '../../store/classrooms'
+
 import DisplayStudentsModal from '../Modals/DisplayStudentsModal'
 import DisplayAssignmentsModal from '../Modals/DisplayAssignmentsModal'
+import DisplayReportsModal from '../Modals/DisplayReportsModal'
 
 import "./MajorAction.css";
 
-const MajorAction = (props) => {
+const MajorAction = () => {
 	const deck = useSelector((state) => state.deck.deck);
 	const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
 	const dispatch = useDispatch();
@@ -31,7 +33,8 @@ const MajorAction = (props) => {
 				<>
 					{/* <div className="majorDiv assignmentDiv">Current Assignments</div> */}
 					<DisplayAssignmentsModal />
-					<div className="majorDiv studentDiv">Reports</div>
+					<DisplayReportsModal />
+					{/* <div className="majorDiv studentDiv">Reports</div> */}
 					<DisplayStudentsModal />
 				</>
 			)}

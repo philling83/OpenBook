@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	background-color: rgb(69, 105, 139);
+	cursor: pointer;
 }
 
 .sideDiv {

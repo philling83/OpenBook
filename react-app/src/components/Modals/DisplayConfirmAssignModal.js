@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal'
 
-import EditClass from '../CreateClass/EditClass'
-
-import './DisplayEditClassModal'
+import './DisplayConfirmAssignModal.css'
 
 const customStyles = {
     overlay: {
@@ -11,10 +9,10 @@ const customStyles = {
     },
     content: {
         position: 'absolute',
-        top: '280px',
-        left: '120px',
-        height: '500px',
-        width: '800px',
+        top: '320px',
+        left: '260px',
+        height: '300px',
+        width: '475px',
         overflow: 'auto',
         WebkitOverflowScrolling: 'touch',
         outline: 'none',
@@ -32,7 +30,7 @@ const customStyles = {
     }
 }
 
-const DisplayEditClassModal = () => {
+const DisplayConfirmAssignModal = () => {
     const [modalOpen, setModalOpen] = useState(true)
 
     const toggleModal = (e) => {
@@ -46,13 +44,24 @@ const DisplayEditClassModal = () => {
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
                 style={customStyles}
-                contentLabel='Edit Class'
+                contentLabel='Confirm Assign Deck'
                 ariaHideApp={false}
             >
-                <EditClass toggleModal={toggleModal}/>
+                <div className='confirmAssignDiv'>
+                    <h1>Assign this deck to HardCode?</h1>
+                    <div className='choiceButtonDiv'>
+                    <div className='closeButtonDiv' onClick={toggleModal}>
+                        <i className='closeButton  yesChoice fas fa-thumbs-up'></i>
+                    </div>
+                    <div className='closeButtonDiv' onClick={toggleModal}>
+                        <div className='closeInnerDiv'></div>
+                        <i className='closeButton fas fa-window-close'></i>
+                    </div>
+                    </div>
+                </div>
             </Modal>
         </div>
     )
 }
 
-export default DisplayEditClassModal;
+export default DisplayConfirmAssignModal;
