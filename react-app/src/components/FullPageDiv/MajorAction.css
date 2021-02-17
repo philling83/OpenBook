@@ -9,6 +9,7 @@
 	width: 2500px;
 	background-color:  rgb(243, 245, 246);
 	padding: 10px;
+	cursor: pointer;
 }
 
 .majorDiv {
@@ -20,7 +21,7 @@
 	height: 170px;
 	width: 250px;
 	margin-left: 25px;
-	border-radius: 5%;
+	border-radius: 10px;
 	color:  rgb(243, 245, 246);
 	font-size: 25px;
 }

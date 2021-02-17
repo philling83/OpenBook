@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import  { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from "../../store/session"
 
 import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
 import DisplaySubmitDeckModal from '../Modals/DisplaySubmitDeckModal'
+import DisplayConfirmAssignModal from '../Modals/DisplayConfirmAssignModal'
 
 import './SideBar.css';
 
@@ -12,9 +13,13 @@ const SideBar = (props) => {
     const dispatch = useDispatch()
     const [editClassModalOpen, setEditClassModalOpen] = useState(false)
     const [submitDeckModalOpen, setSubmitDeckModalOpen] = useState(false)
+    const [confirmAssignModalOpen, setConfirmAssignOpen] = useState(false)
+    const deck = useSelector((state) => state.deck.deck);
     const roomInfo = useSelector(state => state.classroom.room)
     const currentUser = useSelector(state => state.session.user);
     const user = currentUser.username
+
+    useEffect(() => {}, [deck, deck.id]);
 
     const toggleEditClassModal = (e) => {
         e.preventDefault()
@@ -26,6 +31,11 @@ const SideBar = (props) => {
         setSubmitDeckModalOpen(!submitDeckModalOpen)
     }
 
+    const toggleConfirmAssignModal = (e) => {
+        e.preventDefault()
+        setConfirmAssignOpen(!confirmAssignModalOpen)
+    }
+
     const onLogout = async (e) => {
         return dispatch(
           sessionActions.logout()
@@ -34,10 +44,14 @@ const SideBar = (props) => {
 
     return (
         <div className='sideBarDiv'>
+
             {editClassModalOpen &&
                 <DisplayEditClassModal />}
             {submitDeckModalOpen &&
                 <DisplaySubmitDeckModal />}
+            {confirmAssignModalOpen &&
+                <DisplayConfirmAssignModal />}
+
             {props.goHome &&
                 <NavLink to={`/teachers/${currentUser.id}`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Home</div>
@@ -58,14 +72,6 @@ const SideBar = (props) => {
                 <NavLink to='/teacher/EditDeck' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Edit Deck</div>
                 </NavLink>}
-            {props.assignDeck &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Assign Deck</div>
-                </NavLink>}
-            {props.previewDeck &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Preview Deck</div>
-                </NavLink>}
             {props.addCardToDeck &&
                 <NavLink to='' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Add Card to Deck</div>
@@ -82,6 +88,7 @@ const SideBar = (props) => {
                 <NavLink to='' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Remove Card</div>
                 </NavLink>}
+
             {props.completeDeck &&
                 <div className='sideDiv joinText' onClick={toggleSubmitDeckModal}>
                     Complete Deck</div>}
@@ -92,6 +99,16 @@ const SideBar = (props) => {
                 <div>{user}</div>
                 <div>Log Out</div>
             </div>
+
+            {deck.id && props.viewDeck &&
+                <>
+                    <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
+                        Assign Deck</div>
+                    <NavLink to='/teacher/viewDeck' style={{textDecoration: 'none'}}>
+                        <div className='sideDiv joinText'>View Deck</div>
+                    </NavLink>
+                </>
+            }
         </div>
     )
 }

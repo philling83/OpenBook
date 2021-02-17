@@ -4,10 +4,12 @@ import * as deckActions from "../../store/decks"
 
 import './SearchBar.css'
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 	const [term, setTerm] = useState('')
 
 	const dispatch = useDispatch()
+
+	const deckOrCards = props.searchCards ? 'Cards' : 'Decks'
 
 	useEffect(() => {
 		dispatch(deckActions.searchDecks(term));
@@ -21,7 +23,7 @@ const SearchBar = () => {
 		<>
 			<div className="searchBarDiv">
 				<div className='searchBarInner'>
-					<input type="text" className="searchBar" placeholder="Search Decks by Title or Keywords (e.g. addition, words)"
+					<input type="text" className="searchBar" placeholder={`Search ${deckOrCards} by Title or Keywords (e.g. addition, words)`}
 					value={term}
 					onChange={updateValue}
 					/>

@@ -19,7 +19,7 @@ const CreateDeck = () => {
         <div className='teacherDiv'>
             <AddCardToDeck />
             {/* <DeckInfoCreate /> */}
-            <SearchBar />
+            <SearchBar searchCards={true}/>
             <YourCards />
         </div>
 

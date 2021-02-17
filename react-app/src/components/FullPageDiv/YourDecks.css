@@ -23,29 +23,16 @@
 	background-color:  rgb(243, 245, 246);
 }
 
-/* .yourFoldersDiv {
-	height: auto;
-	width: 100%;
-	margin-top: 20px;
-} */
-
-/* .folder {
-	margin-left: 20px;
-	width: auto;
-	height: 25px;
-	color:rgba(1, 5, 53, 0.9);
-} */
-
 .allDecksDiv {
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .deckDiv {
-	border-radius: 5px;
+	border-radius: 3px;
 	display: flex;
 	flex-direction: column;
-	width: 143px;
+	width: 137px;
 	height: 94px;
 	margin: 10px;
 	border: 3px solid rgba(1, 5, 53, 0.9);
@@ -54,19 +41,11 @@
 
 .miniHeader {
 	height: 22px;
-	background-color: tomato;
 }
-
-
 
 .deckDiv:hover {
 	transform: translateY(-5px)
 }
-
-/* .deckDiv img {
-	height: 100%;
-	width: auto;
-} */
 
 .deckText {
 	display: flex;

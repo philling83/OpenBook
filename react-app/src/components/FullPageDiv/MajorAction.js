@@ -7,7 +7,7 @@ import DisplayAssignmentsModal from '../Modals/DisplayAssignmentsModal'
 
 import "./MajorAction.css";
 
-const MajorAction = (props) => {
+const MajorAction = () => {
 	const deck = useSelector((state) => state.deck.deck);
 	const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
 	const dispatch = useDispatch();

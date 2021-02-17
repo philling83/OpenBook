@@ -90,6 +90,7 @@
     border-radius: 5px;
     font-size: 18px;
     left: 20px;
+    cursor: pointer;
 }
 
 .removeStudentButton {
@@ -131,6 +132,8 @@
     background-repeat: no-repeat;
     font-size: 60px;
     z-index: 1;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .closeButton:hover {
@@ -152,8 +155,8 @@
     margin-top: 15px;
     position: relative;
     display: flex;
-    height: 60px;
-    width: 60px;
+    height: auto;
+    width: auto;
 }
 .closeButtonDiv:hover .closeInnerDiv {
     background-color: rgb(32, 60, 87);

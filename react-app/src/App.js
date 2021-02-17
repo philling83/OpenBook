@@ -90,14 +90,13 @@ function App() {
 								createDeck={true}
 								createCard={true}
 								editDeck={false}
-								assignDeck={false}
-								previewDeck={false}
 								addCardToDeck={false}
 								clearCard={false}
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
 								editClass={true}
+								viewDeck={true}
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage />
@@ -116,14 +115,13 @@ function App() {
 								createDeck={true}
 								createCard={true}
 								editDeck={false}
-								assignDeck={false}
-								previewDeck={false}
 								addCardToDeck={false}
 								clearCard={false}
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
 								editClass={true}
+								viewDeck={true}
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage/>
@@ -142,14 +140,13 @@ function App() {
 								createDeck={true}
 								createCard={true}
 								editDeck={false}
-								assignDeck={false}
-								previewDeck={false}
 								addCardToDeck={false}
 								clearCard={false}
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
 								editClass={false}
+								viewDeck={true}
 							/>
 							<div className="mainDiv">
 								<CreateClass />
@@ -168,14 +165,13 @@ function App() {
 								createDeck={false}
 								createCard={true}
 								editDeck={false}
-								assignDeck={false}
-								previewDeck={false}
 								addCardToDeck={false}
 								clearCard={false}
 								editCard={false}
 								removeCard={false}
 								completeDeck={true}
 								editClass={false}
+								viewDeck={true}
 							/>
 							<div className="mainDiv">
 								<CreateDeck />
@@ -210,18 +206,43 @@ function App() {
 								createDeck={true}
 								createCard={false}
 								editDeck={false}
-								assignDeck={false}
-								previewDeck={false}
 								addCardToDeck={true}
 								clearCard={true}
 								editCard={false}
 								removeCard={false}
 								completeDeck={false}
 								editClass={false}
+								viewDeck={true}
 							/>
 							<div className="mainDiv">
 								<CreateCard />
 							</div>
+						</div>
+					</div>
+				</ProtectedRoute>
+
+				<ProtectedRoute path="/teacher/viewDeck">
+					<div className="fullPageDiv">
+						<Banner />
+						<div className="bodyDiv">
+							<SideBar
+								goHome={true}
+								createClass={false}
+								createDeck={false}
+								createCard={false}
+								editDeck={false}
+								addCardToDeck={false}
+								clearCard={false}
+								editCard={false}
+								removeCard={false}
+								completeDeck={false}
+								editClass={false}
+								assignDeck={true}
+								viewDeck={false}
+							/>
+							{/* <div className="mainDiv">
+								<CreateCard />
+							</div> */}
 						</div>
 					</div>
 				</ProtectedRoute>
