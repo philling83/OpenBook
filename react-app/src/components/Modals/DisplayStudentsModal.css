@@ -47,6 +47,8 @@
 
 .studentListHeader {
     font-size: 32px;
+    width: 100%;
+    margin-left: 30px;
 }
 
 .studentModalList {
@@ -80,6 +82,16 @@ scrollbar-width: none;  /* Firefox */
     line-height: 30px;
 }
 
+
+.hardCode::-webkit-scrollbar {
+    display: none;
+}
+
+.hardCode {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 .studentModalList {
     width: 40%;
     height: 500px;
@@ -88,4 +100,10 @@ scrollbar-width: none;  /* Firefox */
 .rightHandList {
     width: 60%;
     border-left: 2px solid rgb(32, 60, 87);
+}
+
+.rightReportsList {
+    width: 60%;
+    border-left: 2px solid rgb(32, 60, 87);
+    line-break: normal;
 }
