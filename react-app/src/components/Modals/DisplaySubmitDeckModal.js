@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 import DeckInfoCreate from '../CreateDeck/DeckInfoCreate'
 
-import './DisplayStudentsModal.css'
+import './DisplaySubmitDeckModal.css'
 
 const customStyles = {
     overlay: {
@@ -49,7 +49,7 @@ const DisplaySubmitDeckModal = () => {
                 contentLabel='Submit Deck'
                 appElement={document.getElementById('app')}
             >
-                <DeckInfoCreate toggleModal={toggleModal}/>
+                <DeckInfoCreate modalVersion={true} toggleModal={toggleModal}/>
             </Modal>
         </div>
     )

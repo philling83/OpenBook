@@ -24,6 +24,8 @@ const DeckInfoCreate = (props) => {
         setSubject(e.target.value)
     }
 
+    const version = props.modalVersion ? 'modalVersionDiv' : 'deckInfoDiv'
+
     const updateTags = (e) => {
         const formattedTags = e.target.value.split(',')
         const cleanedTags = formattedTags.map(el => {
@@ -59,7 +61,7 @@ const DeckInfoCreate = (props) => {
     }
 
     return (
-        <div className='deckInfoDiv'>
+        <div className={version}>
             <div className='upperInfoDiv'>
                 <h1 className='deckInfoHeader'>Enter Your Deck Information ~</h1>
                 <div className='closeButtonDiv' onClick={props.toggleModal}>
