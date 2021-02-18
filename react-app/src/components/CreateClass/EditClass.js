@@ -10,6 +10,7 @@ const EditClass = (props) => {
     let history = useHistory()
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+    const teacherId = useSelector(state => state.session.user.id);
 
     // const teacherId = useSelector(state => state.session.user.id);
     let student_info = useSelector(state => state.classroom.room.students)
@@ -152,7 +153,7 @@ const EditClass = (props) => {
         //Delete removed students
         await dispatch(classActions.deleteStudents(deletedStudents))
 
-        history.push('/teachers/:id')
+        history.push(`/teachers/${teacherId}`)
     }
 
 
