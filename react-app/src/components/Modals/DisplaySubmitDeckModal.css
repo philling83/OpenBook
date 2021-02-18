@@ -3,9 +3,25 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    color: red;
     font-size: 16px;
     font-family: 'Source Sans Pro', sans-serif;
     height: 650px;
-    width: 750px;
+    width: 100%;
+    background-color: rgba(165, 128, 93, 0.5);
+    padding: 40px;
+    padding-left: 100px;
+}
+
+.completeDeckModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 93%;
+}
+
+.closeCompleteModal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }

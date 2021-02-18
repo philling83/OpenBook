@@ -18,16 +18,16 @@ const customStyles = {
         overflow: 'auto',
         WebkitOverflowScrolling: 'touch',
         outline: 'none',
-        backgroundColor: 'rgba(165, 93, 94)',
+        backgroundColor: 'rgb(248, 245, 245)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
-        color: 'rgb(236, 224, 224)',
+        color: 'rgb(32, 60, 87)',
         borderRadius: '5px',
-        padding: '10px',
-        border: '1px solid rgb(236, 224, 224)',
+        padding: '0px',
+        border: '8px solid rgb(32, 60, 87)',
     }
 }
 

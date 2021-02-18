@@ -8,7 +8,7 @@
 	height: 260px;
 	width: 2500px;
 	background-color:  rgb(243, 245, 246);
-	padding: 10px;
+	/* padding: 10px; */
 	cursor: pointer;
 }
 
@@ -60,9 +60,14 @@
 	height: 215px;
 	margin-left: 25px;
 	margin-top: 20px;
-	background-color: rgba(165, 128, 93, 0.5);
+	/* background-color: rgba(165, 128, 93, 0.5); */
 	margin: 20px;
 	box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
+	background-color: rgb(243, 245, 246, 0.8);
+    background-image: url('../../images/paper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2000px;
 	/* border: 2px solid rgba(80, 5, 230, 0.9); */
 }
 
@@ -73,9 +78,9 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	height: 100%;
-	background-color:  rgb(243, 245, 246);
+	background-color: rgba(165, 128, 93);
 	min-width: 600px;
-	width: 1320px;
+	width: 2500px;
 	overflow-x: scroll;
 }
 
@@ -87,11 +92,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 148px;
-	width: 148px;
+	height: 128px;
+	width: 128px;
 	border-top-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	background-color: rgb(157, 224, 218);
+	background-color: rgb(176, 198, 221);
 }
 
 .previewCloseButton {
@@ -122,6 +127,9 @@
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: rgba(165, 128, 93);
 	/* background-color: rgb(133, 99, 37); */
 }
 
@@ -137,14 +145,14 @@
 	background-color:  rgb(243, 245, 246);
 }
 
-.majorActionCancel {
+/* .majorActionCancel {
 	width: 50px;
 	height: 50px;
 	border: none;
 	background-color:  rgb(243, 245, 246);
 	font-size: 20pt;
 	color: rgba(0, 168, 255, 0.7)
-}
+} */
 
 .previewChoice {
 	list-style-type: circle;

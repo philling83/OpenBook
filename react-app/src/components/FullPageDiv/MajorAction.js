@@ -31,10 +31,8 @@ const MajorAction = () => {
 		<div className="majorActionDiv">
 			{!deck.id && (
 				<>
-					{/* <div className="majorDiv assignmentDiv">Current Assignments</div> */}
 					<DisplayAssignmentsModal />
 					<DisplayReportsModal />
-					{/* <div className="majorDiv studentDiv">Reports</div> */}
 					<DisplayStudentsModal />
 				</>
 			)}
@@ -50,8 +48,6 @@ const MajorAction = () => {
 								<div key={card.title.concat(i)} className="cardDiv">
 									<div className="previewQuestionText">{card.title}</div>
 									<div className="cardHolder">
-										{/* <div >{card.name}</div> */}
-                                        {/* <div className="previewText">Subject: {card.subject}</div> */}
 										<div className='choicesAnswerDiv'>
 											<div className="previewChoicesText">
 												{card.possible_answers.map((choice, i) => (
@@ -68,9 +64,6 @@ const MajorAction = () => {
 							</div>
 						))}
 					</div>
-					{/* <button className="majorActionCancel" onClick={cancelPreview}>
-						<i className="fas fa-window-close"></i>
-					</button> */}
 				</div>
 			)}
 		</div>

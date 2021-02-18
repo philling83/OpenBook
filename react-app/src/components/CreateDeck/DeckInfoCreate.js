@@ -64,21 +64,21 @@ const DeckInfoCreate = (props) => {
         <div className={version}>
             <div className='upperInfoDiv'>
                 <h1 className='deckInfoHeader'>Enter Your Deck Information ~</h1>
-                <div className='closeButtonDiv' onClick={props.toggleModal}>
+                <div className='closeButtonDiv closeCompleteModal' onClick={props.toggleModal}>
                     <div className='closeInnerDiv'></div>
                     <i className='closeButton fas fa-window-close'></i>
                 </div>
             </div>
             <form className='deckInfoForm'>
-                <div className='infoDiv'>
+                <div className='completeDeckModal'>
                     <h1 className='infoLabel'>Deck Name ~</h1>
                     <input className='infoInput' placeholder='ex: Arithmetic' onChange={updateName}/>
                 </div>
-                <div className='infoDiv'>
+                <div className='completeDeckModal'>
                     <h1 className='infoLabel'>Subject ~</h1>
                     <input className='infoInput' placeholder='ex: Math' onChange={updateSubject} />
                 </div>
-                <div className='infoDiv'>
+                <div className='completeDeckModal'>
                     <h1 className='infoLabel'>Comma Seperated Keywords ~</h1>
                     <input className='infoInput' placeholder='ex: addition, subtraction' onChange={updateTags}/>
                 </div>

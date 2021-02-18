@@ -6,51 +6,18 @@ import './CardClass.css'
 import * as cardActions from '../../store/cards'
 
 const CreateCard = () => {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         subject: '',
-    //         title: '',
-    //         choices: [],
-    //         answer: '',
-    //         image: 'Upload Image Here',
-    //     };
-    // }
-
     const [subject, setSubject] = useState('')
     const [title, setTitle] = useState('')
     const [choices, setChoices] = useState([])
     const [answer, setAnswer] = useState('')
     const [image, setImage] = useState('Upload Image Here')
     const [confirm, setConfirm] = useState(false)
-
-
-
-
-    // handleSubjectChange = (event) => {
-    //     this.setState({subject: event.target.value})
-    // }
-    // handleQuestionChange = (event) => {
-    //     this.setState({title: event.target.value})
-    // }
-    // handleChoicesChange = (event) => {
-    //     let choices = event.target.value.split(',')
-    //     this.setState({choices: choices})
-    //     console.log(this.state.choices)
-    // }
-    // handleAnswerChange = (event) => {
-    //     this.setState({answer: event.target.value})
-    // }
-    // handleImageChange = (event) => {
-    //     this.setState({image: event.target.value})
-    // }
-
     const dispatch = useDispatch()
     const teacher_id = useSelector(state => state.session.user.id)
 
-    const handleSubjectChange = (e) => {
-        setSubject(e.target.value)
-    }
+    // const handleSubjectChange = (e) => {
+    //     setSubject(e.target.value)
+    // }
 
     const handleQuestionChange = (e) => {
         setTitle(e.target.value)
@@ -69,13 +36,8 @@ const CreateCard = () => {
         setImage(e.target.value)
     }
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
-
-
         const formData = {
             'title': title,
             "subject": subject,
@@ -106,15 +68,13 @@ const CreateCard = () => {
         }, 2000);
     }
 
-
-
-        return (
+    return (
         <div class='createCardDiv'>
             <div class='upperDiv'>
                 <div className='blankCard'>
                     <div className='questionDiv'>
                         {confirm ? <p>Card Successfully Submitted</p> : null}
-                        <p className='subject'>{subject}</p>
+                        {/* <p className='subject'>{subject}</p> */}
                         <p className='question'>{title}</p>
                     </div>
                     <div className='lowerDiv'>
@@ -136,27 +96,33 @@ const CreateCard = () => {
 
             <div className='inputDiv'>
                 <form className='inputForm'>
-                    <label className='inputLabel'>
+                    {/* <label className='inputLabel'>
                         Subject:
                         <input className='inputField' id='subject' value={subject} type='text' onChange={handleSubjectChange} />
-                    </label>
-                    <label className='inputLabel'>
-                        Question:
-                        <input className='inputField' id='question' value={title} type='text' onChange={handleQuestionChange} />
-                    </label>
-                    <label className='inputLabel'>
-                        Choices:
-                        <input className='inputField' id='choices' value={choices} type='text' val onChange={handleChoicesChange} />
-                    </label>
-                    <label className='inputLabel'>
-                        Answer:
-                        <input className='inputField' id='answer' value={answer} type='text' onChange={handleAnswerChange} />
-                    </label>
-                    <label className='inputLabel'>
-                        ImageURL:
-                        <input className='inputField' id='image' value={image} type='url' onChange={handleImageChange} />
-                    </label>
-                    <button onClick={handleSubmit}>Submit</button>
+                    </label> */}
+                    <div className='createCardHeaderDiv'>
+                        <button className='addToDeckButton' onClick={handleSubmit}>Add Card to Deck</button>
+                        <div className='createCardHeader'>~ Create Your Card ~</div>
+                        <button className='clearCardButton' >Clear Card</button>
+                    </div>
+                    <div className='labelsInputsDiv'>
+                        <div className='createCardLabels'>
+                            <div className='createCardLabel'>Question ~</div>
+                            <div className='createCardLabel'>Choices ~</div>
+                            <div className='createCardLabel'>Answer ~</div>
+                            <div className='createCardLabel'>ImageURL ~</div>
+                        </div>
+                        <div className='createCardInputs'>
+                            <input className='inputField' id='question' value={title} type='text' onChange={handleQuestionChange} />
+                            <input className='inputField' id='choices' value={choices} type='text' val onChange={handleChoicesChange} />
+                            <input className='inputField' id='answer' value={answer} type='text' onChange={handleAnswerChange} />
+                            <input className='inputField' id='image' value={image} type='url' onChange={handleImageChange} />
+                        </div>
+                    </div>
+                     <div className='addClearButtonsDiv'>
+
+
+                    </div>
                 </form>
             </div>
         </div>
