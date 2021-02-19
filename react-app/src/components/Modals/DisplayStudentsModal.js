@@ -31,24 +31,9 @@ const customStyles = {
 
 const DisplayStudentsModal = () => {
 	const [modalOpen, setModalOpen] = useState(false);
-    // const [loaded, setLoaded] = useState(false)
-	const teacher_class_id = useSelector(
-		(state) => state.session.user.classrooms_id
-	);
 	const roomInfo = useSelector((state) => state.classroom.room);
 	const dispatch = useDispatch();
-	// const teacher = useSelector((state) => state.classroom.room.teacher.username);
-	const students = [
-		"HardCoded",
-		"HardCoded",
-		"HardCoded",
-		"HardCoded",
-		"HardCoded",
-		"HardCoded",
-		"HardCoded",
-		"HardCoded",
-	];
-	// const assignments = "HardCoded 2/1/21, HardCoded 3/3/21";
+
 
 	useEffect(() => {}, []);
 
@@ -101,9 +86,6 @@ const DisplayStudentsModal = () => {
 						</div>
 						<div className="studentsAndAssignments">
 							<div className="studentModalList">
-								{/* {students.map((student, i) =>
-                                    <h1 className='hardCode' key={i.toString()}>{student}</h1>
-                                )}; */}
 								{displayStudents()}
 							</div>
 							<div className="studentModalList rightHandList">
