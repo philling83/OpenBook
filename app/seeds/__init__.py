@@ -12,7 +12,7 @@ seed_commands = AppGroup('seed')
 
 @seed_commands.command('all')
 def seed():
-    seed_users()
+    # seed_users()
     seed_deck_cards()
     seed_students()
 

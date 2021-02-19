@@ -20,9 +20,9 @@ const YourDecks = () => {
 		})();
     }, [dispatch]);
 
-    useEffect(() => {
-        (async () => dispatch(deckActions.fetchDeck(deckId)))()
-    }, [dispatch, deckId])
+    // useEffect(() => {
+    //     (async () => dispatch(deckActions.fetchDeck(deckId)))()
+    // }, [dispatch, deckId])
 
     const handleSelection = (e) => {
 		console.log(e.target.id)

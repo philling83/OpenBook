@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './DisplayStudentsModal.css'
 
@@ -33,11 +33,15 @@ const customStyles = {
 const DisplayStudentsModal = () => {
     const [modalOpen, setModalOpen] = useState(false)
     // const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
-    const roomInfo = useSelector(state => state.classroom.room)
+    const roomInfo = useSelector(state => state.classroom.room);
+    const dispatch = useDispatch();
     const teacher = "HARD CODE's class"
     const students = ['HardCoded','HardCoded', 'HardCoded', 'HardCoded', 'HardCoded', 'HardCoded', 'HardCoded', 'HardCoded']
     const assignments = 'HardCoded 2/1/21, HardCoded 3/3/21';
 
+    useEffect(() => {
+        
+    },[])
 
     const toggleModal = (e) => {
         e.preventDefault()

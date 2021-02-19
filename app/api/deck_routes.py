@@ -1,7 +1,6 @@
 import re
 from flask import Blueprint, jsonify, request
 from ..models import User, Deck, Classroom
-from ..utils import tag_checker
 from app.models import db
 deck_routes = Blueprint('decks', __name__)
 

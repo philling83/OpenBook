@@ -1,11 +1,14 @@
 from werkzeug.security import generate_password_hash
-from app.models import db, Deck, Card, Classroom
+from app.models import db, User, Deck, Card, Classroom
 # from app.seeds import cards
 
 # Adds a demo user, you can add other users here if you want
 
 
 def seed_deck_cards():
+
+    demo = User(username='Demo', email='demo@aa.io',
+                password='password', classrooms_id=1)
 
     demo_classroom = Classroom(name='Demo Classroom', password='password')
 
@@ -85,6 +88,7 @@ def seed_deck_cards():
                        answer='Buenos noches',
                        created_by=1)
 
+    db.session.add(demo)
     db.session.add(demo_classroom)
     db.session.commit()
 

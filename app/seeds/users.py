@@ -1,5 +1,5 @@
 from werkzeug.security import generate_password_hash
-from app.models import db, User
+from app.models import db, User, Classroom
 
 # Adds a demo user, you can add other users here if you want
 
@@ -7,9 +7,12 @@ from app.models import db, User
 def seed_users():
 
     demo = User(username='Demo', email='demo@aa.io',
-                password='password')
+                password='password', classrooms_id=1)
+
+    demo_room = Classroom(name='Demo Classroom', password='password')
 
     db.session.add(demo)
+    db.session.add(demo_room)
 
     db.session.commit()
 
