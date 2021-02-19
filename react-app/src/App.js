@@ -90,10 +90,6 @@ function App() {
 								createDeck={true}
 								createCard={true}
 								editDeck={false}
-								addCardToDeck={false}
-								clearCard={false}
-								editCard={false}
-								removeCard={false}
 								completeDeck={false}
 								editClass={true}
 								viewDeck={true}
@@ -115,10 +111,6 @@ function App() {
 								createDeck={true}
 								createCard={true}
 								editDeck={false}
-								addCardToDeck={false}
-								clearCard={false}
-								editCard={false}
-								removeCard={false}
 								completeDeck={false}
 								editClass={true}
 								viewDeck={true}
@@ -140,10 +132,6 @@ function App() {
 								createDeck={true}
 								createCard={true}
 								editDeck={false}
-								addCardToDeck={false}
-								clearCard={false}
-								editCard={false}
-								removeCard={false}
 								completeDeck={false}
 								editClass={false}
 								viewDeck={true}
@@ -165,10 +153,6 @@ function App() {
 								createDeck={false}
 								createCard={true}
 								editDeck={false}
-								addCardToDeck={false}
-								clearCard={false}
-								editCard={false}
-								removeCard={false}
 								completeDeck={true}
 								editClass={false}
 								viewDeck={true}
@@ -180,39 +164,19 @@ function App() {
 					</div>
 				</ProtectedRoute>
 
-				<ProtectedRoute path='/teacher/EditDeck'>
-				<div className="fullPageDiv">
-						<Banner />
-						<div className="bodyDiv">
-							<SideBar
-								addToLibrary={true}
-								addCardToDeck={false}
-								createClass={false}
-							/>
-							<div className="mainDiv">
-								<EditDeck />
-							</div>
-						</div>
-					</div>
-				</ProtectedRoute>
-
 				<ProtectedRoute path="/teacher/createCard">
 					<div className="fullPageDiv">
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
 								goHome={true}
-								createClass={true}
+								createClass={false}
 								createDeck={true}
 								createCard={false}
 								editDeck={false}
-								addCardToDeck={true}
-								clearCard={true}
-								editCard={false}
-								removeCard={false}
 								completeDeck={false}
 								editClass={false}
-								viewDeck={true}
+								viewDeck={false}
 							/>
 							<div className="mainDiv">
 								<CreateCard />
@@ -231,18 +195,11 @@ function App() {
 								createDeck={false}
 								createCard={false}
 								editDeck={false}
-								addCardToDeck={false}
-								clearCard={false}
-								editCard={false}
-								removeCard={false}
 								completeDeck={false}
 								editClass={false}
 								assignDeck={true}
 								viewDeck={false}
 							/>
-							{/* <div className="mainDiv">
-								<CreateCard />
-							</div> */}
 						</div>
 					</div>
 				</ProtectedRoute>

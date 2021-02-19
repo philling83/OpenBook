@@ -10,11 +10,9 @@
 }
 
 .blankCard {
-    position: relative;
-    margin-top: 0px;
-    margin-left: 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 450px;
     width: 750px;
     background-color: rgb(243, 245, 246, 0.8);
@@ -36,7 +34,7 @@
     align-items: center;
     height: 62%;
     width: 100%;
-    background-color: rgba(165, 128, 93, 0.9);
+    background-color: rgba(165, 93, 94, 0.9);
     border-bottom: 6px solid rgb(32, 60, 87);
 }
 
@@ -47,18 +45,6 @@
     align-items: center;
     height: 38%;
     width: 100%;
-}
-
-.cardImageDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 270px;
-    width: 480px;
-    bottom: 310px;
-    background-color: rgb(243, 245, 246);
-    border: 2px solid rgba(1, 5, 53, 0.5);
-    border-radius: 5px;
 }
 
 .placeholderText {
@@ -104,19 +90,13 @@
     }
 }
 
-.cardImage {
-    width: 100%;
-    height: 100%;
-
-}
-
 .questionDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100%;
-    width: 100%;
+    height: 140px;
+    width: 750px;
     overflow-wrap: break-word;
     font-size: 35px;
 }
@@ -125,7 +105,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 65px;
+    height: 85px;
     width: 100%;
 }
 
@@ -140,24 +120,35 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 750px;
     font-size: 35px;
+    overflow-x: scroll;
+    margin-left: 20px;
+}
+
+.choiceDiv {
+    overflow: scroll;
+}
+
+.choiceDiv::-webkit-scrollbar {
+	display: none;
 }
 
 .choices {
-    margin-top: 20px;
+    height: 50px;
+    width: auto;
 }
 
 .answer {
-    position: absolute;
-    bottom: 10px;
-    color: #00a8ff;
-}
-
-.lowerDiv {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 750px;
+    color: rgba(165, 93, 130, 0.9);
 }
 
 .labelsInputsDiv {
@@ -184,12 +175,6 @@
     font-size: 25px;
 }
 
-.inputDiv {
-    width: 100%;
-}
-
-
-
 .createCardLabel {
     display: flex;
     justify-content: flex-end;
@@ -198,7 +183,7 @@
     margin-right: 6px;
     font-size: 30px;
     margin-top: 5px;
-    margin-bottom: 27px;
+    margin-bottom: 42px;
 }
 
 .inputField {
@@ -211,7 +196,8 @@
     padding-left: 10px;
     border: 4px solid rgb(32, 60, 87);
     margin-right: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+    outline: none;
 }
 
 .inputField::placeholder {
@@ -229,4 +215,9 @@
     font-size: 18px;
     height: 45px;
     width: 180px;
+}
+
+.addToDeckButton:hover, .clearCardButton:hover {
+    background-color: rgb(176, 198, 221);
+    color: rgb(32, 60, 87);
 }

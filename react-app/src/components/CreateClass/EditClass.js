@@ -36,8 +36,8 @@ const EditClass = (props) => {
     }
 
     const generateCurrentStudentsList = () => {
-        return studentState.map((el) => (
-            <label className='studentInputLabel' id={el.id}>
+        return studentState.map((el, i) => (
+            <label className='studentInputLabel' id={el.id} key={i.toString()}>
                 Student Name
                 <input className='studentInputField' id={el.id} type='text' onChange={updateCurrentStudents} value={el.name} />
                 <button className='myButton removeButton' id={el.id} onClick={deleteCurrentStudent}>Remove</button>
@@ -77,10 +77,10 @@ const EditClass = (props) => {
         if (newStudents === []) {
             return null
         }
-        return newStudents.map((el,i) => (
+        return newStudents.map((el, i) => (
             // <label className='editClassLabel'>
             //     New Student Name]
-                <div className='addStudentRow'>
+                <div className='addStudentRow' key={i.toString()}>
                     <button className='removeStudentButton' id={i} onClick={deleteNewStudent}>Remove</button>
                     <input className='editClassField' placeholder='Enter Student Name' id={i} type='text' onChange={updateNewStudent} value={el.name} />
                 </div>
@@ -129,7 +129,7 @@ const EditClass = (props) => {
 
     const handleSubmitEdit = async (e) => {
         e.preventDefault()
-        console.log('edit submit')
+        console.log('!!!!!!!!!!!!!!!!!edit submit')
         //Edit classroom info
         const classData = {
             'name': className,
@@ -153,7 +153,7 @@ const EditClass = (props) => {
         //Delete removed students
         await dispatch(classActions.deleteStudents(deletedStudents))
 
-        history.push(`/teachers/${teacherId}`)
+        // history.push(`/teachers/${teacherId}`)
     }
 
 

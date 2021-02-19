@@ -72,22 +72,6 @@ const SideBar = (props) => {
                 <NavLink to='/teacher/EditDeck' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Edit Deck</div>
                 </NavLink>}
-            {props.addCardToDeck &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Add Card to Deck</div>
-                </NavLink>}
-            {props.clearCard &&
-                <NavLink to='/teacher/createCard' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Clear Card</div>
-                </NavLink>}
-            {props.editCard &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Edit Card</div>
-                </NavLink>}
-            {props.removeCard &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Remove Card</div>
-                </NavLink>}
 
             {props.completeDeck &&
                 <div className='sideDiv joinText' onClick={toggleSubmitDeckModal}>

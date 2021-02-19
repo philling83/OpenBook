@@ -40,15 +40,15 @@
 }
 
 .assignmentDiv:hover {
-	background-color: rgb(158, 122, 86);
+	background-color: rgb(117, 86, 55);
 }
 
 .studentDiv:hover {
-	background-color: rgb(139, 72, 73);
+	background-color: rgb(109, 47, 48);
 }
 
 .videoDiv:hover {
-	background-color: rgb(136, 67, 103);
+	background-color: rgb(95, 35, 66);
 }
 
 .cardDiv {
@@ -118,8 +118,6 @@
 	align-items: flex-end;
 	width: 325px;
 	height: 198px;
-	/* background-color: violet; */
-	/* margin-bottom: 10px; */
 }
 
 .deckPreviewDiv {
@@ -130,7 +128,6 @@
 	margin: 0;
 	padding: 0;
 	background-color: rgba(165, 128, 93);
-	/* background-color: rgb(133, 99, 37); */
 }
 
 .textDiv {
@@ -145,15 +142,6 @@
 	background-color:  rgb(243, 245, 246);
 }
 
-/* .majorActionCancel {
-	width: 50px;
-	height: 50px;
-	border: none;
-	background-color:  rgb(243, 245, 246);
-	font-size: 20pt;
-	color: rgba(0, 168, 255, 0.7)
-} */
-
 .previewChoice {
 	list-style-type: circle;
 	margin-left: 20px;
@@ -167,7 +155,6 @@
 	width: 100%;
 	height: 70px;
 	margin-left: 10px;
-	/* background-color: tomato; */
 }
 
 .previewAnswerText {
@@ -178,7 +165,6 @@
 	width: 160px;
 	height: 30px;
 	margin-left: 10px;
-	/* background-color: gold; */
 	margin-bottom: 5px;
 }
 
@@ -192,5 +178,4 @@
 	height: 120px;
 	margin-left: 10px;
 	font-size: 17px;
-	/* background-color: blue; */
 }
