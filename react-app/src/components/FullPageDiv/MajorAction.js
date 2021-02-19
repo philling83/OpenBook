@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as deckActions from "../../store/decks";
 import * as classActions from '../../store/classrooms'
@@ -10,6 +10,7 @@ import DisplayReportsModal from '../Modals/DisplayReportsModal'
 import "./MajorAction.css";
 
 const MajorAction = () => {
+	const [loaded, setLoaded] = useState(false)
 	const deck = useSelector((state) => state.deck.deck);
 	const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
 	const dispatch = useDispatch();
@@ -17,7 +18,10 @@ const MajorAction = () => {
 	useEffect(() => {}, [deck, deck.id]);
 
 	useEffect(()=> {
-        dispatch(classActions.getRoom(teacher_class_id))
+		(async() => {
+			await dispatch(classActions.getRoom(teacher_class_id));
+			return setLoaded(true);
+		})()
     }, [dispatch, teacher_class_id])
 
 
