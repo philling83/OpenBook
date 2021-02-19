@@ -21,11 +21,11 @@
     background-repeat: no-repeat;
     background-size: 2000px;
     font-size: 40px;
-    color:rgba(1, 5, 53, 0.9);
+    color:rgb(32, 60, 87);
     overflow-wrap: normal;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
+    box-shadow: 4px 4px 10px 1px rgba(88, 58, 58, 0.9);
 }
 
 .upperDiv {
@@ -34,7 +34,7 @@
     align-items: center;
     height: 62%;
     width: 100%;
-    background-color: rgba(165, 93, 94, 0.9);
+    background-color: rgba(165, 93, 94, 0.8);
     border-bottom: 6px solid rgb(32, 60, 87);
 }
 

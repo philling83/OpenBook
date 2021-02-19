@@ -45,12 +45,12 @@ function App() {
 					<Footer />
 				</Route>
 
-				<ProtectedRoute path="/test" exact={true}>
+				{/* <ProtectedRoute path="/test" exact={true}>
 					<DeckEditv2 />
 				</ProtectedRoute>
 				<ProtectedRoute path="/testCard" exact={true}>
 					<CardCreationForm />
-				</ProtectedRoute>
+				</ProtectedRoute> */}
 
 				<Route path="/login/student" exact={true}>
 					<StudentLoginForm

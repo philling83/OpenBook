@@ -20,9 +20,6 @@ const MajorAction = () => {
         dispatch(classActions.getRoom(teacher_class_id))
     }, [dispatch, teacher_class_id])
 
-
-
-
 	const cancelPreview = () => {
 		return dispatch(deckActions.clearDeck());
 	};
@@ -58,7 +55,6 @@ const MajorAction = () => {
 											</div>
                                         	<div className="previewAnswerText">Answer: {card.answer}</div>
 										</div>
-									<div className='previewImage'>Image</div>
 									</div>
 								</div>
 							</div>

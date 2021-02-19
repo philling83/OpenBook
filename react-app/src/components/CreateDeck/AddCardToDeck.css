@@ -1,27 +1,63 @@
-.checkoutDiv {
+
+.majorCardDiv {
     display: flex;
     flex-direction: column;
-    height: 33vh;
-    background-color: rgb(243, 245, 246);
+    justify-content: flex-start;
+    height: 350px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.deckBuildView {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    background-color: rgba(165, 93, 94, 0.8);
+    /* background-color: forestgreen; */
+    overflow-x: scroll;
+}
+
+.deckBuildView {
+    overflow: scroll;
+}
+
+.deckBuildView::-webkit-scrollbar {
+	display: none;
+}
+
+.addCardDiv {
+    height: 500px;
+    /* background-color: firebrick; */
 }
 
 .addedCardsDiv {
     display: flex;
     height: 90%;
+    width: 2500px;
+    /* background-color: hotpink; */
+    overflow: scroll;
 }
 
 .addedCards {
     display: flex;
-    width: 100%;
-    background-color: rgb(243, 245, 246);
+    justify-content: flex-start;
+    width: 350px;
+    height: 100%;
+    /* background-color: rebeccapurple; */
 }
 
 .addCardText {
-    height: 10%;
+    height: 40px;
     padding-left: 20px;
     padding-top: 10px;
-    color: rgba(1, 5, 53, 0.7);
-    background-color: rgb(243, 245, 246);
-    font-size: 18px;
+    color: rgb(32, 60, 87, 0.7);
+    background-color: rgba(165, 93, 94, 0.8);
+    font-size: 22px;
     align-items: center;
+    /* background-color: royalblue; */
 }
