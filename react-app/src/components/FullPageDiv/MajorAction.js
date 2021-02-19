@@ -41,8 +41,8 @@ const MajorAction = () => {
 							<i className='closeButton fas fa-window-close'></i>
 						</div>
 						{deck.cards.map((card, i) => (
-							<div className='imageTextDiv'>
-								<div key={card.title.concat(i)} className="cardDiv">
+							<div className='imageTextDiv' key={card.title.concat(i)}>
+								<div className="cardDiv">
 									<div className="previewQuestionText">{card.title}</div>
 									<div className="cardHolder">
 										<div className='choicesAnswerDiv'>

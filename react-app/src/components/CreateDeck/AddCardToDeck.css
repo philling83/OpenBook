@@ -18,7 +18,6 @@
     width: 100%;
     padding-left: 10px;
     background-color: rgba(165, 93, 94, 0.8);
-    /* background-color: forestgreen; */
     overflow-x: scroll;
 }
 
@@ -32,14 +31,12 @@
 
 .addCardDiv {
     height: 500px;
-    /* background-color: firebrick; */
 }
 
 .addedCardsDiv {
     display: flex;
     height: 90%;
     width: 2500px;
-    /* background-color: hotpink; */
     overflow: scroll;
 }
 
@@ -48,7 +45,6 @@
     justify-content: flex-start;
     width: 350px;
     height: 100%;
-    /* background-color: rebeccapurple; */
 }
 
 .addCardText {
@@ -59,5 +55,4 @@
     background-color: rgba(165, 93, 94, 0.8);
     font-size: 22px;
     align-items: center;
-    /* background-color: royalblue; */
 }

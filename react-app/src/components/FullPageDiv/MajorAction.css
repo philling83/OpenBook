@@ -60,7 +60,6 @@
 	height: 215px;
 	margin-left: 25px;
 	margin-top: 20px;
-	/* background-color: rgba(165, 128, 93, 0.5); */
 	margin: 20px;
 	box-shadow: 4px 4px 10px 1px rgba(136, 136, 145, 0.9);
 	background-color: rgb(243, 245, 246, 0.8);
@@ -70,7 +69,6 @@
 	background-size: 2000px;
 	color: rgb(32, 60, 87);
 	box-shadow: 4px 4px 10px 1px rgba(92, 71, 52, 0.9);
-	/* border: 2px solid rgba(80, 5, 230, 0.9); */
 }
 
 .cardView {
@@ -146,7 +144,6 @@
 
 .previewChoice {
 	list-style-type: circle;
-	/* margin-left: 20px; */
 }
 
 .previewQuestionText {

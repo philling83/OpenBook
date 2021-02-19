@@ -11,13 +11,10 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import NotFoundPage from "./components/NotFoundPage";
-import DeckEditv2 from "./components/DeckEditv2";
 import Banner from "./components/FullPageDiv/Banner";
 import SideBar from "./components/FullPageDiv/SideBar";
 import CreateDeck from "./components/CreateDeck/CreateDeck";
 import CreateCard from "./components/CreateDeck/CardClass";
-import CardCreationForm from "./components/CardCreationForm";
-import EditDeck from "./components/CreateDeck/EditDeck";
 import TeacherHomePage from './components/FullPageDiv/TeacherHomePage';
 import CreateClass from './components/CreateClass/CreateClass';
 
