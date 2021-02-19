@@ -13,6 +13,7 @@ class Classroom(db.Model):
     decks = db.relationship('Deck', secondary=assignments,
                             back_populates='classrooms')
     students = db.relationship("Student", cascade="all, delete-orphan")
+    teacher = db.relationship("User", backref=db.backref('users'))
 
     @property
     def password(self):
@@ -30,5 +31,6 @@ class Classroom(db.Model):
             "id": self.id,
             "name": self.name,
             "decks": [deck.to_dict() for deck in self.decks],
-            "students": [student.to_dict() for student in self.students]
+            "students": [student.to_dict() for student in self.students],
+            "teacher": [user.to_dict() for user in self.teacher][0]
         }

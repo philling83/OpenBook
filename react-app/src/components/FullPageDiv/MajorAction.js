@@ -20,7 +20,8 @@ const MajorAction = () => {
 	useEffect(()=> {
 		(async() => {
 			await dispatch(classActions.getRoom(teacher_class_id));
-			return setLoaded(true);
+			await setLoaded(true);
+			return;
 		})()
     }, [dispatch, teacher_class_id])
 

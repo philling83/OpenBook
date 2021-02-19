@@ -37,7 +37,7 @@ const DisplayStudentsModal = () => {
 	);
 	const roomInfo = useSelector((state) => state.classroom.room);
 	const dispatch = useDispatch();
-	const teacher = "HARD CODE's class";
+	// const teacher = useSelector((state) => state.classroom.room.teacher.username);
 	const students = [
 		"HardCoded",
 		"HardCoded",
@@ -82,7 +82,7 @@ const DisplayStudentsModal = () => {
 				{roomInfo ? (
 					<div className="studentModalDiv">
 						<div className="studentUpperDiv">
-							<h1 className="editClassHeader">{`${teacher}`}</h1>
+							<h1 className="editClassHeader">{`Teacher : ${roomInfo.teacher.username}`}</h1>
 							<div
 								className="closeButtonDiv .studentClose"
 								onClick={toggleModal}

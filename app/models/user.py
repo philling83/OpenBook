@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
         'classrooms.id'))
     decks = db.relationship('Deck', back_populates='user')
     cards = db.relationship('Card', back_populates='user')
+    classrooms = db.relationship('Classroom', back_populates='teacher')
 
     @property
     def password(self):
