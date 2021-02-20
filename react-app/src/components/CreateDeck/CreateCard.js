@@ -7,7 +7,7 @@ import Card from './Card'
 import './CreateCard.css'
 
 const CreateCard = () => {
-    const [subject, setSubject] = useState('')
+    // const [subject, setSubject] = useState('')
     const [title, setTitle] = useState('')
     const [choices, setChoices] = useState([])
     const [answer, setAnswer] = useState('')
@@ -32,7 +32,7 @@ const CreateCard = () => {
         e.preventDefault();
         const formData = {
             'title': title,
-            "subject": subject,
+            // "subject": subject,
             'possible_answers': choices,
             'answer':answer,
             'created_by': teacher_id
@@ -44,7 +44,7 @@ const CreateCard = () => {
     }
 
     const clearInputs = () => {
-        setSubject('')
+        // setSubject('')
         setTitle('')
         setChoices([])
         setAnswer('')

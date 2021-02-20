@@ -10,6 +10,8 @@ const ViewDeck = () => {
 
     useEffect(() => {}, [deck, deck.id]);
 
+    console.log('GGGGGGGGGG', deck)
+
     return (
         <div className='viewDeckContainer'>
             <div className='viewDeckDiv'>
