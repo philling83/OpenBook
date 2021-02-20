@@ -1,16 +1,33 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
+import * as deckActions from "../../store/decks";
+import * as classActions from '../../store/classrooms'
 
 import Card from '../CreateDeck/Card';
 
 import './ViewDeck.css'
 
 const ViewDeck = () => {
+    const [loaded, setLoaded] = useState(false)
     const deck = useSelector((state) => state.deck.deck);
+    const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
+    const dispatch = useDispatch();
 
     useEffect(() => {}, [deck, deck.id]);
 
-    console.log('GGGGGGGGGG', deck)
+    useEffect(()=> {
+		(async() => {
+			await dispatch(classActions.getRoom(teacher_class_id));
+			await setLoaded(true);
+			return;
+		})()
+    }, [dispatch, teacher_class_id])
+
+    const cancelPreview = () => {
+		return dispatch(deckActions.clearDeck());
+	};
+
+    console.log('GGGGGGGGGG', deck.cards[0], deck.id)
 
     return (
         <div className='viewDeckContainer'>
@@ -29,9 +46,12 @@ const ViewDeck = () => {
                     <div className='cardHolder topCard'>
                         <Card
                             confirm={false}
-                            title={'test'}
-                            choices={['test', 'test']}
-                            answer={'test'}
+                            title='title'
+                            choices={['choice', 'choice']}
+                            answer={'answer'}
+                            // title={deck.cards[0].title}
+                            // choices={deck.cards[0].choices}
+                            // answer={deck.cards[0].answer}
                         />
                     </div>
                     <div className='cardHolder middleCard'>

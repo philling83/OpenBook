@@ -49,8 +49,9 @@ const DisplayConfirmAssignModal = () => {
                 <div className='confirmAssignDiv'>
                     <h1>Assign this deck to HardCode?</h1>
                     <div className='choiceButtonDiv'>
-                    <div className='closeButtonDiv' onClick={toggleModal}>
-                        <i className='closeButton  yesChoice fas fa-thumbs-up'></i>
+                    <div className='closeButtonDiv flipperButtonDiv' onClick={toggleModal}>
+                        <div className='closeInnerDiv'></div>
+                        <div className='flipperButton backButton fas fa-arrow-circle-up'></div>
                     </div>
                     <div className='closeButtonDiv' onClick={toggleModal}>
                         <div className='closeInnerDiv'></div>

@@ -171,7 +171,7 @@
 .previewChoicesText {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
 	width: 270px;
 	height: 120px;

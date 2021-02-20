@@ -9,25 +9,6 @@
     background-color: rgba(165, 128, 93, 0.5)
 }
 
-.blankCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 450px;
-    width: 750px;
-    background-color: rgb(243, 245, 246, 0.8);
-    background-image: url('../../images/paper.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 2000px;
-    font-size: 40px;
-    color:rgb(32, 60, 87);
-    overflow-wrap: normal;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 4px 4px 10px 1px rgba(88, 58, 58, 0.9);
-}
-
 .upperDiv {
     display: flex;
     justify-content: center;

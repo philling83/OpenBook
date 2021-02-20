@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import "./DisplayStudentsModal.css";
 
 const customStyles = {
-<<<<<<< HEAD
     overlay: {
         backgroundColor: 'none'
     },
@@ -27,35 +26,10 @@ const customStyles = {
         borderRadius: '5px',
         padding: '0px',
         border: '8px solid rgb(32, 60, 87)',
-    }
+	},
 }
-=======
-	overlay: {
-		backgroundColor: "none",
-	},
-	content: {
-		position: "absolute",
-		top: "240px",
-		left: "120px",
-		height: "500px",
-		width: "800px",
-		overflow: "auto",
-		WebkitOverflowScrolling: "touch",
-		outline: "none",
-		backgroundColor: "rgb(248, 245, 245)",
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "center",
-		alignItems: "center",
-		color: "rgb(32, 60, 87)",
-		borderRadius: "5px",
-		padding: "0px",
-		border: "8px solid rgb(32, 60, 87)",
-	},
-};
->>>>>>> e32a28e8db07538bad33194a4810df5a36a96f6c
 
-const DisplayStudentsModal = () => {
+	const DisplayStudentsModal = () => {
 	const [modalOpen, setModalOpen] = useState(false);
 	const roomInfo = useSelector((state) => state.classroom.room);
 	const dispatch = useDispatch();

@@ -66,6 +66,7 @@ const CreateCard = () => {
                     title={title}
                     choices={choices}
                     answer={answer}
+                    style={{color: 'rgb(32, 60, 87);'}}
                 />
             </div>
 
