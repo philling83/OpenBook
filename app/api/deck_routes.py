@@ -1,3 +1,4 @@
+import re
 from flask import Blueprint, jsonify, request
 from ..models import User, Deck, Classroom
 from app.models import db
@@ -117,9 +118,16 @@ def unassign_deck_from_classroom(deck_id, classroom_id):
 
 @deck_routes.route('/search/<term>', methods=['GET'])
 def deck_search(term):
+    formatted_term = re.compile(f'{term}*')
     decks = db.session.query(Deck).all()
 
-    return {"decks": [deck.to_dict() for deck in decks if term in deck.tags]}
+    matches = filter(lambda deck: term in deck.tags, decks)
+
+    print(matches)
+
+    return {"decks": [deck.to_dict() for deck in matches]}
+    # return {"decks": [deck.to_dict() for deck in decks if
+    #                   re.match(formatted_term) in deck.tags]}
 
 
 @deck_routes.route('/all-decks', methods=['GET'])

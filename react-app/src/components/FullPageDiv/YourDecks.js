@@ -9,7 +9,7 @@ const YourDecks = () => {
 	const decks = useSelector((state) => state.deck.decks);
 	// const user = useSelector((state) => state.session.user);
     const [loaded, setLoaded] = useState(false);
-    const [deckId, setDeckId] = useState("")
+    const [, setDeckId] = useState("")
 
 	const dispatch = useDispatch();
 
@@ -20,9 +20,9 @@ const YourDecks = () => {
 		})();
     }, [dispatch]);
 
-    useEffect(() => {
-        (async () => dispatch(deckActions.fetchDeck(deckId)))()
-    }, [dispatch, deckId])
+    // useEffect(() => {
+    //     (async () => dispatch(deckActions.fetchDeck(deckId)))()
+    // }, [dispatch, deckId])
 
     const handleSelection = (e) => {
 		console.log(e.target.id)

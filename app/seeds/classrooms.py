@@ -5,12 +5,13 @@ from app.models import db, Classroom
 
 
 def seed_classrooms():
+    pass
 
-    demo = Classroom(name='Demo Classroom', password='password')
+    # demo = Classroom(name='Demo Classroom', password='password')
 
-    db.session.add(demo)
+    # db.session.add(demo)
 
-    db.session.commit()
+    # db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.
 # SQLAlchemy doesn't have a built in function to do this
