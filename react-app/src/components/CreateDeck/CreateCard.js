@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-
-import './CardClass.css'
-
 import * as cardActions from '../../store/cards'
+
+import Card from './Card'
+
+import './CreateCard.css'
 
 const CreateCard = () => {
     const [subject, setSubject] = useState('')
@@ -58,19 +59,14 @@ const CreateCard = () => {
 
     return (
         <div className='createCardDiv'>
+
             <div className='upperDiv'>
-                <div className='blankCard'>
-                    <div className='questionDiv'>
-                        {confirm ? <p>Card Successfully Submitted</p> : null}
-                        <p className='question'>{title}</p>
-                    </div>
-                    <div className='choiceDiv'>
-                        {choices.map((choice, i) => (
-                            <div key={i.toString()} className='choices'>{`~ ${choice}`}</div>
-                        ))}
-                    </div>
-                    <div className='answer'>{answer}</div>
-                </div>
+                <Card
+                    confirm={confirm}
+                    title={title}
+                    choices={choices}
+                    answer={answer}
+                />
             </div>
 
             <div className='inputDiv'>
@@ -92,10 +88,8 @@ const CreateCard = () => {
                             <input placeholder='(e.g. 2)' className='inputField' id='answer' value={answer} type='text' onChange={handleAnswerChange} />
                         </div>
                     </div>
-                     <div className='addClearButtonsDiv'>
 
-
-                    </div>
+                    <div className='addClearButtonsDiv'></div>
                 </form>
             </div>
         </div>

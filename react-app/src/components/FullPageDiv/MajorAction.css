@@ -78,7 +78,7 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	height: 100%;
-	background-color: rgba(165, 128, 93);
+	background-color: rgba(165, 128, 93, 0.7);
 	min-width: 600px;
 	width: 2500px;
 	overflow-x: scroll;
@@ -127,7 +127,7 @@
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: rgba(165, 128, 93);
+	/* background-color: rgba(165, 128, 93,); */
 }
 
 .textDiv {

@@ -34,7 +34,7 @@
     align-items: center;
     height: 62%;
     width: 100%;
-    background-color: rgba(165, 93, 94, 0.8);
+    background-color: rgba(165, 93, 94, 0.5);
     border-bottom: 6px solid rgb(32, 60, 87);
 }
 
@@ -58,7 +58,7 @@
 .createCardHeader {
     font-size: 30px;
 }
-
+/*
 @media only screen and (max-width: 1000px) {
 	.blankCard {
         height: 375px;
@@ -88,7 +88,7 @@
     .createCardHeader {
         font-size: 15px;
     }
-}
+} */
 
 .questionDiv {
     display: flex;

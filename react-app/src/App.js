@@ -14,9 +14,10 @@ import NotFoundPage from "./components/NotFoundPage";
 import Banner from "./components/FullPageDiv/Banner";
 import SideBar from "./components/FullPageDiv/SideBar";
 import CreateDeck from "./components/CreateDeck/CreateDeck";
-import CreateCard from "./components/CreateDeck/CardClass";
+import CreateCard from "./components/CreateDeck/CreateCard";
 import TeacherHomePage from './components/FullPageDiv/TeacherHomePage';
 import CreateClass from './components/CreateClass/CreateClass';
+import ViewDeck from './components/ViewDeck/ViewDeck';
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -197,6 +198,7 @@ function App() {
 								assignDeck={true}
 								viewDeck={false}
 							/>
+							<ViewDeck />
 						</div>
 					</div>
 				</ProtectedRoute>
