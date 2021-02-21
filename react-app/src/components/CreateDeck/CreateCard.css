@@ -108,6 +108,7 @@
     font-size: 35px;
     overflow-x: scroll;
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .choiceDiv {
@@ -121,6 +122,10 @@
 .choices {
     height: 50px;
     width: auto;
+}
+
+.choices:hover {
+    color: rgba(165, 93, 130, 0.9);
 }
 
 .answer {

@@ -92,6 +92,7 @@ function App() {
 								editClass={true}
 								viewDeck={false}
 								assignDeck={false}
+								resetStudy={false}
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage />
@@ -114,6 +115,7 @@ function App() {
 								editClass={true}
 								viewDeck={true}
 								assignDeck={true}
+								resetStudy={false}
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage/>
@@ -136,6 +138,7 @@ function App() {
 								editClass={false}
 								viewDeck={false}
 								assignDeck={false}
+								resetStudy={false}
 							/>
 							<div className="mainDiv">
 								<CreateClass />
@@ -158,6 +161,7 @@ function App() {
 								editClass={false}
 								viewDeck={false}
 								assignDeck={false}
+								resetStudy={false}
 							/>
 							<div className="mainDiv">
 								<CreateDeck />
@@ -180,6 +184,7 @@ function App() {
 								editClass={false}
 								viewDeck={false}
 								assignDeck={false}
+								resetStudy={false}
 							/>
 							<div className="mainDiv">
 								<CreateCard />
@@ -203,6 +208,7 @@ function App() {
 								assignDeck={true}
 								viewDeck={true}
 								assignDeck={false}
+								resetStudy={true}
 							/>
 							<ViewDeck />
 						</div>

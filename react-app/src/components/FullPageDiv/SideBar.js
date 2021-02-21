@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import  { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import * as sessionActions from "../../store/session"
+import * as sessionActions from "../../store/session";
 
 import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
 import DisplaySubmitDeckModal from '../Modals/DisplaySubmitDeckModal'
@@ -79,10 +79,7 @@ const SideBar = (props) => {
             {props.editClass && roomInfo &&
                 <div className='sideDiv joinText' onClick={toggleEditClassModal}>
                     Edit Class</div>}
-            <div className='sideDiv joinText bottomButton' onClick={onLogout}>
-                <div>{user}</div>
-                <div>Log Out</div>
-            </div>
+
             {deck.id &&
                 <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
                     Assign Deck</div>
@@ -92,6 +89,10 @@ const SideBar = (props) => {
                     <div className='sideDiv joinText'>View Deck</div>
                 </NavLink>
             }
+            <div className='sideDiv joinText bottomButton' onClick={onLogout}>
+                <div>{user}</div>
+                <div>Log Out</div>
+            </div>
             {/* {props.viewDeck &&
                 <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
                 Assign Deck</div>
