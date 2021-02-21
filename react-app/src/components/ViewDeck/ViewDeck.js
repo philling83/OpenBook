@@ -63,15 +63,19 @@ const ViewDeck = () => {
         if (currentCard.possible_answers[i] === currentCard.answer) {
             tempArray.splice(counter, 1, 'Hit');
             updateScore();
-            nextCard();
+            setTimeout(() => {
+                nextCard();
+            }, 1000)
             // console.log('hit', counter, tempArray, scores.length)
         } else {
             tempArray.splice(counter, 1, 'Miss');
             updateScore();
-            nextCard();
+            setTimeout(() => {
+                nextCard();
+            }, 1000)
             // console.log('miss', counter, tempArray, scores.length)
         }
-        setScores(tempArray);
+        setScores([...tempArray]);
     }
 
     const hightlightScore = (scoreIndex) => {

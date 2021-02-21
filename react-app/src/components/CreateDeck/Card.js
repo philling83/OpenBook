@@ -5,9 +5,8 @@ import './Card.css'
 const Card = (props) => {
     let tempAnswer
 
-    if (props.completedArray && props.completedArray[props.counter-1] !== '~') {
-        tempAnswer = props.answer;
-        console.log('#######', props.counter, props.completedArray, tempAnswer, props.completedArray[props.counter])
+    if (props.completedArray && props.completedArray[props.counter] !== '~') {
+        tempAnswer = `Answer ~ ${props.answer}`;
     } else {
         tempAnswer = '';
     }
@@ -23,7 +22,7 @@ const Card = (props) => {
                 <div key={i.toString()} className='choices' onClick={() => props.handleGuess(i)}>{`~ ${choice}`}</div>
             ))}
         </div>
-        <div className='answer'>{props.answer}</div>
+        <div className='answer'>{tempAnswer}</div>
     </div>
     )
 }
