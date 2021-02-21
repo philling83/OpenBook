@@ -83,16 +83,19 @@ const SideBar = (props) => {
                 <div>{user}</div>
                 <div>Log Out</div>
             </div>
-
-            {deck.id && props.viewDeck &&
-                <>
-                    <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
-                        Assign Deck</div>
-                    <NavLink to='/teacher/viewDeck' style={{textDecoration: 'none'}}>
-                        <div className='sideDiv joinText'>View Deck</div>
-                    </NavLink>
-                </>
+            {deck.id &&
+                <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
+                    Assign Deck</div>
             }
+            {deck.id && !props.viewDeck &&
+                <NavLink to='/teacher/viewDeck' style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText'>View Deck</div>
+                </NavLink>
+            }
+            {/* {props.viewDeck &&
+                <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
+                Assign Deck</div>
+            } */}
         </div>
     )
 }

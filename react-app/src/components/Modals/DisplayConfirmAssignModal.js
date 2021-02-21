@@ -10,7 +10,7 @@ const customStyles = {
     content: {
         position: 'absolute',
         top: '320px',
-        left: '260px',
+        left: '390px',
         height: '300px',
         width: '475px',
         overflow: 'auto',
