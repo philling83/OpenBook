@@ -32,11 +32,10 @@ const EditClass = (props) => {
 
     const generateCurrentStudentsList = () => {
         return studentState.map((el, i) => (
-            <label className='studentInputLabel' id={el.id} key={i.toString()}>
-                Student Name
-                <input className='studentInputField' id={el.id} type='text' onChange={updateCurrentStudents} value={el.name} />
-                <button className='myButton removeButton' id={el.id} onClick={deleteCurrentStudent}>Remove</button>
-            </label>
+            <div className='addStudentRow' key={i.toString()}>
+                <button className='removeStudentButton' id={el.id} onClick={deleteCurrentStudent}>Remove</button>
+                <div className='currentStudent' placeholder='Enter Student Name' id={el.id}>{el.name}</div>
+            </div>
         ))
     }
 
@@ -163,10 +162,9 @@ const EditClass = (props) => {
                         <h1 className='infoLabel'>Password for class login ~</h1>
                         <input className='infoInput' placeholder='(e.g. 4321)' onChange={updatePassword} />
                     </div>
-                    <div className='scrollDiv'>
-                        {generateCurrentStudentsList()}
-                        {generateNewStudentsList()}
-
+                    <div className='allStudentsDiv'>
+                        <div className='newStudentDiv'>{generateNewStudentsList()}</div>
+                        <div className='currentStudentDiv'>{generateCurrentStudentsList()}</div>
                     </div>
                     <button className='addStudentButton' onClick={addRow}>Add Student</button>
                     <button className='editClassSubmit' onClick={handleSubmitEdit}>Submit Changes</button>
