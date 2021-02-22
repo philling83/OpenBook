@@ -6,7 +6,7 @@ import * as sessionActions from "../../store/session";
 const StudentLoginForm = () => {
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
-	const currentUser = useSelector((state) => state.session.user);
+	// const currentUser = useSelector((state) => state.session.user);
 
 	const dispatch = useDispatch();
 
@@ -20,7 +20,8 @@ const StudentLoginForm = () => {
 
 		return dispatch(sessionActions.student_login({
 			name: "Demo Student",
-			password: "password"
+			password: "password",
+			teacher: false
 		}))
 	};
 
@@ -32,7 +33,7 @@ const StudentLoginForm = () => {
 		setPassword(e.target.value);
 	};
 
-	if (currentUser) return <Redirect to={`/students/${currentUser.id}`} />;
+	// if (currentUser) return <Redirect to={`/students/${currentUser.id}`} />;
 
 	return (
 		<>

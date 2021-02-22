@@ -23,7 +23,7 @@ const SideBar = (props) => {
 
     const role = currentUser.teacher ? 'teacher' : 'student'
 
-    console.log('QQQQQQQQQQQQQQQ', currentUser)
+    // console.log('QQQQQQQQQQQQQQQ', currentUser)
 
     const toggleEditClassModal = (e) => {
         e.preventDefault()
