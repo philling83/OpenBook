@@ -35,6 +35,7 @@ const ViewDeck = () => {
     const updateScore = () => {
         const tempArray = scores;
         let tempCounter = 0;
+
         const score = tempArray.reduce((acc, el) => {
             if (el === 'Hit') {
                 tempCounter++
@@ -46,6 +47,7 @@ const ViewDeck = () => {
                 return acc
             }
         }, 0)
+
         const newScore = Math.round((score/tempCounter) * 100)
         setScore(newScore)
     }
@@ -59,22 +61,23 @@ const ViewDeck = () => {
     const handleGuess = (i) => {
         let tempArray = scores;
         let currentCard = deck.cards[counter]
+
         if (!scores.includes('~')) return
+
         if (currentCard.possible_answers[i] === currentCard.answer) {
             tempArray.splice(counter, 1, 'Hit');
             updateScore();
             setTimeout(() => {
                 nextCard();
-            }, 1000)
-            // console.log('hit', counter, tempArray, scores.length)
+            }, 800)
         } else {
             tempArray.splice(counter, 1, 'Miss');
             updateScore();
             setTimeout(() => {
                 nextCard();
-            }, 1000)
-            // console.log('miss', counter, tempArray, scores.length)
+            }, 800)
         }
+
         setScores([...tempArray]);
     }
 

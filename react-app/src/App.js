@@ -16,6 +16,7 @@ import SideBar from "./components/FullPageDiv/SideBar";
 import CreateDeck from "./components/CreateDeck/CreateDeck";
 import CreateCard from "./components/CreateDeck/CreateCard";
 import TeacherHomePage from './components/FullPageDiv/TeacherHomePage';
+import StudentHomePage from './components/FullPageDiv/StudentHomePage';
 import CreateClass from './components/CreateClass/CreateClass';
 import ViewDeck from './components/ViewDeck/ViewDeck';
 
@@ -42,8 +43,8 @@ function App() {
 					<LoginForm/>
 					<Footer />
 				</Route>
-
-				{/* <ProtectedRoute path="/test" exact={true}>
+{/*
+				<ProtectedRoute path="/test" exact={true}>
 					<DeckEditv2 />
 				</ProtectedRoute>
 				<ProtectedRoute path="/testCard" exact={true}>
@@ -93,6 +94,7 @@ function App() {
 								viewDeck={false}
 								assignDeck={false}
 								resetStudy={false}
+								studentPage={false}
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage />
@@ -101,7 +103,31 @@ function App() {
 					</div>
 				</ProtectedRoute>
 
-				<ProtectedRoute path="/teacher/deckPreview">
+				<ProtectedRoute path="/students/:studentId">
+					<div className="fullPageDiv">
+						<Banner />
+						<div className="bodyDiv">
+							<SideBar
+								goHome={false}
+								createClass={false}
+								createDeck={true}
+								createCard={true}
+								editDeck={false}
+								completeDeck={false}
+								editClass={false}
+								viewDeck={false}
+								assignDeck={false}
+								resetStudy={false}
+								studentPage={true}
+							/>
+							<div className="mainDiv">
+								<StudentHomePage />
+							</div>
+						</div>
+					</div>
+				</ProtectedRoute>
+
+				{/* <ProtectedRoute path="/teacher/deckPreview">
 					<div className="fullPageDiv">
 						<Banner />
 						<div className="bodyDiv">
@@ -116,13 +142,14 @@ function App() {
 								viewDeck={true}
 								assignDeck={true}
 								resetStudy={false}
+								studentPage={false}
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage/>
 							</div>
 						</div>
 					</div>
-				</ProtectedRoute>
+				</ProtectedRoute> */}
 
 				<ProtectedRoute path="/teacher/createClass">
 					<div className="fullPageDiv">
@@ -139,6 +166,7 @@ function App() {
 								viewDeck={false}
 								assignDeck={false}
 								resetStudy={false}
+								studentPage={false}
 							/>
 							<div className="mainDiv">
 								<CreateClass />
@@ -162,6 +190,7 @@ function App() {
 								viewDeck={false}
 								assignDeck={false}
 								resetStudy={false}
+								studentPage={false}
 							/>
 							<div className="mainDiv">
 								<CreateDeck />
@@ -185,6 +214,7 @@ function App() {
 								viewDeck={false}
 								assignDeck={false}
 								resetStudy={false}
+								studentPage={false}
 							/>
 							<div className="mainDiv">
 								<CreateCard />
@@ -209,6 +239,30 @@ function App() {
 								viewDeck={true}
 								assignDeck={false}
 								resetStudy={true}
+								studentPage={false}
+							/>
+							<ViewDeck />
+						</div>
+					</div>
+				</ProtectedRoute>
+
+				<ProtectedRoute path="/student/viewDeck">
+					<div className="fullPageDiv">
+						<Banner />
+						<div className="bodyDiv">
+							<SideBar
+								goHome={true}
+								createClass={false}
+								createDeck={false}
+								createCard={false}
+								editDeck={false}
+								completeDeck={false}
+								editClass={false}
+								assignDeck={false}
+								viewDeck={true}
+								assignDeck={false}
+								resetStudy={true}
+								studentPage={false}
 							/>
 							<ViewDeck />
 						</div>
