@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import  { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import * as sessionActions from "../../store/session"
+import * as sessionActions from "../../store/session";
 
 import DisplayEditClassModal from '../Modals/DisplayEditClassModal'
 import DisplaySubmitDeckModal from '../Modals/DisplaySubmitDeckModal'
@@ -20,6 +20,10 @@ const SideBar = (props) => {
     const user = currentUser.username
 
     useEffect(() => {}, [deck, deck.id]);
+
+    const role = currentUser.teacher ? 'teacher' : 'student'
+
+    console.log('QQQQQQQQQQQQQQQ', currentUser)
 
     const toggleEditClassModal = (e) => {
         e.preventDefault()
@@ -53,7 +57,7 @@ const SideBar = (props) => {
                 <DisplayConfirmAssignModal />}
 
             {props.goHome &&
-                <NavLink to={`/teachers/${currentUser.id}`} style={{textDecoration: 'none'}}>
+                <NavLink to={`/${role}s/${currentUser.id}`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Home</div>
                 </NavLink>}
             {props.createClass &&
@@ -61,32 +65,16 @@ const SideBar = (props) => {
                     <div className='sideDiv joinText'>Create Class</div>
                 </NavLink>}
             {props.createDeck &&
-                <NavLink to='/teacher/createDeck' style={{textDecoration: 'none'}}>
+                <NavLink to={`/${role}/createDeck`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Create Deck</div>
                 </NavLink>}
             {props.createCard &&
-                <NavLink to='/teacher/createCard' style={{textDecoration: 'none'}}>
+                <NavLink to={`/${role}/createCard`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Create Card</div>
                 </NavLink>}
             {props.editDeck &&
                 <NavLink to='/teacher/EditDeck' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Edit Deck</div>
-                </NavLink>}
-            {props.addCardToDeck &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Add Card to Deck</div>
-                </NavLink>}
-            {props.clearCard &&
-                <NavLink to='/teacher/createCard' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Clear Card</div>
-                </NavLink>}
-            {props.editCard &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Edit Card</div>
-                </NavLink>}
-            {props.removeCard &&
-                <NavLink to='' style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Remove Card</div>
                 </NavLink>}
 
             {props.completeDeck &&
@@ -95,20 +83,24 @@ const SideBar = (props) => {
             {props.editClass && roomInfo &&
                 <div className='sideDiv joinText' onClick={toggleEditClassModal}>
                     Edit Class</div>}
+
+            {deck.id && !props.studentPage &&
+                <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
+                    Assign Deck</div>
+            }
+            {deck.id && !props.viewDeck &&
+                <NavLink to={`/${role}/viewDeck`} style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText'>View Deck</div>
+                </NavLink>
+            }
             <div className='sideDiv joinText bottomButton' onClick={onLogout}>
                 <div>{user}</div>
                 <div>Log Out</div>
             </div>
-
-            {deck.id && props.viewDeck &&
-                <>
-                    <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
-                        Assign Deck</div>
-                    <NavLink to='/teacher/viewDeck' style={{textDecoration: 'none'}}>
-                        <div className='sideDiv joinText'>View Deck</div>
-                    </NavLink>
-                </>
-            }
+            {/* {props.viewDeck &&
+                <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
+                Assign Deck</div>
+            } */}
         </div>
     )
 }

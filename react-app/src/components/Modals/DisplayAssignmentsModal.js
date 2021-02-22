@@ -22,7 +22,6 @@ const customStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'absolute',
         color: 'rgb(32, 60, 87)',
         borderRadius: '5px',
         padding: '0px',

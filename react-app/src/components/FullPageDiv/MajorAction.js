@@ -25,9 +25,6 @@ const MajorAction = () => {
 		})()
     }, [dispatch, teacher_class_id])
 
-
-
-
 	const cancelPreview = () => {
 		return dispatch(deckActions.clearDeck());
 	};
@@ -49,21 +46,18 @@ const MajorAction = () => {
 							<i className='closeButton fas fa-window-close'></i>
 						</div>
 						{deck.cards.map((card, i) => (
-							<div className='imageTextDiv'>
-								<div key={card.title.concat(i)} className="cardDiv">
+							<div className='imageTextDiv' key={card.title.concat(i)}>
+								<div className="cardDiv">
 									<div className="previewQuestionText">{card.title}</div>
-									<div className="cardHolder">
-										<div className='choicesAnswerDiv'>
-											<div className="previewChoicesText">
-												{card.possible_answers.map((choice, i) => (
-													<li className="previewChoice" key={choice.concat(i)}>
-														{choice}
-													</li>
-												))}
-											</div>
-                                        	<div className="previewAnswerText">Answer: {card.answer}</div>
+									<div className='choicesAnswerDiv'>
+										<div className="previewChoicesText">
+											{card.possible_answers.map((choice, i) => (
+												<li className="previewChoice" key={choice.concat(i)}>
+													{choice}
+												</li>
+											))}
 										</div>
-									<div className='previewImage'>Image</div>
+										<div className="previewAnswerText">Answer: {card.answer}</div>
 									</div>
 								</div>
 							</div>

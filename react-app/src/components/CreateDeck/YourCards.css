@@ -1,0 +1,53 @@
+.yourCardsDiv {
+    height: 420px;
+    width: 100%;
+    padding-left: 10px;
+    background-color: rgba(165, 128, 93, 0.5);
+    overflow: scroll;
+}
+
+.yourCardTextDiv {
+    font-size: 22px;
+    height: 40px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: rgb(32, 60, 87, 0.7);
+}
+
+.miniCardDiv {
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	width: 137px;
+	height: 94px;
+    margin: 10px;
+    border-radius: 5px;
+	border: 3px solid rgba(1, 5, 53, 0.9);
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgba(165, 128, 93, 0.9);
+}
+
+.miniCardText {
+	display: flex;
+	text-align: center;
+    justify-content: center;
+    align-items: center;
+	color: rgba(1, 5, 53);
+    font-size: 17px;
+    height: 100%;
+    width: 100%;
+    background-color:  rgb(243, 245, 246);
+    background-image: url('../../images/paper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2000px;
+    overflow: hidden;
+}
+
+.allCardsDiv {
+	display: flex;
+	width: 80%;
+    flex-wrap: wrap;
+}

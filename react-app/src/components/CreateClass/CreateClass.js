@@ -86,7 +86,7 @@ const CreateClass = () => {
                     </div>
                 </div>
             </div>
-            <div class='lowerCreateClassDiv'>
+            <div className='lowerCreateClassDiv'>
                 <div className='createClassDiv'>
                     <form className='studentInputForm'>
                         <div className='editDetailDiv'>

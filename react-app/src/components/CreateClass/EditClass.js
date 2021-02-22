@@ -1,18 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import * as classActions from '../../store/classrooms'
 
 import './EditClass.css'
 
 const EditClass = (props) => {
     const dispatch = useDispatch();
-    let history = useHistory()
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
-    const teacherId = useSelector(state => state.session.user.id);
-
-    // const teacherId = useSelector(state => state.session.user.id);
     let student_info = useSelector(state => state.classroom.room.students)
     let classroom_info = useSelector(state => state.classroom.room)
 
@@ -36,8 +31,8 @@ const EditClass = (props) => {
     }
 
     const generateCurrentStudentsList = () => {
-        return studentState.map((el) => (
-            <label className='studentInputLabel' id={el.id}>
+        return studentState.map((el, i) => (
+            <label className='studentInputLabel' id={el.id} key={i.toString()}>
                 Student Name
                 <input className='studentInputField' id={el.id} type='text' onChange={updateCurrentStudents} value={el.name} />
                 <button className='myButton removeButton' id={el.id} onClick={deleteCurrentStudent}>Remove</button>
@@ -55,9 +50,7 @@ const EditClass = (props) => {
                 return el
             }
         })
-
         return setStudentState(new_list)
-
     }
 
     const deleteCurrentStudent = (e) => {
@@ -69,7 +62,6 @@ const EditClass = (props) => {
                 return setDeletedStudents([...deletedStudents, el])
             }
         })
-
         return setStudentState(new_list)
     }
 
@@ -77,14 +69,11 @@ const EditClass = (props) => {
         if (newStudents === []) {
             return null
         }
-        return newStudents.map((el,i) => (
-            // <label className='editClassLabel'>
-            //     New Student Name]
-                <div className='addStudentRow'>
-                    <button className='removeStudentButton' id={i} onClick={deleteNewStudent}>Remove</button>
-                    <input className='editClassField' placeholder='Enter Student Name' id={i} type='text' onChange={updateNewStudent} value={el.name} />
-                </div>
-            // </label>
+        return newStudents.map((el, i) => (
+            <div className='addStudentRow' key={i.toString()}>
+                <button className='removeStudentButton' id={i} onClick={deleteNewStudent}>Remove</button>
+                <input className='editClassField' placeholder='Enter Student Name' id={i} type='text' onChange={updateNewStudent} value={el.name} />
+            </div>
         ))
     }
 
@@ -129,8 +118,6 @@ const EditClass = (props) => {
 
     const handleSubmitEdit = async (e) => {
         e.preventDefault()
-        console.log('edit submit')
-        //Edit classroom info
         const classData = {
             'name': className,
             'password': password
@@ -153,7 +140,7 @@ const EditClass = (props) => {
         //Delete removed students
         await dispatch(classActions.deleteStudents(deletedStudents))
 
-        history.push(`/teachers/${teacherId}`)
+        // history.push(`/teachers/${teacherId}`)
     }
 
 

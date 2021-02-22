@@ -3,16 +3,14 @@ import React from 'react';
 import YourDecks from './YourDecks.js';
 import SearchBar from './SearchBar.js';
 import MajorAction from './MajorAction.js';
-// import MinorAction from './MinorAction.js'
 
 import './StudentHomePage.css'
 
 const StudentHomePage = () => {
     return (
         <div className='studentDiv'>
+            <MajorAction preview={false} />
             <SearchBar />
-            <MajorAction preview={false} thirdActionDisplay='Classmates'/>
-            {/* <MinorAction /> */}
             <YourDecks />
         </div>
 

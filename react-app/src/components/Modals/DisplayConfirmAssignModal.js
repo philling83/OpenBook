@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal'
+import  { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './DisplayConfirmAssignModal.css'
 
@@ -10,7 +12,7 @@ const customStyles = {
     content: {
         position: 'absolute',
         top: '320px',
-        left: '260px',
+        left: '390px',
         height: '300px',
         width: '475px',
         overflow: 'auto',
@@ -21,7 +23,6 @@ const customStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'absolute',
         color: 'rgb(32, 60, 87)',
         borderRadius: '5px',
         padding: '0px',
@@ -31,11 +32,19 @@ const customStyles = {
 }
 
 const DisplayConfirmAssignModal = () => {
-    const [modalOpen, setModalOpen] = useState(true)
+    const [modalOpen, setModalOpen] = useState(true);
+    const currentUser = useSelector(state => state.session.user);
+    const history = useHistory()
 
     const toggleModal = (e) => {
         e.preventDefault()
         setModalOpen(!modalOpen)
+    }
+
+    const handleAssign = (e) => {
+        e.preventDefault()
+        setModalOpen(!modalOpen)
+        history.push(`/teachers/${currentUser.id}`)
     }
 
     return (
@@ -50,9 +59,10 @@ const DisplayConfirmAssignModal = () => {
                 <div className='confirmAssignDiv'>
                     <h1>Assign this deck to HardCode?</h1>
                     <div className='choiceButtonDiv'>
-                    <div className='closeButtonDiv' onClick={toggleModal}>
-                        <i className='closeButton  yesChoice fas fa-thumbs-up'></i>
-                    </div>
+                        <div className='closeButtonDiv flipperButtonDiv' onClick={handleAssign}>
+                            <div className='closeInnerDiv'></div>
+                            <div className='flipperButton backButton fas fa-arrow-circle-up'></div>
+                        </div>
                     <div className='closeButtonDiv' onClick={toggleModal}>
                         <div className='closeInnerDiv'></div>
                         <i className='closeButton fas fa-window-close'></i>

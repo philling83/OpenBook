@@ -23,7 +23,6 @@ const customStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'absolute',
         color: 'rgb(32, 60, 87)',
         borderRadius: '5px',
         padding: '0px',
@@ -47,7 +46,7 @@ const DisplaySubmitDeckModal = () => {
                 onRequestClose={toggleModal}
                 style={customStyles}
                 contentLabel='Submit Deck'
-                appElement={document.getElementById('app')}
+                ariaHideApp={false}
             >
                 <DeckInfoCreate modalVersion={true} toggleModal={toggleModal}/>
             </Modal>

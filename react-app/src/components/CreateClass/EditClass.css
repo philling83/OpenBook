@@ -26,14 +26,15 @@
     margin: 5px;
 }
 
-.addStudentRow {
+/* .addStudentRow {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 708px;
     height: 70px;
     margin: 5px;
-}
+    background-color: hotpink;
+} */
 
 .editClassForm {
     display: flex;

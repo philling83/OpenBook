@@ -17,6 +17,7 @@ const StudentLoginForm = () => {
 
 	const demoStudent = (e) => {
 		e.preventDefault();
+
 		return dispatch(sessionActions.student_login({
 			name: "Demo Student",
 			password: "password"
@@ -31,7 +32,7 @@ const StudentLoginForm = () => {
 		setPassword(e.target.value);
 	};
 
-	if (currentUser) return <Redirect to="/" />;
+	if (currentUser) return <Redirect to={`/students/${currentUser.id}`} />;
 
 	return (
 		<>
