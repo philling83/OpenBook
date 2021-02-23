@@ -32,8 +32,7 @@ const customStyles = {
 	const DisplayStudentsModal = () => {
 	const [modalOpen, setModalOpen] = useState(false);
 	const roomInfo = useSelector((state) => state.classroom.room);
-	const dispatch = useDispatch();
-
+	// const dispatch = useDispatch();
 
 	useEffect(() => {}, []);
 

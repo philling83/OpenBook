@@ -8,9 +8,9 @@ import StudentLoginForm from "./components/auth/StudentLoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
-import NotFoundPage from "./components/NotFoundPage";
+// import UsersList from "./components/UsersList";
+// import User from "./components/User";
+// import NotFoundPage from "./components/NotFoundPage";
 import Banner from "./components/FullPageDiv/Banner";
 import SideBar from "./components/FullPageDiv/SideBar";
 import CreateDeck from "./components/CreateDeck/CreateDeck";
@@ -66,7 +66,7 @@ function App() {
 					<Footer />
 				</Route>
 
-				<ProtectedRoute path="/users" exact={true}>
+				{/* <ProtectedRoute path="/users" exact={true}>
 					<UsersList />
 				</ProtectedRoute>
 				<ProtectedRoute path="/users/:userId" exact={true}>
@@ -77,24 +77,17 @@ function App() {
 				</ProtectedRoute>
 				<Route path="/404">
 					<NotFoundPage />
-				</Route>
+				</Route> */}
 
 				<ProtectedRoute path="/teachers/:teacherId">
 					<div className="fullPageDiv">
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={false}
-								createClass={true}
-								createDeck={true}
-								createCard={true}
-								editDeck={false}
-								completeDeck={false}
-								editClass={true}
-								viewDeck={false}
-								assignDeck={false}
-								resetStudy={false}
-								studentPage={false}
+								createClass
+								createDeck
+								createCard
+								editClass
 							/>
 							<div className="mainDiv">
 								<TeacherHomePage />
@@ -108,17 +101,9 @@ function App() {
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={false}
-								createClass={false}
-								createDeck={true}
-								createCard={true}
-								editDeck={false}
-								completeDeck={false}
-								editClass={false}
-								viewDeck={false}
-								assignDeck={false}
-								resetStudy={false}
-								studentPage={true}
+								createDeck
+								createCard
+								studentPage
 							/>
 							<div className="mainDiv">
 								<StudentHomePage />
@@ -127,46 +112,14 @@ function App() {
 					</div>
 				</ProtectedRoute>
 
-				{/* <ProtectedRoute path="/teacher/deckPreview">
-					<div className="fullPageDiv">
-						<Banner />
-						<div className="bodyDiv">
-							<SideBar
-								goHome={false}
-								createClass={true}
-								createDeck={true}
-								createCard={true}
-								editDeck={false}
-								completeDeck={false}
-								editClass={true}
-								viewDeck={true}
-								assignDeck={true}
-								resetStudy={false}
-								studentPage={false}
-							/>
-							<div className="mainDiv">
-								<TeacherHomePage/>
-							</div>
-						</div>
-					</div>
-				</ProtectedRoute> */}
-
 				<ProtectedRoute path="/teacher/createClass">
 					<div className="fullPageDiv">
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={true}
-								createClass={false}
-								createDeck={true}
-								createCard={true}
-								editDeck={false}
-								completeDeck={false}
-								editClass={false}
-								viewDeck={false}
-								assignDeck={false}
-								resetStudy={false}
-								studentPage={false}
+								goHome
+								createDeck
+								createCard
 							/>
 							<div className="mainDiv">
 								<CreateClass />
@@ -180,17 +133,10 @@ function App() {
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={true}
-								createClass={true}
-								createDeck={false}
-								createCard={true}
-								editDeck={false}
-								completeDeck={true}
-								editClass={false}
-								viewDeck={false}
-								assignDeck={false}
-								resetStudy={false}
-								studentPage={false}
+								goHome
+								createClass
+								createCard
+								completeDeck
 							/>
 							<div className="mainDiv">
 								<CreateDeck />
@@ -204,17 +150,8 @@ function App() {
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={true}
-								createClass={false}
-								createDeck={true}
-								createCard={false}
-								editDeck={false}
-								completeDeck={false}
-								editClass={false}
-								viewDeck={false}
-								assignDeck={false}
-								resetStudy={false}
-								studentPage={false}
+								goHome
+								createDeck
 							/>
 							<div className="mainDiv">
 								<CreateCard />
@@ -228,18 +165,10 @@ function App() {
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={true}
-								createClass={false}
-								createDeck={false}
-								createCard={false}
-								editDeck={false}
-								completeDeck={false}
-								editClass={false}
-								assignDeck={true}
-								viewDeck={true}
-								assignDeck={false}
-								resetStudy={true}
-								studentPage={false}
+								goHome
+								assignDeck
+								viewDeck
+								resetStudy
 							/>
 							<ViewDeck />
 						</div>
@@ -251,18 +180,9 @@ function App() {
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
-								goHome={true}
-								createClass={false}
-								createDeck={false}
-								createCard={false}
-								editDeck={false}
-								completeDeck={false}
-								editClass={false}
-								assignDeck={false}
-								viewDeck={true}
-								assignDeck={false}
-								resetStudy={true}
-								studentPage={false}
+								goHome
+								viewDeck
+								resetStudy
 							/>
 							<ViewDeck />
 						</div>

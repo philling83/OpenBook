@@ -32,7 +32,7 @@ const LoginForm = () => {
 	};
 
 	const demoTeacher = (e) => {
-    e.preventDefault();
+    	e.preventDefault();
 		return dispatch(sessionActions.login({
 			email: "demo@aa.io",
 			password: "password",
@@ -49,8 +49,10 @@ const LoginForm = () => {
 		setPassword(e.target.value);
 	};
 
-	if (currentUser) {
+	if (currentUser && currentUser.teacher) {
 		return <Redirect to={`/teachers/${currentUser.id}`} />;
+	} else if (currentUser) {
+		return <Redirect to={`/students/${currentUser.id}`} />;
 	}
 
 	return (

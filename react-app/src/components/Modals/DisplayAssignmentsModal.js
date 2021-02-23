@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
 
+import DisplayConfirmBeginModal from './DisplayConfirmBeginModal'
+
 import './DisplayAssignmentsModal.css'
 
 const customStyles = {
@@ -31,13 +33,27 @@ const customStyles = {
 
 const DisplayAssignmentsModal = () => {
     const [modalOpen, setModalOpen] = useState(false)
+    const [confirmBeginOpen, setConfirmBeginOpen] = useState(false)
+
     const roomInfo = useSelector(state => state.classroom.room);
-    const teacher = "HardCoded's class"
+    const sessionRole = useSelector(state => state.session.user.teacher);
+
+    let assignmentText = sessionRole ? 'assigned decks' : 'assignments due'
+
+    //HARD CODED
     const assignments = ['HardCoded 1/2/21', 'HardCoded 2/1/21']
+    const assignmentId = 1;
+
 
     const toggleModal = (e) => {
         e.preventDefault()
         setModalOpen(!modalOpen)
+    }
+
+    const toggleConfirmBeginModal = (e) => {
+        console.log(e.target.id)
+        e.preventDefault()
+        setConfirmBeginOpen(!confirmBeginOpen)
     }
 
     // const displayAssignments = () => {
@@ -49,7 +65,11 @@ const DisplayAssignmentsModal = () => {
 
     return (
         <div>
+            {confirmBeginOpen &&
+                <DisplayConfirmBeginModal />}
+
             <div onClick={toggleModal} className="majorDiv assignmentDiv">Assignments</div>
+
             <Modal
                 isOpen={modalOpen}
                 onRequestClose={toggleModal}
@@ -59,25 +79,38 @@ const DisplayAssignmentsModal = () => {
             >
                 {roomInfo ?
                     <div className='studentModalDiv'>
+
                         <div className='studentUpperDiv'>
-                            <h1 className='editClassHeader'>{`${teacher}`}</h1>
+                            <h1 className='editClassHeader'>{`${roomInfo.name}`}</h1>
                             <div className='closeButtonDiv .studentClose' onClick={toggleModal}>
                                 <div className='closeInnerDiv'></div>
                                 <i className='closeButton fas fa-window-close'></i>
                             </div>
                         </div>
+
                         <div className='assignmentHeaderDiv'>
-                            <div className='assHeader'>You have {roomInfo.decks.length} assigned decks</div>
+                            <div className='assHeader'>You have {assignments.length} {assignmentText}:</div>
                         </div>
+
                         <div className='assignmentListDiv'>
                             {assignments.map((assignment, i) =>
                                 <div className='assignmentRow' key={i.toString()}>
-                                    <h1 className='assignmentList' key={i.toString()}>{assignment}</h1>
-                                    <button className='unassignButton'>Unassign</button>
+
+                                    {!sessionRole &&
+                                        <h1 className='assignmentList' key={i.toString()}>{assignment}</h1>}
+                                    {sessionRole &&
+                                        <h1 className='assignmentList' id={assignmentId} key={i.toString()} onClick={(e) => {
+                                            toggleModal(e)
+                                            toggleConfirmBeginModal(e)
+                                        }}>{assignment}</h1>}
+                                    {sessionRole &&
+                                        <button className='unassignButton'>Unassign</button>}
+
+                                {/* {displayAssignments()} */}
                                 </div>
                             )};
                         </div>
-                        {/* {displayAssignments()} */}
+
                     </div>
                 : null}
             </Modal>

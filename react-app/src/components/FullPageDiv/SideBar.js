@@ -23,8 +23,6 @@ const SideBar = (props) => {
 
     const role = currentUser.teacher ? 'teacher' : 'student'
 
-    console.log('QQQQQQQQQQQQQQQ', currentUser)
-
     const toggleEditClassModal = (e) => {
         e.preventDefault()
         setEditClassModalOpen(!editClassModalOpen)
@@ -76,6 +74,10 @@ const SideBar = (props) => {
                 <NavLink to='/teacher/EditDeck' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Edit Deck</div>
                 </NavLink>}
+            {deck.id && !props.viewDeck &&
+                <NavLink to={`/${role}/viewDeck`} style={{textDecoration: 'none'}}>
+                    <div className='sideDiv joinText'>Study Deck</div>
+                </NavLink>}
 
             {props.completeDeck &&
                 <div className='sideDiv joinText' onClick={toggleSubmitDeckModal}>
@@ -83,24 +85,15 @@ const SideBar = (props) => {
             {props.editClass && roomInfo && !deck.id &&
                 <div className='sideDiv joinText' onClick={toggleEditClassModal}>
                     Edit Class</div>}
-
             {deck.id && !props.studentPage &&
                 <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
                     Assign Deck</div>
             }
-            {deck.id && !props.viewDeck &&
-                <NavLink to={`/${role}/viewDeck`} style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>Study Deck</div>
-                </NavLink>
-            }
+
             <div className='sideDiv joinText bottomButton' onClick={onLogout}>
                 <div>{user}</div>
                 <div>Log Out</div>
             </div>
-            {/* {props.viewDeck &&
-                <div className='sideDiv joinText' onClick={toggleConfirmAssignModal}>
-                Assign Deck</div>
-            } */}
         </div>
     )
 }
