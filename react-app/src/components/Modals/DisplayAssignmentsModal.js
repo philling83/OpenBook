@@ -1,7 +1,7 @@
 import React, {  useState } from 'react';
 import Modal from 'react-modal';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 // import * as deckActions from "../../store/decks";
 
 import DisplayConfirmBeginModal from './DisplayConfirmBeginModal'
@@ -39,7 +39,7 @@ const DisplayAssignmentsModal = () => {
     // const [deckId, setDeckId] = useState("")
     // const [loaded, setLoaded] = useState(false);
 
-    // let history = useHistory()
+    let history = useHistory()
     // const dispatch = useDispatch();
 
     const roomInfo = useSelector(state => state.classroom.room);
@@ -110,13 +110,13 @@ const DisplayAssignmentsModal = () => {
                                 <div className='assignmentRow' key={i.toString()}>
 
                                     {sessionRole &&
-                                        <h1 className='assignmentList' id={assignmentId} key={i.toString()} onClick={(e) => {
+                                        <h1 className='assignmentList' key={i.toString()} onClick={(e) => {
                                             // assignDeckId(e)
                                             toggleModal(e)
                                             handleViewDeck(e)
                                         }}>{assignment}</h1>}
                                     {!sessionRole &&
-                                        <h1 className='assignmentList' id={assignmentId} key={i.toString()} onClick={(e) => {
+                                        <h1 className='assignmentList' key={i.toString()} onClick={(e) => {
                                             // assignDeckId(e)
                                             toggleModal(e)
                                             toggleConfirmBeginModal(e)
