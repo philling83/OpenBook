@@ -6,6 +6,7 @@ import './AddCardToDeck.css';
 import * as cardActions from '../../store/cards'
 
 const AddCardToDeck = () => {
+    // const deck = useSelector((state) => state.deck.deck);
     let cards = useSelector(state => state.cards.cards_to_add)
     const [cardsToAdd, setCardsToAdd] = useState([...cards])
     const dispatch = useDispatch()
@@ -25,9 +26,9 @@ const AddCardToDeck = () => {
     const displayCards = () => {
         return cardsToAdd.map((card, i) => {
             return (
-                <div key={i.toString()} className="cardDiv" id={i} onClick={removeCard}>
-                    <div className="previewQuestionText" id={i}>{card.title}</div>
-                    <div className="cardHolder" id={i}>
+                <div key={i.toString()} className="imageTextDiv" id={i} onClick={removeCard}>
+                    <div className="cardDiv" id={i}>
+                        <div className="previewQuestionText" id={i}>{card.title}</div>
                         <div className='choicesAnswerDiv' id={i}>
                             <div className="previewChoicesText" id={i}>
                                 {card.possible_answers.map((choice, ind) => (
@@ -49,7 +50,9 @@ const AddCardToDeck = () => {
             {/* <div className='deckPreviewDiv addCardDiv'> */}
                 <div className='addCardText'>Add Cards to Your Deck</div>
                 <div className='deckBuildView'>
-                    {displayCards()}
+                    {/* <div className='cardView'> */}
+                        {displayCards()}
+                    {/* </div> */}
                 </div>
             </div>
         // </div>

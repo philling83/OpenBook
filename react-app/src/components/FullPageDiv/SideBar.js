@@ -60,15 +60,15 @@ const SideBar = (props) => {
                 <NavLink to={`/${role}s/${currentUser.id}`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Home</div>
                 </NavLink>}
-            {props.createClass &&
+            {props.createClass && !deck.id &&
                 <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}} >
                     <div className='sideDiv joinText'>Create Class</div>
                 </NavLink>}
-            {props.createDeck &&
+            {props.createDeck && !deck.id &&
                 <NavLink to={`/${role}/createDeck`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Create Deck</div>
                 </NavLink>}
-            {props.createCard &&
+            {props.createCard && !deck.id &&
                 <NavLink to={`/${role}/createCard`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Create Card</div>
                 </NavLink>}
@@ -80,7 +80,7 @@ const SideBar = (props) => {
             {props.completeDeck &&
                 <div className='sideDiv joinText' onClick={toggleSubmitDeckModal}>
                     Complete Deck</div>}
-            {props.editClass && roomInfo &&
+            {props.editClass && roomInfo && !deck.id &&
                 <div className='sideDiv joinText' onClick={toggleEditClassModal}>
                     Edit Class</div>}
 
@@ -90,7 +90,7 @@ const SideBar = (props) => {
             }
             {deck.id && !props.viewDeck &&
                 <NavLink to={`/${role}/viewDeck`} style={{textDecoration: 'none'}}>
-                    <div className='sideDiv joinText'>View Deck</div>
+                    <div className='sideDiv joinText'>Study Deck</div>
                 </NavLink>
             }
             <div className='sideDiv joinText bottomButton' onClick={onLogout}>

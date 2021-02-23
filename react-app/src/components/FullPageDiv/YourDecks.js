@@ -39,7 +39,7 @@ const YourDecks = () => {
 	return (
 		loaded && (
 			<div className="yourDecksDiv">
-				<div className="yourDeckTextDiv">Your Decks</div>
+				<div className="yourDeckTextDiv">Click Decks to Preview</div>
 				<div className="decksDiv">
 					<div className="allDecksDiv">
 						{decks.map((deck, i) => (

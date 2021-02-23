@@ -23,18 +23,23 @@
 	height: 94px;
     margin: 10px;
     border-radius: 5px;
-	border: 3px solid rgba(1, 5, 53, 0.9);
+	border: 2px solid rgb(32, 60, 87);
     box-sizing: border-box;
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgba(165, 128, 93, 0.9);
 }
+
+.miniCardDiv:hover {
+	transform: translateY(-5px)
+}
+
 
 .miniCardText {
 	display: flex;
 	text-align: center;
     justify-content: center;
     align-items: center;
-	color: rgba(1, 5, 53);
+	color:rgb(32, 60, 87);
     font-size: 17px;
     height: 100%;
     width: 100%;
@@ -44,6 +49,7 @@
     background-repeat: no-repeat;
     background-size: 2000px;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .allCardsDiv {

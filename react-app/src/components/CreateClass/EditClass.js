@@ -6,6 +6,7 @@ import './EditClass.css'
 
 const EditClass = (props) => {
     const dispatch = useDispatch();
+    // const teacherId = useSelector(state => state.session.user.id);
 
     const teacher_class_id = useSelector(state => state.session.user.classrooms_id)
     let student_info = useSelector(state => state.classroom.room.students)
@@ -139,7 +140,9 @@ const EditClass = (props) => {
         //Delete removed students
         await dispatch(classActions.deleteStudents(deletedStudents))
 
-        // history.push(`/teachers/${teacherId}`)
+        // await dispatch(classActions.createStudents(classroomId, names))
+
+        // history.push(`/teachers/${teacher_class_id}`)
     }
 
 

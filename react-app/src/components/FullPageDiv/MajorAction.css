@@ -22,7 +22,7 @@
 	width: 250px;
 	margin-left: 25px;
 	border-radius: 10px;
-	color:  rgb(243, 245, 246);
+	color: rgb(32, 60, 87);
 	font-size: 25px;
 }
 
@@ -41,14 +41,17 @@
 
 .assignmentDiv:hover {
 	background-color: rgb(117, 86, 55);
+	color: rgb(243, 245, 246);
 }
 
 .studentDiv:hover {
 	background-color: rgb(109, 47, 48);
+	color: rgb(243, 245, 246);
 }
 
 .videoDiv:hover {
 	background-color: rgb(95, 35, 66);
+	color: rgb(243, 245, 246);
 }
 
 .cardDiv {
