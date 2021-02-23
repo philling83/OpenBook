@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import Modal from 'react-modal';
-import { useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useHistory } from 'react-router-dom';
+// import * as deckActions from "../../store/decks";
 
 import DisplayConfirmBeginModal from './DisplayConfirmBeginModal'
 
@@ -34,6 +36,11 @@ const customStyles = {
 const DisplayAssignmentsModal = () => {
     const [modalOpen, setModalOpen] = useState(false)
     const [confirmBeginOpen, setConfirmBeginOpen] = useState(false)
+    // const [deckId, setDeckId] = useState("")
+    // const [loaded, setLoaded] = useState(false);
+
+    // let history = useHistory()
+    // const dispatch = useDispatch();
 
     const roomInfo = useSelector(state => state.classroom.room);
     const sessionRole = useSelector(state => state.session.user.teacher);
@@ -42,8 +49,6 @@ const DisplayAssignmentsModal = () => {
 
     //HARD CODED
     const assignments = ['HardCoded 1/2/21', 'HardCoded 2/1/21']
-    const assignmentId = 1;
-
 
     const toggleModal = (e) => {
         e.preventDefault()
@@ -51,10 +56,18 @@ const DisplayAssignmentsModal = () => {
     }
 
     const toggleConfirmBeginModal = (e) => {
-        console.log(e.target.id)
         e.preventDefault()
         setConfirmBeginOpen(!confirmBeginOpen)
     }
+
+    const handleViewDeck = () => {
+        history.push(`/teacher/viewDeck`)
+    }
+
+    // const assignDeckId = (e) => {
+    //     const deckId = e.target.id;
+    //     return setDeckId(1);
+    // }
 
     // const displayAssignments = () => {
     //     return roomInfo.decks.map((deck) => {
@@ -96,10 +109,15 @@ const DisplayAssignmentsModal = () => {
                             {assignments.map((assignment, i) =>
                                 <div className='assignmentRow' key={i.toString()}>
 
-                                    {!sessionRole &&
-                                        <h1 className='assignmentList' key={i.toString()}>{assignment}</h1>}
                                     {sessionRole &&
                                         <h1 className='assignmentList' id={assignmentId} key={i.toString()} onClick={(e) => {
+                                            // assignDeckId(e)
+                                            toggleModal(e)
+                                            handleViewDeck(e)
+                                        }}>{assignment}</h1>}
+                                    {!sessionRole &&
+                                        <h1 className='assignmentList' id={assignmentId} key={i.toString()} onClick={(e) => {
+                                            // assignDeckId(e)
                                             toggleModal(e)
                                             toggleConfirmBeginModal(e)
                                         }}>{assignment}</h1>}
@@ -108,9 +126,9 @@ const DisplayAssignmentsModal = () => {
 
                                 {/* {displayAssignments()} */}
                                 </div>
-                            )};
+                            )}
                         </div>
-
+                        <div className='instructionText'>Click an assignment to view</div>
                     </div>
                 : null}
             </Modal>

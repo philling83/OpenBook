@@ -10,10 +10,11 @@ import DisplayConfirmAssignModal from '../Modals/DisplayConfirmAssignModal'
 import './SideBar.css';
 
 const SideBar = (props) => {
-    const dispatch = useDispatch()
     const [editClassModalOpen, setEditClassModalOpen] = useState(false)
     const [submitDeckModalOpen, setSubmitDeckModalOpen] = useState(false)
     const [confirmAssignModalOpen, setConfirmAssignOpen] = useState(false)
+
+    const dispatch = useDispatch()
     const deck = useSelector((state) => state.deck.deck);
     const roomInfo = useSelector(state => state.classroom.room)
     const currentUser = useSelector(state => state.session.user);

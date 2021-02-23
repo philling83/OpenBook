@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import YourCards from './YourCards'
 import SearchBar from '../FullPageDiv/SearchBar.js';
 import AddCardToDeck from './AddCardToDeck';
-// import DeckInfoCreate from './DeckInfoCreate'
 
 const CreateDeck = () => {
     const dispatch = useDispatch()
@@ -17,7 +16,6 @@ const CreateDeck = () => {
     return (
         <div className='teacherDiv'>
             <AddCardToDeck />
-            {/* <DeckInfoCreate /> */}
             <SearchBar searchCards={true}/>
             <YourCards />
         </div>

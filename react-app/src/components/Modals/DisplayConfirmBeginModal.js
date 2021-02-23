@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal'
 import  { useHistory } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 
 import './DisplayConfirmAssignModal.css'
 
@@ -34,7 +33,6 @@ const customStyles = {
 const DisplayConfirmBeginModal = () => {
     const [modalOpen, setModalOpen] = useState(true);
     const [deckId, setDeckId] = useState("")
-    // const currentUser = useSelector(state => state.session.user);
     const history = useHistory()
 
     const toggleModal = (e) => {
