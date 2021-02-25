@@ -9,7 +9,7 @@ import './StudentHomePage.css'
 const StudentHomePage = () => {
     return (
         <div className='studentDiv'>
-            <MajorAction preview={false} />
+            <MajorAction />
             <SearchBar />
             <YourDecks />
         </div>

@@ -26,7 +26,6 @@ const EditDeck = () => {
             <SearchBar />
             <AddCardToDeck />
             <DeckInfoEdit />
-            {/* <YourCards /> */}
         </div>
     )
 }
