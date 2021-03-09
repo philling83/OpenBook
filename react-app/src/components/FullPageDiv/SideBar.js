@@ -63,7 +63,7 @@ const SideBar = (props) => {
                 <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}} >
                     <div className='sideDiv joinText'>Create Class</div>
                 </NavLink>}
-            {props.createDeck && !deck.id &&
+            {/* {props.createDeck && !deck.id &&
                 <NavLink to={`/${role}/createDeck`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Create Deck</div>
                 </NavLink>}
@@ -74,7 +74,7 @@ const SideBar = (props) => {
             {props.editDeck &&
                 <NavLink to='/teacher/EditDeck' style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Edit Deck</div>
-                </NavLink>}
+                </NavLink>} */}
             {deck.id && !props.viewDeck &&
                 <NavLink to={`/${role}/viewDeck`} style={{textDecoration: 'none'}}>
                     <div className='sideDiv joinText'>Study Deck</div>

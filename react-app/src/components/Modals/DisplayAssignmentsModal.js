@@ -1,68 +1,71 @@
-import React, {  useState } from 'react';
-import Modal from 'react-modal';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+// import React, {  useState, NavLink } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom'
+// import Modal from 'react-modal';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useHistory } from 'react-router-dom';
 // import * as deckActions from "../../store/decks";
 
-import DisplayConfirmBeginModal from './DisplayConfirmBeginModal'
+// import DisplayConfirmBeginModal from './DisplayConfirmBeginModal'
 
-import './DisplayAssignmentsModal.css'
+// import './DisplayAssignmentsModal.css'
 
-const customStyles = {
-    overlay: {
-        backgroundColor: 'none'
-    },
-    content: {
-        position: 'absolute',
-        top: '240px',
-        left: '120px',
-        height: '500px',
-        width: '800px',
-        overflow: 'auto',
-        WebkitOverflowScrolling: 'touch',
-        outline: 'none',
-        backgroundColor: 'rgb(248, 245, 245)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'rgb(32, 60, 87)',
-        borderRadius: '5px',
-        padding: '0px',
-        border: '8px solid rgb(32, 60, 87)',
-    }
-}
+// const customStyles = {
+//     overlay: {
+//         backgroundColor: 'none'
+//     },
+//     content: {
+//         position: 'absolute',
+//         top: '240px',
+//         left: '120px',
+//         height: '500px',
+//         width: '800px',
+//         overflow: 'auto',
+//         WebkitOverflowScrolling: 'touch',
+//         outline: 'none',
+//         backgroundColor: 'rgb(248, 245, 245)',
+//         display: 'flex',
+//         flexDirection: 'column',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         color: 'rgb(32, 60, 87)',
+//         borderRadius: '5px',
+//         padding: '0px',
+//         border: '8px solid rgb(32, 60, 87)',
+//     }
+// }
 
 const DisplayAssignmentsModal = () => {
-    const [modalOpen, setModalOpen] = useState(false)
-    const [confirmBeginOpen, setConfirmBeginOpen] = useState(false)
+    let history = useHistory();
+    // const [modalOpen, setModalOpen] = useState(false)
+    // const [confirmBeginOpen, setConfirmBeginOpen] = useState(false)
     // const [deckId, setDeckId] = useState("")
     // const [loaded, setLoaded] = useState(false);
 
-    let history = useHistory()
+    // let history = useHistory()
     // const dispatch = useDispatch();
 
-    const roomInfo = useSelector(state => state.classroom.room);
-    const sessionRole = useSelector(state => state.session.user.teacher);
+    // const roomInfo = useSelector(state => state.classroom.room);
+    // const sessionRole = useSelector(state => state.session.user.teacher);
 
-    let assignmentText = sessionRole ? 'assigned decks' : 'assignments due'
+    // let assignmentText = sessionRole ? 'assigned decks' : 'assignments due'
 
     //HARD CODED
-    const assignments = ['HardCoded 1/2/21', 'HardCoded 2/1/21']
+    // const assignments = ['HardCoded 1/2/21', 'HardCoded 2/1/21']
 
-    const toggleModal = (e) => {
-        e.preventDefault()
-        setModalOpen(!modalOpen)
-    }
+    // const toggleModal = (e) => {
+    //     e.preventDefault()
+    //     setModalOpen(!modalOpen)
+    // }
 
-    const toggleConfirmBeginModal = (e) => {
-        e.preventDefault()
-        setConfirmBeginOpen(!confirmBeginOpen)
-    }
+    // const toggleConfirmBeginModal = (e) => {
+    //     e.preventDefault()
+    //     setConfirmBeginOpen(!confirmBeginOpen)
+    // }
 
-    const handleViewDeck = () => {
-        history.push(`/teacher/viewDeck`)
-    }
+    // const handleViewDeck = () => {
+    //     history.push(`/teacher/viewDeck`)
+    // }
 
     // const assignDeckId = (e) => {
     //     const deckId = e.target.id;
@@ -75,64 +78,73 @@ const DisplayAssignmentsModal = () => {
     //     })
     // }
 
+    const redirectClass = () => {
+		history.push('/teacher/createDeck')
+	}
+
 
     return (
-        <div>
-            {confirmBeginOpen &&
-                <DisplayConfirmBeginModal />}
+        // <NavLink to='/teacher/createClass' style={{textDecoration: 'none'}} >
+            // <Switch>
 
-            <div onClick={toggleModal} className="majorDiv assignmentDiv">Assignments</div>
+        <div onClick={redirectClass} className='majorDiv assignmentDiv'>Create Deck</div>
 
-            <Modal
-                isOpen={modalOpen}
-                onRequestClose={toggleModal}
-                style={customStyles}
-                contentLabel='Your Assignments'
-                ariaHideApp={false}
-            >
-                {roomInfo ?
-                    <div className='studentModalDiv'>
+        // <div>
+        //     {confirmBeginOpen &&
+        //         <DisplayConfirmBeginModal />}
 
-                        <div className='studentUpperDiv'>
-                            <h1 className='editClassHeader'>{`${roomInfo.name}`}</h1>
-                            <div className='closeButtonDiv .studentClose' onClick={toggleModal}>
-                                <div className='closeInnerDiv'></div>
-                                <i className='closeButton fas fa-window-close'></i>
-                            </div>
-                        </div>
+        //     <div onClick={toggleModal} className="majorDiv assignmentDiv">Assignments</div>
 
-                        <div className='assignmentHeaderDiv'>
-                            <div className='assHeader'>You have {assignments.length} {assignmentText}:</div>
-                        </div>
+        //     <Modal
+        //         isOpen={modalOpen}
+        //         onRequestClose={toggleModal}
+        //         style={customStyles}
+        //         contentLabel='Your Assignments'
+        //         ariaHideApp={false}
+        //     >
+        //         {roomInfo ?
+        //             <div className='studentModalDiv'>
 
-                        <div className='assignmentListDiv'>
-                            {assignments.map((assignment, i) =>
-                                <div className='assignmentRow' key={i.toString()}>
+        //                 <div className='studentUpperDiv'>
+        //                     <h1 className='editClassHeader'>{`${roomInfo.name}`}</h1>
+        //                     <div className='closeButtonDiv .studentClose' onClick={toggleModal}>
+        //                         <div className='closeInnerDiv'></div>
+        //                         <i className='closeButton fas fa-window-close'></i>
+        //                     </div>
+        //                 </div>
 
-                                    {sessionRole &&
-                                        <h1 className='assignmentList' key={i.toString()} onClick={(e) => {
-                                            // assignDeckId(e)
-                                            toggleModal(e)
-                                            handleViewDeck(e)
-                                        }}>{assignment}</h1>}
-                                    {!sessionRole &&
-                                        <h1 className='assignmentList' key={i.toString()} onClick={(e) => {
-                                            // assignDeckId(e)
-                                            toggleModal(e)
-                                            toggleConfirmBeginModal(e)
-                                        }}>{assignment}</h1>}
-                                    {sessionRole &&
-                                        <button className='unassignButton'>Unassign</button>}
+        //                 <div className='assignmentHeaderDiv'>
+        //                     <div className='assHeader'>You have {assignments.length} {assignmentText}:</div>
+        //                 </div>
 
-                                {/* {displayAssignments()} */}
-                                </div>
-                            )}
-                        </div>
-                        <div className='instructionText'>Click an assignment to view</div>
-                    </div>
-                : null}
-            </Modal>
-        </div>
+        //                 <div className='assignmentListDiv'>
+        //                     {assignments.map((assignment, i) =>
+        //                         <div className='assignmentRow' key={i.toString()}>
+
+        //                             {sessionRole &&
+        //                                 <h1 className='assignmentList' key={i.toString()} onClick={(e) => {
+        //                                     // assignDeckId(e)
+        //                                     toggleModal(e)
+        //                                     handleViewDeck(e)
+        //                                 }}>{assignment}</h1>}
+        //                             {!sessionRole &&
+        //                                 <h1 className='assignmentList' key={i.toString()} onClick={(e) => {
+        //                                     // assignDeckId(e)
+        //                                     toggleModal(e)
+        //                                     toggleConfirmBeginModal(e)
+        //                                 }}>{assignment}</h1>}
+        //                             {sessionRole &&
+        //                                 <button className='unassignButton'>Unassign</button>}
+
+        //                         {/* {displayAssignments()} */}
+        //                         </div>
+        //                     )}
+        //                 </div>
+        //                 <div className='instructionText'>Click an assignment to view</div>
+        //             </div>
+        //         : null}
+        //     </Modal>
+        // </div>
     )
 }
 

@@ -40,18 +40,18 @@ const EditClass = (props) => {
         ))
     }
 
-    const updateCurrentStudents = (e) => {
-        let new_list = studentState.map(el => {
+    // const updateCurrentStudents = (e) => {
+    //     let new_list = studentState.map(el => {
 
-            if (el.id === Number(e.target.id)) {
-                el.name = e.target.value
-                return el
-            } else {
-                return el
-            }
-        })
-        return setStudentState(new_list)
-    }
+    //         if (el.id === Number(e.target.id)) {
+    //             el.name = e.target.value
+    //             return el
+    //         } else {
+    //             return el
+    //         }
+    //     })
+    //     return setStudentState(new_list)
+    // }
 
     const deleteCurrentStudent = (e) => {
         e.preventDefault()

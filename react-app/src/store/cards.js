@@ -51,7 +51,7 @@ export const addCard = (card) => async(dispatch) => {
     console.log('hit addCard')
     const response = await fetch('/api/cards/', {method:'POST', headers: {'Content-Type':'application/json'} ,body: JSON.stringify(card)})
     const responseJson = await response.json()
-    console.log(responseJson)
+    // console.log('EEEEEEEEEEEEE', responseJson)
     dispatch(newCard(responseJson))
 
     return response

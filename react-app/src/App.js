@@ -101,6 +101,7 @@ function App() {
 						<Banner />
 						<div className="bodyDiv">
 							<SideBar
+								goHome
 								createDeck
 								createCard
 								studentPage
